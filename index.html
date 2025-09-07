@@ -115,8 +115,36 @@
 <body>
 
   <div class="hero">
-    <!-- Background images -->
-    <div class="slides">
+    <!-- Hamburger Menu -->
+<div class="hamburger" id="hamburger" style="position:absolute; top:20px; right:30px; cursor:pointer; z-index:10;">
+  <div style="width:30px; height:4px; background:white; margin:6px 0;"></div>
+  <div style="width:30px; height:4px; background:white; margin:6px 0;"></div>
+  <div style="width:30px; height:4px; background:white; margin:6px 0;"></div>
+</div>
+
+<!-- Navigation Menu -->
+<nav class="nav-menu" id="nav-menu" style="position:absolute; top:60px; right:30px; background:#9b59b6; padding:20px; border-radius:10px; display:none; z-index:9;">
+  <a href="#about" style="display:block; color:white; margin-bottom:10px; text-decoration:none; font-weight:bold;">About</a>
+  <a href="departments.html" style="display:block; color:white; margin-bottom:10px; text-decoration:none; font-weight:bold;">Departments</a>
+  <a href="#registration" style="display:block; color:white; margin-bottom:10px; text-decoration:none; font-weight:bold;">Registration</a>
+  <a href="#contact" style="display:block; color:white; margin-bottom:10px; text-decoration:none; font-weight:bold;">Contact</a>
+</nav>
+
+<!-- JavaScript to toggle menu -->
+<script>
+  const hamburger = document.getElementById('hamburger');
+  const navMenu = document.getElementById('nav-menu');
+
+  hamburger.addEventListener('click', () => {
+    if(navMenu.style.display === 'block') {
+      navMenu.style.display = 'none';
+    } else {
+      navMenu.style.display = 'block';
+    }
+  });
+</script>
+    <!--  images -->
+    <div class="slidBackgroundes">
       <img src="churcht1.jpg" class="active">
       <img src="churcht2.jpg">
       <img src="churcht3.jpg">
@@ -393,3 +421,41 @@
 
 </section>
 <!-- ================= END CONTACT SECTION ================= -->
+<!-- Back to Top Arrow -->
+<a href="#top" id="back-to-top" 
+   style="position:fixed; bottom:30px; right:30px; background:#9b59b6; color:white; padding:15px; border-radius:50%; font-size:20px; text-decoration:none; display:none; z-index:1000; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
+  ↑
+</a>
+
+<script>
+  const backToTop = document.getElementById('back-to-top');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 300) {
+      backToTop.style.display = 'block';
+    } else {
+      backToTop.style.display = 'none';
+    }
+  });
+</script>
+<!-- Google Map Section -->
+<section style="padding:80px 20px; text-align:center; background:#f8f8f8;">
+  <h2 style="color:#9b59b6; font-size:2.8rem; font-weight:bold; margin-bottom:20px;">Find Us</h2>
+  <p style="font-size:18px; color:#333; margin-bottom:40px; max-width:800px; margin-left:auto; margin-right:auto;">
+    Visit Kingdom Citizens Church International at Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria.
+  </p>
+  <div style="max-width:900px; margin:0 auto; border-radius:25px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.15);">
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.123456!2d3.345678!3d7.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104123456789abcd%3A0x123456789abcdef!2sKingdom%20Citizens%20Church%20International!5e0!3m2!1sen!2sng!4v1694070000000!5m2!1sen!2sng" 
+            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+  </div>
+</section>
+<!-- Footer -->
+<footer style="background:#9b59b6; color:white; padding:40px 20px; text-align:center;">
+  <p style="font-size:16px; margin-bottom:10px;">&copy; 2025 Kingdom Citizens Church International. All rights reserved.</p>
+  <p style="font-size:14px; margin-bottom:15px;">
+    <a href="#about" style="color:white; text-decoration:underline; margin:0 10px;">About</a> |
+    <a href="#departments" style="color:white; text-decoration:underline; margin:0 10px;">Departments</a> |
+    <a href="#registration" style="color:white; text-decoration:underline; margin:0 10px;">Register</a> |
+    <a href="#contact" style="color:white; text-decoration:underline; margin:0 10px;">Contact</a>
+  </p>
+  <p style="font-size:14px;">Designed & Maintained by Kingdom Citizens Church IT Team</p>
+</footer>
