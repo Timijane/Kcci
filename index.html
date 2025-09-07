@@ -12,12 +12,9 @@
     }
 
     body, html {
-      height: 100%;
       font-family: Arial, sans-serif;
-      overflow: hidden;
     }
 
-    /* Hero Section */
     .hero {
       position: relative;
       width: 100%;
@@ -25,7 +22,6 @@
       overflow: hidden;
     }
 
-    /* Background Slideshow */
     .slides {
       position: absolute;
       width: 100%;
@@ -47,7 +43,6 @@
       opacity: 1;
     }
 
-    /* Content in center */
     .hero-content {
       position: relative;
       z-index: 2;
@@ -57,48 +52,45 @@
       transform: translateY(-50%);
     }
 
-    /* Logo styling */
     .hero-content img {
-      width: 120px;          /* smaller size */
-      height: 120px;         /* fixed height */
-      border-radius: 50%;    /* round logo */
-      object-fit: cover;     /* keeps proportion inside circle */
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
       margin-bottom: 15px;
-      margin-top: -40px;     /* moves it upward */
-      border: 3px solid white; /* optional border for elegance */
+      margin-top: -40px;
+      border: 3px solid white;
     }
 
     .hero-content h1 {
       font-size: 3rem;
       font-weight: bold;
       text-transform: uppercase;
-      text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8), 
-                   0px 0px 20px rgba(255, 215, 0, 0.6); /* radiant gold glow */
+      text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8),
+                   0px 0px 20px rgba(255, 215, 0, 0.6);
     }
 
     .hero-content h2 {
       font-size: 1.5rem;
       font-style: italic;
       margin-top: 10px;
-      text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8), 
-                   0px 0px 20px rgba(255, 215, 0, 0.6); /* radiant gold glow */
+      text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8),
+                   0px 0px 20px rgba(255, 215, 0, 0.6);
     }
 
-    /* Rotating Scripture */
     .scripture {
       margin-top: 30px;
       font-size: 1.3rem;
       font-weight: 500;
       opacity: 0;
       transition: opacity 2s ease-in-out;
-      text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.9); /* soft white glow */
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.9);
     }
 
     .scripture.active {
       opacity: 1;
     }
 
-    /* Dark overlay for readability */
     .overlay {
       position: absolute;
       top: 0;
@@ -108,12 +100,42 @@
       background: rgba(0,0,0,0.5);
       z-index: 1;
     }
+
+    #about {
+      background-color: #ffffff;
+      padding: 60px 20px;
+    }
+
+    #about .headline {
+      text-align: center;
+      margin-bottom: 50px;
+    }
+
+    #about .headline h1 {
+      color: #9b59b6;
+      font-size: 42px;
+      font-weight: bold;
+      margin-bottom: 10px;
+    }
+
+    #about .headline .line {
+      width: 120px;
+      height: 4px;
+      background: #9b59b6;
+      margin: 0 auto 30px;
+    }
+
+    #about .headline img {
+      width: 140px;
+      height: 140px;
+      border-radius: 50%;
+      margin-bottom: 30px;
+    }
   </style>
 </head>
 <body>
 
   <div class="hero">
-    <!-- Background images -->
     <div class="slides">
       <img src="churcht1.jpg" class="active">
       <img src="churcht2.jpg">
@@ -126,11 +148,7 @@
       <img src="churcht9.jpg">
       <img src="churcht10.jpg">
     </div>
-
-    <!-- Dark overlay -->
     <div class="overlay"></div>
-
-    <!-- Main Content -->
     <div class="hero-content">
       <img src="logo1.jpg" alt="Church Logo">
       <h1>KINGDOM CITIZENS CHURCH INTERNATIONAL</h1>
@@ -139,8 +157,15 @@
     </div>
   </div>
 
+  <section id="about">
+    <div class="headline">
+      <h1>About Kingdom Citizens</h1>
+      <div class="line"></div>
+      <img src="logo1.jpg" alt="Church Logo">
+    </div>
+  </section>
+
   <script>
-    // Background slideshow
     const slides = document.querySelectorAll('.slides img');
     let currentSlide = 0;
 
@@ -149,9 +174,8 @@
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
     }
-    setInterval(changeSlide, 5000); // change every 5s
+    setInterval(changeSlide, 5000);
 
-    // Scriptures rotation
     const scriptures = [
       "Now faith is the substance of things hoped for, the evidence of things not seen. – Hebrews 11:1",
       "Have faith in God. – Mark 11:22",
@@ -178,10 +202,9 @@
       currentScripture = (currentScripture + 1) % scriptures.length;
     }
 
-    // initialize
     scriptureEl.textContent = scriptures[0];
     scriptureEl.classList.add("active");
-    setInterval(changeScripture, 6000); // change every 6s
+    setInterval(changeScripture, 6000);
   </script>
 
   <!-- ================= ABOUT PAGE ================= -->
