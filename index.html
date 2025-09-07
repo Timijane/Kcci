@@ -1,1 +1,375 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Kingdom Citizens Church International</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
 
+    body, html {
+      height: 100%;
+      font-family: Arial, sans-serif;
+      scroll-behavior: smooth;
+    }
+
+    /* Navbar */
+    .navbar {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      background: rgba(0,0,0,0.7);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 15px 30px;
+      z-index: 1000;
+    }
+
+    .navbar h2 {
+      color: gold;
+      font-size: 1.2rem;
+    }
+
+    .menu-toggle {
+      font-size: 1.8rem;
+      color: gold;
+      cursor: pointer;
+      display: none;
+    }
+
+    .nav-links {
+      display: flex;
+      list-style: none;
+    }
+
+    .nav-links li {
+      margin-left: 20px;
+    }
+
+    .nav-links a {
+      text-decoration: none;
+      color: white;
+      font-weight: bold;
+      transition: color 0.3s;
+    }
+
+    .nav-links a:hover {
+      color: gold;
+    }
+
+    @media (max-width: 768px) {
+      .menu-toggle {
+        display: block;
+      }
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background: rgba(0,0,0,0.9);
+        position: absolute;
+        top: 60px;
+        right: 20px;
+        padding: 15px;
+        border-radius: 5px;
+      }
+      .nav-links.active {
+        display: flex;
+      }
+    }
+
+    /* Hero Section */
+    .hero {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      overflow: hidden;
+    }
+
+    /* Slideshow */
+    .slides {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      top: 0;
+      left: 0;
+    }
+
+    .slides img {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+    }
+
+    .slides img.active {
+      opacity: 1;
+    }
+
+    /* Overlay */
+    .overlay {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(0,0,0,0.5);
+      z-index: 1;
+    }
+
+    /* Hero Content */
+    .hero-content {
+      position: relative;
+      z-index: 2;
+      text-align: center;
+      color: white;
+      top: 50%;
+      transform: translateY(-50%);
+    }
+
+    .hero-content img {
+      width: 150px;
+      height: auto;
+      margin-bottom: 20px;
+    }
+
+    .hero-content h1 {
+      font-size: 2.5rem;
+      font-weight: bold;
+      text-transform: uppercase;
+      text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.9);
+    }
+
+    .hero-content h2 {
+      font-size: 1.2rem;
+      font-style: italic;
+      margin-top: 10px;
+      text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8);
+    }
+
+    /* Scripture */
+    .scripture {
+      margin-top: 30px;
+      font-size: 1rem;
+      font-weight: 500;
+      opacity: 0;
+      transition: opacity 1.5s ease-in-out;
+      text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.9);
+    }
+
+    .scripture.active {
+      opacity: 1;
+    }
+
+    /* Scroll Button */
+    .scroll-btn {
+      position: absolute;
+      bottom: 30px;
+      left: 50%;
+      transform: translateX(-50%);
+      padding: 12px 25px;
+      font-size: 1rem;
+      background: gold;
+      color: black;
+      font-weight: bold;
+      border: none;
+      border-radius: 30px;
+      cursor: pointer;
+      transition: 0.3s;
+      z-index: 2;
+    }
+
+    .scroll-btn:hover {
+      background: white;
+      color: green;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Navbar -->
+  <nav class="navbar">
+    <h2>KCCI</h2>
+    <div class="menu-toggle" id="menu-toggle">&#9776;</div>
+    <ul class="nav-links" id="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#departments">Departments</a></li>
+      <li><a href="#groups">Groups</a></li>
+    </ul>
+  </nav>
+
+  <!-- Hero Section -->
+  <section id="home" class="hero">
+    <div class="slides">
+      <img src="churcht1.jpg" class="active">
+      <img src="churcht2.jpg">
+      <img src="churcht3.jpg">
+      <img src="churcht4.jpg">
+      <img src="churcht5.jpg">
+      <img src="churcht6.jpg">
+      <img src="churcht7.jpg">
+      <img src="churcht8.jpg">
+      <img src="churcht9.jpg">
+      <img src="churcht10.jpg">
+    </div>
+    <div class="overlay"></div>
+    <div class="hero-content">
+      <img src="logo1.jpg" alt="Church Logo">
+      <h1>KINGDOM CITIZENS CHURCH INTERNATIONAL</h1>
+      <h2>... nurturing the heir</h2>
+      <div id="scripture" class="scripture"></div>
+    </div>
+    <button class="scroll-btn" onclick="document.getElementById('about').scrollIntoView()">Visit Our Church</button>
+  </section>
+
+  <script>
+    // Mobile Menu
+    const menuToggle = document.getElementById("menu-toggle");
+    const navLinks = document.getElementById("nav-links");
+
+    menuToggle.addEventListener("click", () => {
+      navLinks.classList.toggle("active");
+    });
+
+    // Slideshow
+    const slides = document.querySelectorAll('.slides img');
+    let currentSlide = 0;
+
+    function changeSlide() {
+      slides[currentSlide].classList.remove('active');
+      currentSlide = (currentSlide + 1) % slides.length;
+      slides[currentSlide].classList.add('active');
+    }
+    setInterval(changeSlide, 5000);
+
+    // Scriptures
+    const scriptures = [
+      "Now faith is the substance of things hoped for, the evidence of things not seen. – Hebrews 11:1",
+      "Have faith in God. – Mark 11:22",
+      "So then faith comes by hearing, and hearing by the word of God. – Romans 10:17",
+      "For we walk by faith, not by sight. – 2 Corinthians 5:7",
+      "If you have faith as small as a mustard seed… nothing will be impossible for you. – Matthew 17:20",
+      "This is the victory that has overcome the world, even our faith. – 1 John 5:4",
+      "But let him ask in faith, nothing wavering. – James 1:6",
+      "The life I now live in the body, I live by faith in the Son of God. – Galatians 2:20",
+      "Take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. – Ephesians 6:16",
+      "And whatever you ask in prayer, you will receive, if you have faith. – Matthew 21:22"
+    ];
+
+    let currentScripture = 0;
+    const scriptureEl = document.getElementById("scripture");
+
+    function changeScripture() {
+      scriptureEl.classList.remove("active");
+      setTimeout(() => {
+        scriptureEl.textContent = scriptures[currentScripture];
+        scriptureEl.classList.add("active");
+      }, 500);
+
+      currentScripture = (currentScripture + 1) % scriptures.length;
+    }
+
+    scriptureEl.textContent = scriptures[0];
+    scriptureEl.classList.add("active");
+    setInterval(changeScripture, 6000);
+  </script>
+  <!-- ================= ABOUT SECTION ================= -->
+<section id="about" style="background-color:white; padding:60px 20px; font-family: Arial, sans-serif;">
+
+  <!-- Mandate with Logo -->
+  <div style="text-align:center; margin-bottom:50px;">
+    <img src="logo1.jpg" alt="Church Logo" 
+         style="width:140px; height:140px; border-radius:50%; margin-bottom:20px;">
+    <h2 style="color: gold; font-size:32px; font-weight:bold; margin-bottom:15px;">Our Mandate</h2>
+    <p style="background: gold; color: #006400; display:inline-block; padding:15px 25px; border-radius:12px; font-size:18px; max-width:800px; line-height:1.6;">
+      To restore the lost soul and destinies back to Christ’s Kingdom for preservation through the preaching of the Word of Faith.
+    </p>
+  </div>
+
+  <!-- Vision and Mission -->
+  <div style="text-align:center; margin-bottom:50px;">
+    <h2 style="color: gold; font-size:32px; font-weight:bold; margin-bottom:15px;">Our Vision</h2>
+    <p style="background: gold; color: #006400; display:inline-block; padding:12px 20px; border-radius:10px; font-size:18px; max-width:800px; line-height:1.6;">
+      To develop Christians full of Faith.
+    </p>
+
+    <h2 style="color: gold; font-size:32px; font-weight:bold; margin:40px 0 15px;">Our Mission</h2>
+    <p style="background: gold; color: #006400; display:inline-block; padding:12px 20px; border-radius:10px; font-size:18px; max-width:800px; line-height:1.6;">
+      To nurture the heir.
+    </p>
+  </div>
+
+  <!-- Remark -->
+  <div style="text-align:center; margin-bottom:60px;">
+    <h2 style="color: gold; font-size:32px; font-weight:bold; margin-bottom:15px;">About the Church</h2>
+    <p style="background: gold; color: #006400; display:inline-block; padding:15px 25px; border-radius:12px; font-size:18px; max-width:900px; line-height:1.6;">
+      Kingdom Citizens Church International, located at Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria, is a family of believers passionate about the Kingdom of God. 
+      We are committed to raising Christians rooted in faith, walking in destiny, and living as heirs of the Kingdom.
+    </p>
+  </div>
+
+  <!-- Meet Our Pastors -->
+  <div style="text-align:center;">
+    <h2 style="color: gold; font-size:32px; font-weight:bold; margin-bottom:40px;">Meet Our Pastors</h2>
+    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
+
+      <!-- Pastor Sam Balogun -->
+      <div style="text-align:center; max-width:220px;">
+        <img src="balogun.jpg" alt="Pastor Sam Balogun" 
+             style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+        <h3 style="color: gold; font-size:20px; font-weight:bold;">Pastor Sam Balogun</h3>
+        <p style="background: gold; color:#006400; padding:10px; border-radius:8px; font-size:16px; line-height:1.4;">
+          Founder and Senior Pastor of Kingdom Citizens Church International, a visionary leader with a passion for faith and kingdom impact.
+        </p>
+      </div>
+
+      <!-- Pastor Mrs Felicia Balogun -->
+      <div style="text-align:center; max-width:220px;">
+        <img src="felicia.jpg" alt="Pastor Mrs Felicia Balogun" 
+             style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+        <h3 style="color: gold; font-size:20px; font-weight:bold;">Pastor Mrs Felicia Balogun</h3>
+        <p style="background: gold; color:#006400; padding:10px; border-radius:8px; font-size:16px; line-height:1.4;">
+          Co-founder and mother in faith, nurturing believers and strengthening families in Christ.
+        </p>
+      </div>
+
+      <!-- Pastor Wale Somoye -->
+      <div style="text-align:center; max-width:220px;">
+        <img src="wale.jpg" alt="Pastor Wale Somoye" 
+             style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+        <h3 style="color: gold; font-size:20px; font-weight:bold;">Pastor Wale Somoye</h3>
+        <p style="background: gold; color:#006400; padding:10px; border-radius:8px; font-size:16px; line-height:1.4;">
+          Resident Pastor, currently leading the Osara branch with dedication and faith-driven leadership.
+        </p>
+      </div>
+
+      <!-- Pastor Peter Oluwakunbi -->
+      <div style="text-align:center; max-width:220px;">
+        <img src="peter.jpg" alt="Pastor Peter Oluwakunbi" 
+             style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
+        <h3 style="color: gold; font-size:20px; font-weight:bold;">Pastor Peter Oluwakunbi</h3>
+        <p style="background: gold; color:#006400; padding:10px; border-radius:8px; font-size:16px; line-height:1.4;">
+          Youth Pastor, passionate about empowering the next generation of believers with the Word of God.
+        </p>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Departments Button -->
+  <div style="text-align:center; margin-top:80px; margin-bottom:40px;">
+    <a href="departments.html" 
+       style="background: gold; color: #006400; padding: 15px 30px; border-radius: 25px; font-size:20px; font-weight:bold; text-decoration: none; transition:0.3s;">
+      Visit Our Departments & Groups
+    </a>
+  </div>
+</section>
+<!-- ================= END ABOUT SECTION ================= -->
+</body>
+</html>
