@@ -3,114 +3,175 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Message from the Founder – Kingdom Citizen</title>
-  <link rel="stylesheet" href="/styles/globals.css" />
+  <title>Pastor Balogun’s Desk</title>
+
+  <!-- Google Font for Lobster headline -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+  <style>
+    /* General Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    /* Top Navigation (same style as homepage) */
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: purple;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      z-index: 100;
+    }
+
+    nav .logo {
+      color: #fff;
+      font-size: 1.5rem;
+      font-weight: bold;
+      text-decoration: none;
+    }
+
+    nav ul {
+      list-style: none;
+      display: flex;
+      gap: 1.5rem;
+    }
+
+    nav ul li a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #ddd;
+    }
+
+    /* Pastor Photo */
+    .pastor-photo {
+      display: flex;
+      justify-content: center;
+      margin: 2rem 0 1rem;
+    }
+
+    .pastor-photo img {
+      max-width: 250px;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+
+    /* Headline */
+    .headline {
+      background: purple;
+      color: #fff;
+      font-family: 'Lobster', cursive;
+      font-size: 2.5rem;
+      padding: 0.75rem 2rem;
+      display: inline-block;
+      border-radius: 8px;
+      margin: 0 auto 2rem;
+      text-align: center;
+    }
+
+    .headline-container {
+      text-align: center;
+    }
+
+    /* Speech Card */
+    .speech-card {
+      max-width: 900px;
+      margin: 0 auto 3rem;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 4px solid;
+      border-image: linear-gradient(45deg, #b266ff, #800080) 1;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
+    }
+
+    .speech-card h2 {
+      margin-top: 1.5rem;
+      color: purple;
+    }
+
+    /* Bottom Buttons */
+    .links {
+      text-align: center;
+      margin-bottom: 3rem;
+    }
+
+    .links a {
+      display: inline-block;
+      margin: 0 1rem;
+      padding: 0.75rem 1.5rem;
+      background: purple;
+      color: #fff;
+      text-decoration: none;
+      border-radius: 6px;
+      transition: background 0.3s;
+    }
+
+    .links a:hover {
+      background: #a64ca6;
+    }
+  </style>
 </head>
-<body class="bg-gray-50 text-gray-800">
-  <main class="max-w-4xl mx-auto p-6">
-    <!-- Pastor Photo -->
-    <div class="flex justify-center mb-6">
-      <img src="/images/pastor.jpg"
-           alt="Pastor Balogun"
-           class="rounded-full shadow-lg w-48 h-48 object-cover" />
-    </div>
+<body>
 
-    <h1 class="text-3xl font-bold text-center mb-6">Who Is a Kingdom Citizen?</h1>
+  <!-- Navigation -->
+  <nav>
+    <a href="index.html" class="logo">Your Church Name</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="departments.html">Departments</a></li>
+    </ul>
+  </nav>
 
-    <div class="prose lg:prose-xl mx-auto">
-      <p>
-        By creation man was made in the class of God. Adam in the Garden of Eden,
-        by God's wisdom, named all the animals one by one. But when he fell his
-        wisdom was corrupted. It did not do away with the nature of God, but the
-        nature of the devil—sin, wickedness, etc.—every mortal being shared this
-        nature with Adam by natural birth. For the one born of the flesh is flesh
-        and the one born of the Spirit is spirit (John 3:5–6; Romans 3:23).
-      </p>
-      <p>
-        But thank God for Jesus who died for you, and He wants to spend eternity
-        with you. You have a part to play: accept that Jesus Christ is your Lord
-        and Savior. Pray this prayer:  
-        “Lord Jesus, I am a sinner. Forgive me my sin. I know You died for me and
-        rose on the third day. Jesus, wash me with Your blood, come into my heart.
-        I receive You today as my Lord and Savior. Write my name in the Book of Life.
-        I am born again; I am now a Kingdom Citizen. I am no longer merely earthly,
-        but a heavenly being.”
-      </p>
+  <!-- Pastor Photo -->
+  <div class="pastor-photo">
+    <img src="balogun.jpg" alt="Pastor Balogun" />
+  </div>
 
-      <h2 class="mt-10 font-bold">Know Your Rights as a Kingdom Citizen</h2>
+  <!-- Headline -->
+  <div class="headline-container">
+    <div class="headline">Pastor Balogun’s Desk</div>
+  </div>
 
-      <h3>1. You Are a New Creation</h3>
-      <p>
-        2 Corinthians 5:17 – “Therefore if any man be in Christ, he is a new creature:
-        old things are passed away; behold, all things are become new.”  
-        As you have given your life to Christ, you become a new citizen of a new
-        Kingdom and a member of God’s family on earth. You possess Heaven’s “green
-        card” and are entitled to the second resurrection; the second death has no
-        power over you (2 Cor 5:17; 1 John 4:5).
-      </p>
+  <!-- Speech Content -->
+  <div class="speech-card">
+    <p><strong>Who is a Kingdom Citizen?</strong><br>
+    By creation man was made in the class of God. Adam in the Garden of Eden, by God's wisdom, named all the animals one by one. But when he fell, his wisdom was corrupted. It did not take away the nature of God, yet the nature of the devil—sin and wickedness—spread to every mortal being through natural birth (John 3:5–6; Romans 3:23). But thank God for Jesus, who died for you and wants to spend eternity with you! You must accept that Jesus Christ is your Lord and Savior. Pray this prayer: “Lord Jesus, I am a sinner. Forgive me my sins. I know You died for me and rose on the third day. Wash me with Your blood. Come into my heart. I receive You today as my Lord and Savior. Write my name in the Book of Life. I am born again. I am now a Kingdom Citizen.”</p>
 
-      <h3>2. Your Sins Are Forgiven</h3>
-      <p>
-        Romans 8:1 – “There is therefore now no condemnation to those who are in
-        Christ Jesus.” Salvation is a product of grace, not works. Grace grants you
-        justification in the sight of God. By the blood of Jesus your sins are
-        forgiven; you are made clean and perfect. When the devil reminds you of
-        former sins, tell him to get lost and recite Romans 8:1.
-      </p>
+    <h2>Know Your Rights as a Kingdom Citizen</h2>
+    <p><strong>1. You Are a New Creation:</strong> 2 Corinthians 5:17 …</p>
+    <p><strong>2. Your Sins Are Forgiven:</strong> Romans 8:1 …</p>
+    <p><strong>3. Free from Curses:</strong> Galatians 3:13 …</p>
+    <p><strong>4. Satan Is Under Your Feet:</strong> Ephesians 1:21 …</p>
 
-      <h3>3. Free from Curses</h3>
-      <p>
-        Galatians 3:13 – “Christ has redeemed us from the curse of the law, being
-        made a curse for us, for it is written, Cursed is every one that hangeth on
-        a tree.” You are now free from every curse—poverty, failure, sickness,
-        barrenness. No demonic agent or charm can harm you (Num 23:23; Isa 54:17;
-        Luke 10:19).
-      </p>
+    <h2>Know Your Duties as a Kingdom Citizen</h2>
+    <p>You need knowledge—Hosea 4:6 … Attend foundation classes, study the Word (2 Timothy 2:15), read the Bible (2 Timothy 3:16), and do not miss church programmes (Hebrews 10:25). Get involved in church activities and join a service group.</p>
+  </div>
 
-      <h3>4. Satan Is Under Your Feet</h3>
-      <p>
-        Ephesians 1:21 – God “raised us up together and made us sit together in
-        heavenly places in Christ Jesus, far above all principality and power.”
-        Your new status makes you victorious over the devil and his works
-        (Psalm 82:5-6; John 10:34-35).
-      </p>
+  <!-- Links -->
+  <div class="links">
+    <a href="about.html">← Back to About Page</a>
+    <a href="departments.html">Visit Departments & Groups →</a>
+  </div>
 
-      <h2 class="mt-10 font-bold">Know Your Duties as a Kingdom Citizen</h2>
-
-      <p>
-        Every member of a kingdom enjoys rights and benefits but also has duties.
-        Our constitution is the Bible. To enjoy these privileges:
-      </p>
-
-      <ul>
-        <li>
-          <strong>You Need Knowledge:</strong> Hosea 4:6; John 8:32 – Learn how the
-          Kingdom operates so you won’t be a stumbling block.
-        </li>
-        <li>
-          <strong>Attend Foundation Class:</strong> A discipleship school for
-          beginners. Saturday mornings at 8 a.m.
-        </li>
-        <li>
-          <strong>Study the Word:</strong> 2 Tim 2:15; 3:16 – Read the Bible more
-          than any other book. Also read anointed Christian books (Dan 9:2).
-        </li>
-        <li>
-          <strong>Don’t Miss Church Programmes:</strong> Hebrews 10:25 – Be
-          nurtured under the anointing of the Holy Ghost.
-        </li>
-        <li>
-          <strong>Get Involved:</strong> Join a service group; don’t be a bench
-          warmer.
-        </li>
-      </ul>
-    </div>
-
-    <!-- Navigation Links -->
-    <div class="flex justify-center gap-8 mt-12">
-      <a href="/about.html" class="text-blue-600 hover:underline">← Back to About Page</a>
-      <a href="/departments.html" class="text-blue-600 hover:underline">Visit Our Departments &amp; Groups →</a>
-    </div>
-  </main>
 </body>
 </html>
