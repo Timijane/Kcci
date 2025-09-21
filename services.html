@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Our Services – Kingdom Citizens Church</title>
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
+
+  <style>
+    body {
+      margin: 0;
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+    }
+
+    /* ===== Top Navigation ===== */
+    header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 10px 20px;
+      background: #fff;
+      position: fixed;
+      top: 0;
+      left: 0;
+      right: 0;
+      box-shadow: 0 2px 6px rgba(0,0,0,0.1);
+      z-index: 1000;
+    }
+    header img {
+      height: 35px;
+      margin-right: 8px;
+    }
+    .logo-title {
+      display: flex;
+      align-items: center;
+      font-weight: bold;
+      font-size: 16px;
+      color: #4b0082;
+    }
+    .hamburger {
+      font-size: 24px;
+      cursor: pointer;
+      color: #4b0082;
+      background: none;
+      border: none;
+    }
+
+    /* ===== Side Menu ===== */
+    .side-menu {
+      position: fixed;
+      top: 0;
+      right: -260px;            /* hidden by default */
+      width: 260px;
+      height: 100%;
+      background: #4b0082;
+      color: #fff;
+      padding: 60px 20px;
+      transition: right 0.3s ease;
+      z-index: 1200;
+    }
+    .side-menu.open {
+      right: 0;
+    }
+    .side-menu a {
+      display: block;
+      color: #fff;
+      text-decoration: none;
+      margin: 18px 0;
+      font-size: 18px;
+    }
+    .close-btn {
+      position: absolute;
+      top: 15px;
+      right: 20px;
+      font-size: 28px;
+      cursor: pointer;
+      color: #fff;
+    }
+
+    /* ===== Page Title ===== */
+    .hero {
+      margin-top: 70px; /* space for fixed header */
+      background: #4b0082;
+      color: #fff;
+      padding: 40px 20px;
+      text-align: center;
+      font-family: 'Lobster', cursive;
+      font-size: 36px;
+    }
+
+    /* ===== Services List ===== */
+    .services-container {
+      max-width: 700px;
+      margin: 40px auto;
+      padding: 0 20px;
+    }
+    .service-card {
+      background: #fff;
+      border: 3px solid #a56de2;
+      border-radius: 12px;
+      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+      padding: 20px;
+      margin-bottom: 25px;
+    }
+    .service-card h3 {
+      margin-top: 0;
+      color: #4b0082;
+    }
+
+    /* ===== Bottom Buttons ===== */
+    .bottom-buttons {
+      display: flex;
+      justify-content: center;
+      gap: 20px;
+      margin: 40px 0 60px;
+    }
+    .bottom-buttons a {
+      text-decoration: none;
+      background: #4b0082;
+      color: #fff;
+      padding: 12px 24px;
+      border-radius: 30px;
+      font-weight: bold;
+      transition: background 0.3s;
+    }
+    .bottom-buttons a:hover {
+      background: #6a0dad;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Header with Hamburger -->
+  <header>
+    <div class="logo-title">
+      <img src="logo.png" alt="Church Logo">
+      Kingdom Citizens Church
+    </div>
+    <button class="hamburger" id="menuBtn">&#9776;</button>
+  </header>
+
+  <!-- Slide-in Side Menu -->
+  <nav class="side-menu" id="sideMenu">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <a href="index.html">Home</a>
+    <a href="about.html">About</a>
+    <a href="departments.html">Departments</a>
+    <a href="pastor-note.html">Pastor’s Note</a>
+    <a href="services.html">Services</a>
+    <a href="contact.html">Contact</a>
+  </nav>
+
+  <!-- Hero Title -->
+  <div class="hero">Our Services</div>
+
+  <!-- Services Content -->
+  <div class="services-container">
+    <div class="service-card">
+      <h3>Sunday Royal Service</h3>
+      <p><strong>Manna from Heaven:</strong> 8:00–9:00 am<br>
+         <strong>Royal Service:</strong> 9:00–11:30 am</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Monday</h3>
+      <p><strong>Morning Showers:</strong> 6:00–7:00 am</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Wednesday</h3>
+      <p><strong>Word &amp; Communion Service:</strong> 5:30 pm</p>
+    </div>
+
+    <div class="service-card">
+      <h3>Friday</h3>
+      <p><strong>Prayer of Faith:</strong> 5:30 pm</p>
+    </div>
+  </div>
+
+  <!-- Bottom Navigation Buttons -->
+  <div class="bottom-buttons">
+    <a href="index.html">Back to Home</a>
+    <a href="departments.html">Back to Departments</a>
+  </div>
+
+  <!-- JS for Menu Toggle -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const sideMenu = document.getElementById('sideMenu');
+    const closeBtn = document.getElementById('closeBtn');
+
+    menuBtn.addEventListener('click', () => {
+      sideMenu.classList.add('open');
+    });
+    closeBtn.addEventListener('click', () => {
+      sideMenu.classList.remove('open');
+    });
+  </script>
+
+</body>
+</html>
