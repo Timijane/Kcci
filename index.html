@@ -3,31 +3,100 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kingdom Citizens Church International</title>
+  <title>Kingdom Citizens Church INT'L</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
+
   <style>
+    /* Reset */
     * {
       margin: 0;
       padding: 0;
       box-sizing: border-box;
     }
 
-    body, html {
-      font-family: Arial, sans-serif;
+    html {
+      scroll-behavior: smooth;
     }
 
+    body {
+      font-family: 'Roboto', sans-serif;
+      overflow-x: hidden;
+    }
+
+    /* Sticky Navigation */
+    nav {
+      position: fixed;
+      top: 0;
+      width: 100%;
+      padding: 15px 30px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      background: rgba(255, 255, 255, 0.9);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      z-index: 1000;
+      transition: all 0.4s ease;
+    }
+
+    nav.hidden {
+      top: -100px;
+    }
+
+    .nav-left {
+      display: flex;
+      align-items: center;
+      gap: 15px;
+      opacity: 0;
+      transition: opacity 0.8s ease;
+    }
+
+    .nav-left.visible {
+      opacity: 1;
+    }
+
+    .nav-left img {
+      width: 40px;
+      height: 40px;
+      border-radius: 50%;
+      object-fit: cover;
+    }
+
+    .nav-left span {
+      font-weight: bold;
+      font-size: 1.2rem;
+      color: #9b59b6;
+    }
+
+    nav ul {
+      display: flex;
+      list-style: none;
+      gap: 25px;
+    }
+
+    nav ul li a {
+      text-decoration: none;
+      color: #333;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+
+    nav ul li a:hover {
+      color: #9b59b6;
+    }
+
+    /* Hero Section */
     .hero {
       position: relative;
       width: 100%;
       height: 100vh;
       overflow: hidden;
-    }
-
-    .slides {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      top: 0;
-      left: 0;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     .slides img {
@@ -35,6 +104,8 @@
       width: 100%;
       height: 100%;
       object-fit: cover;
+      top: 0;
+      left: 0;
       opacity: 0;
       transition: opacity 2s ease-in-out;
     }
@@ -46,126 +117,127 @@
     .hero-content {
       position: relative;
       z-index: 2;
-      text-align: center;
-      color: white;
-      top: 50%;
-      transform: translateY(-50%);
+      color: #fff;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
     }
 
-    .hero-content img {
+    .hero-content img.logo {
       width: 120px;
       height: 120px;
       border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      margin-top: -40px;
+      margin-bottom: 20px;
       border: 3px solid white;
     }
 
     .hero-content h1 {
-      font-size: 3rem;
-      font-weight: bold;
-      text-transform: uppercase;
-      text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8),
-                   0px 0px 20px rgba(255, 215, 0, 0.6);
+      font-family: 'Lobster', cursive;
+      font-size: 4rem;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.6);
+      margin-bottom: 15px;
     }
 
     .hero-content h2 {
-      font-size: 1.5rem;
+      font-family: 'Roboto', sans-serif;
       font-style: italic;
-      margin-top: 10px;
-      text-shadow: 0px 0px 10px rgba(255, 215, 0, 0.8),
-                   0px 0px 20px rgba(255, 215, 0, 0.6);
+      font-weight: 700;
+      font-size: 1.8rem;
+      transform: rotate(-8deg);
+      color: #ffd700;
+      margin-bottom: 30px;
+      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
+      animation: tilt 2s infinite alternate;
+    }
+
+    @keyframes tilt {
+      from { transform: rotate(-8deg); }
+      to { transform: rotate(8deg); }
     }
 
     .scripture {
-      margin-top: 30px;
       font-size: 1.3rem;
       font-weight: 500;
+      color: #fff;
+      text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
+      max-width: 800px;
+      margin: 0 auto;
       opacity: 0;
       transition: opacity 2s ease-in-out;
-      text-shadow: 0px 0px 8px rgba(255, 255, 255, 0.9);
     }
 
     .scripture.active {
       opacity: 1;
     }
 
-    .overlay {
-      position: absolute;
-      top: 0;
-      left: 0;
-      width: 100%;
-      height: 100%;
-      background: rgba(0,0,0,0.5);
-      z-index: 1;
+    /* Responsive */
+    @media (max-width: 768px) {
+      .hero-content h1 {
+        font-size: 3rem;
+      }
+      .hero-content h2 {
+        font-size: 1.5rem;
+      }
+      nav ul {
+        gap: 15px;
+      }
     }
 
-    #about {
-      background-color: #ffffff;
-      padding: 60px 20px;
+    @media (max-width: 480px) {
+      .hero-content h1 {
+        font-size: 2.2rem;
+      }
+      .hero-content h2 {
+        font-size: 1.2rem;
+      }
+      .nav-left span {
+        font-size: 1rem;
+      }
     }
 
-    #about .headline {
-      text-align: center;
-      margin-bottom: 50px;
-    }
-
-    #about .headline h1 {
-      color: #9b59b6;
-      font-size: 42px;
-      font-weight: bold;
-      margin-bottom: 10px;
-    }
-
-    #about .headline .line {
-      width: 120px;
-      height: 4px;
-      background: #9b59b6;
-      margin: 0 auto 30px;
-    }
-
-    #about .headline img {
-      width: 140px;
-      height: 140px;
-      border-radius: 50%;
-      margin-bottom: 30px;
-    }
   </style>
 </head>
 <body>
 
-  <div class="hero">
-    <div class="slides">
-      <img src="churcht1.jpg" class="active">
-      <img src="churcht2.jpg">
-      <img src="churcht3.jpg">
-      <img src="churcht4.jpg">
-      <img src="churcht5.jpg">
-      <img src="churcht6.jpg">
-      <img src="churcht7.jpg">
-      <img src="churcht8.jpg">
-      <img src="churcht9.jpg">
-      <img src="churcht10.jpg">
-    </div>
-    <div class="overlay"></div>
-    <div class="hero-content">
+  <!-- Navigation -->
+  <nav>
+    <div class="nav-left">
       <img src="logo1.jpg" alt="Church Logo">
-      <h1>KINGDOM CITIZENS CHURCH INTERNATIONAL</h1>
-      <h2>... nurturing the heir</h2>
-      <div id="scripture" class="scripture"></div>
+      <span>Kingdom Citizens Church</span>
     </div>
-  </div>
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#departments">Departments</a></li>
+      <li><a href="#contact">Contact</a></li>
+      <li><a href="#blog">Blog</a></li>
+    </ul>
+  </nav>
 
-  <section id="about">
-    <div class="headline">
-      <h1>About Kingdom Citizens</h1>
-      <div class="line"></div>
-      <img src="logo1.jpg" alt="Church Logo">
+  <!-- Hero Section -->
+  <section class="hero" id="hero">
+    <div class="slides">
+      <img src="church1.jpg" class="active">
+      <img src="church2.jpg">
+      <img src="church3.jpg">
+      <img src="church4.jpg">
+      <img src="church5.jpg">
+      <img src="church6.jpg">
+      <img src="church7.jpg">
+      <img src="church8.jpg">
+      <img src="church9.jpg">
+    </div>
+
+    <div class="hero-content">
+      <img src="logo1.jpg" class="logo" alt="Church Logo">
+      <h1>Kingdom Citizens Church INT'L</h1>
+      <h2>nurturing the heirs</h2>
+      <div id="scripture" class="scripture"></div>
     </div>
   </section>
 
   <script>
+    // Hero Slider
     const slides = document.querySelectorAll('.slides img');
     let currentSlide = 0;
 
@@ -176,6 +248,7 @@
     }
     setInterval(changeSlide, 5000);
 
+    // Scripture Slider
     const scriptures = [
       "Now faith is the substance of things hoped for, the evidence of things not seen. – Hebrews 11:1",
       "Have faith in God. – Mark 11:22",
@@ -198,257 +271,15 @@
         scriptureEl.textContent = scriptures[currentScripture];
         scriptureEl.classList.add("active");
       }, 1000);
-
       currentScripture = (currentScripture + 1) % scriptures.length;
     }
 
     scriptureEl.textContent = scriptures[0];
     scriptureEl.classList.add("active");
     setInterval(changeScripture, 6000);
-  </script>
 
-  <!-- ================= ABOUT PAGE ================= -->
-<section id="about" style="background-color: #ffffff; padding: 60px 20px;">
-
-  <!-- Main Headline -->
-  <div style="text-align:center; margin-bottom:50px;">
-    <h1 style="color:#9b59b6; font-size:42px; font-weight:bold; margin-bottom:10px;">About Kingdom Citizens</h1>
-    <div style="width:120px; height:4px; background:#9b59b6; margin:0 auto 30px;"></div>
-    <img src="logo1.jpg" alt="Church Logo" style="width:140px; height:140px; border-radius:50%; margin-bottom:30px;">
-  </div>
-
-  <!-- Mandate -->
-  <div style="max-width:900px; margin:0 auto 60px; background:#ffffff; padding:25px 30px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-    <h2 style="color:#9b59b6; font-size:28px; font-weight:bold; margin-bottom:15px;">Our Mandate</h2>
-    <p style="font-size:18px; line-height:1.6; color:#333;">
-      To restore the lost soul and destinies back to Christ’s Kingdom for preservation through the preaching of the Word of Faith.
-    </p>
-  </div>
-
-  <!-- Vision -->
-  <div style="max-width:900px; margin:0 auto 60px; background:#ffffff; padding:25px 30px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-    <h2 style="color:#9b59b6; font-size:28px; font-weight:bold; margin-bottom:15px;">Our Vision</h2>
-    <p style="font-size:18px; line-height:1.6; color:#333;">
-      To develop Christians full of Faith.
-    </p>
-  </div>
-
-  <!-- Mission -->
-  <div style="max-width:900px; margin:0 auto 60px; background:#ffffff; padding:25px 30px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-    <h2 style="color:#9b59b6; font-size:28px; font-weight:bold; margin-bottom:15px;">Our Mission</h2>
-    <p style="font-size:18px; line-height:1.6; color:#333;">
-      To nurture the heir.
-    </p>
-  </div>
-
-  <!-- About the Church -->
-  <div style="max-width:900px; margin:0 auto 60px; background:#ffffff; padding:25px 30px; border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1);">
-    <h2 style="color:#9b59b6; font-size:28px; font-weight:bold; margin-bottom:15px;">About the Church</h2>
-    <p style="font-size:18px; line-height:1.6; color:#333;">
-      Kingdom Citizens Church International, located at Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria, is a family of believers passionate about the Kingdom of God. 
-      We are committed to raising Christians rooted in faith, walking in destiny, and living as heirs of the Kingdom.
-    </p>
-  </div>
-
-  <!-- Meet Our Pastors -->
-  <div style="text-align:center; margin-bottom:60px;">
-    <h2 style="color:#9b59b6; font-size:32px; font-weight:bold; margin-bottom:40px;">Meet Our Pastors</h2>
-    <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
-
-      <!-- Pastor Sam Balogun -->
-      <div style="text-align:center; max-width:220px;">
-        <img src="balogun.jpg" alt="Pastor Sam Balogun" style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-        <h3 style="color:#9b59b6; font-size:20px; font-weight:bold;">Pastor Sam Balogun</h3>
-        <p style="background:#ffffff; color:#333; padding:12px; border-radius:10px; font-size:16px;">
-          Founder and Senior Pastor of Kingdom Citizens Church International, a visionary leader with a passion for faith, discipleship, and impacting lives for the glory of God. His leadership inspires many to walk boldly in their destiny.
-        </p>
-      </div>
-
-      <!-- Pastor Mrs Felicia Balogun -->
-      <div style="text-align:center; max-width:220px;">
-        <img src="felicia.jpg" alt="Pastor Mrs Felicia Balogun" style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-        <h3 style="color:#9b59b6; font-size:20px; font-weight:bold;">Pastor Mrs Felicia Balogun</h3>
-        <p style="background:#ffffff; color:#333; padding:12px; border-radius:10px; font-size:16px;">
-          Co-founder and mother in faith, dedicated to nurturing believers, strengthening families, and fostering a culture of love and spiritual growth in the church community.
-        </p>
-      </div>
-
-      <!-- Pastor Wale Somoye -->
-      <div style="text-align:center; max-width:220px;">
-        <img src="wale.jpg" alt="Pastor Wale Somoye" style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-        <h3 style="color:#9b59b6; font-size:20px; font-weight:bold;">Pastor Wale Somoye</h3>
-        <p style="background:#ffffff; color:#333; padding:12px; border-radius:10px; font-size:16px;">
-          Resident Pastor and head of Osara branch, passionate about shepherding the flock, delivering the Word of God, and mentoring leaders to excellence.
-        </p>
-      </div>
-
-      <!-- Pastor Peter Oluwakunbi -->
-      <div style="text-align:center; max-width:220px;">
-        <img src="peter.jpg" alt="Pastor Peter Oluwakunbi" style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-        <h3 style="color:#9b59b6; font-size:20px; font-weight:bold;">Pastor Peter Oluwakunbi</h3>
-        <p style="background:#ffffff; color:#333; padding:12px; border-radius:10px; font-size:16px;">
-          Youth Pastor, devoted to empowering the next generation through teaching, mentorship, and instilling a passion for the Word of God in young believers.
-        </p>
-      </div>
-
-      <!-- Evangelist Daniel Onaleye -->
-      <div style="text-align:center; max-width:220px;">
-        <img src="daniel.jpg" alt="Evangelist Daniel Onaleye" style="width:180px; height:180px; border-radius:50%; object-fit:cover; margin-bottom:15px;">
-        <h3 style="color:#9b59b6; font-size:20px; font-weight:bold;">Evangelist Daniel Onaleye</h3>
-        <p style="background:#ffffff; color:#333; padding:12px; border-radius:10px; font-size:16px;">
-          Head of the Choir and Evangelist, known for his inspiring worship leadership and evangelistic fervor, bringing souls into the Kingdom through music and the gospel message.
-        </p>
-      </div>
-
-    </div>
-  </div>
-
-  <!-- Departments Button -->
-  <div style="text-align:center; margin-top:60px;">
-    <a href="departments.html" style="background:#9b59b6; color:#ffffff; padding:15px 30px; border-radius:25px; font-size:20px; font-weight:bold; text-decoration:none; transition:0.3s;">
-      Visit Our Departments & Groups
-    </a>
-  </div>
-
-</section>
-<!-- ================= END ABOUT PAGE ================= -->
-<!-- ================= REGISTRATION FORM SECTION ================= -->
-<section id="registration" style="padding:80px 20px; text-align:center; background:#f8f8f8;">
-  
-  <!-- Section Heading -->
-  <h2 style="color:#9b59b6; font-size:2.8rem; font-weight:bold; margin-bottom:20px; text-shadow: 0px 0px 5px rgba(0,0,0,0.1);">
-    Event / Group Registration
-  </h2>
-  
-  <!-- Section Intro -->
-  <p style="font-size:18px; line-height:1.8; color:#333; max-width:800px; margin:0 auto 50px;">
-    Fill out this form to register for upcoming events, join a department, or get involved in our church ministries. We are excited to connect with you and help you grow in faith!
-  </p>
-
-  <!-- White card container for form -->
-  <div style="max-width:900px; margin:0 auto; background:#ffffff; padding:50px 30px; border-radius:25px; box-shadow:0 12px 30px rgba(0,0,0,0.15);">
-    
-    <!-- Embedded Google Form -->
-    <iframe src="https://docs.google.com/forms/d/e/1FAIpQLScUOr5lvd26g3NZnM0eiQEIf9sUxyf11CsuyREH8gA3goFutQ/viewform?embedded=true" 
-            width="100%" 
-            height="1936" 
-            frameborder="0" 
-            marginheight="0" 
-            marginwidth="0" 
-            style="border:none;">
-      Loading…
-    </iframe>
-    
-  </div>
-
-</section>
-<!-- ================= END REGISTRATION FORM SECTION ================= -->
-<!-- ================= CONTACT SECTION ================= -->
-<section id="contact" style="padding:80px 20px; text-align:center; background:#f8f8f8;">
-  
-  <!-- Section Heading -->
-  <h2 style="color:#9b59b6; font-size:2.8rem; font-weight:bold; margin-bottom:20px; text-shadow: 0px 0px 5px rgba(0,0,0,0.1);">
-    Contact & Connect With Us
-  </h2>
-  
-  <!-- Intro Text -->
-  <p style="font-size:18px; line-height:1.8; color:#333; max-width:800px; margin:0 auto 50px;">
-    We’d love to hear from you! Reach out via email, WhatsApp, social media, or visit us in person. You can also watch our latest messages and church videos below.
-  </p>
-
-  <!-- White card container -->
-  <div style="max-width:1000px; margin:0 auto; background:#ffffff; padding:50px 30px; border-radius:25px; box-shadow:0 12px 30px rgba(0,0,0,0.15);">
-    
-    <!-- Contact Info -->
-    <div style="margin-bottom:50px; text-align:left;">
-      <h3 style="color:#9b59b6; font-size:1.8rem; margin-bottom:15px;">Contact Information</h3>
-      <p style="font-size:16px; color:#333; margin-bottom:8px;"><strong>Email:</strong> <a href="mailto:Samuelbalogun1162@gmail.com" style="color:#9b59b6; text-decoration:none;">Samuelbalogun1162@gmail.com</a></p>
-      <p style="font-size:16px; color:#333; margin-bottom:8px;"><strong>WhatsApp:</strong> <a href="https://wa.me/2348034280774" style="color:#9b59b6; text-decoration:none;">+234 803 428 0774</a></p>
-      <p style="font-size:16px; color:#333; margin-bottom:8px;"><strong>Address:</strong> Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</p>
-    </div>
-
-    <!-- Video Section -->
-    <div style="margin-bottom:50px;">
-      <h3 style="color:#9b59b6; font-size:1.8rem; margin-bottom:20px;">Watch Our Videos</h3>
-      <div style="display:flex; flex-wrap:wrap; justify-content:center; gap:30px;">
-        <!-- Facebook Videos -->
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Kingdomcitizenchurchintl/videos/622014654000762/&show_text=0&width=560" 
-                width="320" height="180" style="border:none;overflow:hidden;border-radius:15px;" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Kingdomcitizenchurchintl/videos/991219949176013/&show_text=0&width=560" 
-                width="320" height="180" style="border:none;overflow:hidden;border-radius:15px;" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
-        <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Kingdomcitizenchurchintl/videos/1108112234202579/&show_text=0&width=560" 
-                width="320" height="180" style="border:none;overflow:hidden;border-radius:15px;" scrolling="no" frameborder="0" allowfullscreen="true"></iframe>
-      </div>
-
-      <!-- YouTube Video -->
-      <div style="margin-top:40px;">
-        <iframe width="560" height="315" src="https://www.youtube.com/embed/U6CgnzAxsjR3I" 
-                title="YouTube video" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture" 
-                allowfullscreen style="border-radius:15px; width:100%; max-width:560px; height:315px;"></iframe>
-      </div>
-    </div>
-
-    <!-- Social Media Buttons -->
-    <div style="margin-top:30px; text-align:center;">
-      <h3 style="color:#9b59b6; font-size:1.8rem; margin-bottom:20px;">Connect With Us</h3>
-      <div style="display:flex; justify-content:center; gap:20px; flex-wrap:wrap;">
-        <!-- Facebook -->
-        <a href="https://www.facebook.com/Kingdomcitizenchurchintl" target="_blank" 
-           style="display:inline-block; background:#3b5998; color:#fff; padding:15px 25px; border-radius:15px; font-weight:bold; text-decoration:none; transition:transform 0.3s;">
-          Facebook
-        </a>
-        <!-- YouTube -->
-        <a href="https://youtube.com/@kingdomcitizenschurchinter3209?si=U6CgnzAxsjR3Iupd" target="_blank" 
-           style="display:inline-block; background:#ff0000; color:#fff; padding:15px 25px; border-radius:15px; font-weight:bold; text-decoration:none; transition:transform 0.3s;">
-          YouTube
-        </a>
-        <!-- WhatsApp -->
-        <a href="https://wa.me/2348034280774" target="_blank" 
-           style="display:inline-block; background:#25D366; color:#fff; padding:15px 25px; border-radius:15px; font-weight:bold; text-decoration:none; transition:transform 0.3s;">
-          WhatsApp
-        </a>
-      </div>
-    </div>
-
-  </div>
-
-</section>
-<!-- ================= END CONTACT SECTION ================= -->
-<!-- Back to Top Arrow -->
-<a href="#top" id="back-to-top" 
-   style="position:fixed; bottom:30px; right:30px; background:#9b59b6; color:white; padding:15px; border-radius:50%; font-size:20px; text-decoration:none; display:none; z-index:1000; box-shadow:0 5px 15px rgba(0,0,0,0.3);">
-  ↑
-</a>
-
-<script>
-  const backToTop = document.getElementById('back-to-top');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 300) {
-      backToTop.style.display = 'block';
-    } else {
-      backToTop.style.display = 'none';
-    }
-  });
-</script>
-<!-- Google Map Section -->
-<section style="padding:80px 20px; text-align:center; background:#f8f8f8;">
-  <h2 style="color:#9b59b6; font-size:2.8rem; font-weight:bold; margin-bottom:20px;">Find Us</h2>
-  <p style="font-size:18px; color:#333; margin-bottom:40px; max-width:800px; margin-left:auto; margin-right:auto;">
-    Visit Kingdom Citizens Church International at Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria.
-  </p>
-  <div style="max-width:900px; margin:0 auto; border-radius:25px; overflow:hidden; box-shadow:0 12px 30px rgba(0,0,0,0.15);">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3967.123456!2d3.345678!3d7.123456!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x104123456789abcd%3A0x123456789abcdef!2sKingdom%20Citizens%20Church%20International!5e0!3m2!1sen!2sng!4v1694070000000!5m2!1sen!2sng" 
-            width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
-  </div>
-</section>
-<!-- Footer -->
-<footer style="background:#9b59b6; color:white; padding:40px 20px; text-align:center;">
-  <p style="font-size:16px; margin-bottom:10px;">&copy; 2025 Kingdom Citizens Church International. All rights reserved.</p>
-  <p style="font-size:14px; margin-bottom:15px;">
-    <a href="#about" style="color:white; text-decoration:underline; margin:0 10px;">About</a> |
-    <a href="#departments" style="color:white; text-decoration:underline; margin:0 10px;">Departments</a> |
-    <a href="#registration" style="color:white; text-decoration:underline; margin:0 10px;">Register</a> |
-    <a href="#contact" style="color:white; text-decoration:underline; margin:0 10px;">Contact</a>
-  </p>
-  <p style="font-size:14px;">Designed & Maintained by Kingdom Citizens Church IT Team</p>
-</footer>
+    // Sticky Nav Fade-in
+    const navLeft = document.querySelector('.nav-left');
+    window.addEventListener('scroll', () => {
+      if(window.scrollY > 50){
+        navLeft.classList.add('visible');
