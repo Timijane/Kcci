@@ -6,97 +6,130 @@
 <title>Kingdom Citizens Church INT'L</title>
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 <style>
-  * { margin:0; padding:0; box-sizing:border-box; }
-  body, html { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
+/* ===== Global Styles ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body, html { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; background-color: #f0f0f0; }
 
-  /* ===== Navigation ===== */
-  nav {
-    position: fixed;
-    top:0;
-    left:0;
-    width:100%;
-    background:#4B0082; /* Sharp solid color */
-    z-index:1000;
-    display:flex;
-    justify-content:space-between;
-    align-items:center;
-    padding:10px 20px;
-    transition: all 0.3s ease;
-  }
-  nav.scrolled { padding:5px 20px; box-shadow:0 3px 15px rgba(0,0,0,0.3); }
-  .nav-left { display:flex; align-items:center; }
-  .nav-left img { width:40px; height:40px; border-radius:50%; margin-right:10px; }
-  .nav-left h1 { color:white; font-size:1.2rem; font-weight:bold; white-space:nowrap; }
-  .nav-right ul { list-style:none; display:flex; gap:20px; }
-  .nav-right a { color:white; text-decoration:none; font-weight:bold; transition:0.3s; }
-  .nav-right a:hover { color:#FFD700; }
+/* ===== Navigation ===== */
+nav {
+  position: fixed;
+  top:0;
+  left:0;
+  width:100%;
+  background:#4B0082;
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  transition: all 0.3s ease;
+}
+nav.scrolled { padding:5px 20px; box-shadow:0 3px 15px rgba(0,0,0,0.3); }
+.nav-left { display:flex; align-items:center; }
+.nav-left img { width:40px; height:40px; border-radius:50%; margin-right:10px; }
+.nav-left h1 { color:white; font-size:1.2rem; font-weight:bold; white-space:nowrap; }
+.nav-right ul { list-style:none; display:flex; gap:20px; }
+.nav-right a { color:white; text-decoration:none; font-weight:bold; transition:0.3s; }
+.nav-right a:hover { color:#FFD700; }
 
-  /* Hamburger Menu */
-  .hamburger { display:none; flex-direction:column; cursor:pointer; }
-  .hamburger div { width:25px; height:3px; background:white; margin:4px 0; transition:0.3s; }
-  @media(max-width:768px){
-    .nav-right { display:none; position:absolute; top:60px; right:20px; flex-direction:column; background:#4B0082; padding:20px; border-radius:10px; }
-    .nav-right.show { display:flex; }
-    .hamburger { display:flex; }
-  }
+/* Hamburger Menu */
+.hamburger { display:none; flex-direction:column; cursor:pointer; }
+.hamburger div { width:25px; height:3px; background:white; margin:4px 0; transition:0.3s; }
+@media(max-width:768px){
+  .nav-right { display:none; position:absolute; top:60px; right:20px; flex-direction:column; background:#4B0082; padding:20px; border-radius:10px; }
+  .nav-right.show { display:flex; }
+  .hamburger { display:flex; }
+}
 
-  /* ===== Hero Section ===== */
-  .hero {
-    width:100%;
-    height:100vh;
-    position:relative;
-    overflow:hidden;
-  }
-  .slides {
-    position:absolute;
-    width:100%;
-    height:100%;
-    top:0; left:0;
-  }
-  .slides img {
-    position:absolute;
-    width:100%;
-    height:100%;
-    object-fit:cover;
-    opacity:0;
-    transition: opacity 2s ease-in-out;
-  }
-  .slides img.active { opacity:1; }
+/* ===== Hero Section ===== */
+.hero {
+  width:100%;
+  height:100vh;
+  position:relative;
+  overflow:hidden;
+}
+.slides {
+  position:absolute;
+  width:100%;
+  height:100%;
+  top:0; left:0;
+}
+.slides img {
+  position:absolute;
+  width:100%;
+  height:100%;
+  object-fit:cover;
+  opacity:0;
+  transition: opacity 2s ease-in-out;
+}
+.slides img.active { opacity:1; }
 
-  .hero-content {
-    position:relative;
-    z-index:2;
-    text-align:center;
-    color:white;
-    top:50%;
-    transform:translateY(-50%);
-  }
-  .hero-content img { width:120px; height:120px; border-radius:50%; margin-bottom:15px; border:3px solid white; }
-  .hero-content h1 { font-family:'Lobster', cursive; font-size:4rem; font-weight:bold; color:#fff; text-shadow:0 0 10px rgba(0,0,0,0.7); line-height:1.2; }
-  .hero-content h2 { font-size:2rem; font-weight:bold; color:#32CD32; margin:20px 0; white-space:nowrap; overflow:hidden; }
+.hero-content {
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:white;
+  top:50%;
+  transform:translateY(-50%);
+  transition: transform 0.1s ease;
+}
+.hero-content img { width:120px; height:120px; border-radius:50%; margin-bottom:15px; border:3px solid white; }
+.hero-content h1 { font-family:'Lobster', cursive; font-size:4rem; font-weight:bold; color:#fff; text-shadow:0 0 10px rgba(0,0,0,0.7); line-height:1.2; }
+.hero-content h2 { font-size:2rem; font-weight:bold; color:#32CD32; margin:20px 0; white-space:nowrap; overflow:hidden; }
 
-  .scripture {
-    margin-top:60px;
-    font-size:1.8rem;
-    font-weight:bold;
-    opacity:0;
-    transition: opacity 2s ease-in-out;
-    text-shadow:0 0 10px rgba(0,0,0,0.7);
-  }
-  .scripture.active { opacity:1; }
+.scripture {
+  margin-top:60px;
+  font-size:1.8rem;
+  font-weight:bold;
+  opacity:0;
+  transition: opacity 2s ease-in-out;
+  text-shadow:0 0 10px rgba(0,0,0,0.7);
+}
+.scripture.active { opacity:1; }
 
-  /* ===== CTA Buttons ===== */
-  .hero-buttons { margin-top:40px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
-  .hero-buttons a { padding:15px 30px; border-radius:25px; font-weight:bold; color:white; text-decoration:none; background:#32CD32; transition:0.3s; }
-  .hero-buttons a.donate { background:#FF4500; }
-  .hero-buttons a.watch { background:#1E90FF; }
-  .hero-buttons a:hover { transform:scale(1.05); }
+/* ===== CTA Buttons ===== */
+.hero-buttons { margin-top:40px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+.hero-buttons a { padding:15px 30px; border-radius:25px; font-weight:bold; color:white; text-decoration:none; background:#32CD32; transition:0.3s; }
+.hero-buttons a.donate { background:#FF4500; }
+.hero-buttons a.watch { background:#1E90FF; }
+.hero-buttons a:hover { transform:scale(1.05); }
 
-  /* ===== Smooth scrolling sections ===== */
-  section { padding:80px 20px; }
-
-  /* Tilt effect */
-  .hero-content { transition: transform 0.1s ease; }
+/* ===== About Section ===== */
+.about-header {
+  background-color: #333;
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 50px 20px;
+  text-decoration: underline;
+}
+section.about-content {
+  background-color: #fff;
+  padding: 40px 20px;
+  margin: 20px auto;
+  max-width: 1000px;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0,0,0,0.1);
+}
+section.about-content h2 { font-family: 'Lobster', cursive; font-size: 2rem; margin-bottom: 15px; }
+section.about-content p { font-size: 1.1rem; line-height: 1.8; margin-bottom: 15px; }
+.pastor-note-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #28a745;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  margin: 20px auto;
+}
+.pastor-note-btn:hover { background-color: #218838; }
+.center { text-align:center; }
 </style>
 </head>
 <body>
@@ -113,7 +146,7 @@
   <div class="nav-right" id="nav-links">
     <ul>
       <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
+      <li><a href="#about-section">About</a></li>
       <li><a href="#registration">Register</a></li>
       <li><a href="#contact">Contact</a></li>
     </ul>
@@ -147,10 +180,42 @@
   </div>
 </section>
 
-<!-- ===== About Section (Placeholder) ===== -->
-<section id="about">
-  <h2>About Kingdom Citizens Church</h2>
-  <p>Church details will go here...</p>
+<!-- ===== About Section ===== -->
+<section id="about-section">
+  <div class="about-header">About Page</div>
+
+  <section class="about-content">
+    <h2>Church History</h2>
+    <p>
+      In September 1979 after the tedious school hours, I engaged myself discussing with some Christian Brethren about the end time agenda of God.
+      Particularly our discussion was centered on the second coming of our Lord Jesus Christ. A few minutes after this discussion, I left them and I was alone in a room when suddenly I was taken up in the spirit, I lifted up my eyes and looked. Behold, I saw Jesus Christ seated upon a throne high and exalted. The whole sky was full of His Glory.
+    </p>
+    <p>
+      The Son of God appeared in the clouds of Heaven in power and great glory. I saw thousands of His Angels around the throne sent through the whole Earth. Later, I saw these Angels cross-examining both slave and free according to each person's deeds. Those found guilty were seen burning inside hot furnaces of fire.
+    </p>
+    <p>
+      I saw a square-shaped glass house by the right hand side of the throne of Judgment reserved for the blameless. When it got to my turn, I was found blameless and was ushered into this glass house. As I took the last step, I was transformed; the whole apparel on me changed to golden-linen materials. Though few could make it into this glass house full of everything you need here on Earth—an Eden of no pain, no sorrow, no night, no death, no heat, no hunger. This is Heaven's Kingdom on Earth. (Rev. 21:1-End)
+    </p>
+  </section>
+
+  <section class="about-content">
+    <h2>Royal Mandate</h2>
+    <p>We are sent to restore the lost souls and destinies back into Christ’s Kingdom for preservation through the preaching of the Word of Faith.</p>
+  </section>
+
+  <section class="about-content">
+    <h2>Vision & Mission</h2>
+    <p><strong>Vision:</strong> To raise a family of matured kingdom stars who will live Heaven practically on Earth, getting them ready for the second coming of the King.</p>
+    <p><strong>Mission:</strong></p>
+    <ul>
+      <li>To teach through training programmes how to use the Good News of His Kingdom to solve life challenges in marriage, career, profession, business, finances, moral, spiritual etc.</li>
+      <li>To infuse the vision into believers and release them for the expansion of His Kingdom on Earth.</li>
+    </ul>
+  </section>
+
+  <div class="center">
+    <a href="pastor-note.html" class="pastor-note-btn">Read Presiding Pastor’s Note</a>
+  </div>
 </section>
 
 <!-- ===== Registration Section (Placeholder) ===== -->
@@ -166,288 +231,70 @@
 </section>
 
 <script>
-  /* ===== Hamburger toggle ===== */
-  const hamburger = document.getElementById('hamburger');
-  const navLinks = document.getElementById('nav-links');
-  hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+/* ===== Hamburger toggle ===== */
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
 
-  /* ===== Smooth scroll handled by CSS scroll-behavior ===== */
+/* ===== Sticky nav on scroll ===== */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50) { navbar.classList.add('scrolled'); }
+  else { navbar.classList.remove('scrolled'); }
+});
 
-  /* ===== Sticky nav on scroll ===== */
-  const navbar = document.getElementById('navbar');
-  window.addEventListener('scroll', () => {
-    if(window.scrollY > 50) { navbar.classList.add('scrolled'); }
-    else { navbar.classList.remove('scrolled'); }
-  });
+/* ===== Hero image slideshow ===== */
+const slides = document.querySelectorAll('.slides img');
+let currentSlide = 0;
+function changeSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide+1)%slides.length;
+  slides[currentSlide].classList.add('active');
+}
+setInterval(changeSlide, 5000);
 
-  /* ===== Hero image slideshow ===== */
-  const slides = document.querySelectorAll('.slides img');
-  let currentSlide = 0;
-  function changeSlide() {
-    slides[currentSlide].classList.remove('active');
-    currentSlide = (currentSlide+1)%slides.length;
-    slides[currentSlide].classList.add('active');
-  }
-  setInterval(changeSlide, 5000);
+/* ===== Slogan sliding effect ===== */
+const slogan = document.getElementById('slogan');
+function slideSlogan() {
+  slogan.style.transform = `translateX(${Math.random()*20-10}px)`;
+}
+setInterval(slideSlogan, 300);
 
-  /* ===== Slogan sliding effect ===== */
-  const slogan = document.getElementById('slogan');
-  function slideSlogan() {
-    slogan.style.transform = `translateX(${Math.random()*20-10}px)`;
-  }
-  setInterval(slideSlogan, 300);
+/* ===== Scripture rotation ===== */
+const scriptures = [
+  "Now faith is the substance of things hoped for. – Hebrews 11:1",
+  "Have faith in God. – Mark 11:22",
+  "Faith comes by hearing, and hearing by the word of God. – Romans 10:17",
+  "For we walk by faith, not by sight. – 2 Corinthians 5:7",
+  "If you have faith as small as a mustard seed… – Matthew 17:20",
+  "This is the victory that has overcome the world. – 1 John 5:4",
+  "Let him ask in faith, nothing wavering. – James 1:6",
+  "The life I now live in the body, I live by faith. – Galatians 2:20",
+  "Take up the shield of faith… – Ephesians 6:16",
+  "Whatever you ask in prayer, you will receive. – Matthew 21:22"
+];
+const scriptureEl = document.getElementById('scripture');
+let currentScripture = 0;
+function changeScripture() {
+  scriptureEl.classList.remove('active');
+  setTimeout(() => {
+    scriptureEl.textContent = scriptures[currentScripture];
+    scriptureEl.classList.add('active');
+  }, 500);
+  currentScripture = (currentScripture+1)%scriptures.length;
+}
+scriptureEl.textContent = scriptures[0];
+scriptureEl.classList.add('active');
+setInterval(changeScripture, 6000);
 
-  /* ===== Scripture rotation ===== */
-  const scriptures = [
-    "Now faith is the substance of things hoped for. – Hebrews 11:1",
-    "Have faith in God. – Mark 11:22",
-    "Faith comes by hearing, and hearing by the word of God. – Romans 10:17",
-    "For we walk by faith, not by sight. – 2 Corinthians 5:7",
-    "If you have faith as small as a mustard seed… – Matthew 17:20",
-    "This is the victory that has overcome the world. – 1 John 5:4",
-    "Let him ask in faith, nothing wavering. – James 1:6",
-    "The life I now live in the body, I live by faith. – Galatians 2:20",
-    "Take up the shield of faith… – Ephesians 6:16",
-    "Whatever you ask in prayer, you will receive. – Matthew 21:22"
-  ];
-  const scriptureEl = document.getElementById('scripture');
-  let currentScripture = 0;
-  function changeScripture() {
-    scriptureEl.classList.remove('active');
-    setTimeout(() => {
-      scriptureEl.textContent = scriptures[currentScripture];
-      scriptureEl.classList.add('active');
-    }, 500);
-    currentScripture = (currentScripture+1)%scriptures.length;
-  }
-  scriptureEl.textContent = scriptures[0];
-  scriptureEl.classList.add('active');
-  setInterval(changeScripture, 6000);
-
-  /* ===== Hero tilt effect ===== */
-  const heroContent = document.querySelector('.hero-content');
-  document.addEventListener('mousemove', (e) => {
-    const x = (window.innerWidth/2 - e.pageX)/50;
-    const y = (window.innerHeight/2 - e.pageY)/50;
-    heroContent.style.transform = `translateY(-50%) rotateX(${y}deg) rotateY(${x}deg)`;
-  });
- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kingdom Citizens Church INT'L - About</title>
-    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-    <style>
-        /* Global Styles */
-        body {
-            margin: 0;
-            font-family: 'Roboto', sans-serif;
-            background-color: #f0f0f0;
-            color: #000;
-        }
-
-        /* Navigation */
-        nav {
-            position: sticky;
-            top: 0;
-            background-color: #222; /* sharp, solid color */
-            color: #fff;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 20px;
-            z-index: 1000;
-        }
-
-        nav .logo-name {
-            display: flex;
-            align-items: center;
-            font-size: 1.2rem;
-            font-weight: bold;
-            font-family: 'Roboto', sans-serif;
-        }
-
-        nav .logo-name img {
-            width: 40px;
-            height: 40px;
-            border-radius: 50%;
-            margin-right: 10px;
-        }
-
-        nav ul {
-            list-style: none;
-            display: flex;
-            gap: 20px;
-        }
-
-        nav ul li {
-            cursor: pointer;
-        }
-
-        /* Hamburger Menu for Mobile */
-        .hamburger {
-            display: none;
-            flex-direction: column;
-            cursor: pointer;
-        }
-
-        .hamburger div {
-            width: 25px;
-            height: 3px;
-            background-color: #fff;
-            margin: 4px 0;
-        }
-
-        @media (max-width: 768px) {
-            nav ul {
-                display: none;
-                flex-direction: column;
-                position: absolute;
-                top: 60px;
-                right: 20px;
-                background-color: #222;
-                padding: 10px;
-                border-radius: 5px;
-            }
-
-            nav ul.active {
-                display: flex;
-            }
-
-            .hamburger {
-                display: flex;
-            }
-        }
-
-        /* Page Header */
-        .about-header {
-            background-color: #333; /* screen color background */
-            color: #fff;
-            font-size: 3rem;
-            font-weight: bold;
-            text-align: center;
-            padding: 50px 20px;
-            text-decoration: underline;
-        }
-
-        /* Section Styles */
-        section {
-            background-color: #fff;
-            padding: 40px 20px;
-            margin: 20px auto;
-            max-width: 1000px;
-            border-radius: 10px;
-            box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-        }
-
-        section h2 {
-            font-family: 'Lobster', cursive;
-            font-size: 2rem;
-            margin-bottom: 15px;
-        }
-
-        section p {
-            font-size: 1.1rem;
-            line-height: 1.8;
-            margin-bottom: 15px;
-        }
-
-        /* Button */
-        .pastor-note-btn {
-            display: inline-block;
-            padding: 15px 25px;
-            background-color: #28a745;
-            color: #fff;
-            font-weight: bold;
-            border: none;
-            border-radius: 5px;
-            cursor: pointer;
-            text-decoration: none;
-            font-size: 1.1rem;
-            transition: background-color 0.3s;
-            margin: 20px auto;
-        }
-
-        .pastor-note-btn:hover {
-            background-color: #218838;
-        }
-
-        .center {
-            text-align: center;
-        }
-    </style>
-</head>
-<body>
-
-    <!-- Navigation -->
-    <nav>
-        <div class="logo-name">
-            <img src="church-logo.png" alt="Kingdom Citizens Church Logo">
-            Kingdom Citizens Church INT'L
-        </div>
-        <ul>
-            <li>Home</li>
-            <li>About</li>
-            <li>Departments</li>
-            <li>Contact</li>
-        </ul>
-        <div class="hamburger" onclick="toggleMenu()">
-            <div></div>
-            <div></div>
-            <div></div>
-        </div>
-    </nav>
-
-    <!-- About Header -->
-    <div class="about-header">About Page</div>
-
-    <!-- Church History -->
-    <section>
-        <h2>Church History</h2>
-        <p>
-            In September 1979 after the tedious school hours, I engaged myself discussing with some Christian Brethren about the end time agenda of God.
-            Particularly our discussion was centered on the second coming of our Lord Jesus Christ. A few minutes after this discussion, I left them and I was alone in a room when suddenly I was taken up in the spirit, I lifted up my eyes and looked. Behold, I saw Jesus Christ seated upon a throne high and exalted. The whole sky was full of His Glory.
-        </p>
-        <p>
-            The Son of God appeared in the clouds of Heaven in power and great glory. I saw thousands of His Angels around the throne sent through the whole Earth. Later, I saw these Angels cross-examining both slave and free according to each person's deeds. Those found guilty were seen burning inside hot furnaces of fire.
-        </p>
-        <p>
-            I saw a square-shaped glass house by the right hand side of the throne of Judgment reserved for the blameless. When it got to my turn, I was found blameless and was ushered into this glass house. As I took the last step, I was transformed; the whole apparel on me changed to golden-linen materials. Though few could make it into this glass house full of everything you need here on Earth—an Eden of no pain, no sorrow, no night, no death, no heat, no hunger. This is Heaven's Kingdom on Earth. (Rev. 21:1-End)
-        </p>
-    </section>
-
-    <!-- Royal Mandate -->
-    <section>
-        <h2>Royal Mandate</h2>
-        <p>
-            We are sent to restore the lost souls and destinies back into Christ’s Kingdom for preservation through the preaching of the Word of Faith.
-        </p>
-    </section>
-
-    <!-- Vision and Mission -->
-    <section>
-        <h2>Vision & Mission</h2>
-        <p><strong>Vision:</strong> To raise a family of matured kingdom stars who will live Heaven practically on Earth, getting them ready for the second coming of the King.</p>
-        <p><strong>Mission:</strong></p>
-        <ul>
-            <li>To teach through training programmes how to use the Good News of His Kingdom to solve life challenges in marriage, career, profession, business, finances, moral, spiritual etc.</li>
-            <li>To infuse the vision into believers and release them for the expansion of His Kingdom on Earth.</li>
-        </ul>
-    </section>
-
-    <!-- Presiding Pastor Note Button -->
-    <div class="center">
-        <a href="pastor-note.html" class="pastor-note-btn">Read Presiding Pastor’s Note</a>
-    </div>
-
-    <script>
-        function toggleMenu() {
-            document.querySelector('nav ul').classList.toggle('active');
-        }
-    </script>
-</body>
-</html>
+/* ===== Hero tilt effect ===== */
+const heroContent = document.querySelector('.hero-content');
+document.addEventListener('mousemove', (e) => {
+  const x = (window.innerWidth/2 - e.pageX)/50;
+  const y = (window.innerHeight/2 - e.pageY)/50;
+  heroContent.style.transform = `translateY(-50%) rotateX(${y}deg) rotateY(${x}deg)`;
+});
 </script>
+
 </body>
 </html>
