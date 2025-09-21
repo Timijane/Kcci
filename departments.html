@@ -5,103 +5,60 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kingdom Citizens Church - Departments & Groups</title>
   <style>
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-    }
+    * {margin:0; padding:0; box-sizing:border-box; font-family:'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;}
+    body {background:#fff; color:#333; line-height:1.6;}
 
-    body {
-      background-color: #ffffff;
-      color: #333;
-      line-height: 1.6;
+    /* NAVBAR */
+    .navbar {
+      display:flex; justify-content:space-between; align-items:center;
+      padding:15px 30px; background:#9b59b6; position:sticky; top:0; z-index:1000;
     }
-
-    section {
-      padding: 60px 20px;
-      text-align: center;
+    .navbar img {height:50px;}
+    .navbar h1 {color:#fff; font-size:1.5rem;}
+    .navbar a {
+      color:#fff; text-decoration:none; margin-left:20px; font-weight:bold;
     }
+    .navbar a:hover {text-decoration:underline;}
 
-    h1, h2, h3 {
-      color: #9b59b6;
-      font-weight: bold;
-    }
-
-    h1 {
-      font-size: 3rem;
-      margin-bottom: 20px;
-    }
-
-    h2 {
-      font-size: 2.2rem;
-      margin-bottom: 30px;
-    }
-
-    h3 {
-      font-size: 1.5rem;
-      margin-bottom: 10px;
-    }
-
+    section {padding:60px 20px; text-align:center;}
+    h1, h2, h3 {color:#9b59b6; font-weight:bold;}
+    h1 {font-size:3rem; margin-bottom:20px;}
+    h2 {font-size:2.2rem; margin-bottom:30px;}
+    h3 {font-size:1.5rem; margin-bottom:10px;}
     p {
-      background: #ffffff;
-      display: inline-block;
-      padding: 15px 25px;
-      border-radius: 15px;
-      box-shadow: 0 4px 10px rgba(0,0,0,0.1);
-      max-width: 800px;
-      margin-bottom: 30px;
-      font-size: 18px;
+      background:#fff; display:inline-block; padding:15px 25px;
+      border-radius:15px; box-shadow:0 4px 10px rgba(0,0,0,0.1);
+      max-width:900px; margin-bottom:30px; font-size:18px; text-align:left;
     }
 
     .group-container {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: center;
-      gap: 40px;
-      margin-top: 40px;
+      display:flex; flex-wrap:wrap; justify-content:center; gap:40px; margin-top:40px;
     }
-
-    .member {
-      text-align: center;
-      max-width: 220px;
-    }
-
+    .member {text-align:center; max-width:220px;}
     .member img {
-      width: 180px;
-      height: 180px;
-      border-radius: 50%;
-      object-fit: cover;
-      margin-bottom: 15px;
-      border: 4px solid #9b59b6;
+      width:180px; height:180px; border-radius:50%;
+      object-fit:cover; margin-bottom:15px; border:4px solid #9b59b6;
     }
 
-    .button-link {
-      display: inline-block;
-      background: #9b59b6;
-      color: #ffffff;
-      font-size: 20px;
-      font-weight: bold;
-      padding: 15px 35px;
-      border-radius: 30px;
-      text-decoration: none;
-      margin-top: 40px;
-      transition: transform 0.3s ease;
-    }
-
-    .button-link:hover {
-      transform: scale(1.05);
-    }
-
-    @media (max-width: 768px) {
-      .group-container {
-        flex-direction: column;
-        align-items: center;
-      }
+    @media(max-width:768px){
+      .group-container {flex-direction:column; align-items:center;}
     }
   </style>
 </head>
 <body>
+
+  <!-- NAVBAR -->
+  <nav class="navbar">
+    <div style="display:flex;align-items:center;gap:10px;">
+      <img src="logo.png" alt="Kingdom Citizens Church Logo">
+      <h1>Kingdom Citizens Church</h1>
+    </div>
+    <div>
+      <a href="index.html">Home</a>
+      <a href="about.html">About</a>
+      <a href="departments.html">Departments</a>
+    </div>
+  </nav>
 
   <!-- Page Headline -->
   <section>
@@ -109,7 +66,7 @@
     <p>Explore the ministries and groups of Kingdom Citizens Church International, each designed to nurture faith, service, and excellence in the body of Christ.</p>
   </section>
 
-  <!-- Pastoral Group -->
+  <!-- Pastoral Group (unchanged) -->
   <section>
     <h2>Pastoral Group</h2>
     <div class="group-container">
@@ -141,45 +98,85 @@
     </div>
   </section>
 
-  <!-- Youth Section -->
+  <!-- Departments -->
   <section>
-    <h2>Youth Section</h2>
-    <p>The Youth Section empowers young believers to grow in faith, leadership, and service through mentorship, teaching, and fellowship.</p>
+    <h2>Children's Department</h2>
+    <img src="department1.jpg" alt="Children's Department" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>Our Children's church is geared towards raising a new generation of children that will fear God and love humanity. A generation that will be solution providers to the problems of their society.</p>
   </section>
 
-  <!-- Choir Section -->
   <section>
-    <h2>Choir Section</h2>
-    <p>The Choir Section leads worship, glorifies God, and inspires heartfelt praise across the Church community.</p>
+    <h2>Teenagers' Department</h2>
+    <img src="department2.jpg" alt="Teenagers Department" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>This unit is committed in teaching our children who are between the ages of 13-18 Years as they gradually grow up to become young adults. Our focus also is to give them godly counsel and guidance to make right choices and decisions.</p>
   </section>
 
-  <!-- Royal Pillars Section -->
   <section>
-    <h2>Royal Pillars</h2>
-    <p>Dedicated men and women committed to prayer, mentorship, and community service, strengthening the Church family.</p>
+    <h2>Youth Fellowship</h2>
+    <img src="department3.jpg" alt="Youth Fellowship" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>This is the group of our young adults. Our main objective is to develop them in the wisdom and love of God by instilling in them biblical principles, encouraging them to be students of the Word and teaching them how to handle life challenges using the Word. Meetings: 2nd Friday monthly, 11 pm–4 am.</p>
   </section>
 
-  <!-- Men of Issachar Section -->
   <section>
-    <h2>Men of Issachar</h2>
-    <p>Seek spiritual insight and discernment, guiding the Church with wisdom and faithful service.</p>
+    <h2>Women’s Fellowship (Royal Pillars)</h2>
+    <img src="department4.jpg" alt="Women Fellowship" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>We are committed to the successful family life of our members. Women gather every 2nd Saturday of the month at 9 am for fellowship and prayer.  
+       <strong>Royal Sisters:</strong> Under 45 yrs.  
+       <strong>Royal Pillars:</strong> 45 yrs and above.</p>
   </section>
 
-  <!-- Children Section -->
   <section>
-    <h2>Children Section</h2>
-    <p>Nurturing the next generation in faith, love, and knowledge of God’s Word through fun and engaging activities.</p>
+    <h2>Men’s Fellowship</h2>
+    <img src="department5.jpg" alt="Men Fellowship" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>This group is twofold: Business Men Fellowship and Men of Issachar. Our aim is to raise kingdom-minded men who bring heaven to their homes and lead exemplary lives. Meetings: every Saturday 4:30 pm for business fellowship and general prayer.</p>
   </section>
 
-  <!-- Media Department Section -->
   <section>
-    <h2>Media Department</h2>
-    <p>Capturing and sharing the Church’s message across platforms with creativity, excellence, and dedication.</p>
+    <h2>Kingdom Citizens Voices (Choir)</h2>
+    <img src="department6.jpg" alt="Choir" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>We give high premium to praise and worship of God. Our praise team is gifted and devoted to fulfilling Ps. 100:4-5 and Ps. 22:3. They meet every Saturday at 4 pm.</p>
   </section>
 
-  <!-- Back to About Page Button -->
   <section>
-    <a href="index.html#about" class="button-link">Back to About Page</a>
+    <h2>Ushering Group</h2>
+    <img src="department7.jpg" alt="Ushering Group" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>This team maintains order within the church. They are the “physical angels” welcoming everyone to service.</p>
+  </section>
+
+  <section>
+    <h2>Royal Security Unit</h2>
+    <img src="department8.jpg" alt="Royal Security" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>The kingdom law-enforcement agents ensuring cars are parked orderly and crowds are under check.</p>
+  </section>
+
+  <section>
+    <h2>Evangelism Team</h2>
+    <img src="department9.jpg" alt="Evangelism Team" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>Fulfilling the Great Commission (Matt. 28:19-20), this team wins souls, follows up newcomers, and organizes crusades and prayer meetings.</p>
+  </section>
+
+  <section>
+    <h2>Burden Bearers (Prayer Group)</h2>
+    <img src="department10.jpg" alt="Burden Bearers" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>Dynamic individuals devoted to praying for the church, pastors, and revival. Meetings: every Tuesday 5:30 pm and Sunday 6:30–7:40 am.</p>
+  </section>
+
+  <section>
+    <h2>Sanctuary Keepers & Decorators</h2>
+    <img src="department11.jpg" alt="Sanctuary Keepers" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>This team keeps the church building and environment neat. As they care for God’s house, God cares for them (Ex. 23:25-26).</p>
+  </section>
+
+  <section>
+    <h2>Media Unit (ICT Group)</h2>
+    <img src="department12.jpg" alt="Media Unit" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>Handles visual/audio production, publications, and internet outreach to spread the gospel of our Lord Jesus.</p>
+  </section>
+
+  <section>
+    <h2>Prayer Centre – Home Fellowship</h2>
+    <img src="department13.jpg" alt="Home Fellowship" style="width:250px;border-radius:20px;border:4px solid #9b59b6;">
+    <p>The church in homes: fostering pastoral relationships, extending love and care as in Acts 2:46. A harvest basket for new souls.</p>
   </section>
 
 </body>
