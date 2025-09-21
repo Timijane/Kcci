@@ -1,275 +1,236 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Kingdom Citizens Church INT'L</title>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingdom Citizens Church INT'L</title>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+  * { margin:0; padding:0; box-sizing:border-box; }
+  body, html { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; }
 
-  <style>
-    * {
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+  /* ===== Navigation ===== */
+  nav {
+    position: fixed;
+    top:0;
+    left:0;
+    width:100%;
+    background:#4B0082; /* Sharp solid color */
+    z-index:1000;
+    display:flex;
+    justify-content:space-between;
+    align-items:center;
+    padding:10px 20px;
+    transition: all 0.3s ease;
+  }
+  nav.scrolled { padding:5px 20px; box-shadow:0 3px 15px rgba(0,0,0,0.3); }
+  .nav-left { display:flex; align-items:center; }
+  .nav-left img { width:40px; height:40px; border-radius:50%; margin-right:10px; }
+  .nav-left h1 { color:white; font-size:1.2rem; font-weight:bold; white-space:nowrap; }
+  .nav-right ul { list-style:none; display:flex; gap:20px; }
+  .nav-right a { color:white; text-decoration:none; font-weight:bold; transition:0.3s; }
+  .nav-right a:hover { color:#FFD700; }
 
-    body, html {
-      font-family: 'Roboto', sans-serif;
-      scroll-behavior: smooth;
-    }
+  /* Hamburger Menu */
+  .hamburger { display:none; flex-direction:column; cursor:pointer; }
+  .hamburger div { width:25px; height:3px; background:white; margin:4px 0; transition:0.3s; }
+  @media(max-width:768px){
+    .nav-right { display:none; position:absolute; top:60px; right:20px; flex-direction:column; background:#4B0082; padding:20px; border-radius:10px; }
+    .nav-right.show { display:flex; }
+    .hamburger { display:flex; }
+  }
 
-    /* ===== NAVIGATION ===== */
-    .navbar {
-      position: fixed;
-      top:0;
-      left:0;
-      width:100%;
-      background:#2c3e50;
-      color:white;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:15px 30px;
-      z-index:999;
-      box-shadow:0 3px 10px rgba(0,0,0,0.3);
-    }
+  /* ===== Hero Section ===== */
+  .hero {
+    width:100%;
+    height:100vh;
+    position:relative;
+    overflow:hidden;
+  }
+  .slides {
+    position:absolute;
+    width:100%;
+    height:100%;
+    top:0; left:0;
+  }
+  .slides img {
+    position:absolute;
+    width:100%;
+    height:100%;
+    object-fit:cover;
+    opacity:0;
+    transition: opacity 2s ease-in-out;
+  }
+  .slides img.active { opacity:1; }
 
-    .church-name-nav {
-      font-weight:bold;
-      font-size:20px;
-    }
+  .hero-content {
+    position:relative;
+    z-index:2;
+    text-align:center;
+    color:white;
+    top:50%;
+    transform:translateY(-50%);
+  }
+  .hero-content img { width:120px; height:120px; border-radius:50%; margin-bottom:15px; border:3px solid white; }
+  .hero-content h1 { font-family:'Lobster', cursive; font-size:4rem; font-weight:bold; color:#fff; text-shadow:0 0 10px rgba(0,0,0,0.7); line-height:1.2; }
+  .hero-content h2 { font-size:2rem; font-weight:bold; color:#32CD32; margin:20px 0; white-space:nowrap; overflow:hidden; }
 
-    .nav-links a {
-      color:white;
-      text-decoration:none;
-      margin-left:25px;
-      font-weight:bold;
-      transition:0.3s;
-    }
+  .scripture {
+    margin-top:60px;
+    font-size:1.8rem;
+    font-weight:bold;
+    opacity:0;
+    transition: opacity 2s ease-in-out;
+    text-shadow:0 0 10px rgba(0,0,0,0.7);
+  }
+  .scripture.active { opacity:1; }
 
-    .nav-links a:hover {
-      color:#f1c40f;
-    }
+  /* ===== CTA Buttons ===== */
+  .hero-buttons { margin-top:40px; display:flex; justify-content:center; gap:20px; flex-wrap:wrap; }
+  .hero-buttons a { padding:15px 30px; border-radius:25px; font-weight:bold; color:white; text-decoration:none; background:#32CD32; transition:0.3s; }
+  .hero-buttons a.donate { background:#FF4500; }
+  .hero-buttons a.watch { background:#1E90FF; }
+  .hero-buttons a:hover { transform:scale(1.05); }
 
-    /* Hamburger */
-    .hamburger {
-      display:none;
-      flex-direction: column;
-      cursor:pointer;
-    }
+  /* ===== Smooth scrolling sections ===== */
+  section { padding:80px 20px; }
 
-    .hamburger div {
-      width:25px;
-      height:3px;
-      background:white;
-      margin:4px 0;
-    }
-
-    @media(max-width:768px){
-      .nav-links {
-        position: fixed;
-        top:65px;
-        right:-100%;
-        height:100vh;
-        width:250px;
-        background:#2c3e50;
-        flex-direction: column;
-        gap:20px;
-        padding:30px;
-        transition: right 0.3s ease-in-out;
-      }
-
-      .nav-links.show {
-        right:0;
-      }
-
-      .hamburger {
-        display:flex;
-      }
-    }
-
-    /* ===== HERO ===== */
-    .hero {
-      position: relative;
-      width:100%;
-      height:100vh;
-      overflow:hidden;
-    }
-
-    .slides img {
-      position:absolute;
-      width:100%;
-      height:100%;
-      object-fit:cover;
-      opacity:0;
-      transition:opacity 2s ease-in-out;
-    }
-
-    .slides img.active {
-      opacity:1;
-    }
-
-    .hero-content {
-      position:absolute;
-      z-index:2;
-      text-align:center;
-      top:50%;
-      left:50%;
-      transform:translate(-50%, -50%);
-      color:white;
-    }
-
-    .hero-content img.logo {
-      width:100px;
-      height:100px;
-      border-radius:50%;
-      object-fit:cover;
-      margin-bottom:20px;
-      border:3px solid white;
-    }
-
-    .hero-content h1 {
-      font-family:'Lobster', cursive;
-      font-size:4rem;
-      text-transform:uppercase;
-      font-weight:bold;
-      text-shadow:0px 0px 15px rgba(0,0,0,0.7);
-    }
-
-    .hero-content .slogan {
-      display:block;
-      font-style:italic;
-      font-size:1.8rem;
-      color:#2ecc71;
-      margin-top:20px;
-      overflow:hidden;
-      white-space:nowrap;
-      animation:slideText 15s linear infinite;
-    }
-
-    @keyframes slideText {
-      0% {transform:translateX(100%);}
-      100% {transform:translateX(-100%);}
-    }
-
-    .scripture {
-      margin-top:60px;
-      font-size:1.5rem;
-      font-weight:500;
-      opacity:0;
-      transition:opacity 1.5s ease-in-out;
-      text-shadow:0px 0px 8px rgba(0,0,0,0.7);
-    }
-
-    .scripture.active {
-      opacity:1;
-    }
-
-    /* ===== RESPONSIVE ===== */
-    @media(max-width:768px){
-      .hero-content h1 {
-        font-size:2.5rem;
-      }
-
-      .hero-content .slogan {
-        font-size:1.2rem;
-      }
-
-      .scripture {
-        font-size:1rem;
-      }
-    }
-  </style>
+  /* Tilt effect */
+  .hero-content { transition: transform 0.1s ease; }
+</style>
 </head>
 <body>
 
-  <!-- NAVIGATION -->
-  <nav class="navbar">
-    <div class="church-name-nav">Kingdom Citizens Church INT'L</div>
-    <div class="hamburger" id="hamburger">
-      <div></div>
-      <div></div>
-      <div></div>
-    </div>
-    <div class="nav-links" id="nav-links">
-      <a href="#about">About</a>
-      <a href="#registration">Register</a>
-      <a href="#contact">Contact</a>
-    </div>
-  </nav>
+<!-- ===== Navigation ===== -->
+<nav id="navbar">
+  <div class="nav-left">
+    <img src="logo1.jpg" alt="Church Logo">
+    <h1>Kingdom Citizens Church INT'L</h1>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <div></div><div></div><div></div>
+  </div>
+  <div class="nav-right" id="nav-links">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#registration">Register</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
 
-  <!-- HERO -->
-  <div class="hero">
-    <div class="slides">
-      <img src="church1.jpg" class="active">
-      <img src="church2.jpg">
-      <img src="church3.jpg">
-      <img src="church4.jpg">
-      <img src="church5.jpg">
-      <img src="church6.jpg">
-      <img src="church7.jpg">
-      <img src="church8.jpg">
-      <img src="church9.jpg">
-    </div>
-    <div class="hero-content">
-      <img src="logo1.jpg" alt="Church Logo" class="logo">
-      <h1>Kingdom Citizens Church INT'L</h1>
-      <span class="slogan">... nurturing the hiers</span>
-      <div id="scripture" class="scripture"></div>
-    </div>
+<!-- ===== Hero Section ===== -->
+<section class="hero" id="hero">
+  <div class="slides">
+    <img src="church1.jpg" class="active">
+    <img src="church2.jpg">
+    <img src="church3.jpg">
+    <img src="church4.jpg">
+    <img src="church5.jpg">
+    <img src="church6.jpg">
+    <img src="church7.jpg">
+    <img src="church8.jpg">
+    <img src="church9.jpg">
   </div>
 
-  <script>
-    // Hamburger toggle
-    const hamburger = document.getElementById('hamburger');
-    const navLinks = document.getElementById('nav-links');
+  <div class="hero-content">
+    <img src="logo1.jpg" alt="Church Logo">
+    <h1>Kingdom Citizens Church INT'L</h1>
+    <h2 id="slogan">nurturing the heirs</h2>
+    <div class="scripture" id="scripture"></div>
+    <div class="hero-buttons">
+      <a href="#registration" class="join">Join Us</a>
+      <a href="#donate" class="donate">Donate</a>
+      <a href="#watch" class="watch">Watch Sermons</a>
+    </div>
+  </div>
+</section>
 
-    hamburger.addEventListener('click', () => {
-      navLinks.classList.toggle('show');
-    });
+<!-- ===== About Section (Placeholder) ===== -->
+<section id="about">
+  <h2>About Kingdom Citizens Church</h2>
+  <p>Church details will go here...</p>
+</section>
 
-    // Hero slideshow
-    const slides = document.querySelectorAll('.slides img');
-    let currentSlide = 0;
+<!-- ===== Registration Section (Placeholder) ===== -->
+<section id="registration">
+  <h2>Register for Events</h2>
+  <p>Google form or other registration details...</p>
+</section>
 
-    function changeSlide() {
-      slides[currentSlide].classList.remove('active');
-      currentSlide = (currentSlide + 1) % slides.length;
-      slides[currentSlide].classList.add('active');
-    }
+<!-- ===== Contact Section (Placeholder) ===== -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email, WhatsApp, Address...</p>
+</section>
 
-    setInterval(changeSlide, 5000);
+<script>
+  /* ===== Hamburger toggle ===== */
+  const hamburger = document.getElementById('hamburger');
+  const navLinks = document.getElementById('nav-links');
+  hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
 
-    // Scriptures rotation
-    const scriptures = [
-      "Now faith is the substance of things hoped for, the evidence of things not seen. – Hebrews 11:1",
-      "Have faith in God. – Mark 11:22",
-      "So then faith comes by hearing, and hearing by the word of God. – Romans 10:17",
-      "For we walk by faith, not by sight. – 2 Corinthians 5:7",
-      "If you have faith as small as a mustard seed… nothing will be impossible for you. – Matthew 17:20",
-      "This is the victory that has overcome the world, even our faith. – 1 John 5:4",
-      "But let him ask in faith, nothing wavering. – James 1:6",
-      "The life I now live in the body, I live by faith in the Son of God. – Galatians 2:20",
-      "Take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. – Ephesians 6:16",
-      "And whatever you ask in prayer, you will receive, if you have faith. – Matthew 21:22"
-    ];
+  /* ===== Smooth scroll handled by CSS scroll-behavior ===== */
 
-    let currentScripture = 0;
-    const scriptureEl = document.getElementById("scripture");
-    scriptureEl.textContent = scriptures[0];
-    scriptureEl.classList.add("active");
+  /* ===== Sticky nav on scroll ===== */
+  const navbar = document.getElementById('navbar');
+  window.addEventListener('scroll', () => {
+    if(window.scrollY > 50) { navbar.classList.add('scrolled'); }
+    else { navbar.classList.remove('scrolled'); }
+  });
 
-    function changeScripture() {
-      scriptureEl.classList.remove("active");
-      setTimeout(() => {
-        scriptureEl.textContent = scriptures[currentScripture];
-        scriptureEl.classList.add("active");
-      }, 500);
+  /* ===== Hero image slideshow ===== */
+  const slides = document.querySelectorAll('.slides img');
+  let currentSlide = 0;
+  function changeSlide() {
+    slides[currentSlide].classList.remove('active');
+    currentSlide = (currentSlide+1)%slides.length;
+    slides[currentSlide].classList.add('active');
+  }
+  setInterval(changeSlide, 5000);
 
-      currentScripture = (currentScripture + 1) % scriptures.length;
-    }
+  /* ===== Slogan sliding effect ===== */
+  const slogan = document.getElementById('slogan');
+  function slideSlogan() {
+    slogan.style.transform = `translateX(${Math.random()*20-10}px)`;
+  }
+  setInterval(slideSlogan, 300);
 
-    setInterval(changeScripture, 6000);
-  </script>
+  /* ===== Scripture rotation ===== */
+  const scriptures = [
+    "Now faith is the substance of things hoped for. – Hebrews 11:1",
+    "Have faith in God. – Mark 11:22",
+    "Faith comes by hearing, and hearing by the word of God. – Romans 10:17",
+    "For we walk by faith, not by sight. – 2 Corinthians 5:7",
+    "If you have faith as small as a mustard seed… – Matthew 17:20",
+    "This is the victory that has overcome the world. – 1 John 5:4",
+    "Let him ask in faith, nothing wavering. – James 1:6",
+    "The life I now live in the body, I live by faith. – Galatians 2:20",
+    "Take up the shield of faith… – Ephesians 6:16",
+    "Whatever you ask in prayer, you will receive. – Matthew 21:22"
+  ];
+  const scriptureEl = document.getElementById('scripture');
+  let currentScripture = 0;
+  function changeScripture() {
+    scriptureEl.classList.remove('active');
+    setTimeout(() => {
+      scriptureEl.textContent = scriptures[currentScripture];
+      scriptureEl.classList.add('active');
+    }, 500);
+    currentScripture = (currentScripture+1)%scriptures.length;
+  }
+  scriptureEl.textContent = scriptures[0];
+  scriptureEl.classList.add('active');
+  setInterval(changeScripture, 6000);
+
+  /* ===== Hero tilt effect ===== */
+  const heroContent = document.querySelector('.hero-content');
+  document.addEventListener('mousemove', (e) => {
+    const x = (window.innerWidth/2 - e.pageX)/50;
+    const y = (window.innerHeight/2 - e.pageY)/50;
+    heroContent.style.transform = `translateY(-50%) rotateX(${y}deg) rotateY(${x}deg)`;
+  });
+</script>
 </body>
 </html>
