@@ -4,218 +4,96 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Kingdom Citizens Church INT'L</title>
-
   <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:ital,wght@1,400;1,700&display=swap" rel="stylesheet">
-
   <style>
-    /* Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * { margin:0; padding:0; box-sizing:border-box; }
+    html { scroll-behavior: smooth; }
+    body { font-family: 'Roboto', sans-serif; }
 
-    html {
-      scroll-behavior: smooth;
-    }
-
-    body {
-      font-family: 'Roboto', sans-serif;
-      overflow-x: hidden;
-    }
-
-    /* Sticky Navigation */
-    nav {
-      position: fixed;
+    /* Navbar */
+    .navbar {
+      position: sticky;
       top: 0;
       width: 100%;
-      padding: 15px 30px;
+      background: rgba(255,255,255,0.95);
       display: flex;
-      align-items: center;
       justify-content: space-between;
-      background: rgba(255, 255, 255, 0.9);
-      box-shadow: 0 4px 15px rgba(0,0,0,0.1);
+      align-items: center;
+      padding: 15px 30px;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.1);
       z-index: 1000;
-      transition: all 0.4s ease;
     }
+    .logo-name { display:flex; align-items:center; gap:15px; }
+    .nav-logo { width:50px; height:50px; border-radius:50%; }
+    .church-name { font-family:'Lobster', cursive; font-size:1.8rem; font-weight:bold; color:#9b59b6; }
+    .nav-links { display:flex; list-style:none; gap:25px; }
+    .nav-links li a { text-decoration:none; color:#9b59b6; font-weight:bold; transition: color 0.3s; }
+    .nav-links li a:hover { color:#f39c12; }
+    .hamburger { display:none; flex-direction:column; cursor:pointer; gap:5px; }
+    .hamburger span { height:3px; width:25px; background:#9b59b6; border-radius:5px; }
 
-    nav.hidden {
-      top: -100px;
-    }
-
-    .nav-left {
-      display: flex;
-      align-items: center;
-      gap: 15px;
-      opacity: 0;
-      transition: opacity 0.8s ease;
-    }
-
-    .nav-left.visible {
-      opacity: 1;
-    }
-
-    .nav-left img {
-      width: 40px;
-      height: 40px;
-      border-radius: 50%;
-      object-fit: cover;
-    }
-
-    .nav-left span {
-      font-weight: bold;
-      font-size: 1.2rem;
-      color: #9b59b6;
-    }
-
-    nav ul {
-      display: flex;
-      list-style: none;
-      gap: 25px;
-    }
-
-    nav ul li a {
-      text-decoration: none;
-      color: #333;
-      font-weight: 500;
-      transition: color 0.3s;
-    }
-
-    nav ul li a:hover {
-      color: #9b59b6;
-    }
-
-    /* Hero Section */
-    .hero {
-      position: relative;
-      width: 100%;
-      height: 100vh;
-      overflow: hidden;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      text-align: center;
-    }
-
-    .slides img {
-      position: absolute;
-      width: 100%;
-      height: 100%;
-      object-fit: cover;
-      top: 0;
-      left: 0;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
-    }
-
-    .slides img.active {
-      opacity: 1;
-    }
-
-    .hero-content {
-      position: relative;
-      z-index: 2;
-      color: #fff;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-    }
-
-    .hero-content img.logo {
-      width: 120px;
-      height: 120px;
-      border-radius: 50%;
-      margin-bottom: 20px;
-      border: 3px solid white;
-    }
-
-    .hero-content h1 {
-      font-family: 'Lobster', cursive;
-      font-size: 4rem;
-      text-shadow: 2px 2px 12px rgba(0,0,0,0.6);
-      margin-bottom: 15px;
-    }
-
-    .hero-content h2 {
-      font-family: 'Roboto', sans-serif;
-      font-style: italic;
-      font-weight: 700;
-      font-size: 1.8rem;
-      transform: rotate(-8deg);
-      color: #ffd700;
-      margin-bottom: 30px;
-      text-shadow: 2px 2px 8px rgba(0,0,0,0.5);
-      animation: tilt 2s infinite alternate;
-    }
-
-    @keyframes tilt {
-      from { transform: rotate(-8deg); }
-      to { transform: rotate(8deg); }
-    }
-
-    .scripture {
-      font-size: 1.3rem;
-      font-weight: 500;
-      color: #fff;
-      text-shadow: 2px 2px 12px rgba(0,0,0,0.7);
-      max-width: 800px;
-      margin: 0 auto;
-      opacity: 0;
-      transition: opacity 2s ease-in-out;
-    }
-
-    .scripture.active {
-      opacity: 1;
-    }
-
-    /* Responsive */
-    @media (max-width: 768px) {
-      .hero-content h1 {
-        font-size: 3rem;
+    @media screen and (max-width:768px){
+      .nav-links {
+        position:absolute;
+        top:70px; right:0;
+        background:white;
+        flex-direction:column;
+        width:200px;
+        transform: translateX(100%);
+        transition: transform 0.3s ease-in-out;
+        padding:15px; border-radius:8px; box-shadow:0 5px 15px rgba(0,0,0,0.2);
       }
-      .hero-content h2 {
-        font-size: 1.5rem;
-      }
-      nav ul {
-        gap: 15px;
-      }
+      .nav-links.show { transform: translateX(0); }
+      .hamburger { display:flex; }
     }
 
-    @media (max-width: 480px) {
-      .hero-content h1 {
-        font-size: 2.2rem;
-      }
-      .hero-content h2 {
-        font-size: 1.2rem;
-      }
-      .nav-left span {
-        font-size: 1rem;
-      }
-    }
+    /* Hero */
+    .hero { position: relative; width:100%; height:100vh; overflow:hidden; display:flex; justify-content:center; align-items:center; flex-direction:column; background:#000; }
+    .slides { position:absolute; width:100%; height:100%; top:0; left:0; }
+    .slides img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; transition: opacity 2s ease-in-out; }
+    .slides img.active { opacity:1; }
+    .hero-content { position:relative; z-index:2; text-align:center; color:white; }
+    .hero-content img { width:120px; height:120px; border-radius:50%; object-fit:cover; margin-bottom:15px; border:3px solid white; }
+    .hero-title { font-size:3rem; font-weight:bold; text-transform:uppercase; color:#9b59b6; text-shadow:0px 0px 10px rgba(0,0,0,0.5); margin-bottom:20px; }
 
+    /* Slogan as news ticker */
+    .slogan { font-size:1.5rem; font-style:italic; color:#e74c3c; white-space:nowrap; overflow:hidden; margin-bottom:60px; }
+    .slogan span { display:inline-block; animation:ticker 15s linear infinite; }
+    @keyframes ticker { 0%{ transform: translateX(100%);} 100%{ transform: translateX(-100%);} }
+
+    /* Scriptures */
+    .scripture { font-size:1.2rem; font-weight:500; color:#fff; text-align:center; opacity:0; transition:opacity 2s ease-in-out; max-width:800px; margin:0 auto; }
+    .scripture.active { opacity:1; }
+
+    /* Section examples */
+    section { padding:80px 20px; text-align:center; }
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
-  <nav>
-    <div class="nav-left">
-      <img src="logo1.jpg" alt="Church Logo">
-      <span>Kingdom Citizens Church</span>
-    </div>
-    <ul>
-      <li><a href="#hero">Home</a></li>
-      <li><a href="#about">About</a></li>
-      <li><a href="#departments">Departments</a></li>
-      <li><a href="#contact">Contact</a></li>
-      <li><a href="#blog">Blog</a></li>
-    </ul>
-  </nav>
+  <!-- Navbar -->
+  <header>
+    <nav class="navbar">
+      <div class="logo-name">
+        <img src="logo1.jpg" alt="Church Logo" class="nav-logo">
+        <span class="church-name">Kingdom Citizens Church INT'L</span>
+      </div>
+      <ul class="nav-links">
+        <li><a href="#about">About</a></li>
+        <li><a href="#registration">Register</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+      <div class="hamburger">
+        <span></span>
+        <span></span>
+        <span></span>
+      </div>
+    </nav>
+  </header>
 
-  <!-- Hero Section -->
-  <section class="hero" id="hero">
+  <!-- Hero -->
+  <div class="hero">
     <div class="slides">
       <img src="church1.jpg" class="active">
       <img src="church2.jpg">
@@ -227,66 +105,66 @@
       <img src="church8.jpg">
       <img src="church9.jpg">
     </div>
-
     <div class="hero-content">
-      <img src="logo1.jpg" class="logo" alt="Church Logo">
-      <h1>Kingdom Citizens Church INT'L</h1>
-      <h2>nurturing the heirs</h2>
+      <img src="logo1.jpg" alt="Church Logo">
+      <h1 class="hero-title">Kingdom Citizens Church INT'L</h1>
+      <div class="slogan"><span>................ nurturing the hiers</span></div>
       <div id="scripture" class="scripture"></div>
     </div>
+  </div>
+
+  <!-- Example About Section -->
+  <section id="about" style="background:#f8f8f8;">
+    <h2 style="color:#9b59b6; font-size:2.5rem; margin-bottom:20px;">About Kingdom Citizens</h2>
+    <p style="max-width:800px; margin:0 auto; font-size:1.2rem; color:#333;">
+      Kingdom Citizens Church International is committed to nurturing faith and developing believers as heirs of the Kingdom.
+    </p>
   </section>
 
+  <!-- Scripts -->
   <script>
-    // Hero Slider
+    // Hamburger toggle
+    const hamburger = document.querySelector('.hamburger');
+    const navLinks = document.querySelector('.nav-links');
+    hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
+
+    // Hero slider
     const slides = document.querySelectorAll('.slides img');
     let currentSlide = 0;
-
-    function changeSlide() {
+    function changeSlide(){
       slides[currentSlide].classList.remove('active');
       currentSlide = (currentSlide + 1) % slides.length;
       slides[currentSlide].classList.add('active');
     }
     setInterval(changeSlide, 5000);
 
-    // Scripture Slider
+    // Scriptures
     const scriptures = [
-      "Now faith is the substance of things hoped for, the evidence of things not seen. – Hebrews 11:1",
+      "Now faith is the substance of things hoped for – Hebrews 11:1",
       "Have faith in God. – Mark 11:22",
-      "So then faith comes by hearing, and hearing by the word of God. – Romans 10:17",
-      "For we walk by faith, not by sight. – 2 Corinthians 5:7",
-      "If you have faith as small as a mustard seed… nothing will be impossible for you. – Matthew 17:20",
-      "This is the victory that has overcome the world, even our faith. – 1 John 5:4",
-      "But let him ask in faith, nothing wavering. – James 1:6",
-      "The life I now live in the body, I live by faith in the Son of God. – Galatians 2:20",
-      "Take up the shield of faith, with which you can extinguish all the flaming arrows of the evil one. – Ephesians 6:16",
-      "And whatever you ask in prayer, you will receive, if you have faith. – Matthew 21:22"
+      "Faith comes by hearing – Romans 10:17",
+      "Walk by faith, not by sight – 2 Corinthians 5:7",
+      "Faith as small as a mustard seed – Matthew 17:20",
+      "Victory through faith – 1 John 5:4",
+      "Ask in faith, nothing wavering – James 1:6",
+      "Live by faith in the Son – Galatians 2:20",
+      "Take up the shield of faith – Ephesians 6:16",
+      "Ask in prayer, you will receive – Matthew 21:22"
     ];
-
     let currentScripture = 0;
     const scriptureEl = document.getElementById("scripture");
-
-    function changeScripture() {
+    function changeScripture(){
       scriptureEl.classList.remove("active");
       setTimeout(() => {
         scriptureEl.textContent = scriptures[currentScripture];
         scriptureEl.classList.add("active");
-      }, 1000);
+      }, 500);
       currentScripture = (currentScripture + 1) % scriptures.length;
     }
-
     scriptureEl.textContent = scriptures[0];
     scriptureEl.classList.add("active");
     setInterval(changeScripture, 6000);
-
-    // Sticky Nav Fade-in
-    const navLeft = document.querySelector('.nav-left');
-    window.addEventListener('scroll', () => {
-      if(window.scrollY > 50){
-        navLeft.classList.add('visible');
-} else {
-        navLeft.classList.remove('visible');
-      }
-    });
   </script>
+
 </body>
 </html>
