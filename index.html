@@ -1,256 +1,297 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Royal Dominion Church</title>
-  <style>
-    /* Global Reset */
-    * {margin:0; padding:0; box-sizing:border-box;}
-    body {font-family: Arial, sans-serif; line-height:1.6; color:#333;}
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kingdom Citizens Church INT'L</title>
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+<style>
+/* ===== Global Styles ===== */
+* { margin:0; padding:0; box-sizing:border-box; }
+body, html { font-family: 'Roboto', sans-serif; scroll-behavior: smooth; background-color: #f0f0f0; }
 
-    /* ===== Navigation ===== */
-    header {
-      position: fixed;
-      top:0; left:0;
-      width:100%;
-      background: #4B0082; /* sharp purple */
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-      padding:15px 30px;
-      z-index:1000;
-    }
-    header .logo-container {
-      display:flex;
-      align-items:center;
-    }
-    header img.logo {
-      height:40px; margin-right:10px;
-    }
-    header h1 {
-      font-size:1.3rem;
-      color:white;
-      font-weight:bold;
-      white-space:nowrap;
-      font-family:'Trebuchet MS', sans-serif;
-    }
-    nav ul {
-      list-style:none;
-      display:flex;
-      gap:20px;
-    }
-    nav ul li a {
-      color:white;
-      text-decoration:none;
-      font-weight:bold;
-      transition:color 0.3s;
-    }
-    nav ul li a:hover {color:#ddd;}
+/* ===== Navigation ===== */
+nav {
+  position: fixed;
+  top:0; left:0;
+  width:100%;
+  background:#4B0082;       /* deep purple */
+  z-index:1000;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:10px 20px;
+  transition: all 0.3s ease;
+}
+nav.scrolled { padding:5px 20px; box-shadow:0 3px 15px rgba(0,0,0,0.3); }
+.nav-left { display:flex; align-items:center; }
+.nav-left img { width:40px; height:40px; border-radius:50%; margin-right:10px; }
+.nav-left h1 { color:white; font-size:1rem; font-weight:bold; white-space:nowrap; }
+.nav-right ul { list-style:none; display:flex; gap:20px; }
+.nav-right a { color:white; text-decoration:none; font-weight:bold; transition:0.3s; }
+.nav-right a:hover { color:#FFD700; }
 
-    /* Hamburger menu */
-    .menu-icon {display:none; cursor:pointer; flex-direction:column;}
-    .menu-icon span {
-      height:3px; width:25px; background:white;
-      margin:4px 0; transition:0.4s;
-    }
-    @media(max-width:768px){
-      nav ul {
-        flex-direction:column;
-        position:absolute;
-        top:60px; right:0;
-        background:#4B0082;
-        width:200px;
-        display:none;
-        padding:20px;
-      }
-      nav ul.active {display:flex;}
-      .menu-icon {display:flex;}
-    }
+/* Hamburger Menu */
+.hamburger { display:none; flex-direction:column; cursor:pointer; }
+.hamburger div { width:25px; height:3px; background:white; margin:4px 0; transition:0.3s; }
+@media(max-width:768px){
+  .nav-right { display:none; position:absolute; top:60px; right:20px; flex-direction:column; background:#4B0082; padding:20px; border-radius:10px; }
+  .nav-right.show { display:flex; }
+  .hamburger { display:flex; }
+}
 
-    /* ===== Hero Section ===== */
-    .hero {
-      height:100vh;
-      background: url('hero-image.jpg') center/cover no-repeat;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      color:white;
-      position:relative;
-    }
-    .hero::after{
-      content:"";
-      position:absolute;
-      top:0; left:0; right:0; bottom:0;
-      background: rgba(0,0,0,0.5);
-    }
-    .hero-content {
-      position:relative;
-      z-index:1;
-      transform:translateY(-50%);
-    }
-    .hero-content h1 {
-      font-family:'Lobster', cursive;
-      font-size:3rem; /* reduced a bit */
-      font-weight:bold;
-      margin-bottom:20px;
-    }
-    .hero-content p.slogan {
-      font-size:1.4rem; /* slightly bigger but less than church name */
-      font-weight:bold;
-      color:green;
-      margin-bottom:20px;
-    }
-    .hero-content p.scripture {
-      font-size:1.2rem; /* reduced scripture size */
-      font-weight:bold;
-      margin-bottom:30px;
-    }
-    .hero-buttons a {
-      display:inline-block;
-      margin:0 10px;
-      padding:10px 20px;
-      background:#4B0082;
-      color:white;
-      border-radius:30px;
-      text-decoration:none;
-      font-size:0.9rem; /* smaller stylish buttons */
-      font-weight:bold;
-      transition: background 0.3s;
-    }
-    .hero-buttons a:hover {background:#6a0dad;}
+/* ===== Hero Section ===== */
+.hero { width:100%; height:100vh; position:relative; overflow:hidden; }
+.slides { position:absolute; width:100%; height:100%; top:0; left:0; }
+.slides img { position:absolute; width:100%; height:100%; object-fit:cover; opacity:0; transition: opacity 2s ease-in-out; }
+.slides img.active { opacity:1; }
 
-    /* ===== About Page ===== */
-    /* Purple header section */
-    .about-header {
-      background:#5a1ea1;
-      color:white;
-      text-align:center;
-      padding:120px 20px 100px;
-    }
-    .about-header h1 {
-      font-size:3rem;
-      border-bottom:4px solid white;
-      display:inline-block;
-      padding-bottom:10px;
-      font-weight:bold;
-    }
+.hero-content {
+  position:relative;
+  z-index:2;
+  text-align:center;
+  color:white;
+  top:50%;
+  transform:translateY(-50%);
+  transition: transform 0.1s ease;
+}
+.hero-content img { width:120px; height:120px; border-radius:50%; margin-bottom:15px; border:3px solid white; }
+.hero-content h1 { font-family:'Lobster', cursive; font-size:3.2rem; font-weight:bold; text-shadow:0 0 10px rgba(0,0,0,0.7); line-height:1.2; }
+.hero-content h2 { font-size:1.4rem; font-weight:bold; color:#32CD32; margin:20px 0; white-space:nowrap; }
+.scripture {
+  margin-top:40px;
+  font-size:1.2rem;            /* smaller */
+  font-weight:bold;
+  opacity:0;
+  transition: opacity 2s ease-in-out;
+  text-shadow:0 0 10px rgba(0,0,0,0.7);
+}
+.scripture.active { opacity:1; }
 
-    /* Radiant background blocks */
-    .about-block {
-      background: linear-gradient(180deg,#6a0dad 0%,#a24bff 100%);
-      padding:80px 20px;
-    }
-    .about-card {
-      background:white;
-      max-width:900px;
-      margin:0 auto 60px;
-      padding:40px;
-      border-radius:20px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.15);
-    }
-    .about-card h2 {
-      font-size:2rem;
-      text-align:center;
-      margin-bottom:20px;
-      color:#4b0082;
-    }
+/* ===== CTA Buttons ===== */
+.hero-buttons { margin-top:30px; display:flex; justify-content:center; gap:15px; flex-wrap:wrap; }
+.hero-buttons a {
+  padding:10px 20px;           /* smaller, stylish */
+  border-radius:25px;
+  font-weight:bold;
+  color:white;
+  text-decoration:none;
+  background:#32CD32;
+  transition:0.3s;
+  font-size:0.9rem;
+}
+.hero-buttons a.donate { background:#FF4500; }
+.hero-buttons a.watch { background:#1E90FF; }
+.hero-buttons a:hover { transform:scale(1.05); }
 
-    /* spacing between Home and About page */
-    .section-gap {height:150px;}
-  </style>
+/* ===== About Section ===== */
+#about-section { background:#4B0082; padding-top:100px; } /* purple background & big top space */
+
+.about-header {
+  color: #fff;
+  font-size: 3rem;
+  font-weight: bold;
+  text-align: center;
+  padding: 60px 20px 40px;
+  text-decoration: underline;
+}
+
+/* radiant backgrounds for each content block */
+section.about-content {
+  background: linear-gradient(135deg,#7b2ff7,#f107a3);
+  padding: 60px 20px;
+  margin: 60px auto;
+  max-width: 1000px;
+  border-radius: 10px;
+}
+section.about-content h2 {
+  font-family: 'Lobster', cursive;
+  font-size: 2rem;
+  margin-bottom: 15px;
+  color:#fff;
+  text-align:center;
+}
+section.about-content .card {
+  background:#fff;
+  padding:30px;
+  border-radius:10px;
+  box-shadow:0 4px 10px rgba(0,0,0,0.2);
+}
+section.about-content p,
+section.about-content ul { font-size:1.1rem; line-height:1.8; color:#333; margin-bottom:15px; }
+section.about-content ul { padding-left:20px; }
+
+.pastor-note-btn {
+  display: inline-block;
+  padding: 15px 25px;
+  background-color: #28a745;
+  color: #fff;
+  font-weight: bold;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  text-decoration: none;
+  font-size: 1.1rem;
+  transition: background-color 0.3s;
+  margin: 40px auto;
+}
+.pastor-note-btn:hover { background-color: #218838; }
+.center { text-align:center; }
+</style>
 </head>
 <body>
 
-  <!-- ===== Navigation ===== -->
-  <header>
-    <div class="logo-container">
-      <img src="logo.png" alt="Logo" class="logo">
-      <h1>Royal Dominion Church</h1>
+<!-- ===== Navigation ===== -->
+<nav id="navbar">
+  <div class="nav-left">
+    <img src="logo1.jpg" alt="Church Logo">
+    <h1>Kingdom Citizens Church INT'L</h1>
+  </div>
+  <div class="hamburger" id="hamburger">
+    <div></div><div></div><div></div>
+  </div>
+  <div class="nav-right" id="nav-links">
+    <ul>
+      <li><a href="#hero">Home</a></li>
+      <li><a href="#about-section">About</a></li>
+      <li><a href="#registration">Register</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- ===== Hero Section ===== -->
+<section class="hero" id="hero">
+  <div class="slides">
+    <img src="church1.jpg" class="active">
+    <img src="church2.jpg">
+    <img src="church3.jpg">
+    <img src="church4.jpg">
+    <img src="church5.jpg">
+    <img src="church6.jpg">
+    <img src="church7.jpg">
+    <img src="church8.jpg">
+    <img src="church9.jpg">
+  </div>
+
+  <div class="hero-content">
+    <img src="logo1.jpg" alt="Church Logo">
+    <h1>Kingdom Citizens Church INT'L</h1>
+    <h2 id="slogan">.............. nurturing the hiers</h2>
+    <div class="scripture" id="scripture"></div>
+    <div class="hero-buttons">
+      <a href="#registration" class="join">Join Us</a>
+      <a href="#donate" class="donate">Donate</a>
+      <a href="#watch" class="watch">Watch Sermons</a>
     </div>
-    <div class="menu-icon" onclick="toggleMenu()">
-      <span></span><span></span><span></span>
+  </div>
+</section>
+
+<!-- ===== About Section ===== -->
+<section id="about-section">
+  <div class="about-header">About Us</div>
+
+  <section class="about-content">
+    <h2>Church History</h2>
+    <div class="card">
+      <p>In September 1979 ... (full text as before) ...</p>
     </div>
-    <nav>
+  </section>
+
+  <section class="about-content">
+    <h2>Royal Mandate</h2>
+    <div class="card">
+      <p>We are sent to restore the lost souls and destinies back into Christ’s Kingdom...</p>
+    </div>
+  </section>
+
+  <section class="about-content">
+    <h2>Vision & Mission</h2>
+    <div class="card">
+      <p><strong>Vision:</strong> To raise a family of matured kingdom stars who will live Heaven practically on Earth...</p>
+      <p><strong>Mission:</strong></p>
       <ul>
-        <li><a href="#home">Home</a></li>
-        <li><a href="#about">About</a></li>
-        <li><a href="#">Donate</a></li>
-        <li><a href="#">Watch Sermon</a></li>
-        <li><a href="#">Join Us</a></li>
+        <li>To teach through training programmes ...</li>
+        <li>To infuse the vision into believers ...</li>
       </ul>
-    </nav>
-  </header>
-
-  <!-- ===== Home Section ===== -->
-  <section class="hero" id="home">
-    <div class="hero-content">
-      <h1>Royal Dominion Church</h1>
-      <p class="slogan">.............. nurturing the hiers</p>
-      <p class="scripture">“For the earth will be filled with the knowledge of the glory of the Lord as the waters cover the sea.” – Habakkuk 2:14</p>
-      <div class="hero-buttons">
-        <a href="#">Donate</a>
-        <a href="#">Watch Sermon</a>
-        <a href="#">Join Us</a>
-      </div>
     </div>
   </section>
 
-  <!-- spacing between sections -->
-  <div class="section-gap"></div>
+  <div class="center">
+    <a href="pastor-note.html" class="pastor-note-btn">Read Presiding Pastor’s Note</a>
+  </div>
+</section>
 
-  <!-- ===== About Page ===== -->
-  <section id="about">
-    <div class="about-header">
-      <h1>ABOUT US</h1>
-    </div>
+<!-- ===== Registration Section (Placeholder) ===== -->
+<section id="registration">
+  <h2>Register for Events</h2>
+  <p>Google form or other registration details...</p>
+</section>
 
-    <div class="about-block">
-      <div class="about-card">
-        <h2>CHURCH HISTORY</h2>
-        <p>
-          In September 1979 after the tedious school hours... (Your full church history text here)
-        </p>
-      </div>
+<!-- ===== Contact Section (Placeholder) ===== -->
+<section id="contact">
+  <h2>Contact Us</h2>
+  <p>Email, WhatsApp, Address...</p>
+</section>
 
-      <div class="about-card">
-        <h2>ROYAL MANDATE</h2>
-        <p>
-          Sent to restore the lost soul and destinies back into Christ kingdom for presentation through the preaching of the word of Faith.
-        </p>
-      </div>
+<script>
+/* Hamburger toggle */
+const hamburger = document.getElementById('hamburger');
+const navLinks = document.getElementById('nav-links');
+hamburger.addEventListener('click', () => { navLinks.classList.toggle('show'); });
 
-      <div class="about-card">
-        <h2>VISION & MISSION</h2>
-        <p>
-          1. To raise with God a family of matured kingdom stars...<br>
-          2. To teach them through training programmes...<br>
-          3. To infuse the vision into them and release them for the expansion of His Kingdom on the Earth.
-        </p>
-      </div>
+/* Sticky nav */
+const navbar = document.getElementById('navbar');
+window.addEventListener('scroll', () => {
+  if(window.scrollY > 50) { navbar.classList.add('scrolled'); }
+  else { navbar.classList.remove('scrolled'); }
+});
 
-      <div class="about-card" style="text-align:center;">
-        <a href="pastor-note.html" style="color:#4b0082; font-weight:bold; text-decoration:underline;">
-          Read Our Presiding Pastor's Note
-        </a>
-      </div>
-    </div>
-  </section>
+/* Hero image slideshow */
+const slides = document.querySelectorAll('.slides img');
+let currentSlide = 0;
+function changeSlide() {
+  slides[currentSlide].classList.remove('active');
+  currentSlide = (currentSlide+1)%slides.length;
+  slides[currentSlide].classList.add('active');
+}
+setInterval(changeSlide, 5000);
 
-  <!-- ===== Scripts ===== -->
-  <script>
-    function toggleMenu() {
-      document.querySelector('nav ul').classList.toggle('active');
-    }
+/* Slogan subtle slide */
+const slogan = document.getElementById('slogan');
+function slideSlogan() { slogan.style.transform = `translateX(${Math.random()*20-10}px)`; }
+setInterval(slideSlogan, 300);
 
-    /* ===== Hero tilt effect ===== */
-    const heroContent = document.querySelector('.hero-content');
-    document.addEventListener('mousemove', (e) => {
-      const x = (window.innerWidth/2 - e.pageX)/50;
-      const y = (window.innerHeight/2 - e.pageY)/50;
-      heroContent.style.transform = `translateY(-50%) rotateX(${y}deg) rotateY(${x}deg)`;
-    });
-  </script>
+/* Scripture rotation */
+const scriptures = [
+  "Now faith is the substance of things hoped for. – Hebrews 11:1",
+  "Have faith in God. – Mark 11:22",
+  "Faith comes by hearing, and hearing by the word of God. – Romans 10:17",
+  "For we walk by faith, not by sight. – 2 Corinthians 5:7",
+  "If you have faith as small as a mustard seed… – Matthew 17:20",
+  "This is the victory that has overcome the world. – 1 John 5:4"
+];
+const scriptureEl = document.getElementById('scripture');
+let currentScripture = 0;
+function changeScripture() {
+  scriptureEl.classList.remove('active');
+  setTimeout(() => {
+    scriptureEl.textContent = scriptures[currentScripture];
+    scriptureEl.classList.add('active');
+  }, 500);
+  currentScripture = (currentScripture+1)%scriptures.length;
+}
+scriptureEl.textContent = scriptures[0];
+scriptureEl.classList.add('active');
+setInterval(changeScripture, 6000);
+
+/* Hero tilt effect */
+const heroContent = document.querySelector('.hero-content');
+document.addEventListener('mousemove', (e) => {
+  const x = (window.innerWidth/2 - e.pageX)/50;
+  const y = (window.innerHeight/2 - e.pageY)/50;
+  heroContent.style.transform = `translateY(-50%) rotateX(${y}deg) rotateY(${x}deg)`;
+});
+</script>
 </body>
-          </html>
+</html>
