@@ -3,27 +3,22 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Pastor Balogun’s Desk</title>
+  <title>Pastor Sam Balogun – From the Founder’s Desk</title>
 
-  <!-- Google Font for Lobster headline -->
+  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
   <style>
-    /* General Reset */
-    * {
-      margin: 0;
-      padding: 0;
-      box-sizing: border-box;
-    }
+    * {margin:0;padding:0;box-sizing:border-box;}
 
     body {
       font-family: Arial, sans-serif;
       background: #fff;
       color: #333;
-      line-height: 1.6;
+      line-height: 1.7;
     }
 
-    /* Top Navigation (same style as homepage) */
+    /* ======= NAVBAR ======= */
     nav {
       position: sticky;
       top: 0;
@@ -32,68 +27,97 @@
       display: flex;
       justify-content: space-between;
       align-items: center;
-      padding: 1rem 2rem;
-      z-index: 100;
+      padding: 0.5rem 1.5rem;
+      z-index: 999;
     }
-
-    nav .logo {
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
       color: #fff;
-      font-size: 1.5rem;
       font-weight: bold;
+      font-size: 1.2rem;
       text-decoration: none;
     }
-
-    nav ul {
+    .logo-area img {
+      height: 40px;
+      width: auto;
+    }
+    .nav-links {
       list-style: none;
       display: flex;
-      gap: 1.5rem;
+      gap: 1rem;
     }
-
-    nav ul li a {
+    .nav-links a {
       color: #fff;
       text-decoration: none;
       font-weight: 500;
       transition: color 0.3s;
     }
+    .nav-links a:hover {color: #ddd;}
 
-    nav ul li a:hover {
-      color: #ddd;
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: purple;
+        flex-direction: column;
+        width: 200px;
+        text-align: right;
+        padding: 1rem;
+        display: none;
+      }
+      .nav-links.active {display: flex;}
+      .hamburger {display: flex;}
     }
 
-    /* Pastor Photo */
+    /* ======= PAGE CONTENT ======= */
     .pastor-photo {
       display: flex;
       justify-content: center;
       margin: 2rem 0 1rem;
     }
-
     .pastor-photo img {
       max-width: 250px;
-      height: auto;
       border-radius: 10px;
       box-shadow: 0 4px 12px rgba(0,0,0,0.2);
     }
 
-    /* Headline */
+    .headline-container {
+      text-align: center;
+      margin-bottom: 2rem;
+    }
     .headline {
       background: purple;
       color: #fff;
       font-family: 'Lobster', cursive;
-      font-size: 2.5rem;
+      font-size: 2.3rem;
       padding: 0.75rem 2rem;
+      border-radius: 10px;
       display: inline-block;
-      border-radius: 8px;
-      margin: 0 auto 2rem;
-      text-align: center;
+    }
+    .subhead {
+      margin-top: .5rem;
+      font-size: 1rem;
+      color: #555;
     }
 
-    .headline-container {
-      text-align: center;
-    }
-
-    /* Speech Card */
     .speech-card {
-      max-width: 900px;
+      max-width: 950px;
       margin: 0 auto 3rem;
       background: #fff;
       padding: 2rem;
@@ -102,18 +126,16 @@
       border-image: linear-gradient(45deg, #b266ff, #800080) 1;
       box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-
     .speech-card h2 {
       margin-top: 1.5rem;
       color: purple;
     }
+    .speech-card strong {color: purple;}
 
-    /* Bottom Buttons */
     .links {
       text-align: center;
       margin-bottom: 3rem;
     }
-
     .links a {
       display: inline-block;
       margin: 0 1rem;
@@ -124,53 +146,69 @@
       border-radius: 6px;
       transition: background 0.3s;
     }
-
-    .links a:hover {
-      background: #a64ca6;
-    }
+    .links a:hover {background: #a64ca6;}
   </style>
 </head>
 <body>
 
-  <!-- Navigation -->
+  <!-- NAV -->
   <nav>
-    <a href="index.html" class="logo">Your Church Name</a>
-    <ul>
+    <a href="index.html" class="logo-area">
+      <img src="images/logo.png" alt="Kingdom Citizens Church Logo">
+      Kingdom Citizens Church
+    </a>
+
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="departments.html">Departments</a></li>
     </ul>
+
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
   </nav>
 
   <!-- Pastor Photo -->
   <div class="pastor-photo">
-    <img src="balogun.jpg" alt="Pastor Balogun" />
+    <img src="images/balogun.jpg" alt="Pastor Sam Balogun">
   </div>
 
   <!-- Headline -->
   <div class="headline-container">
-    <div class="headline">Pastor Balogun’s Desk</div>
+    <div class="headline">Pastor Sam Balogun</div>
+    <div class="subhead">From the Founder’s Desk</div>
   </div>
 
   <!-- Speech Content -->
   <div class="speech-card">
     <p><strong>Who is a Kingdom Citizen?</strong><br>
-    By creation man was made in the class of God. Adam in the Garden of Eden, by God's wisdom, named all the animals one by one. But when he fell, his wisdom was corrupted. It did not take away the nature of God, yet the nature of the devil—sin and wickedness—spread to every mortal being through natural birth (John 3:5–6; Romans 3:23). But thank God for Jesus, who died for you and wants to spend eternity with you! You must accept that Jesus Christ is your Lord and Savior. Pray this prayer: “Lord Jesus, I am a sinner. Forgive me my sins. I know You died for me and rose on the third day. Wash me with Your blood. Come into my heart. I receive You today as my Lord and Savior. Write my name in the Book of Life. I am born again. I am now a Kingdom Citizen.”</p>
+      By creation man was made in the class of God. Adam in the Garden of Eden, by God's wisdom, named all the animals one by one, but when he fell his wisdom was corrupted. It did not take away the nature of God, yet the nature of the devil—sin and wickedness—spread to every mortal being through natural birth (John 3:5–6; Romans 3:23). But thank God for Jesus, who died for you and wants to spend eternity with you! You must accept that Jesus Christ is your Lord and Savior. Pray this prayer: “Lord Jesus, I am a sinner. Forgive me my sin. I know You died for me and rose on the third day. Wash me with Your blood. Come into my heart. I receive You today as my Lord and Savior. Write my name in the Book of Life. I am born again. I am now a Kingdom Citizen.”</p>
 
     <h2>Know Your Rights as a Kingdom Citizen</h2>
-    <p><strong>1. You Are a New Creation:</strong> 2 Corinthians 5:17 …</p>
-    <p><strong>2. Your Sins Are Forgiven:</strong> Romans 8:1 …</p>
-    <p><strong>3. Free from Curses:</strong> Galatians 3:13 …</p>
-    <p><strong>4. Satan Is Under Your Feet:</strong> Ephesians 1:21 …</p>
+    <p><strong>1. You Are a New Creation:</strong> 2 Corinthians 5:17 – Therefore if any man be in Christ he is a new creature: old things are passed away; behold, all things are become new. As you have given your life to Christ, you become a new citizen of a new Kingdom and a member of God's family on Earth. You possess Heaven's green card and are entitled to the second resurrection; the second death has no power over you (2 Corinthians 5:17; 1 John 4:5).</p>
+
+    <p><strong>2. Your Sins Are Forgiven:</strong> Romans 8:1 – “There is therefore now no condemnation to those who are in Christ Jesus.” Salvation is a product of grace, not works. By the blood of Jesus your sins are forgiven; you are thoroughly made clean and perfect. When the devil reminds you of your former sins, tell him to get lost and recite Romans 8:1.</p>
+
+    <p><strong>3. Free from Curses:</strong> Galatians 3:13 – “Christ has redeemed us from the curse of the law, being made a curse for us; for it is written, Cursed is every one that hangeth on a tree.” You are now free from every curse—poverty, failure, sickness, barrenness. No demonic agent or charm can harm you (Num 23:23; Isa 54:17; Luke 10:19).</p>
+
+    <p><strong>4. Satan Is Under Your Feet:</strong> Ephesians 1:21 – “And hath raised us up together and made us sit together in heavenly places in Christ Jesus, far above all principality and power.” Your new status makes you victorious over the devil and his works (Psalm 82:5–6; John 10:34–35).</p>
 
     <h2>Know Your Duties as a Kingdom Citizen</h2>
-    <p>You need knowledge—Hosea 4:6 … Attend foundation classes, study the Word (2 Timothy 2:15), read the Bible (2 Timothy 3:16), and do not miss church programmes (Hebrews 10:25). Get involved in church activities and join a service group.</p>
+    <p>Every member of a kingdom enjoys rights and benefits but also has duties. Our constitution is the Bible. To enjoy these privileges:</p>
+    <ul>
+      <li><strong>You Need Knowledge:</strong> Hosea 4:6; John 8:32 – Learn how the Kingdom operates so you won’t be a stumbling block.</li>
+      <li><strong>Attend Foundation Class:</strong> Discipleship school for beginners. Saturday mornings at 8 a.m.</li>
+      <li><strong>Study the Word:</strong> 2 Timothy 2:15; 3:16 – Read the Bible more than any other book. Also read anointed Christian books (Daniel 9:2).</li>
+      <li><strong>Don’t Miss Church Programmes:</strong> Hebrews 10:25 – Be nurtured under the anointing of the Holy Ghost.</li>
+      <li><strong>Get Involved:</strong> Join a service group; don’t be a bench warmer.</li>
+    </ul>
   </div>
 
-  <!-- Links -->
+  <!-- Bottom Links -->
   <div class="links">
     <a href="about.html">← Back to About Page</a>
-    <a href="departments.html">Visit Departments & Groups →</a>
+    <a href="departments.html">Visit Departments &amp; Groups →</a>
   </div>
 
 </body>
