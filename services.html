@@ -4,85 +4,71 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Our Services – Kingdom Citizens Church INT'L</title>
-  <link rel="stylesheet" href="style.css" />
   <style>
-    /* ===== Page-specific hero ===== */
-    .hero {
-      background: url('timi1.jpg') center center/cover no-repeat;
-      min-height: 70vh;
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      text-align: center;
-      color: #fff;
-      position: relative;
-    }
-    .hero::after {
-      content:"";
-      position:absolute;
-      inset:0;
-      background:linear-gradient(to bottom,
-                  rgba(0,100,0,0.55),
-                  rgba(218,165,32,0.55));
-    }
-    .hero h1 {
-      position: relative;
-      font-size: 3rem;
-      z-index:1;
-      text-shadow:2px 2px 4px #000;
-    }
+    /* === RESET === */
+    *{margin:0;padding:0;box-sizing:border-box;font-family:Arial, Helvetica, sans-serif;}
 
-    /* ===== Services section ===== */
-    .services {
-      background: linear-gradient(135deg,#006400 0%,#daa520 100%);
+    /* === NAVBAR (Same as About Page) === */
+    .navbar{
+      background:linear-gradient(90deg,#006400 0%,#daa520 100%);
+      display:flex;
+      justify-content:space-between;
+      align-items:center;
+      padding:15px 30px;
+      position:sticky;
+      top:0;
+      z-index:1000;
+    }
+    .nav-left{
+      display:flex;
+      align-items:center;
+      gap:10px;
+    }
+    .nav-left .logo{
+      height:60px;
+    }
+    .nav-left .brand{
       color:#fff;
-      padding:60px 20px;
+      font-size:1.5rem;
+      font-weight:700;
     }
-    .services h2 {
-      text-align:center;
-      font-size:2.2rem;
-      margin-bottom:30px;
-      border-bottom:3px solid #daa520;
-      display:inline-block;
-      padding-bottom:10px;
+    .nav-links a{
+      color:#fff;
+      text-decoration:none;
+      margin-left:25px;
+      font-weight:600;
+      transition:color .3s;
     }
-    .service-list {
-      max-width:800px;
-      margin:0 auto;
-      font-size:1.1rem;
-      line-height:1.8;
-    }
-    .service-list h3 {
+    .nav-links a:hover,
+    .nav-links a.active{
       color:#ffd700;
-      margin-top:20px;
-      font-size:1.3rem;
     }
-    /* ===== Responsive nav fixes ===== */
-    .hamburger {
+    .hamburger{
+      font-size:1.8rem;
+      color:#fff;
       cursor:pointer;
+      display:none;
     }
-    .mobile-nav {
+    .mobile-nav{
       position:fixed;
-      top:0;right:-40%;
+      top:0;
+      right:-40%;
       width:40%;
       height:100%;
       background:linear-gradient(180deg,#006400 0%,#daa520 100%);
       padding:80px 20px;
-      box-shadow:-2px 0 5px rgba(0,0,0,0.3);
-      transition: right 0.3s ease;
+      transition:right .3s ease;
       z-index:999;
     }
-    .mobile-nav.open { right:0; }
-    .mobile-nav a {
+    .mobile-nav.open{ right:0; }
+    .mobile-nav a{
       display:block;
-      margin:15px 0;
       color:#fff;
-      font-size:1.1rem;
+      margin:20px 0;
       text-decoration:none;
-      border-bottom:1px solid rgba(255,255,255,0.2);
-      padding-bottom:5px;
+      font-weight:600;
     }
-    .close-btn {
+    .close-btn{
       position:absolute;
       top:20px;
       right:20px;
@@ -90,15 +76,72 @@
       color:#fff;
       cursor:pointer;
     }
+    @media(max-width:768px){
+      .nav-links{ display:none; }
+      .hamburger{ display:block; }
+    }
+
+    /* === HERO SECTION === */
+    .hero{
+      background:url('timi1.jpg') center/cover no-repeat;
+      height:60vh;
+      display:flex;
+      justify-content:center;
+      align-items:center;
+      text-align:center;
+      color:white;
+      background-attachment:fixed;
+    }
+    .hero h1{
+      font-size:3rem;
+      background:rgba(0,0,0,0.5);
+      padding:20px;
+      border-radius:10px;
+    }
+
+    /* === SERVICES CONTENT === */
+    .services{
+      max-width:900px;
+      margin:50px auto;
+      padding:0 20px;
+    }
+    .services h2{
+      text-align:center;
+      color:#006400;
+      margin-bottom:30px;
+      font-size:2.2rem;
+    }
+    .service-item{
+      background:#f9f9f9;
+      border-left:6px solid #006400;
+      padding:20px;
+      margin-bottom:20px;
+      border-radius:6px;
+      box-shadow:0 0 8px rgba(0,0,0,0.1);
+    }
+    .service-item h3{
+      color:#daa520;
+      margin-bottom:8px;
+      font-size:1.3rem;
+    }
+    footer{
+      background:#006400;
+      color:#fff;
+      text-align:center;
+      padding:20px 0;
+      margin-top:40px;
+    }
   </style>
 </head>
 <body>
 
-  <!-- ===== Navigation ===== -->
+  <!-- ===== NAVIGATION ===== -->
   <header class="navbar">
     <div class="nav-left">
-      <img src="logo11.jpg" alt="Kingdom Citizens Church Logo" style="height:60px;">
+      <img src="logo11.jpg" alt="Kingdom Citizens Church Logo" class="logo">
+      <h1 class="brand">Kingdom Citizens Church INT'L</h1>
     </div>
+
     <nav class="nav-links desktop-nav">
       <a href="index.html">Home</a>
       <a href="about.html">About</a>
@@ -106,7 +149,9 @@
       <a href="services.html" class="active">Services</a>
       <a href="contact.html">Contact</a>
     </nav>
+
     <div class="hamburger" onclick="toggleNav()">&#9776;</div>
+
     <div class="mobile-nav" id="mobileNav">
       <div class="close-btn" onclick="toggleNav()">&times;</div>
       <a href="index.html">Home</a>
@@ -117,43 +162,45 @@
     </div>
   </header>
 
-  <!-- ===== Hero ===== -->
+  <!-- ===== HERO ===== -->
   <section class="hero">
     <h1>Our Services</h1>
   </section>
 
-  <!-- ===== Services Content ===== -->
+  <!-- ===== SERVICES CONTENT ===== -->
   <section class="services">
-    <div class="service-list">
-      <h2>Worship Schedule</h2>
+    <h2>Join Us in Worship & Fellowship</h2>
 
-      <h3>Sunday – Royal Service</h3>
-      <p>
-        <strong>Manna from Heaven:</strong> 8:00 – 9:00 am<br/>
-        <strong>Royal Service:</strong> 9:00 – 11:30 am
-      </p>
+    <div class="service-item">
+      <h3>Sunday Royal Service</h3>
+      <p><strong>Manna from Heaven:</strong> 8:00 – 9:00 AM</p>
+      <p><strong>Royal Service:</strong> 9:00 – 11:30 AM</p>
+    </div>
 
+    <div class="service-item">
       <h3>Morning Showers</h3>
-      <p>Wednesday – 5:30 pm</p>
+      <p>Wednesday – 5:30 PM</p>
+    </div>
 
-      <h3>Word &amp; Communion Service</h3>
-      <p>Every Wednesday at 5:30 pm</p>
+    <div class="service-item">
+      <h3>Word & Communion Service</h3>
+      <p>Every Wednesday – 5:30 PM</p>
+    </div>
 
-      <h3>Prayer of Faith Night Vigil</h3>
-      <p>Every Last Friday of the month – 11:00 pm to 4:00 am</p>
+    <div class="service-item">
+      <h3>Prayer of Faith</h3>
+      <p>Every Last Friday Vigil – 11:00 PM to 4:00 AM</p>
     </div>
   </section>
 
-  <footer style="text-align:center;padding:20px;background:#003300;color:#fff;">
-    &copy; <script>document.write(new Date().getFullYear());</script>
-    Kingdom Citizens Church INT'L. All Rights Reserved.
+  <footer>
+    &copy; 2025 Kingdom Citizens Church INT'L. All rights reserved.
   </footer>
 
   <script>
-    function toggleNav() {
+    function toggleNav(){
       document.getElementById('mobileNav').classList.toggle('open');
     }
   </script>
-
 </body>
 </html>
