@@ -5,80 +5,98 @@
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <title>Kingdom Citizens Church INT'L</title>
 
-<!-- Fonts -->
+<!-- Google Fonts -->
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
 <style>
-/* ===== Global ===== */
-*{box-sizing:border-box;margin:0;padding:0}
-html,body{height:100%;font-family:Roboto,system-ui,-apple-system,"Segoe UI",Arial;scroll-behavior:smooth;background:#fff;color:#222}
-a{color:inherit;text-decoration:none}
+/* ===== GLOBAL ===== */
+*{box-sizing:border-box;margin:0;padding:0;}
+html,body{height:100%;font-family:Roboto,system-ui,-apple-system,"Segoe UI",Arial;scroll-behavior:smooth;background:#fff;color:#222;}
+a{color:inherit;text-decoration:none;}
 
-/* ===== Navigation ===== */
+/* ===== NAVIGATION ===== */
 nav{
-  position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;
-  background:linear-gradient(90deg,#7CFC00,#FFD700); /* light green to sharp gold */
-  padding:12px 22px;z-index:1200;transition:all .25s ease;box-shadow:0 2px 0 rgba(0,0,0,0.06);
+  position:fixed;top:0;left:0;width:100%;
+  display:flex;justify-content:space-between;align-items:center;
+  background:linear-gradient(90deg,#7CFC00,#FFD700);
+  padding:12px 22px;
+  z-index:1200;
+  transition:all .25s ease;
+  box-shadow:0 2px 0 rgba(0,0,0,0.06);
 }
-nav.scrolled{padding:8px 20px;box-shadow:0 6px 20px rgba(0,0,0,0.18)}
-.nav-left{display:flex;align-items:center;gap:12px}
-.nav-left img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15)}
-.nav-left .brand-wrap .brand-text{color:#fff;font-weight:900;font-size:1.2rem;white-space:nowrap;text-shadow:0 2px 4px rgba(0,0,0,0.4);}
-.nav-right ul{display:flex;gap:18px;list-style:none;align-items:center}
-.nav-right a{color:#fff;font-weight:700;padding:6px 8px;border-radius:6px;transition:all .18s}
-.nav-right a:hover{background:rgba(255,255,255,0.15)}
+nav.scrolled{padding:8px 20px;box-shadow:0 6px 20px rgba(0,0,0,0.18);}
+.nav-left{display:flex;align-items:center;gap:12px;}
+.nav-left img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15);}
+.nav-left .brand-text{color:#fff;font-weight:900;font-size:1.2rem;text-shadow:0 2px 4px rgba(0,0,0,0.4);}
+.nav-right ul{display:flex;gap:18px;list-style:none;align-items:center;}
+.nav-right a{color:#fff;font-weight:700;padding:6px 8px;border-radius:6px;transition:all .18s;}
+.nav-right a:hover{background:rgba(255,255,255,0.15);}
 
-/* Hamburger */
-.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
-.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px}
-@media(max-width:820px){
-  .nav-right{position:fixed;right:-100%;top:0;height:100%;background:linear-gradient(90deg,#7CFC00,#FFD700);padding:40px 20px;flex-direction:column;gap:30px;transition:right .3s ease;min-width:200px}
-  .nav-right.show{right:0}
-  .hamburger{display:flex}
+/* Hamburger icon */
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;}
+.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;}
+
+/* --- Mobile Sidebar --- */
+@media (max-width:820px){
+  .nav-right{
+    position:fixed;
+    top:0;
+    right:-260px;           /* hide offscreen */
+    width:240px;
+    height:100%;
+    background:linear-gradient(180deg,#7CFC00,#FFD700);
+    padding:80px 24px 40px;
+    flex-direction:column;
+    gap:30px;
+    transition:right .3s ease;
+    box-shadow:-4px 0 12px rgba(0,0,0,0.3);
+  }
+  .nav-right.show{right:0;} /* slide in */
+  .hamburger{display:flex;}
 }
 
-/* ===== Hero ===== */
+/* ===== HERO ===== */
 .hero{
-  position:relative;height:92vh;min-height:520px;display:flex;align-items:center;justify-content:center;overflow:hidden;
+  position:relative;
+  height:92vh;min-height:520px;
+  display:flex;align-items:center;justify-content:center;
+  overflow:hidden;
 }
-.slides{position:absolute;inset:0}
-.slides img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.8s ease}
-.slides img.active{opacity:1}
-.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg, rgba(0,0,0,0.25) 0%, rgba(0,0,0,0.45) 70%);pointer-events:none}
+.slides{position:absolute;inset:0;}
+.slides img{position:absolute;width:100%;height:100%;object-fit:cover;opacity:0;transition:opacity 1.8s ease;}
+.slides img.active{opacity:1;}
+.hero-overlay{position:absolute;inset:0;background:linear-gradient(180deg,rgba(0,0,0,0.25) 0%,rgba(0,0,0,0.45) 70%);pointer-events:none;}
 
 .hero-content{
-  position:relative;z-index:6;text-align:center;color:#fff;padding:0 20px;transform:translateY(0);
-  transition:transform .12s linear;
+  position:relative;z-index:6;text-align:center;color:#fff;padding:0 20px;
 }
-.hero-logo{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 12px;border:3px solid rgba(255,255,255,0.9)}
-.hero-title{font-family:'Lobster',cursive;font-size:3.2rem;line-height:1;letter-spacing:0.5px;margin-bottom:6px;text-shadow:0 6px 26px rgba(0,0,0,0.5)}
+.hero-logo{width:110px;height:110px;border-radius:50%;object-fit:cover;margin:0 auto 12px;border:3px solid rgba(255,255,255,0.9);}
+.hero-title{font-family:'Lobster',cursive;font-size:3.2rem;line-height:1;letter-spacing:0.5px;margin-bottom:6px;text-shadow:0 6px 26px rgba(0,0,0,0.5);}
 .hero-slogan {
-  color:#fff;font-weight:700;font-style:italic;font-size:1.2rem;white-space:nowrap;overflow:hidden;display:block;
+  color:#fff;font-weight:700;font-style:italic;font-size:1.2rem;
+  white-space:nowrap;overflow:hidden;display:block;
   margin:10px auto 8px;max-width:90vw;
 }
 
-/* news ticker */
-.ticker {
-  display:inline-block;white-space:nowrap;padding-left:100%;animation:ticker 16s linear infinite;
-}
-@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-100%)}}
+/* news ticker animation */
+.ticker {display:inline-block;white-space:nowrap;padding-left:100%;animation:ticker 16s linear infinite;}
+@keyframes ticker{0%{transform:translateX(0)}100%{transform:translateX(-100%);}}
 
 /* scriptures */
-.scripture{margin-top:18px;font-size:1rem;font-weight:700;opacity:0;transition:opacity .6s ease;text-shadow:0 4px 18px rgba(0,0,0,0.45);max-width:900px;margin-left:auto;margin-right:auto}
-.scripture.active{opacity:1}
+.scripture{margin-top:18px;font-size:1rem;font-weight:700;opacity:0;transition:opacity .6s ease;text-shadow:0 4px 18px rgba(0,0,0,0.45);max-width:900px;margin-left:auto;margin-right:auto;}
+.scripture.active{opacity:1;}
 
 /* hero buttons */
-.hero-ctas{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap}
-.hero-ctas a{display:inline-block;padding:10px 18px;border-radius:999px;font-weight:700;font-size:.9rem;color:#fff;transition:transform .12s ease,box-shadow .12s}
-.hero-ctas a.join{background:#28a745}
-.hero-ctas a.donate{background:#ff5a1f}
-.hero-ctas a.watch{background:#1e90ff}
-.hero-ctas a:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.18)}
-
+.hero-ctas{margin-top:20px;display:flex;gap:10px;justify-content:center;flex-wrap:wrap;}
+.hero-ctas a{display:inline-block;padding:10px 18px;border-radius:999px;font-weight:700;font-size:.9rem;color:#fff;transition:transform .12s ease,box-shadow .12s;}
+.hero-ctas a.join{background:#28a745;}
+.hero-ctas a.donate{background:#ff5a1f;}
+.hero-ctas a.watch{background:#1e90ff;}
+.hero-ctas a:hover{transform:translateY(-3px);box-shadow:0 8px 24px rgba(0,0,0,0.18);}
 </style>
 </head>
-<body>
 
+<body>
 <!-- NAV -->
 <nav id="topNav">
   <div class="nav-left">
@@ -126,47 +144,44 @@ nav.scrolled{padding:8px 20px;box-shadow:0 6px 20px rgba(0,0,0,0.18)}
     <img src="logo1.jpg" alt="church logo" class="hero-logo">
     <div class="hero-title">Kingdom Citizens Church INT'L</div>
 
-    <div class="hero-slogan" aria-hidden="false">
+    <div class="hero-slogan">
       <span class="ticker">.............. nurturing the heirs &nbsp;&nbsp;&nbsp; • &nbsp;&nbsp;&nbsp; .............. nurturing the heirs</span>
     </div>
 
     <div class="scripture" id="scripture" aria-live="polite"></div>
 
     <div class="hero-ctas" role="navigation" aria-label="Hero CTAs">
-      <a href="join.html" class="join" title="Join Us">Join Us</a>
-      <a href="donate.html" class="donate" title="Donate">Donate</a>
-      <a href="#" class="watch" title="Watch Sermons">Watch Sermons</a>
+      <a href="join.html" class="join">Join Us</a>
+      <a href="donate.html" class="donate">Donate</a>
+      <a href="#" class="watch">Watch Sermons</a>
     </div>
   </div>
 </section>
 
-<div style="height:140px"></div> <!-- gap before next sections -->
+<div style="height:140px"></div><!-- gap before next sections -->
 
 <!-- CONTACT -->
-<section id="contact" style="padding:48px 20px;max-width:1100px;margin:36px auto">
+<section id="contact" style="padding:48px 20px;max-width:1100px;margin:36px auto;">
   <h3>Contact Us</h3>
   <p>Email, WhatsApp, and address will go here.</p>
 </section>
 
+<!-- ===== SCRIPTS ===== -->
 <script>
-/* Hamburger toggle */
 function toggleMenu(){
-  const nav = document.getElementById('navRight');
-  nav.classList.toggle('show');
+  document.getElementById('navRight').classList.toggle('show');
 }
-
-/* Close menu when clicking link on mobile */
 document.querySelectorAll('#navRight a').forEach(a=>{
   a.addEventListener('click',()=>{ if(window.innerWidth<=820) toggleMenu(); });
 });
 
-/* Sticky nav smaller on scroll */
+/* shrink nav on scroll */
 window.addEventListener('scroll', () => {
   const el = document.getElementById('topNav');
   if(window.scrollY>60) el.classList.add('scrolled'); else el.classList.remove('scrolled');
 });
 
-/* Hero slideshow */
+/* hero slideshow */
 const slides = Array.from(document.querySelectorAll('.slides img'));
 let slideIndex = 0;
 function nextSlide(){
@@ -176,7 +191,7 @@ function nextSlide(){
 }
 setInterval(nextSlide, 5000);
 
-/* Scriptures rotation */
+/* scripture rotation */
 const scriptures = [
   "Now faith is the substance of things hoped for. – Hebrews 11:1",
   "Have faith in God. – Mark 11:22",
@@ -189,7 +204,6 @@ const scriptures = [
 ];
 const scriptureEl = document.getElementById('scripture');
 let si = 0;
-
 function rotateScripture() {
   scriptureEl.classList.remove('active');
   setTimeout(() => {
