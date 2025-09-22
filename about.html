@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Learn about the history, vision, mission and royal mandate of Kingdom Citizens Church INT'L.">
+  <title>About Us - Kingdom Citizens Church INT'L</title>
+  <link rel="icon" href="favicon.ico">
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+  <style>
+    *{box-sizing:border-box;margin:0;padding:0;}
+    html,body{height:100%;font-family:Roboto,sans-serif;background:#fff;color:#222;scroll-behavior:smooth;}
+    a{color:inherit;text-decoration:none;}
+
+    /* NAVIGATION */
+    nav{
+      position:fixed;top:0;left:0;width:100%;display:flex;justify-content:space-between;align-items:center;
+      background:linear-gradient(90deg,#7CFC00,#FFD700);
+      padding:12px 22px;z-index:1200;transition:all .25s ease;
+    }
+    .nav-left{display:flex;align-items:center;gap:12px}
+    .nav-left img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15)}
+    .nav-left .brand-wrap .brand-text{color:#fff;font-weight:900;font-size:1.2rem;text-shadow:0 2px 4px rgba(0,0,0,0.4);}
+    .nav-right ul{display:flex;gap:18px;list-style:none;align-items:center}
+    .nav-right a{color:#fff;font-weight:700;padding:6px 8px;border-radius:6px;transition:all .18s}
+    .nav-right a:hover{background:rgba(255,255,255,0.15)}
+    .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+    .hamburger span{width:26px;height:3px;background:#fff;border-radius:2px}
+    @media(max-width:820px){
+      .nav-right{position:fixed;right:-100%;top:0;height:100%;background:linear-gradient(90deg,#7CFC00,#FFD700);padding:40px 20px;flex-direction:column;gap:30px;transition:right .3s ease;min-width:200px}
+      .nav-right.show{right:0;}
+      .hamburger{display:flex;}
+    }
+
+    /* HERO IMAGE FOR ABOUT */
+    .hero-about{
+      position:relative;height:65vh;min-height:400px;display:flex;align-items:center;justify-content:center;overflow:hidden;
+    }
+    .hero-about img{
+      width:100%;height:100%;object-fit:cover;
+    }
+    .hero-about .about-title{
+      position:absolute;color:#fff;font-family:'Lobster',cursive;font-size:4rem;font-weight:900;text-shadow:0 4px 24px rgba(0,0,0,0.5);
+      text-transform:uppercase;letter-spacing:2px;text-align:center;
+    }
+
+    /* CONTENT SECTION */
+    main#about-main{background:#fefefe;padding:60px 20px;}
+    .content-card{
+      max-width:1000px;margin:50px auto;background:#fff;border-radius:20px;padding:32px;box-shadow:0 18px 36px rgba(0,0,0,0.08);
+      position:relative;overflow:hidden;
+    }
+    .content-card::before{
+      content:"";position:absolute;top:0;left:0;width:100%;height:100%;background:linear-gradient(160deg,#7CFC00,#FFD700);opacity:0.08;border-radius:20px;z-index:0;
+    }
+    .content-card h2{
+      font-family:'Lobster',cursive;color:#4b0082;font-size:2rem;margin-bottom:16px;position:relative;z-index:1;
+    }
+    .content-card p, .content-card ul{
+      font-size:1rem;line-height:1.7;color:#222;position:relative;z-index:1;
+    }
+    .section-gap{height:80px;}
+  </style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="topNav">
+  <div class="nav-left">
+    <img src="logo1.jpg" alt="Kingdom Citizens Church logo">
+    <div class="brand-wrap">
+      <div class="brand-text">Kingdom Citizens Church INT'L</div>
+    </div>
+  </div>
+  <div class="hamburger" onclick="toggleMenu()">
+    <span></span><span></span><span></span>
+  </div>
+  <div class="nav-right" id="navRight">
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="departments.html">Departments</a></li>
+      <li><a href="pastor-note.html">Pastor’s Desk</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="join.html">Join Us</a></li>
+      <li><a href="donate.html">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO ABOUT IMAGE -->
+<section class="hero-about">
+  <img src="balogun2.jpg" alt="Church congregation background">
+  <div class="about-title">ABOUT US</div>
+</section>
+
+<!-- CONTENT SECTIONS -->
+<main id="about-main">
+
+  <!-- HISTORY -->
+  <section class="content-card">
+    <h2>CHURCH HISTORY</h2>
+    <p>In September 1979 after the tedious school hours, I engaged myself discussing with some Christian Brethren about the end time agenda of God. Particularly our discussion was centered on the second coming of our Lord Jesus Christ. A few minutes after this discussion, I left them and I was alone in a room when suddenly I was taken up in the spirit, I lifted up my eyes and looked. Behold I saw Jesus Christ seated upon a throne high and exalted. The whole sky was full of His Glory.</p>
+    <p>The Son of God appeared in the clouds of Heaven in power and great glory. I saw thousands of His Angels around the throne sent through the whole Earth. While later I saw these Angels cross-examining both slave and free according to each person's deeds. Those found guilty were seen burning inside hot furnaces of fire.</p>
+    <p>I saw a square shaped glass house by the right hand side of the throne of Judgment reserved for the blameless. When it got to my turn to be cross examined, I was found blameless and I was ushered into this square shaped glass house.</p>
+    <p>As I took the last step to enter into this glorious building, I was transformed; the whole apparel on me changed to a golden-linen material. Though few of us could make it into this glass house full of everything you need here on Earth — an Eden of no pain, no sorrow, no night, no death, no heat, no hunger. This is Heaven's Kingdom on the Earth. (Rev. 21:1-End)</p>
+  </section>
+
+  <div class="section-gap"></div>
+
+  <!-- VISION -->
+  <section class="content-card">
+    <h2>THE VISION</h2>
+    <p>Our vision is to raise and nurture a generation of Kingdom Citizens who will live Heaven on Earth. We aim to restore lost souls and destinies back into Christ's Kingdom through the preaching of the Word of Faith. This vision drives every activity in the church and ensures that our members live a life empowered by faith and divine purpose.</p>
+  </section>
+
+  <div class="section-gap"></div>
+
+  <!-- ROYAL MANDATE -->
+  <section class="content-card">
+    <h2>ROYAL MANDATE</h2>
+    <p>We are sent to restore the lost souls and destinies back into Christ's Kingdom for preservation through the preaching of the Word of Faith. Our mandate is to guide, train, and equip every believer to fulfill their divine purpose and live victoriously in Christ.</p>
+  </section>
+
+  <div class="section-gap"></div>
+
+  <!-- MISSION -->
+  <section class="content-card">
+    <h2>MISSION STATEMENT</h2>
+    <p>Why are we sent?</p>
+    <ul>
+      <li>To raise with God a family of matured kingdom stars who will live Heaven practically on the Earth, getting them ready for the second coming of the KING.</li>
+      <li>To teach them through training programmes how to use the Good News of His Kingdom to solve life challenges in marriage, career, profession, business, finances, moral, and spiritual matters.</li>
+      <li>To infuse the vision into them and release them for the expansion of His Kingdom on the Earth.</li>
+    </ul>
+  </section>
+
+</main>
+
+<script>
+function toggleMenu(){
+  document.getElementById('navRight').classList.toggle('show');
+}
+document.querySelectorAll('#navRight a').forEach(a=>{
+  a.addEventListener('click',()=>{ if(window.innerWidth<=820) toggleMenu(); });
+});
+</script>
+</body>
+</html>
