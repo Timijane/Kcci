@@ -145,6 +145,9 @@ footer p{margin:8px 0}
 <section class="hero" id="hero">
   <div class="slides">
     <img src="timi1.jpg" class="active" alt="">
+    <img src="timi2.jpg" alt="">
+    <img src="timi3.jpg" alt="">
+    <img src="timi4.jpg" alt="">
   </div>
   <div class="hero-overlay"></div>
   <div class="hero-content">
@@ -162,7 +165,7 @@ footer p{margin:8px 0}
 
 <div style="height:140px"></div>
 
-<!-- SERVICES PLAYCARDS -->
+<!-- SERVICES -->
 <section id="services">
   <h2>Our Services</h2>
   <div class="card-container">
@@ -191,8 +194,12 @@ footer p{margin:8px 0}
 <section id="videos">
   <h2>Watch Sermons</h2>
   <div class="card-container">
-    <div class="card"><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Kingdomcitizenchurchintl/videos/1133165812102782/&show_text=0&width=320" height="180" allowfullscreen></iframe></div>
-    <div class="card"><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Kingdomcitizenchurchintl/videos/622014654000762/&show_text=0&width=320" height="180" allowfullscreen></iframe></div>
+    <div class="card">
+      <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Kingdomcitizenchurchintl/videos/1133165812102782/&show_text=0&width=320" height="180" allowfullscreen></iframe>
+    </div>
+    <div class="card">
+      <iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Kingdomcitizenchurchintl/videos/622014654000762/&show_text=0&width=320" height="180" allowfullscreen></iframe>
+    </div>
   </div>
 </section>
 
@@ -206,7 +213,7 @@ footer p{margin:8px 0}
   </div>
 </section>
 
-<!-- CONTACT -->
+!-- CONTACT -->
 <section id="contact">
   <h2>Contact Us</h2>
   <div class="contact-info">
@@ -216,77 +223,79 @@ footer p{margin:8px 0}
     </div>
     <div>
       <h4>Phone</h4>
-      <p>Call: <a href="tel:07027175427">07027175427</a></p>
-      <p>WhatsApp: <a href="https://wa.me/2348034280774" target="_blank">+234 803 428 0774</a></p>
+      <p>Call: <a href="tel:07027175432">07027175432</a><br>
+      WhatsApp: <a href="https://wa.me/2347027175432" target="_blank">+2347027175432</a></p>
     </div>
     <div>
-      <h4>Email & Website</h4>
-      <p>Email: <a href="mailto:info@kingdomcitizenschurch.com">info@kingdomcitizenschurch.com</a></p>
-      <p>Website: <a href="https://kingdomcitizenschurch.com" target="_blank">kingdomcitizenschurch.com</a></p>
+      <h4>Email</h4>
+      <p><a href="mailto:info@kingdomcitizenschurchintl.org">info@kingdomcitizenschurchintl.org</a></p>
     </div>
   </div>
   <div class="map-container">
-    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.7031121971713!2d3.342142315297184!3d7.147424794773541!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b9c6b9f4e539d%3A0x3e1e1a26ee9e78d9!2sWole%20Iredele%20Street%2C%20Abeokuta%2C%20Ogun%20State%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1695392832321!5m2!1sen!2sng" width="100%" height="350" style="border:0;" allowfullscreen="" loading="lazy"></iframe>
+    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3966.123456789!2d3.341234567!3d7.147654321!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103b1abcd12345%3A0xabcdef1234567890!2sKingdom%20Citizens%20Church%20INTL!5e0!3m2!1sen!2sng!4v1695412345678" width="100%" height="400" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <p>Follow Us:</p>
-  <a href="https://www.facebook.com/Kingdomcitizenchurchintl" target="_blank">Facebook</a> |
-  <a href="https://youtube.com/@kingdomcitizenschurchinter3209?si=7Lgj7va7MsfO2K5H" target="_blank">YouTube</a> |
-  <a href="https://wa.me/2348034280774" target="_blank">WhatsApp</a>
   <p>&copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved.</p>
+  <p>
+    Follow us:
+    <a href="https://facebook.com/kingdomcitizenschurchintl" target="_blank">Facebook</a> |
+    <a href="https://instagram.com/kingdomcitizenschurchintl" target="_blank">Instagram</a> |
+    <a href="https://youtube.com/kingdomcitizenschurchintl" target="_blank">YouTube</a>
+  </p>
 </footer>
 
+<!-- ===== SCRIPTS ===== -->
 <script>
-/* ===== Navigation ===== */
-const navRight = document.getElementById('navRight');
+// Hamburger toggle
 const hamburger = document.getElementById('hamburger');
+const navRight = document.getElementById('navRight');
 const closeBtn = document.getElementById('closeBtn');
-hamburger.addEventListener('click', () => navRight.classList.toggle('show'));
+
+hamburger.addEventListener('click', () => navRight.classList.add('show'));
 closeBtn.addEventListener('click', () => navRight.classList.remove('show'));
-document.querySelectorAll('#navRight a').forEach(a=>{
-  a.addEventListener('click',()=>{ if(window.innerWidth<=820) navRight.classList.remove('show'); });
-});
+
+// Navbar scroll effect
+const nav = document.getElementById('topNav');
 window.addEventListener('scroll', () => {
-  const el = document.getElementById('topNav');
-  if(window.scrollY>60) el.classList.add('scrolled'); else el.classList.remove('scrolled');
+  if(window.scrollY > 60){nav.classList.add('scrolled')}
+  else{nav.classList.remove('scrolled')}
 });
 
-/* ===== Hero Slideshow ===== */
-const slides = Array.from(document.querySelectorAll('.slides img'));
+// Hero slider
 let slideIndex = 0;
-function nextSlide(){
-  slides.forEach(s=>s.classList.remove('active'));
-  slideIndex = (slideIndex+1)%slides.length;
-  slides[slideIndex].classList.add('active');
+const slides = document.querySelectorAll('.slides img');
+function showSlides(){
+  slides.forEach(slide => slide.classList.remove('active'));
+  slideIndex++;
+  if(slideIndex > slides.length){slideIndex = 1;}
+  slides[slideIndex-1].classList.add('active');
+  setTimeout(showSlides, 5000);
 }
-setInterval(nextSlide, 5000);
+showSlides();
 
-/* ===== Scriptures Rotation ===== */
+// Scriptures ticker
 const scriptures = [
-  "Now faith is the substance of things hoped for. – Hebrews 11:1",
-  "Have faith in God. – Mark 11:22",
-  "So then faith comes by hearing, and hearing by the word of God. – Romans 10:17",
-  "For we walk by faith, not by sight. – 2 Corinthians 5:7",
-  "If you have faith as small as a mustard seed… – Matthew 17:20",
-  "This is the victory that has overcome the world, even our faith. – 1 John 5:4",
-  "But let him ask in faith, nothing wavering. – James 1:6",
-  "The life I now live in the body, I live by faith in the Son of God. – Galatians 2:20"
+  "Psalm 23:1 - The Lord is my shepherd; I shall not want.",
+  "Jeremiah 29:11 - For I know the plans I have for you, declares the Lord.",
+  "Philippians 4:13 - I can do all things through Christ who strengthens me.",
+  "Isaiah 40:31 - Those who hope in the Lord will renew their strength."
 ];
+let scriptureIndex = 0;
 const scriptureEl = document.getElementById('scripture');
-let si = 0;
-function rotateScripture() {
+function showScripture(){
   scriptureEl.classList.remove('active');
   setTimeout(() => {
-    scriptureEl.textContent = scriptures[si];
+    scriptureEl.textContent = scriptures[scriptureIndex];
     scriptureEl.classList.add('active');
-    si = (si + 1) % scriptures.length;
-  }, 300);
+    scriptureIndex = (scriptureIndex + 1) % scriptures.length;
+  }, 500);
 }
-rotateScripture();
-setInterval(rotateScripture, 6000);
+setInterval(showScripture, 6000);
+showScripture();
 </script>
+
 </body>
 </html>
