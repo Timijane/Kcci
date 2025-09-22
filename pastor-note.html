@@ -5,132 +5,190 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Pastor Sam Balogun – From the Founder’s Desk</title>
 
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Lobster&display=swap" rel="stylesheet">
 
   <style>
-    *{margin:0;padding:0;box-sizing:border-box;}
-    body{font-family:Roboto,Arial,sans-serif;background:#fff;color:#222;line-height:1.7;}
+    * {margin:0;padding:0;box-sizing:border-box;}
 
-    /* ===== NAVIGATION ===== */
-    nav{
-      position:fixed;top:0;left:0;width:100%;
-      background:linear-gradient(90deg,#008751,#FFD700);
-      display:flex;justify-content:space-between;align-items:center;
-      padding:12px 22px;z-index:1000;
+    body {
+      font-family: Arial, sans-serif;
+      background: #fff;
+      color: #333;
+      line-height: 1.7;
     }
-    .nav-left{display:flex;align-items:center;gap:10px;}
-    .nav-left img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.2);}
-    .brand-text{color:#fff;font-weight:900;font-size:1.1rem;text-shadow:0 1px 3px rgba(0,0,0,.4);}
-    .nav-right ul{display:flex;list-style:none;gap:18px;}
-    .nav-right a{color:#fff;font-weight:700;text-decoration:none;padding:6px 8px;border-radius:6px;transition:.2s;}
-    .nav-right a:hover{background:rgba(255,255,255,0.15);}
-    .hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;}
-    .hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;}
-    @media(max-width:820px){
-      .nav-right{
-        position:fixed;top:0;right:-40%;
-        width:40%;height:100%;
-        background:linear-gradient(90deg,#008751,#FFD700);
-        flex-direction:column;justify-content:center;align-items:center;
-        gap:22px;transition:right .3s ease;
+
+    /* ======= NAVBAR ======= */
+    nav {
+      position: sticky;
+      top: 0;
+      width: 100%;
+      background: purple;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 0.5rem 1.5rem;
+      z-index: 999;
+    }
+    .logo-area {
+      display: flex;
+      align-items: center;
+      gap: .5rem;
+      color: #fff;
+      font-weight: bold;
+      font-size: 1.2rem;
+      text-decoration: none;
+    }
+    .logo-area img {height: 40px;width: auto;}
+    .nav-links {
+      list-style: none;
+      display: flex;
+      gap: 1rem;
+    }
+    .nav-links a {
+      color: #fff;
+      text-decoration: none;
+      font-weight: 500;
+      transition: color 0.3s;
+    }
+    .nav-links a:hover {color: #ddd;}
+
+    /* Hamburger */
+    .hamburger {
+      display: none;
+      flex-direction: column;
+      cursor: pointer;
+      gap: 4px;
+    }
+    .hamburger span {
+      width: 25px;
+      height: 3px;
+      background: #fff;
+      border-radius: 2px;
+    }
+    @media (max-width: 768px) {
+      .nav-links {
+        position: absolute;
+        top: 60px;
+        right: 0;
+        background: purple;
+        flex-direction: column;
+        gap: 0.5rem;
+        width: 200px;
+        text-align: right;
+        padding: 0.75rem;
+        display: none;
       }
-      .nav-right.show{right:0;}
-      .hamburger{display:flex;}
-      .close-btn{
-        position:absolute;top:16px;right:16px;
-        font-size:28px;color:#fff;cursor:pointer;
-      }
+      .nav-links li {margin: 0;}
+      .nav-links.active {display: flex;}
+      .hamburger {display: flex;}
     }
 
-    /* ===== HERO IMAGE ===== */
-    .hero-pastor{
-      position:relative;
-      height:65vh;min-height:420px;
-      background:url('balo.jpg') center/cover no-repeat;
-      display:flex;justify-content:center;align-items:center;
-      margin-top:64px; /* push below fixed nav */
+    /* ======= HERO SECTION ======= */
+    .hero {
+      position: relative;
+      width: 100%;
+      max-height: 400px;
+      overflow: hidden;
     }
-    .hero-pastor .hero-title{
-      color:#fff;font-family:'Lobster',cursive;font-size:3rem;
-      text-shadow:0 4px 20px rgba(0,0,0,0.5);
-      text-align:center;padding:0 12px;
+    .hero img {
+      width: 100%;
+      height: auto;
+      display: block;
+    }
+    .hero-caption {
+      position: absolute;
+      bottom: 20px;
+      left: 50%;
+      transform: translateX(-50%);
+      text-align: center;
+      color: #fff;
+    }
+    .hero-caption .headline {
+      background: rgba(128, 0, 128, 0.8);
+      font-family: 'Lobster', cursive;
+      font-size: 2.3rem;
+      padding: 0.5rem 1.5rem;
+      border-radius: 10px;
+      margin-bottom: 0.5rem;
+    }
+    .hero-caption .subhead {
+      background: rgba(0,0,0,0.5);
+      font-size: 1rem;
+      padding: 0.3rem 1rem;
+      border-radius: 8px;
     }
 
-    /* ===== CONTENT ===== */
-    main{max-width:1000px;margin:60px auto;padding:0 20px;}
-    .speech-card{
-      background:#fff;padding:32px;border-radius:16px;
-      box-shadow:0 8px 24px rgba(0,0,0,0.1);
-      border:4px solid; 
-      border-image:linear-gradient(45deg,#008751,#FFD700) 1;
+    /* ======= SPEECH CONTENT ======= */
+    .speech-card {
+      max-width: 950px;
+      margin: 2rem auto 3rem;
+      background: #fff;
+      padding: 2rem;
+      border-radius: 12px;
+      border: 4px solid;
+      border-image: linear-gradient(45deg, #b266ff, #800080) 1;
+      box-shadow: 0 8px 20px rgba(0,0,0,0.1);
     }
-    .speech-card h2{
-      text-align:center;
-      color:#008751;
-      margin:28px 0 14px;
-      font-family:'Lobster',cursive;
-      font-size:1.8rem;
-      border-bottom:3px solid #FFD700;
-      display:inline-block;
+    .speech-card h2 {
+      margin-top: 1.5rem;
+      color: purple;
     }
-    .speech-card p, .speech-card ul{
-      font-size:1rem;
-      margin-top:14px;
-    }
-    .speech-card ul{padding-left:20px;list-style:disc;}
+    .speech-card strong {color: purple;}
 
-    /* LINKS */
-    .links{
-      text-align:center;
-      margin:40px 0;
+    /* Bottom Links small & stylish */
+    .links {
+      text-align: center;
+      margin-bottom: 3rem;
     }
-    .links a{
-      background:linear-gradient(90deg,#008751,#FFD700);
-      color:#fff;text-decoration:none;
-      padding:10px 20px;
-      border-radius:6px;
-      margin:0 8px;
-      font-weight:600;
-      transition:opacity .25s;
+    .links a {
+      display: inline-block;
+      margin: 0 0.5rem;
+      padding: 0.5rem 1rem;
+      background: transparent;
+      color: purple;
+      font-size: 0.9rem;
+      border: 1px solid purple;
+      border-radius: 20px;
+      text-decoration: none;
+      transition: all 0.3s ease;
     }
-    .links a:hover{opacity:0.85;}
+    .links a:hover {background: purple;color: #fff;}
   </style>
 </head>
 <body>
 
-<!-- NAV -->
-<nav>
-  <div class="nav-left">
-    <img src="logo1.jpg" alt="Kingdom Citizens Church Logo">
-    <div class="brand-text">Kingdom Citizens Church INT'L</div>
-  </div>
+  <!-- NAV -->
+  <nav>
+    <a href="index.html" class="logo-area">
+      <img src="images/logo.png" alt="Kingdom Citizens Church Logo">
+      Kingdom Citizens Church INT'L
+    </a>
 
-  <div class="hamburger" onclick="toggleMenu()">
-    <span></span><span></span><span></span>
-  </div>
-
-  <div class="nav-right" id="navRight">
-    <div class="close-btn" onclick="toggleMenu()">×</div>
-    <ul>
+    <ul class="nav-links" id="navLinks">
       <li><a href="index.html">Home</a></li>
       <li><a href="about.html">About</a></li>
       <li><a href="departments.html">Departments</a></li>
-      <li><a href="services.html">Services</a></li>
-      <li><a href="join.html">Join Us</a></li>
     </ul>
-  </div>
-</nav>
 
-<!-- HERO IMAGE -->
-<section class="hero-pastor">
-  <div class="hero-title">Pastor Sam Balogun<br><small style="font-size:1.2rem;">From the Founder’s Desk</small></div>
-</section>
+    <div class="hamburger" onclick="document.getElementById('navLinks').classList.toggle('active')">
+      <span></span><span></span><span></span>
+    </div>
+  </nav>
 
-<!-- CONTENT -->
-<main>
+  <!-- HERO IMAGE WITH BOTTOM CAPTION -->
+  <section class="hero">
+    <img src="images/balo.jpg" alt="Pastor Sam Balogun">
+    <div class="hero-caption">
+      <div class="headline">Pastor Sam Balogun</div>
+      <div class="subhead">From the Founder’s Desk</div>
+    </div>
+  </section>
+
+  <!-- SPEECH CONTENT -->
   <div class="speech-card">
     <p><strong>Who is a Kingdom Citizen?</strong><br>
-    By creation man was made in the class of God. Adam in the Garden of Eden, by God's wisdom, named all the animals one by one, but when he fell his wisdom was corrupted. It did not take away the nature of God, yet the nature of the devil—sin and wickedness—spread to every mortal being through natural birth (John 3:5–6; Romans 3:23). But thank God for Jesus, who died for you and wants to spend eternity with you! You must accept that Jesus Christ is your Lord and Savior. Pray this prayer: “Lord Jesus, I am a sinner. Forgive me my sin. I know You died for me and rose on the third day. Wash me with Your blood. Come into my heart. I receive You today as my Lord and Savior. Write my name in the Book of Life. I am born again. I am now a Kingdom Citizen.”</p>
+      By creation man was made in the class of God. Adam in the Garden of Eden, by God's wisdom, named all the animals one by one, but when he fell his wisdom was corrupted. It did not take away the nature of God, yet the nature of the devil—sin and wickedness—spread to every mortal being through natural birth (John 3:5–6; Romans 3:23). But thank God for Jesus, who died for you and wants to spend eternity with you! You must accept that Jesus Christ is your Lord and Savior. Pray this prayer: “Lord Jesus, I am a sinner. Forgive me my sin. I know You died for me and rose on the third day. Wash me with Your blood. Come into my heart. I receive You today as my Lord and Savior. Write my name in the Book of Life. I am born again. I am now a Kingdom Citizen.”</p>
 
     <h2>Know Your Rights as a Kingdom Citizen</h2>
     <p><strong>1. You Are a New Creation:</strong> 2 Corinthians 5:17 – Therefore if any man be in Christ he is a new creature: old things are passed away; behold, all things are become new. As you have given your life to Christ, you become a new citizen of a new Kingdom and a member of God's family on Earth. You possess Heaven's green card and are entitled to the second resurrection; the second death has no power over you (2 Corinthians 5:17; 1 John 4:5).</p>
@@ -152,16 +210,11 @@
     </ul>
   </div>
 
+  <!-- Bottom Links -->
   <div class="links">
     <a href="about.html">← Back to About Page</a>
-    <a href="departments.html">Visit Departments →</a>
+    <a href="departments.html">Visit Departments &amp; Groups →</a>
   </div>
-</main>
 
-<script>
-function toggleMenu(){
-  document.getElementById('navRight').classList.toggle('show');
-}
-</script>
 </body>
-</html>
+  </html>
