@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Departments & Groups – Kingdom Citizens Church INT'L</title>
+<title>Departments & Ministers – Kingdom Citizens Church INT'L</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
@@ -53,14 +53,21 @@ nav{
 .hero-dept{
   position:relative;
   height:45vh;min-height:260px;
-  background:linear-gradient(90deg,#0a5c34,#d4af37);
+  background:url('church1.jpg') center top/cover no-repeat;
   display:flex;align-items:center;justify-content:center;
 }
+.hero-dept::after{
+  content:"";
+  position:absolute;inset:0;
+  background:rgba(0,0,0,.4);
+}
 .hero-dept h1{
+  position:relative;
   color:#fff;
   font-family:'Lobster',cursive;
   font-size:2.8rem;
   text-shadow:0 4px 15px rgba(0,0,0,.4);
+  z-index:1;
 }
 
 /* ===== Content ===== */
@@ -111,7 +118,7 @@ main{padding:70px 20px 60px;max-width:1100px;margin:auto}
 <!-- ===== Navigation ===== -->
 <nav id="topNav">
   <div class="nav-left">
-    <img src="logo.png" alt="logo">
+    <img src="logo1.png" alt="logo">
     <div class="brand-text">Kingdom Citizens Church INT'L</div>
   </div>
 
@@ -131,88 +138,107 @@ main{padding:70px 20px 60px;max-width:1100px;margin:auto}
 
 <!-- ===== Hero Banner ===== -->
 <section class="hero-dept">
-  <h1>Departments &amp; Groups</h1>
+  <h1>Departments &amp; Ministers</h1>
 </section>
 
-<!-- ===== Main Content ===== -->
 <main>
 
+  <!-- ===== Founders & Ministers ===== -->
   <section class="section-card">
-    <img src="department1.jpg" alt="Children's Department">
+    <img src="founder.jpg" alt="Founder Pastor Sam Balogun">
+    <h2>Founder – Pastor Sam Balogun</h2>
+    <p>Write the full biography of Pastor Sam Balogun here in detail without shortening any part. Include ministry journey, calling, achievements, and vision.</p>
+  </section>
+
+  <section class="section-card">
+    <img src="cofounder.jpg" alt="Co-Founder">
+    <h2>Co-Founder</h2>
+    <p>Full biography of the co-founder of the church. Provide all details you want to display without abbreviations.</p>
+  </section>
+
+  <section class="section-card">
+    <img src="pastors.jpg" alt="Pastors">
+    <h2>Pastors</h2>
+    <p>Introduce all the pastors serving in the ministry with their full names and detailed roles, experiences, and dedication to the Kingdom work.</p>
+  </section>
+
+  <section class="section-card">
+    <img src="evangelists.jpg" alt="Evangelists">
+    <h2>Evangelists</h2>
+    <p>Provide the names and detailed ministry highlights of the evangelists of the church, showing their passion for soul-winning and missions.</p>
+  </section>
+
+  <!-- ===== Departments & Groups ===== -->
+  <section class="section-card">
+    <img src="church2.jpg" alt="Children's Department">
     <h2>Children's Department</h2>
-    <p>Our Children's church is geared towards raising a new generation of children …</p>
+    <p>Full description of the children's department…</p>
   </section>
 
   <section class="section-card">
-    <img src="department2.jpg" alt="Teenagers Department">
+    <img src="church3.jpg" alt="Teenagers Department">
     <h2>Teenagers' Department</h2>
-    <p>This unit is committed in teaching our children …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department3.jpg" alt="Youth Fellowship">
+    <img src="church4.jpg" alt="Youth Fellowship">
     <h2>Youth Fellowship</h2>
-    <p>This is the group of our young adults …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department4.jpg" alt="Women Fellowship">
+    <img src="church5.jpg" alt="Women Fellowship">
     <h2>Women’s Fellowship (Royal Pillars)</h2>
-    <p>We are committed to the successful family life of our members …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department5.jpg" alt="Men Fellowship">
+    <img src="church6.jpg" alt="Men Fellowship">
     <h2>Men’s Fellowship</h2>
-    <p>This group is twofold …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department6.jpg" alt="Choir">
+    <img src="church7.jpg" alt="Choir">
     <h2>Kingdom Citizens Voices (Choir)</h2>
-    <p>We give high premium to praise and worship …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department7.jpg" alt="Ushering Group">
+    <img src="church8.jpg" alt="Ushering Group">
     <h2>Ushering Group</h2>
-    <p>This team maintains order within the church …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department8.jpg" alt="Royal Security">
+    <img src="church9.jpg" alt="Royal Security">
     <h2>Royal Security Unit</h2>
-    <p>The kingdom law-enforcement agents ensuring cars …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department9.jpg" alt="Evangelism Team">
+    <img src="church10.jpg" alt="Evangelism Team">
     <h2>Evangelism Team</h2>
-    <p>Fulfilling the Great Commission …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department10.jpg" alt="Burden Bearers">
+    <img src="church11.jpg" alt="Burden Bearers">
     <h2>Burden Bearers (Prayer Group)</h2>
-    <p>Dynamic individuals devoted to praying …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department11.jpg" alt="Sanctuary Keepers">
+    <img src="church12.jpg" alt="Sanctuary Keepers">
     <h2>Sanctuary Keepers & Decorators</h2>
-    <p>This team keeps the church building and environment neat …</p>
+    <p>Full description…</p>
   </section>
 
   <section class="section-card">
-    <img src="department12.jpg" alt="Media Unit">
+    <img src="church13.jpg" alt="Media Unit">
     <h2>Media Unit (ICT Group)</h2>
-    <p>Handles visual/audio production …</p>
-  </section>
-
-  <section class="section-card">
-    <img src="department13.jpg" alt="Home Fellowship">
-    <h2>Prayer Centre – Home Fellowship</h2>
-    <p>The church in homes: fostering pastoral relationships …</p>
+    <p>Full description…</p>
   </section>
 
 </main>
@@ -226,4 +252,4 @@ document.querySelectorAll('#navRight a').forEach(a=>{
 });
 </script>
 </body>
-      </html>
+  </html>
