@@ -1,174 +1,176 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>About Us – Your Church</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Open+Sans:wght@400;600&display=swap" rel="stylesheet">
-  <style>
-    *{margin:0;padding:0;box-sizing:border-box}
-    body{font-family:'Open Sans',sans-serif;background:#fff;color:#333;line-height:1.6}
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>About Us – Kingdom Citizens Church INT'L</title>
 
-    /* NAVBAR */
-    header{background:linear-gradient(90deg,#008753,#ffd700);
-           position:fixed;top:0;width:100%;z-index:1000;}
-    .nav-container{display:flex;justify-content:space-between;
-                   align-items:center;padding:1rem 2rem;}
-    .logo{color:#fff;font-size:1.8rem;font-weight:bold;text-decoration:none}
-    nav ul{list-style:none;display:flex;gap:1.5rem;}
-    nav a{color:#fff;text-decoration:none;font-weight:600;transition:.3s;}
-    nav a:hover{color:#ffd700;}
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
 
-    /* Hamburger */
-    .hamburger{display:none;flex-direction:column;cursor:pointer;}
-    .hamburger span{height:3px;width:25px;background:#fff;margin:4px 0;}
-    .mobile-menu{
-        position:fixed;top:0;right:-40%;width:40%;height:100%;
-        background:linear-gradient(180deg,#008753,#ffd700);
-        padding:2rem;display:flex;flex-direction:column;
-        align-items:flex-start;transition:.4s ease;
-    }
-    .mobile-menu.active{right:0;}
-    .mobile-menu a{color:#fff;font-size:1.1rem;margin:1rem 0;text-decoration:none}
-    .close-btn{font-size:2rem;color:#fff;align-self:flex-end;cursor:pointer;margin-bottom:1rem;}
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+html,body{font-family:Roboto,Arial,sans-serif;background:#fff;color:#222;scroll-behavior:smooth}
+a{text-decoration:none;color:inherit}
 
-    /* HERO */
-    .hero{
-      background:url('images/about-hero.jpg') center top/cover no-repeat;
-      height:60vh;
-      display:flex;
-      justify-content:center;
-      align-items:center;
-      text-align:center;
-      padding-top:70px;
-    }
-    .hero h1{
-      color:#fff;
-      font-family:'Lobster',cursive;
-      font-size:4rem;
-      letter-spacing:2px;
-      text-shadow:2px 2px 6px rgba(0,0,0,.6);
-    }
+/* ===== Navigation ===== */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  display:flex;justify-content:space-between;align-items:center;
+  background:linear-gradient(90deg,#008751,#FFD700);
+  padding:12px 22px;z-index:1200;transition:.25s;
+}
+.nav-left{display:flex;align-items:center;gap:12px}
+.nav-left img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15)}
+.brand-text{color:#fff;font-weight:900;font-size:1.2rem;text-shadow:0 2px 4px rgba(0,0,0,.4)}
 
-    /* CONTENT SECTIONS */
-    .section{
-      max-width:1100px;
-      margin:4rem auto;
-      background:#fff;
-      padding:2.5rem;
-      border-radius:20px;
-      box-shadow:0 8px 20px rgba(0,0,0,0.08);
-    }
-    .section h2{
-      font-family:'Lobster',cursive;
-      font-size:2.5rem;
-      text-align:center;
-      margin-bottom:1rem;
-      text-transform:uppercase;
-      position:relative;
-    }
-    .section h2::after{
-      content:'';
-      width:80px;
-      height:4px;
-      background:#ffd700;
-      display:block;
-      margin:0.5rem auto;
-      border-radius:2px;
-    }
-    .section p{font-size:1.05rem;margin-top:1rem;text-align:justify;}
+.nav-right ul{display:flex;gap:18px;list-style:none;align-items:center}
+.nav-right a{color:#fff;font-weight:700;padding:6px 8px;border-radius:6px;transition:.18s}
+.nav-right a:hover{background:rgba(255,255,255,.15)}
 
-    @media(max-width:768px){
-      nav ul{display:none;}
-      .hamburger{display:flex;}
-      .hero h1{font-size:3rem;}
-      .section{margin:2rem 1rem;padding:1.5rem;}
-    }
-  </style>
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px}
+
+@media(max-width:820px){
+  .nav-right{
+    position:fixed;top:0;right:-40%;width:40%;height:100%;
+    background:linear-gradient(180deg,#008751,#FFD700);
+    padding:60px 20px 20px;
+    flex-direction:column;justify-content:flex-start;
+    gap:22px;list-style:none;
+    transition:right .3s ease;
+  }
+  .nav-right.show{right:0;}
+  .nav-right ul{flex-direction:column;gap:22px;width:100%}
+  .hamburger{display:flex}
+  .close-btn{
+    position:absolute;top:16px;right:18px;
+    font-size:28px;font-weight:bold;
+    color:#fff;cursor:pointer;
+  }
+}
+
+/* ===== Hero ===== */
+.hero-about{
+  position:relative;
+  height:70vh;min-height:420px;
+  background:url('images/balogun2.jpg') center top/cover no-repeat;
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.about-title{
+  position:relative;
+  margin-bottom:20px;
+  color:#fff;
+  font-family:'Lobster',cursive;
+  font-size:3.2rem;
+  text-shadow:0 4px 20px rgba(0,0,0,.55);
+}
+
+/* ===== Content ===== */
+main{padding:60px 20px;max-width:1000px;margin:auto}
+.section-card{
+  margin-bottom:60px;
+  background:#fff;
+  border-radius:16px;
+  padding:32px;
+  box-shadow:0 12px 28px rgba(0,0,0,0.08);
+  position:relative;
+}
+.section-card h2{
+  text-align:center;
+  font-family:'Lobster',cursive;
+  font-size:2rem;
+  color:#008751;
+  margin-bottom:18px;
+  position:relative;
+}
+.section-card h2::after{
+  content:"";
+  display:block;
+  width:80px;
+  height:3px;
+  background:#FFD700;
+  margin:8px auto 0;
+  border-radius:2px;
+}
+.section-card p, .section-card ul{
+  font-size:1rem;
+  line-height:1.7;
+  color:#222;
+}
+.section-card ul{padding-left:20px;margin-top:10px}
+.section-card li{margin-bottom:8px}
+</style>
 </head>
 <body>
 
-<header>
-  <div class="nav-container">
-    <a href="index.html" class="logo">YourChurch</a>
-    <nav>
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="pastor.html">Pastor Note</a></li>
-        <li><a href="departments.html">Departments</a></li>
-        <li><a href="join.html">Join Us</a></li>
-        <li><a href="service.html">Service</a></li>
-        <li><a href="contact.html">Contact</a></li>
-        <li><a href="questions.html">Any Questions</a></li>
-        <li><a href="donate.html">Send Donation</a></li>
-      </ul>
-    </nav>
-    <div class="hamburger" id="hamburger">
-      <span></span><span></span><span></span>
-    </div>
+<!-- ===== Navigation ===== -->
+<nav id="topNav">
+  <div class="nav-left">
+    <img src="logo1.jpg" alt="logo">
+    <div class="brand-text">Kingdom Citizens Church INT'L</div>
   </div>
 
-  <div class="mobile-menu" id="mobileMenu">
+  <div class="hamburger" id="hamburger">
+    <span></span><span></span><span></span>
+  </div>
+
+  <div class="nav-right" id="navRight">
     <span class="close-btn" id="closeBtn">&times;</span>
-    <a href="index.html">Home</a>
-    <a href="about.html">About</a>
-    <a href="pastor.html">Pastor Note</a>
-    <a href="departments.html">Departments</a>
-    <a href="join.html">Join Us</a>
-    <a href="service.html">Service</a>
-    <a href="contact.html">Contact</a>
-    <a href="questions.html">Any Questions</a>
-    <a href="donate.html">Send Donation</a>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="departments.html">Departments</a></li>
+      <li><a href="pastor-note.html">Pastor’s Desk</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="join.html">Join Us</a></li>
+      <li><a href="donate.html">Donate</a></li>
+    </ul>
   </div>
-</header>
+</nav>
 
-<section class="hero">
-  <h1>ABOUT&nbsp;US</h1>
+<!-- ===== Hero Image ===== -->
+<section class="hero-about">
+  <div class="about-title">ABOUT&nbsp;US</div>
 </section>
 
+<!-- ===== Main Content ===== -->
 <main>
-  <section class="section">
+  <section class="section-card">
     <h2>Church History</h2>
-    <p>
-      <!-- full church history text here -->
-      Our church was founded … (keep your original full-length content).
-    </p>
+    <p>In September 1979 after the tedious school hours, I engaged myself discussing with some Christian Brethren about the end time agenda of God.</p>
+    <p>Particularly our discussion was centered on the second coming of our Lord Jesus Christ. A few minutes after this discussion, I left them and I was alone in a room when suddenly I was taken up in the spirit, I lifted up my eyes and looked. Behold I saw Jesus Christ seated upon a throne high and exalted. The whole sky was full of His Glory.</p>
+    <p>The Son of God appeared in the clouds of Heaven in power and great glory. I saw thousands of His Angels around the throne sent through the whole Earth. While later I saw these Angels cross-examining both slave and free according to each person's deeds. Those found guilty were seen burning inside hot furnaces of fire.</p>
+    <p>I saw a square shaped glass house by the right hand side of the throne of Judgment reserved for the blameless. When it got to my turn to be cross examined, I was found blameless and I was ushered into this square shaped glass house.</p>
+    <p>As I took the last step to enter into this glorious building, I was transformed; the whole apparel on me changed to a golden-linen material. Though few of us could make it into this glass house full of everything you need here on Earth—an Eden of no pain, no sorrow, no night, no death, no heat, no hunger. This is Heaven's Kingdom on the Earth. (Rev. 21:1–End)</p>
   </section>
 
-  <section class="section">
-    <h2>Vision</h2>
-    <p>
-      <!-- full vision text -->
-      To reach the world with the Gospel … (your full text).
-    </p>
+  <section class="section-card">
+    <h2>Royal Mandate</h2>
+    <p>We are sent to restore the lost soul and destinies back into Christ's Kingdom for preservation through the preaching of the Word of Faith.</p>
   </section>
 
-  <section class="section">
-    <h2>Mission</h2>
-    <p>
-      <!-- full mission text -->
-      We are committed to … (your full text).
-    </p>
+  <section class="section-card">
+    <h2>Mission Statement</h2>
+    <ul>
+      <li>To raise with God a family of matured kingdom stars who will live Heaven practically on the Earth, getting them ready for the second coming of the KING.</li>
+      <li>To teach them through training programmes how to use the Good News of His Kingdom to solve life challenges in marriage, career, profession, business, finances, moral and spiritual matters.</li>
+      <li>To infuse the vision into them and release them for the expansion of His Kingdom on the Earth.</li>
+    </ul>
   </section>
 
-  <!-- Add more sections as needed -->
+  <section class="section-card">
+    <h2>The Vision</h2>
+    <p>Our vision is to raise and nurture a generation of Kingdom Citizens who will live Heaven on Earth. We aim to restore lost souls and destinies back into Christ's Kingdom through the preaching of the Word of Faith, ensuring our members live a life empowered by faith and divine purpose.</p>
+  </section>
 </main>
 
 <script>
-  const hamburger = document.getElementById('hamburger');
-  const mobileMenu = document.getElementById('mobileMenu');
-  const closeBtn = document.getElementById('closeBtn');
-
-  hamburger.addEventListener('click', () => {
-    mobileMenu.classList.add('active');
-  });
-  closeBtn.addEventListener('click', () => {
-    mobileMenu.classList.remove('active');
-  });
+const navRight=document.getElementById('navRight');
+document.getElementById('hamburger').onclick=()=>navRight.classList.add('show');
+document.getElementById('closeBtn').onclick=()=>navRight.classList.remove('show');
+document.querySelectorAll('#navRight a').forEach(a=>{
+  a.addEventListener('click',()=>{ if(window.innerWidth<=820) navRight.classList.remove('show'); });
+});
 </script>
-
 </body>
 </html>
