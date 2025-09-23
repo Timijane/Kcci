@@ -1,0 +1,198 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Donate - Kingdom Citizens Church INT'L</title>
+
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
+
+<style>
+/* ===== Global ===== */
+*{box-sizing:border-box;margin:0;padding:0}
+html,body{height:100%;font-family:Roboto,system-ui,-apple-system,"Segoe UI",Arial;scroll-behavior:smooth;background:#fff;color:#222}
+a{color:inherit;text-decoration:none}
+
+/* ===== Navigation ===== */
+nav{
+  position:fixed;top:0;left:0;width:100%;
+  display:flex;justify-content:space-between;align-items:center;
+  background:linear-gradient(90deg,#008751,#FFD700);
+  padding:12px 22px;z-index:1200;transition:all .25s ease;
+  box-shadow:0 2px 0 rgba(0,0,0,0.06);
+}
+nav.scrolled{padding:8px 20px;box-shadow:0 6px 20px rgba(0,0,0,0.18)}
+
+.nav-left{display:flex;align-items:center;gap:12px}
+.nav-left img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,0.15)}
+.brand-text{color:#fff;font-weight:900;font-size:1.2rem;white-space:nowrap;text-shadow:0 2px 4px rgba(0,0,0,0.4);}
+
+.nav-right ul{display:flex;gap:18px;list-style:none;align-items:center}
+.nav-right a{color:#fff;font-weight:700;padding:6px 8px;border-radius:6px;transition:all .18s}
+.nav-right a:hover{background:rgba(255,255,255,0.15)}
+
+.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
+.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px}
+
+@media(max-width:820px){
+  .nav-right{
+    position:fixed;top:0;right:-40%;
+    width:40%;height:100%;
+    background:linear-gradient(180deg,#008751,#FFD700);
+    padding:60px 20px 20px;
+    flex-direction:column;justify-content:flex-start;
+    gap:22px;list-style:none;
+    transition:right .3s ease;
+  }
+  .nav-right.show{right:0;}
+  .nav-right ul{flex-direction:column;gap:22px;width:100%}
+  .hamburger{display:flex}
+  .close-btn{
+    position:absolute;top:16px;right:18px;
+    font-size:28px;font-weight:bold;
+    color:#fff;cursor:pointer;
+  }
+}
+
+/* ===== Hero Section ===== */
+.hero{
+  position:relative;height:60vh;min-height:400px;
+  display:flex;align-items:center;justify-content:center;overflow:hidden;
+  background:url('donate-hero.jpg') center/cover no-repeat;
+}
+.hero-overlay{position:absolute;inset:0;background:rgba(0,0,0,0.35)}
+.hero-content{
+  position:relative;z-index:6;text-align:center;color:#fff;padding:0 20px;
+}
+.hero-title{font-family:'Lobster',cursive;font-size:2.8rem;line-height:1;letter-spacing:0.5px;margin-bottom:12px;text-shadow:0 6px 26px rgba(0,0,0,0.5)}
+.hero-subtitle{font-weight:700;font-size:1.2rem;margin-bottom:16px}
+
+/* ===== Donate Form Card ===== */
+.card-container{display:flex;justify-content:center;margin:40px 10px}
+.card{background:#fff;border-radius:12px;box-shadow:0 6px 18px rgba(0,0,0,0.12);overflow:hidden;transition:transform .25s,box-shadow .25s;width:360px}
+.card:hover{transform:translateY(-6px);box-shadow:0 12px 26px rgba(0,0,0,0.2)}
+.card-content{padding:24px;text-align:center}
+.card-content h4{font-family:'Lobster',cursive;font-size:1.8rem;color:#222;margin-bottom:12px}
+.card-content p{font-size:0.95rem;line-height:1.5;color:#555;margin-bottom:16px}
+
+/* Paystack Inputs */
+.card-content input{width:100%;padding:10px;margin-bottom:12px;border-radius:6px;border:1px solid #ccc;font-size:1rem}
+.card-content button{background:#28a745;color:#fff;padding:12px 20px;border:none;border-radius:6px;font-weight:700;cursor:pointer;font-size:1rem;transition:all .2s}
+.card-content button:hover{background:#218838}
+
+/* Footer */
+footer{text-align:center;background:#008751;color:#fff;padding:24px 16px;margin-top:40px}
+footer a{color:#FFD700;margin:0 8px;font-weight:700}
+footer p{margin:8px 0}
+</style>
+</head>
+<body>
+
+<!-- NAVIGATION -->
+<nav id="topNav">
+  <div class="nav-left">
+    <img src="logo1.jpg" alt="logo">
+    <div class="brand-text">Kingdom Citizens Church INT'L</div>
+  </div>
+  <div class="hamburger" id="hamburger"><span></span><span></span><span></span></div>
+  <div class="nav-right" id="navRight">
+    <span class="close-btn" id="closeBtn">&times;</span>
+    <ul>
+      <li><a href="index.html">Home</a></li>
+      <li><a href="about.html">About</a></li>
+      <li><a href="departments.html">Departments</a></li>
+      <li><a href="pastor-note.html">Pastor’s Desk</a></li>
+      <li><a href="services.html">Services</a></li>
+      <li><a href="join-us.html">Join Us</a></li>
+      <li><a href="donate.html">Donate</a></li>
+    </ul>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero">
+  <div class="hero-overlay"></div>
+  <div class="hero-content">
+    <div class="hero-title">Support Our Mission</div>
+    <div class="hero-subtitle">Your donation helps us spread the Word and serve our community.</div>
+  </div>
+</section>
+
+<!-- DONATE FORM -->
+<section id="donate">
+  <div class="card-container">
+    <div class="card">
+      <div class="card-content">
+        <h4>Donate Online</h4>
+        <p>Securely donate to Kingdom Citizens Church INT'L using Paystack.</p>
+        
+        <!-- Paystack Donate Inputs -->
+        <input type="number" id="amount" placeholder="Enter amount (NGN)">
+        <input type="text" id="email" placeholder="Enter your email">
+        <button onclick="payWithPaystack()">Donate Now</button>
+
+        <!-- Paystack Inline JS -->
+        <script src="https://js.paystack.co/v1/inline.js"></script>
+        <script>
+        function payWithPaystack(){
+          var email = document.getElementById('email').value;
+          var amount = document.getElementById('amount').value * 100; // amount in kobo
+          
+          if(email === "" || amount <= 0){
+            alert("Please enter a valid email and amount");
+            return;
+          }
+
+          var handler = PaystackPop.setup({
+            key: 'pk_test_aaf7f6095e4579b17cc449df2563c096de124278', // your public key
+            email: email,
+            amount: amount,
+            currency: "NGN",
+            callback: function(response){
+              alert('Payment successful! Transaction ref: ' + response.reference);
+              window.location.href = "thank-you.html"; // optional thank-you page
+            },
+            onClose: function(){
+              alert('Transaction was not completed, window closed.');
+            }
+          });
+          handler.openIframe();
+        }
+        </script>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <p>&copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved.</p>
+  <p>
+    Follow us:
+    <a href="https://facebook.com/kingdomcitizenschurchintl" target="_blank">Facebook</a> |
+    <a href="https://instagram.com/kingdomcitizenschurchintl" target="_blank">Instagram</a> |
+    <a href="https://youtube.com/kingdomcitizenschurchintl" target="_blank">YouTube</a>
+  </p>
+</footer>
+
+<script>
+// Hamburger toggle
+const navRight = document.getElementById('navRight');
+const hamburger = document.getElementById('hamburger');
+const closeBtn = document.getElementById('closeBtn');
+hamburger.addEventListener('click',()=>navRight.classList.toggle('show'));
+closeBtn.addEventListener('click',()=>navRight.classList.remove('show'));
+document.querySelectorAll('#navRight a').forEach(a=>{
+  a.addEventListener('click',()=>{ if(window.innerWidth<=820) navRight.classList.remove('show'); });
+});
+
+// Navbar shrink on scroll
+window.addEventListener('scroll', () => {
+  const el = document.getElementById('topNav');
+  if(window.scrollY>60) el.classList.add('scrolled'); else el.classList.remove('scrolled');
+});
+</script>
+
+</body>
+</html>
