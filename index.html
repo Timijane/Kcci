@@ -54,6 +54,7 @@
     color: inherit;
   }
   
+  /* Enhanced container for better responsiveness */
   .container {
     width: min(100% - clamp(1rem, 5vw, 3rem), 1200px);
     margin: 0 auto;
@@ -83,19 +84,21 @@
     box-shadow: 0 6px 20px rgba(0, 90, 58, 0.25);
   }
   
+  /* Professional touch: Glass morphism effect */
   .glass-effect {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
   
+  /* 1. BIGGER LOGO IN MENU BAR - INCREASED SIZE */
   header {
-    background: linear-gradient(90deg, #f8f9fa, #FFD700);
+    background: linear-gradient(90deg, #008751, #FFD700);
     box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
     position: sticky;
     top: 0;
     z-index: 1000;
-    padding: 12px 0;
+    padding: 8px 0;
     transition: all 0.3s ease;
     width: 100%;
   }
@@ -118,13 +121,13 @@
     transform: translateX(-50%);
   }
   
-  /* INCREASED LOGO SIZE */
+  /* MUCH BIGGER LOGO FRAME - INCREASED SIZE */
   .logo-frame {
-    width: clamp(90px, 12vw, 130px);
-    height: clamp(90px, 12vw, 130px);
+    width: clamp(90px, 10vw, 120px);
+    height: clamp(90px, 10vw, 120px);
     border-radius: 50%;
     background: white;
-    border: 4px solid var(--primary);
+    border: 4px solid var(--secondary);
     display: flex;
     align-items: center;
     justify-content: center;
@@ -134,24 +137,25 @@
   }
   
   .logo-frame img {
-    width: 90%;
-    height: 90%;
+    width: 85%;
+    height: 85%;
     object-fit: contain;
   }
   
-  /* LOGO TEXT UPDATED TO GREEN */
+  /* 6. KINGDOM CITIZENS CHURCH ON ONE LINE - CHANGED TO GREEN COLOR */
   .logo-text {
     font-family: 'Lobster', cursive;
-    font-size: clamp(1.2rem, 3.5vw, 2.2rem);
+    font-size: clamp(1.5rem, 4vw, 2.625rem);
     font-weight: 400;
-    color: var(--primary);
+    color: #008751; /* CHANGED FROM WHITE TO GREEN */
     letter-spacing: 1.5px;
-    line-height: 1.1;
-    text-align: left;
-    white-space: normal;
-    text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.1);
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
   }
   
+  /* Navigation */
   .nav-container {
     display: flex;
     align-items: center;
@@ -171,12 +175,13 @@
     }
     
     .nav-menu a {
-      color: var(--dark);
+      color: white;
       font-weight: 500;
       font-size: clamp(0.875rem, 1vw, 0.9375rem);
       transition: all 0.3s ease;
       padding: 8px 0;
       position: relative;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
     }
     
     .nav-menu a::after {
@@ -186,7 +191,7 @@
       left: 0;
       width: 0;
       height: 2px;
-      background: var(--primary);
+      background: white;
       transition: width 0.3s ease;
     }
     
@@ -211,20 +216,9 @@
     .dropdown:hover .dropdown-content {
       display: block;
     }
-    
-    .dropdown-content a {
-      color: var(--dark) !important;
-      padding: 10px 20px;
-      display: block;
-      text-shadow: none !important;
-    }
-    
-    .dropdown-content a:hover {
-      background: #f0f0f0;
-      color: var(--primary) !important;
-    }
   }
   
+  /* Mobile Menu */
   .hamburger {
     display: none;
     cursor: pointer;
@@ -233,7 +227,7 @@
     position: relative;
     z-index: 1001;
     margin-left: auto;
-    background: var(--primary);
+    background: var(--accent);
     border-radius: 5px;
     padding: 8px;
   }
@@ -307,6 +301,13 @@
       transform: translateX(0);
     }
     
+    .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+    .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+    .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+    .nav-menu li:nth-child(5) { transition-delay: 0.5s; }
+    .nav-menu li:nth-child(6) { transition-delay: 0.6s; }
+    
     .nav-menu a {
       font-size: 1.125rem;
       display: block;
@@ -339,6 +340,58 @@
       transform: none;
       margin-right: auto;
     }
+    
+    .logo-text {
+      font-size: clamp(1.25rem, 5vw, 1.875rem);
+    }
+    
+    .logo-frame {
+      width: clamp(70px, 10vw, 90px);
+      height: clamp(70px, 10vw, 90px);
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .logo-text {
+      font-size: clamp(1.125rem, 4vw, 1.5rem);
+    }
+    
+    .logo-frame {
+      width: clamp(60px, 10vw, 70px);
+      height: clamp(60px, 10vw, 70px);
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .nav-menu {
+      width: min(90%, 350px);
+      right: -100%;
+    }
+    
+    .logo-text {
+      font-size: clamp(1rem, 4vw, 1.25rem);
+    }
+    
+    .logo-frame {
+      width: clamp(50px, 10vw, 60px);
+      height: clamp(50px, 10vw, 60px);
+    }
+    
+    .header-container {
+      padding: 0 1rem;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .logo-text {
+      font-size: 0.875rem;
+    }
+    
+    .logo-frame {
+      width: 45px;
+      height: 45px;
+      margin-right: 0.5rem;
+    }
   }
   
   /* Hero Section */
@@ -365,10 +418,11 @@
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.2);
+    background: rgba(0, 0, 0, 0.15);
     z-index: 1;
   }
   
+  /* 7. FASTER VIDEO LOADING */
   .hero-video {
     position: absolute;
     top: 0;
@@ -377,8 +431,14 @@
     height: 100%;
     object-fit: cover;
     z-index: 0;
+    preload: auto;
+    playsinline: true;
+    muted: true;
+    loop: true;
+    autoplay: true;
   }
   
+  /* 4. LOWER HERO TEXT */
   .hero-content {
     max-width: min(90%, 800px);
     padding: 0 clamp(1rem, 3vw, 2rem);
@@ -396,6 +456,7 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
   
+  /* 5. FASTER & SLANTED BIBLE TICKER */
   .scripture-ticker {
     position: absolute;
     bottom: 0;
@@ -426,10 +487,15 @@
   }
   
   @keyframes ticker-scroll {
-    0% { transform: translateX(0) skewY(3deg); }
-    100% { transform: translateX(-50%) skewY(3deg); }
+    0% {
+      transform: translateX(0) skewY(3deg);
+    }
+    100% {
+      transform: translateX(-50%) skewY(3deg);
+    }
   }
   
+  /* Professional touch: Scroll progress indicator */
   .scroll-progress {
     position: fixed;
     top: 0;
@@ -441,6 +507,7 @@
     transition: width 0.1s ease;
   }
   
+  /* ====== 1. FIXED CIRCLE BUTTONS SECTION ====== */
   .circle-buttons-section {
     padding: clamp(3rem, 8vw, 4.375rem) 0;
     background: white;
@@ -488,8 +555,21 @@
     z-index: 1;
   }
   
-  .circle-button:hover:before { opacity: 1; }
-  .circle-button:hover { transform: scale(1.08); }
+  .circle-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 20px 40px rgba(0, 135, 81, 0.3);
+  }
+  
+  .circle-button:hover:before {
+    opacity: 1;
+  }
+  
+  .circle-button.square {
+    border-radius: 20px;
+    width: clamp(160px, 22vw, 200px);
+    height: clamp(160px, 22vw, 200px);
+    background: linear-gradient(135deg, var(--secondary) 0%, #ffed4e 100%);
+  }
   
   .circle-button i {
     font-size: clamp(2.5rem, 5vw, 2.75rem);
@@ -503,33 +583,164 @@
     font-weight: 500;
     position: relative;
     z-index: 2;
+    line-height: 1.3;
   }
   
-  /* ANIMATIONS */
-  @keyframes bounce { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-15px); } }
-  @keyframes pulse { 0%, 100% { transform: scale(1); } 50% { transform: scale(1.05); } }
-  @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-10px); } }
-  @keyframes rotate { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
-  @keyframes sparkle { 0%, 100% { opacity: 0.7; } 50% { opacity: 1; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); } }
-
-  .circle-button.bounce { animation: bounce 2s ease-in-out infinite; }
-  .circle-button.pulse { animation: pulse 1.5s ease-in-out infinite; }
-  .circle-button.float { animation: float 3s ease-in-out infinite; }
-  .circle-button.rotate i { animation: rotate 8s linear infinite; }
-  .circle-button.sparkle i { animation: sparkle 1.5s ease-in-out infinite; }
-
+  /* ====== DYNAMIC BUTTON ANIMATIONS ====== */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 15px 35px rgba(0, 135, 81, 0.2); }
+    50% { box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3); }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+  }
+  
+  .circle-button.bounce {
+    animation: bounce var(--animation-time, 2s) ease-in-out infinite;
+  }
+  
+  .circle-button.pulse {
+    animation: pulse var(--animation-time, 1.5s) ease-in-out infinite;
+  }
+  
+  .circle-button.rotate i {
+    animation: rotate var(--animation-time, 8s) linear infinite;
+  }
+  
+  .circle-button.glow {
+    animation: glow var(--animation-time, 2s) ease-in-out infinite;
+  }
+  
+  .circle-button.shake {
+    animation: shake var(--animation-time, 1s) ease-in-out infinite;
+  }
+  
+  .circle-button.float {
+    animation: float var(--animation-time, 3s) ease-in-out infinite;
+  }
+  
+  .circle-button.sparkle i {
+    animation: sparkle var(--animation-time, 1.5s) ease-in-out infinite;
+  }
+  
+  .circle-button.hover-active {
+    transform: scale(1.1) !important;
+    z-index: 10;
+  }
+  
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple-animation 0.8s linear;
+    pointer-events: none;
+  }
+  
+  @keyframes ripple-animation {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  .circle-button.clicked {
+    animation: none !important;
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .circle-buttons-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .circle-button {
+      width: clamp(130px, 35vw, 160px);
+      height: clamp(130px, 35vw, 160px);
+    }
+    
+    .circle-button i {
+      font-size: clamp(2rem, 6vw, 2.5rem);
+      margin-bottom: 0.75rem;
+    }
+    
+    .circle-button h3 {
+      font-size: clamp(0.75rem, 2vw, 0.875rem);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .circle-buttons-container {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .circle-button {
+      width: 160px;
+      height: 160px;
+    }
+  }
+  
   /* Logo Section */
   .logo-section {
     padding: clamp(4rem, 10vw, 7.5rem) 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
     text-align: center;
     position: relative;
+    overflow: hidden;
+  }
+  
+  .logo-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
   }
   
   .big-logo {
-    max-width: min(90%, 450px);
+    max-width: min(90%, 500px); /* INCREASED SIZE */
     margin: 0 auto clamp(2rem, 5vw, 3.125rem);
     animation: float 4s ease-in-out infinite;
+    position: relative;
+  }
+  
+  .big-logo img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
   }
   
   .we-are-spac {
@@ -537,14 +748,29 @@
     font-size: clamp(2.5rem, 6vw, 4.5rem);
     color: var(--primary);
     margin-bottom: clamp(1.5rem, 4vw, 1.875rem);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
     position: relative;
     display: inline-block;
+  }
+  
+  .we-are-spac:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(100px, 20vw, 150px);
+    height: 3px;
+    background: var(--secondary);
   }
   
   /* About Card */
   .about-card-section {
     padding: clamp(3rem, 8vw, 5rem) 0 clamp(5rem, 12vw, 8.75rem);
     background: white;
+    position: relative;
   }
   
   .floating-card {
@@ -559,15 +785,38 @@
     border: 1px solid rgba(0,0,0,0.05);
   }
   
+  .floating-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+  
   .floating-card h2 {
     color: var(--primary);
     font-family: 'Playfair Display', serif;
     font-size: clamp(2rem, 4vw, 2.8rem);
     margin-bottom: clamp(1.5rem, 4vw, 1.875rem);
     text-align: center;
+    font-weight: 600;
   }
   
-  /* Dynamic Pictures */
+  .floating-card p {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: clamp(1rem, 2.5vw, 1.875rem);
+    text-align: center;
+  }
+  
+  .card-btn-container {
+    text-align: center;
+  }
+  
+  /* ====== 2. ENHANCED DYNAMIC PICTURES SECTION ====== */
   .dynamic-pictures {
     padding: clamp(4rem, 10vw, 7.5rem) 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -579,6 +828,19 @@
     font-size: clamp(2rem, 5vw, 3rem);
     color: var(--primary);
     margin-bottom: clamp(2rem, 6vw, 5rem);
+    position: relative;
+    padding-bottom: clamp(1rem, 2.5vw, 1.25rem);
+  }
+  
+  .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(80px, 15vw, 100px);
+    height: 4px;
+    background: var(--secondary);
   }
   
   .picture-grid {
@@ -597,9 +859,60 @@
     opacity: 0;
     cursor: pointer;
     position: relative;
+    transform-origin: center;
+    will-change: transform, opacity;
   }
   
-  .picture-card.visible { opacity: 1; transform: translateY(0); }
+  .picture-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .picture-card:hover:before {
+    opacity: 1;
+  }
+  
+  .picture-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  }
+  
+  .picture-card.from-left {
+    transform: translateX(-200px) rotateY(-30deg);
+  }
+  
+  .picture-card.from-right {
+    transform: translateX(200px) rotateY(30deg);
+  }
+  
+  .picture-card.from-up {
+    transform: translateY(-200px) rotateX(-30deg);
+  }
+  
+  .picture-card.from-down {
+    transform: translateY(200px) rotateX(30deg);
+  }
+  
+  .picture-card.from-diagonal-left {
+    transform: translateX(-150px) translateY(150px) rotate(-15deg);
+  }
+  
+  .picture-card.from-diagonal-right {
+    transform: translateX(150px) translateY(150px) rotate(15deg);
+  }
+  
+  .picture-card.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotate(0) rotateX(0) rotateY(0) !important;
+  }
   
   .picture-card img {
     width: 100%;
@@ -608,129 +921,500 @@
     transition: transform 0.5s ease;
   }
   
+  .picture-card:hover img {
+    transform: scale(1.05);
+  }
+  
   .picture-card h3 {
     padding: clamp(1rem, 2.5vw, 1.5rem);
     color: var(--primary);
     text-align: center;
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
     font-weight: 600;
+    position: relative;
+    z-index: 2;
   }
   
-  /* Slider */
+  .picture-card.large {
+    grid-column: span 2;
+  }
+  
+  .picture-card.large img {
+    height: 380px;
+  }
+  
+  @media (max-width: 1100px) {
+    .picture-card.large {
+      grid-column: span 1;
+    }
+    
+    .picture-card.large img {
+      height: 280px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .picture-grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    }
+    
+    .picture-card img {
+      height: 200px;
+    }
+    
+    .picture-card.large img {
+      height: 220px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .picture-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .picture-card img {
+      height: 180px;
+    }
+  }
+  
+  /* Instagram-like Slider */
   .insta-slider {
-    margin-top: 50px;
-    padding: 40px;
+    margin: clamp(2rem, 5vw, 3.75rem) 0 clamp(1.5rem, 4vw, 2.5rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
     background: white;
     border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    position: relative;
+  }
+  
+  .insta-title {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: clamp(1.5rem, 4vw, 1.875rem);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-family: 'Playfair Display', serif;
   }
   
   .insta-track {
     display: flex;
-    gap: 20px;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
     overflow-x: auto;
-    padding: 20px 0;
+    padding: clamp(1rem, 2.5vw, 1.5rem) 0;
+    scroll-behavior: smooth;
     scrollbar-width: none;
+    -ms-overflow-style: none;
   }
   
-  .insta-track::-webkit-scrollbar { display: none; }
+  .insta-track::-webkit-scrollbar {
+    display: none;
+  }
   
   .insta-slide {
     flex: 0 0 auto;
-    width: 220px;
-    height: 220px;
+    width: clamp(180px, 25vw, 220px);
+    height: clamp(180px, 25vw, 220px);
     border-radius: 15px;
     overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
   }
   
-  .insta-slide img { width: 100%; height: 100%; object-fit: cover; }
+  .insta-slide:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  }
   
-  /* Modal */
+  .insta-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Location Section */
+  .location-section {
+    padding: clamp(4rem, 10vw, 7.5rem) 0;
+    background: white;
+    position: relative;
+  }
+  
+  .location-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+  
+  .location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    margin-top: clamp(2rem, 5vw, 3.75rem);
+  }
+  
+  /* ====== MODAL FOR GALLERY POPUP ====== */
   .modal {
     display: none;
     position: fixed;
-    top: 0; left: 0; width: 100%; height: 100%;
-    background: rgba(0,0,0,0.9);
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
     z-index: 2000;
     justify-content: center;
     align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
   }
   
-  .modal.active { display: flex; }
+  .modal.active {
+    display: flex;
+    opacity: 1;
+  }
   
   .modal-content {
     background: white;
     border-radius: 20px;
-    max-width: 800px;
+    max-width: min(90%, 800px);
     width: 90%;
     overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+  
+  .modal.active .modal-content {
+    transform: scale(1);
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .modal-caption {
+    padding: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+  }
+  
+  .modal-caption h3 {
+    color: var(--primary);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1rem;
+  }
+  
+  .modal-caption p {
+    color: #555;
+    line-height: 1.6;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 2001;
+    transition: transform 0.3s ease;
+  }
+  
+  .close-modal:hover {
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .modal-image {
+      height: 300px;
+    }
+    
+    .close-modal {
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+    }
   }
   
   /* Footer */
   footer {
     background: var(--dark);
     color: white;
-    padding: 60px 0 30px;
+    padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 1.875rem);
     position: relative;
+    width: 100%;
+    overflow: hidden;
+  }
+  
+  footer:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
   }
   
   .footer-content {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
-    gap: 40px;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: clamp(2rem, 5vw, 3.125rem);
   }
   
-  .footer-column h3 { color: var(--secondary); margin-bottom: 20px; }
-  .footer-links { list-style: none; }
-  .footer-links li { margin-bottom: 10px; }
-  .footer-links a { color: #ddd; }
-  .social-links { display: flex; gap: 15px; margin-top: 20px; }
-  .social-links a { width: 40px; height: 40px; background: rgba(255,255,255,0.1); border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+  .footer-column h3 {
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--secondary);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.625rem;
+  }
   
+  .footer-column h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+  }
+  
+  .footer-links {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-links a {
+    color: #ddd;
+    transition: 0.3s;
+    display: inline-block;
+  }
+  
+  .footer-links a:hover {
+    color: var(--secondary);
+    transform: translateX(5px);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: clamp(0.75rem, 2vw, 1rem);
+    margin-top: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(40px, 5vw, 45px);
+    height: clamp(40px, 5vw, 45px);
+    background: rgba(255,255,255,0.1);
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  .social-links a:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+    color: var(--dark);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: clamp(1rem, 2.5vw, 1.875rem);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    color: #aaa;
+  }
+  
+  /* Scroll to top button */
   .scroll-top {
     position: fixed;
-    bottom: 30px; right: 30px;
-    width: 50px; height: 50px;
+    bottom: clamp(1rem, 3vw, 1.875rem);
+    right: clamp(1rem, 3vw, 1.875rem);
+    width: clamp(45px, 5vw, 50px);
+    height: clamp(45px, 5vw, 50px);
     background: var(--primary);
     color: white;
     border-radius: 50%;
-    display: flex; align-items: center; justify-content: center;
-    cursor: pointer; opacity: 0; visibility: hidden; transition: 0.3s;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
   }
   
-  .scroll-top.visible { opacity: 1; visibility: visible; }
+  .scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
   
+  .scroll-top:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+  }
+  
+  /* Professional touch: Loading animation */
   .loading {
-    position: fixed; top: 0; left: 0; width: 100%; height: 3px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
     background: linear-gradient(90deg, var(--primary), var(--secondary));
-    z-index: 9999; animation: loading 2s infinite;
+    z-index: 9999;
+    transform-origin: 0 50%;
+    animation: loading 2s ease-in-out infinite;
   }
   
-  @keyframes loading { 0% { transform: scaleX(0); } 50% { transform: scaleX(1); } 100% { transform: scaleX(0); } }
-
+  @keyframes loading {
+    0% { transform: scaleX(0); transform-origin: 0 50%; }
+    50% { transform: scaleX(1); transform-origin: 0 50%; }
+    100% { transform: scaleX(0); transform-origin: 100% 50%; }
+  }
+  
+  /* Professional touch: Modern hover effects */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Professional touch: Gradient text */
   .gradient-text {
-    background: var(--gradient);
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
     -webkit-background-clip: text;
     -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Professional touch: Modern focus states */
+  *:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  
+  /* Professional touch: Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary), var(--secondary));
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--secondary), var(--primary));
+  }
+  
+  /* Professional touch: Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Professional touch: Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    body {
+      font-size: 12pt;
+      line-height: 1.5;
+      background: white !important;
+    }
+    
+    .hero-video {
+      display: none;
+    }
+    
+    .hero {
+      background: var(--primary);
+      color: white;
+    }
+  }
+  
+  /* Ensure all images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Professional touch: Skip to main content */
+  .skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    z-index: 9999;
+    transition: top 0.3s ease;
+  }
+  
+  .skip-to-main:focus {
+    top: 0;
   }
 </style>
 </head>
 <body>
-
+<!-- Loading animation -->
 <div class="loading"></div>
+
+<!-- Scroll progress indicator -->
 <div class="scroll-progress" id="scrollProgress"></div>
 
+<!-- Skip to main content link -->
+<a href="#main-content" class="skip-to-main">Skip to main content</a>
+
+<!-- Modal for Gallery Popup -->
 <div class="modal" id="galleryModal">
-  <span class="close-modal" style="position:absolute; top:20px; right:30px; color:white; font-size:40px; cursor:pointer;">&times;</span>
+  <span class="close-modal">&times;</span>
   <div class="modal-content">
-    <img class="modal-image" src="" alt="" style="width:100%; height:400px; object-fit:cover;">
-    <div class="modal-caption" style="padding:20px; text-align:center;">
+    <img class="modal-image" src="" alt="">
+    <div class="modal-caption">
       <h3 id="modalTitle"></h3>
       <p id="modalDescription"></p>
     </div>
   </div>
 </div>
 
-<div class="scroll-top" id="scrollTop"><i class="fas fa-chevron-up"></i></div>
+<!-- Scroll to Top Button -->
+<div class="scroll-top" id="scrollTop">
+  <i class="fas fa-chevron-up"></i>
+</div>
 
 <header id="mainHeader" class="glass-effect">
   <div class="container header-container">
@@ -742,12 +1426,13 @@
     </div>
     <div class="nav-container">
       <ul class="nav-menu">
-        <li><a href="#home">Home</a></li>
+        <li><a href="#home" class="active">Home</a></li>
         <li class="dropdown"><a href="#about">About <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-content">
             <a href="about.html">Our Story</a>
             <a href="beliefs.html">Beliefs</a>
             <a href="leadership.html">Leadership</a>
+            <a href="vision.html">Vision & Mission</a>
           </div>
         </li>
         <li><a href="#departments">Departments</a></li>
@@ -759,11 +1444,11 @@
             <a href="counselling.html">Counselling</a>
             <a href="voice.html">Royal Voice</a>
             <a href="evangelism.html">Evangelism</a>
-            <a href="royal.html">Royal Pillar</a>
           </div>
         </li>
         <li><a href="pastor-note.html">Pastor's Desk</a></li>
         <li><a href="#contact">Contact</a></li>
+        <li><a href="join.html">Join Us</a></li>
         <li><a href="donate.html">Donate</a></li>
       </ul>
       <div class="hamburger"><span></span><span></span><span></span></div>
@@ -771,43 +1456,62 @@
   </div>
 </header>
 
-<section class="hero" id="home">
+<!-- Hero Section -->
+<section class="hero" id="home" id="main-content">
+  <!-- 7. FASTER VIDEO LOADING WITH OPTIMIZED ATTRIBUTES -->
   <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
     <source src="kingdom-video.mp4" type="video/mp4">
+    <source src="kingdom-video.webm" type="video/webm">
     Your browser does not support the video tag.
   </video>
   <div class="hero-overlay"></div>
+  
   <div class="hero-content">
-    <p>Welcome to Kingdom Citizens Church INT'L - nurturing the heirs of God's kingdom. We're delighted you've chosen to visit us! We pray the Word of God delivered from this ministry becomes a testimony in your life.</p>
+    <p>Welcome to Kingdom Citizens Church INT'L - nurturing the heirs of God's kingdom. We're delighted you've chosen to visit us! We pray the Word of God delivered from this ministry becomes a testimony in your life. God bless you abundantly.</p>
   </div>
+  
+  <!-- 5. FASTER & SLANTED SCRIPTURE TICKER -->
   <div class="scripture-ticker">
     <div class="ticker-container">
-      <div class="ticker-item"><i class="fas fa-fire"></i> "But you will receive power..." - Acts 1:8</div>
-      <div class="ticker-item"><i class="fas fa-cross"></i> "For we walk by faith..." - 2 Cor 5:7</div>
-      <div class="ticker-item"><i class="fas fa-crown"></i> "But you are a chosen people..." - 1 Peter 2:9</div>
-      <div class="ticker-item"><i class="fas fa-fire"></i> "But you will receive power..." - Acts 1:8</div>
-      <div class="ticker-item"><i class="fas fa-cross"></i> "For we walk by faith..." - 2 Cor 5:7</div>
-      <div class="ticker-item"><i class="fas fa-crown"></i> "But you are a chosen people..." - 1 Peter 2:9</div>
+      <div class="ticker-item"><i class="fas fa-fire"></i> "But you will receive power when the Holy Spirit comes on you..." - Acts 1:8</div>
+      <div class="ticker-item"><i class="fas fa-cross"></i> "For we walk by faith, not by sight." - 2 Corinthians 5:7</div>
+      <div class="ticker-item"><i class="fas fa-heart"></i> "Now faith is the substance of things hoped for." - Hebrews 11:1</div>
+      <div class="ticker-item"><i class="fas fa-hand-holding-heart"></i> "The life I now live in the body, I live by faith in the Son of God." - Galatians 2:20</div>
+      <div class="ticker-item"><i class="fas fa-crown"></i> "But you are a chosen people, a royal priesthood, a holy nation..." - 1 Peter 2:9</div>
+      <div class="ticker-item"><i class="fas fa-dove"></i> "But the fruit of the Spirit is love, joy, peace, forbearance, kindness..." - Galatians 5:22</div>
+      <div class="ticker-item"><i class="fas fa-mountain"></i> "I can do all this through him who gives me strength." - Philippians 4:13</div>
+      <div class="ticker-item"><i class="fas fa-seedling"></i> "For God has not given us a spirit of fear, but of power and love..." - 2 Timothy 1:7</div>
+      
+      <!-- Duplicate for seamless loop -->
+      <div class="ticker-item"><i class="fas fa-fire"></i> "But you will receive power when the Holy Spirit comes on you..." - Acts 1:8</div>
+      <div class="ticker-item"><i class="fas fa-cross"></i> "For we walk by faith, not by sight." - 2 Corinthians 5:7</div>
+      <div class="ticker-item"><i class="fas fa-heart"></i> "Now faith is the substance of things hoped for." - Hebrews 11:1</div>
+      <div class="ticker-item"><i class="fas fa-hand-holding-heart"></i> "The life I now live in the body, I live by faith in the Son of God." - Galatians 2:20</div>
+      <div class="ticker-item"><i class="fas fa-crown"></i> "But you are a chosen people, a royal priesthood, a holy nation..." - 1 Peter 2:9</div>
+      <div class="ticker-item"><i class="fas fa-dove"></i> "But the fruit of the Spirit is love, joy, peace, forbearance, kindness..." - Galatians 5:22</div>
+      <div class="ticker-item"><i class="fas fa-mountain"></i> "I can do all this through him who gives me strength." - Philippians 4:13</div>
+      <div class="ticker-item"><i class="fas fa-seedling"></i> "For God has not given us a spirit of fear, but of power and love..." - 2 Timothy 1:7</div>
     </div>
   </div>
 </section>
 
+<!-- Circle Buttons Section -->
 <section class="circle-buttons-section" id="quick-links">
   <div class="container">
     <div class="circle-buttons-container">
-      <div class="circle-button bounce" onclick="location.href='join.html'">
+      <div class="circle-button dynamic hover-lift" id="new-button" onclick="navigateToPage('join.html', this)">
         <i class="fas fa-user-plus"></i>
         <h3>Join Us</h3>
       </div>
-      <div class="circle-button pulse" onclick="location.href='prayer.html'">
+      <div class="circle-button dynamic hover-lift" id="prayer-button" onclick="navigateToPage('prayer.html', this)">
         <i class="fas fa-praying-hands"></i>
         <h3>Prayer Request</h3>
       </div>
-      <div class="circle-button float" onclick="location.href='testimony.html'">
+      <div class="circle-button dynamic hover-lift" id="testimony-button" onclick="navigateToPage('testimony.html', this)">
         <i class="fas fa-bullhorn"></i>
         <h3>Share Testimony</h3>
       </div>
-      <div class="circle-button sparkle" onclick="location.href='donate.html'">
+      <div class="circle-button hover-lift" id="resources-button" onclick="navigateToPage('donate.html', this)">
         <i class="fas fa-hand-holding-heart"></i>
         <h3>Give/Donate</h3>
       </div>
@@ -815,6 +1519,7 @@
   </div>
 </section>
 
+<!-- Logo and About Section -->
 <section class="logo-section">
   <div class="container">
     <div class="big-logo">
@@ -828,185 +1533,615 @@
   <div class="container">
     <div class="floating-card glass-effect">
       <h2>Welcome to Kingdom Citizens Church INT'L</h2>
-      <p>Kingdom Citizens Church INT'L is a vibrant, multicultural community of believers committed to nurturing heirs of God's kingdom through the gospel of Jesus Christ. Join us as we worship, learn, and serve together in unity and love.</p>
-      <div style="text-align:center;"><a href="about.html" class="btn">Read More</a></div>
+      <p>Kingdom Citizens Church INT'L is a vibrant, multicultural community of believers committed to nurturing heirs of God's kingdom through the gospel of Jesus Christ. Founded on the principles of faith, royalty, and divine inheritance, we are dedicated to worship, fellowship, and kingdom service.</p>
+      <p>Our mission is to raise kingdom citizens and nurture leaders who will transform their world through the power of the Holy Spirit. Through dynamic worship, sound biblical teaching, and compassionate outreach, we strive to impact our community and beyond with kingdom values.</p>
+      <p>Join us as we worship, learn, and serve together in unity and love, building a church that reflects God's kingdom here on earth and prepares citizens for eternity.</p>
+      <div class="card-btn-container">
+        <a href="about.html" class="btn">Read More</a>
+      </div>
     </div>
   </div>
 </section>
 
+<!-- Dynamic Pictures Section -->
 <section class="dynamic-pictures">
   <div class="container">
     <h2 class="section-title gradient-text">Our Ministries & Services</h2>
     <div class="picture-grid">
-      <div class="picture-card" onclick="location.href='youth.html'">
-        <img src="youth-ministry.jpg" alt="Youth Ministry">
+      <div class="picture-card hover-lift" onclick="openPage('youth.html')">
+        <img src="youth-ministry.jpg" alt="Youth Ministry" loading="lazy">
         <h3>Youth Ministry</h3>
       </div>
-      <div class="picture-card" onclick="location.href='seed-royal.html'">
-        <img src="sunday-service.jpg" alt="Seed Royal Service">
-        <h3>Seed Royal Service</h3>
+      <div class="picture-card hover-lift" onclick="openPage('royal.html')">
+        <img src="royal-piller.jpg" alt="Royal Piller" loading="lazy">
+        <h3>Royal Piller</h3>
       </div>
-      <div class="picture-card" onclick="location.href='royal.html'">
-        <img src="sunday-service.jpg" alt="Royal Pillar">
-        <h3>Royal Pillar</h3>
-      </div>
-      <div class="picture-card" onclick="location.href='voice.html'">
-        <img src="worship-team.jpg" alt="Royal Voice">
+      <div class="picture-card hover-lift" onclick="openPage('voice.html')">
+        <img src="royal-voice.jpg" alt="Royal Voice" loading="lazy">
         <h3>Royal Voice</h3>
       </div>
-      <div class="picture-card" onclick="location.href='children.html'">
-        <img src="kids-church.jpg" alt="Children Church">
-        <h3>Children Church</h3>
-      </div>
-      <div class="picture-card" onclick="location.href='foundation.html'">
-        <img src="teens.jpg" alt="Foundation Class">
-        <h3>Foundation Class</h3>
-      </div>
-      <div class="picture-card" onclick="location.href='evangelism.html'">
-        <img src="evangelism.jpg" alt="Evangelism">
-        <h3>Evangelism</h3>
-      </div>
-      <div class="picture-card" onclick="location.href='seed.html'">
-        <img src="kids-church.jpg" alt="Seed School">
-        <h3>Seed School</h3>
-      </div>
-      <div class="picture-card" onclick="location.href='counselling.html'">
-        <img src="marriage-counselling.jpg" alt="Counselling">
+      <div class="picture-card hover-lift" onclick="openPage('counselling.html')">
+        <img src="counselling.jpg" alt="Counselling" loading="lazy">
         <h3>Counselling</h3>
       </div>
-      <div class="picture-card" onclick="location.href='sermons.html'">
-        <img src="sermons.jpg" alt="Listen to Sermon">
-        <h3>Listen to Sermon</h3>
+      <div class="picture-card hover-lift" onclick="openPage('children.html')">
+        <img src="children-church.jpg" alt="Children Church" loading="lazy">
+        <h3>Children Church</h3>
       </div>
-      <div class="picture-card" onclick="location.href='pastors.html'">
-        <img src="pastors.jpg" alt="Meet Our Pastors">
-        <h3>Meet Our Pastors</h3>
+      <div class="picture-card hover-lift" onclick="openPage('foundation.html')">
+        <img src="foundation-class.jpg" alt="Foundation Class" loading="lazy">
+        <h3>Foundation Class</h3>
       </div>
-      <div class="picture-card" onclick="location.href='news.html'">
-        <img src="news.jpg" alt="Church News">
-        <h3>Church News</h3>
+      <div class="picture-card hover-lift" onclick="openPage('seed.html')">
+        <img src="seed-royal.jpg" alt="Seed Royal School" loading="lazy">
+        <h3>Seed Royal School</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('evangelism.html')">
+        <img src="evangelism.jpg" alt="Evangelism Ministry" loading="lazy">
+        <h3>Evangelism Ministry</h3>
       </div>
     </div>
     
+    <!-- Instagram-like Program Slider -->
     <div class="insta-slider glass-effect">
-      <h3 style="text-align:center; margin-bottom:20px;" class="gradient-text">Our Church Gallery</h3>
+      <h3 class="insta-title gradient-text">Our Church Gallery</h3>
       <div class="insta-track">
-        <div class="insta-slide"><img src="gallery1.jpg" alt="Gallery"></div>
-        <div class="insta-slide"><img src="gallery2.jpg" alt="Gallery"></div>
-        <div class="insta-slide"><img src="gallery3.jpg" alt="Gallery"></div>
-        <div class="insta-slide"><img src="gallery4.jpg" alt="Gallery"></div>
-        <div class="insta-slide"><img src="gallery5.jpg" alt="Gallery"></div>
+        <div class="insta-slide hover-lift" onclick="openGalleryModal('gallery1.jpg', 'Sunday Royal Service', 'Join us every Sunday for uplifting worship and inspirational messages. Manna from Heaven: 8:00-9:00am, Royal Service: 9:00-11:30am')">
+          <img src="gallery1.jpg" alt="Sunday Service" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openGalleryModal('gallery2.jpg', 'Youth Empowerment', 'Monthly gatherings for young people featuring dynamic speakers, worship, and fellowship. A safe space for youth to grow in faith and connect with peers.')">
+          <img src="gallery2.jpg" alt="Youth Ministry" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openGalleryModal('gallery3.jpg', 'Community Outreach', 'Monthly community service projects where we demonstrate God\'s love through practical acts of kindness and support to our neighbors.')">
+          <img src="gallery3.jpg" alt="Community Outreach" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openGalleryModal('gallery4.jpg', 'Prayer & Fasting Conference', 'Annual spiritual retreat focused on deepening our prayer lives and seeking God\'s direction for the coming year.')">
+          <img src="gallery4.jpg" alt="Prayer Conference" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openGalleryModal('gallery5.jpg', 'Family Fun Day', 'Quarterly event for families to connect, play, and grow together in a Christ-centered environment. Games, food, and fellowship for all ages.')">
+          <img src="gallery5.jpg" alt="Family Fun Day" loading="lazy">
+        </div>
       </div>
     </div>
   </div>
 </section>
 
-<section class="location-section" id="locations" style="padding: 60px 0;">
+<!-- Location Section -->
+<section class="location-section" id="locations">
   <div class="container">
     <h2 class="section-title gradient-text">CHURCH LOCATION AND INFORMATION</h2>
-    <div class="picture-grid">
-      <div class="picture-card" onclick="location.href='location.html'">
-        <img src="location.jpg" alt="Our Location">
+    <div class="location-grid">
+      <div class="picture-card hover-lift" onclick="openPage('location.html')">
+        <img src="location.jpg" alt="Our Location" loading="lazy">
         <h3>Our Location</h3>
       </div>
-      <div class="picture-card" onclick="location.href='services.html'">
-        <img src="services.jpg" alt="Service Times">
+      <div class="picture-card hover-lift" onclick="openPage('services.html')">
+        <img src="services.jpg" alt="Service Times" loading="lazy">
         <h3>Service Times</h3>
       </div>
-      <div class="picture-card" onclick="location.href='library.html'">
-        <img src="library.jpg" alt="Church Library">
+      <div class="picture-card hover-lift" onclick="openPage('library.html')">
+        <img src="library.jpg" alt="Church Library" loading="lazy">
         <h3>Church Library</h3>
       </div>
-      <div class="picture-card" onclick="location.href='contact-info.html'">
-        <img src="contact.jpg" alt="Contact Information">
+      <div class="picture-card hover-lift" onclick="openPage('contact-info.html')">
+        <img src="contact.jpg" alt="Contact Information" loading="lazy">
         <h3>Contact Information</h3>
       </div>
     </div>
   </div>
 </section>
 
+<!-- Footer -->
 <footer id="contact">
   <div class="container footer-content">
     <div class="footer-column">
       <h3>Kingdom Citizens Church INT'L</h3>
-      <p>A vibrant community of believers committed to nurturing heirs of God's kingdom.</p>
+      <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
       <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
+        <a href="https://facebook.com/kingdomcitizenschurchintl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/kingdomcitizens" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/kingdomcitizenschurchintl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/kingdomcitizenschurchintl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://tiktok.com/@kingdomcitizens" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
       </div>
     </div>
     <div class="footer-column">
       <h3>Quick Links</h3>
       <ul class="footer-links">
         <li><a href="#home">Home</a></li>
-        <li><a href="seed-royal.html">Seed Royal Service</a></li>
-        <li><a href="foundation.html">Foundation Class</a></li>
+        <li><a href="#quick-links">Quick Access</a></li>
+        <li><a href="#locations">Location</a></li>
+        <li><a href="#ministries">Ministries</a></li>
+        <li><a href="watch-live.html">Watch Live</a></li>
         <li><a href="donate.html">Give Online</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="pastor-note.html">Pastor's Desk</a></li>
       </ul>
     </div>
     <div class="footer-column">
       <h3>Contact Us</h3>
       <ul class="footer-links">
-        <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Nigeria</li>
-        <li><i class="fas fa-phone"></i> +2347027175427</li>
-        <li><i class="fas fa-envelope"></i> info@kingdomcitizenschurchintl.org</li>
+        <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
+        <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
+        <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
+        <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
+        <li><i class="fas fa-clock"></i> Sunday: Manna 8am, Royal Service 9am-11:30am</li>
+        <li><i class="fas fa-clock"></i> Wednesday: Word & Communion 5:30pm</li>
       </ul>
     </div>
   </div>
-  <div style="text-align:center; padding-top:20px; border-top:1px solid rgba(255,255,255,0.1); margin-top:20px; font-size:0.8rem;">
-    &copy; 2026 Kingdom Citizens Church INT'L. All Rights Reserved.
+  <div class="footer-bottom">
+    &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
   </div>
 </footer>
 
 <script>
 // Header scroll effect
+const header = document.getElementById('mainHeader');
 window.addEventListener('scroll', () => {
-  const header = document.getElementById('mainHeader');
-  if (window.scrollY > 50) header.style.padding = '5px 0';
-  else header.style.padding = '12px 0';
+  if (window.scrollY > 50) {
+    header.classList.add('header-scrolled');
+  } else {
+    header.classList.remove('header-scrolled');
+  }
 });
 
-// Hamburger
+// HAMBURGER MENU
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
+const dropdowns = document.querySelectorAll('.dropdown');
+
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
+  
+  // Prevent body scroll when menu is open
+  if (navMenu.classList.contains('active')) {
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.style.overflow = 'auto';
+  }
 });
 
-// Scroll Progress
-window.addEventListener('scroll', () => {
+// Dropdown menu on mobile
+dropdowns.forEach(dropdown => {
+  const trigger = dropdown.querySelector('a');
+  trigger.addEventListener('click', (e) => {
+    if (window.innerWidth <= 992) {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+    }
+  });
+});
+
+// Close menu when clicking outside on mobile
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
+    if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.style.overflow = 'auto';
+    }
+  }
+});
+
+// Professional touch: Scroll progress indicator
+window.addEventListener('scroll', function() {
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
   const scrolled = (winScroll / height) * 100;
-  document.getElementById('scrollProgress').style.width = scrolled + '%';
+  const scrollProgress = document.getElementById('scrollProgress');
+  if (scrollProgress) {
+    scrollProgress.style.width = scrolled + '%';
+  }
 });
 
-// Reveal cards on scroll
-const observer = new IntersectionObserver((entries) => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) entry.target.classList.add('visible');
+// ====== DYNAMIC EFFECTS FOR FIRST THREE CIRCLE BUTTONS ======
+function initializeDynamicButtons() {
+  const buttons = document.querySelectorAll('.circle-button.dynamic');
+  
+  // Clear existing animations
+  buttons.forEach(btn => {
+    btn.style.animation = 'none';
+    btn.querySelector('i').style.animation = 'none';
   });
-}, { threshold: 0.1 });
+  
+  // Assign dynamic effects with faster animations
+  const effects = [
+    { name: 'bounce', time: '2s' },
+    { name: 'pulse', time: '1.5s' },
+    { name: 'float', time: '3s' }
+  ];
+  
+  const iconEffects = [
+    { name: 'rotate', time: '8s' },
+    { name: 'sparkle', time: '1.5s' },
+    { name: 'sparkle', time: '1.8s' }
+  ];
+  
+  buttons.forEach((button, index) => {
+    // Button animation
+    const effect = effects[index % effects.length];
+    button.style.setProperty('--animation-time', effect.time);
+    
+    // Remove previous animation classes
+    ['bounce', 'pulse', 'rotate', 'glow', 'shake', 'float'].forEach(cls => {
+      button.classList.remove(cls);
+    });
+    
+    // Add new animation
+    button.classList.add(effect.name);
+    
+    // Icon animation
+    const iconEffect = iconEffects[index % iconEffects.length];
+    const icon = button.querySelector('i');
+    icon.style.animation = 'none';
+    
+    // Apply icon animation
+    if (iconEffect.name === 'rotate') {
+      icon.style.animation = `rotate ${iconEffect.time} linear infinite`;
+    } else if (iconEffect.name === 'sparkle') {
+      icon.style.animation = `sparkle ${iconEffect.time} ease-in-out infinite`;
+    }
+    
+    // Enhanced hover effects
+    button.addEventListener('mouseenter', function() {
+      this.style.transform = 'scale(1.15) rotate(5deg)';
+      this.style.zIndex = '10';
+    });
+    
+    button.addEventListener('mouseleave', function() {
+      this.style.transform = '';
+      this.style.zIndex = '';
+    });
+    
+    // Click effect
+    button.addEventListener('click', function(e) {
+      createRipple(e, this);
+      // Quick pulse effect on click
+      this.style.animation = 'none';
+      setTimeout(() => {
+        this.classList.add(effect.name);
+      }, 10);
+    });
+  });
+}
 
-document.querySelectorAll('.picture-card').forEach(card => observer.observe(card));
+// ====== GALLERY MODAL FUNCTIONS ======
+function openGalleryModal(imageSrc, title, description) {
+  const modal = document.getElementById('galleryModal');
+  const modalImage = modal.querySelector('.modal-image');
+  const modalTitle = document.getElementById('modalTitle');
+  const modalDescription = document.getElementById('modalDescription');
+  
+  modalImage.src = imageSrc;
+  modalTitle.textContent = title;
+  modalDescription.textContent = description;
+  
+  modal.classList.add('active');
+  document.body.style.overflow = 'hidden';
+}
 
-// Loading animation hide
-window.addEventListener('load', () => {
+function closeGalleryModal() {
+  const modal = document.getElementById('galleryModal');
+  modal.classList.remove('active');
+  document.body.style.overflow = 'auto';
+}
+
+// Close modal when clicking X or outside
+document.querySelector('.close-modal').addEventListener('click', closeGalleryModal);
+document.getElementById('galleryModal').addEventListener('click', function(e) {
+  if (e.target === this) {
+    closeGalleryModal();
+  }
+});
+
+// Close modal with Escape key
+document.addEventListener('keydown', function(e) {
+  if (e.key === 'Escape') {
+    closeGalleryModal();
+  }
+});
+
+// Create ripple effect
+function createRipple(event, element) {
+  const ripple = document.createElement('span');
+  const rect = element.getBoundingClientRect();
+  const size = Math.max(rect.width, rect.height);
+  const x = event.clientX - rect.left - size / 2;
+  const y = event.clientY - rect.top - size / 2;
+  
+  ripple.style.width = ripple.style.height = size + 'px';
+  ripple.style.left = x + 'px';
+  ripple.style.top = y + 'px';
+  ripple.classList.add('ripple');
+  
+  // Remove existing ripples
+  const existingRipples = element.querySelectorAll('.ripple');
+  existingRipples.forEach(r => r.remove());
+  
+  element.appendChild(ripple);
+  
+  // Remove ripple after animation
   setTimeout(() => {
-    document.querySelector('.loading').style.display = 'none';
-  }, 500);
+    ripple.remove();
+  }, 800);
+}
+
+// ====== SMOOTHER SCROLLING AND ANIMATIONS ======
+let lastScrollY = 0;
+let ticking = false;
+
+function updateScroll() {
+  // Picture cards animation with requestAnimationFrame
+  const pictureCards = document.querySelectorAll('.picture-card:not(.visible)');
+  const windowHeight = window.innerHeight;
+  
+  pictureCards.forEach(card => {
+    const cardTop = card.getBoundingClientRect().top;
+    
+    if (cardTop < windowHeight - 100) {
+      card.classList.add('visible');
+    }
+  });
+  
+  // Smooth parallax effect for hero
+  const hero = document.querySelector('.hero');
+  if (hero) {
+    const scrolled = window.pageYOffset;
+    const rate = scrolled * -0.5;
+    hero.style.transform = `translate3d(0, ${rate}px, 0)`;
+  }
+  
+  lastScrollY = window.scrollY;
+  ticking = false;
+}
+
+function requestTick() {
+  if (!ticking) {
+    requestAnimationFrame(updateScroll);
+    ticking = true;
+  }
+}
+
+// Optimized scroll event listener
+window.addEventListener('scroll', requestTick, { passive: true });
+
+// Initialize on load
+window.addEventListener('DOMContentLoaded', function() {
+  // Preload video
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) heroVideo.load();
+  
+  // Initialize dynamic buttons
+  initializeDynamicButtons();
+  
+  // Initialize picture cards with random directional animations
+  const pictureCards = document.querySelectorAll('.picture-card');
+  const animationClasses = [
+    'from-left', 'from-right', 'from-up', 'from-down',
+    'from-diagonal-left', 'from-diagonal-right'
+  ];
+  
+  pictureCards.forEach((card, index) => {
+    const randomClass = animationClasses[index % animationClasses.length];
+    card.classList.add(randomClass);
+    card.style.transitionDelay = `${(index % 6) * 0.1}s`;
+  });
+  
+  // Initial check for visible elements
+  updateScroll();
+  
+  // Hide loading animation
+  setTimeout(() => {
+    const loading = document.querySelector('.loading');
+    if (loading) {
+      loading.style.opacity = '0';
+      setTimeout(() => {
+        loading.style.display = 'none';
+      }, 300);
+    }
+  }, 1000);
 });
 
-// Scroll to top
-const scrollTop = document.getElementById('scrollTop');
+// Scroll to top button
+const scrollTopBtn = document.getElementById('scrollTop');
+
 window.addEventListener('scroll', () => {
-  if (window.scrollY > 300) scrollTop.classList.add('visible');
-  else scrollTop.classList.remove('visible');
+  if (window.scrollY > 300) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
 });
-scrollTop.addEventListener('click', () => window.scrollTo({ top: 0, behavior: 'smooth' }));
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// ====== IMPROVED BUTTON NAVIGATION (NO LOADING) ======
+function navigateToPage(page, element) {
+  // For dynamic buttons - no loading spinner
+  if(['new-button', 'prayer-button', 'testimony-button'].includes(element.id)) {
+    createRipple(event, element);
+    
+    // Quick animation before navigation
+    element.classList.add('clicked');
+    element.style.transform = 'scale(0.95)';
+    
+    // Navigate immediately (no delay)
+    setTimeout(() => {
+      window.location.href = page;
+    }, 300);
+    
+    return false;
+  }
+  
+  // Original behavior for other buttons
+  element.classList.add('square');
+  setTimeout(() => {
+    window.location.href = page;
+  }, 500);
+}
+
+function openPage(page) {
+  window.location.href = page;
+}
+
+// ====== SMOOTH INSTAGRAM SLIDER ======
+const instaTrack = document.querySelector('.insta-track');
+if (instaTrack) {
+  let scrollAmount = 0;
+  const slideWidth = 245;
+  let autoScrollInterval;
+  let isDragging = false;
+  let startX;
+  let scrollLeft;
+  
+  function startAutoScroll() {
+    autoScrollInterval = setInterval(() => {
+      if (!isDragging) {
+        scrollAmount += slideWidth;
+        
+        // Reset if at end
+        if (scrollAmount >= instaTrack.scrollWidth - instaTrack.clientWidth) {
+          scrollAmount = 0;
+          instaTrack.scrollTo({ left: 0, behavior: 'smooth' });
+        } else {
+          instaTrack.scrollTo({ left: scrollAmount, behavior: 'smooth' });
+        }
+      }
+    }, 4000); // Faster auto-scroll
+  }
+  
+  startAutoScroll();
+  
+  // Pause auto-scroll on hover
+  instaTrack.addEventListener('mouseenter', () => {
+    clearInterval(autoScrollInterval);
+  });
+  
+  instaTrack.addEventListener('mouseleave', () => {
+    startAutoScroll();
+  });
+  
+  // Make draggable
+  instaTrack.addEventListener('mousedown', (e) => {
+    isDragging = true;
+    startX = e.pageX - instaTrack.offsetLeft;
+    scrollLeft = instaTrack.scrollLeft;
+    instaTrack.style.cursor = 'grabbing';
+    clearInterval(autoScrollInterval);
+  });
+  
+  instaTrack.addEventListener('mouseleave', () => {
+    isDragging = false;
+    instaTrack.style.cursor = 'grab';
+  });
+  
+  instaTrack.addEventListener('mouseup', () => {
+    isDragging = false;
+    instaTrack.style.cursor = 'grab';
+    startAutoScroll();
+  });
+  
+  instaTrack.addEventListener('mousemove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.pageX - instaTrack.offsetLeft;
+    const walk = (x - startX) * 2;
+    instaTrack.scrollLeft = scrollLeft - walk;
+  });
+  
+  // Touch events for mobile
+  instaTrack.addEventListener('touchstart', (e) => {
+    isDragging = true;
+    startX = e.touches[0].pageX - instaTrack.offsetLeft;
+    scrollLeft = instaTrack.scrollLeft;
+    clearInterval(autoScrollInterval);
+  });
+  
+  instaTrack.addEventListener('touchend', () => {
+    isDragging = false;
+    startAutoScroll();
+  });
+  
+  instaTrack.addEventListener('touchmove', (e) => {
+    if (!isDragging) return;
+    e.preventDefault();
+    const x = e.touches[0].pageX - instaTrack.offsetLeft;
+    const walk = (x - startX) * 2;
+    instaTrack.scrollLeft = scrollLeft - walk;
+  });
+}
+
+// Smooth scrolling for anchor links
+document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+  anchor.addEventListener('click', function(e) {
+    if (this.getAttribute('href') === '#') return;
+    
+    e.preventDefault();
+    const targetId = this.getAttribute('href');
+    
+    if (targetId === '#home') {
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    } else {
+      const targetElement = document.querySelector(targetId);
+      if (targetElement) {
+        window.scrollTo({
+          top: targetElement.offsetTop - 80,
+          behavior: 'smooth'
+        });
+      }
+    }
+  });
+});
+
+// Reinitialize on window resize
+window.addEventListener('resize', initializeDynamicButtons);
+
+// Performance optimization: Debounce resize events
+let resizeTimeout;
+window.addEventListener('resize', function() {
+  clearTimeout(resizeTimeout);
+  resizeTimeout = setTimeout(function() {
+    initializeDynamicButtons();
+    updateScroll();
+  }, 250);
+});
 </script>
 
 </body>
 </html>
+
+<!-- 
+LIST OF ALL IMAGE NAMES SAVED IN THE CODE:
+
+1. logo11.jpg (header logo)
+2. hero-poster.jpg (video poster)
+3. kingdom-video.mp4 (hero video)
+4. kingdom-video.webm (hero video alternative)
+5. youth-ministry.jpg (youth ministry)
+6. royal-piller.jpg (royal piller)
+7. royal-voice.jpg (royal voice)
+8. counselling.jpg (counselling)
+9. children-church.jpg (children church)
+10. foundation-class.jpg (foundation class)
+11. seed-royal.jpg (seed royal school)
+12. evangelism.jpg (evangelism ministry)
+13. gallery1.jpg (gallery - sunday service)
+14. gallery2.jpg (gallery - youth empowerment)
+15. gallery3.jpg (gallery - community outreach)
+16. gallery4.jpg (gallery - prayer conference)
+17. gallery5.jpg (gallery - family fun day)
+18. location.jpg (location)
+19. services.jpg (service times)
+20. library.jpg (church library)
+21. contact.jpg (contact information)
+-->
