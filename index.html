@@ -131,11 +131,11 @@
   
   /* MUCH BIGGER LOGO FRAME - INCREASED SIZE */
   .logo-frame {
-    width: clamp(90px, 10vw, 120px);
-    height: clamp(90px, 10vw, 120px);
+    width: clamp(120px, 15vw, 160px); /* INCREASED SIZE */
+    height: clamp(120px, 15vw, 160px); /* INCREASED SIZE */
     border-radius: 50%;
     background: white;
-    border: 4px solid var(--secondary);
+    border: 5px solid var(--secondary); /* INCREASED BORDER */
     display: flex;
     align-items: center;
     justify-content: center;
@@ -150,10 +150,10 @@
     object-fit: contain;
   }
   
-  /* 6. KINGDOM CITIZENS CHURCH ON ONE LINE - CHANGED TO GREEN COLOR */
+  /* 6. KINGDOM CITIZENS CHURCH ON ONE LINE - CHANGED TO GREEN COLOR AND INCREASED SIZE */
   .logo-text {
     font-family: 'Lobster', cursive;
-    font-size: clamp(1.5rem, 4vw, 2.625rem);
+    font-size: clamp(2rem, 5vw, 3.5rem); /* INCREASED SIZE */
     font-weight: 400;
     color: #008751; /* CHANGED FROM WHITE TO GREEN */
     letter-spacing: 1.5px;
@@ -351,23 +351,23 @@
     }
     
     .logo-text {
-      font-size: clamp(1.25rem, 5vw, 1.875rem);
+      font-size: clamp(1.5rem, 6vw, 2.5rem); /* ADJUSTED FOR MOBILE */
     }
     
     .logo-frame {
-      width: clamp(70px, 10vw, 90px);
-      height: clamp(70px, 10vw, 90px);
+      width: clamp(80px, 12vw, 100px); /* ADJUSTED FOR MOBILE */
+      height: clamp(80px, 12vw, 100px); /* ADJUSTED FOR MOBILE */
     }
   }
   
   @media (max-width: 768px) {
     .logo-text {
-      font-size: clamp(1.125rem, 4vw, 1.5rem);
+      font-size: clamp(1.25rem, 5vw, 1.8rem); /* ADJUSTED FOR MOBILE */
     }
     
     .logo-frame {
-      width: clamp(60px, 10vw, 70px);
-      height: clamp(60px, 10vw, 70px);
+      width: clamp(70px, 12vw, 85px); /* ADJUSTED FOR MOBILE */
+      height: clamp(70px, 12vw, 85px); /* ADJUSTED FOR MOBILE */
     }
   }
   
@@ -378,12 +378,12 @@
     }
     
     .logo-text {
-      font-size: clamp(1rem, 4vw, 1.25rem);
+      font-size: clamp(1.125rem, 5vw, 1.5rem); /* ADJUSTED FOR MOBILE */
     }
     
     .logo-frame {
-      width: clamp(50px, 10vw, 60px);
-      height: clamp(50px, 10vw, 60px);
+      width: clamp(60px, 12vw, 75px); /* ADJUSTED FOR MOBILE */
+      height: clamp(60px, 12vw, 75px); /* ADJUSTED FOR MOBILE */
     }
     
     .header-container {
@@ -393,12 +393,12 @@
   
   @media (max-width: 400px) {
     .logo-text {
-      font-size: 0.875rem;
+      font-size: 1rem; /* ADJUSTED FOR MOBILE */
     }
     
     .logo-frame {
-      width: 45px;
-      height: 45px;
+      width: 55px; /* ADJUSTED FOR MOBILE */
+      height: 55px; /* ADJUSTED FOR MOBILE */
       margin-right: 0.5rem;
     }
   }
@@ -740,7 +740,7 @@
   }
   
   .big-logo {
-    max-width: min(90%, 500px); /* INCREASED SIZE */
+    max-width: min(90%, 600px); /* INCREASED SIZE */
     margin: 0 auto clamp(2rem, 5vw, 3.125rem);
     animation: float 4s ease-in-out infinite;
     position: relative;
@@ -1578,6 +1578,15 @@
   <div class="container">
     <h2 class="section-title gradient-text">Our Ministries & Services</h2>
     <div class="picture-grid">
+      <!-- Added KCCI UK and KCCI US as requested -->
+      <div class="picture-card hover-lift" onclick="openPage('kcci-uk.html')">
+        <img src="kcci-uk.jpg" alt="KCCI UK Ministry" loading="lazy">
+        <h3>KCCI UK</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('kcci-us.html')">
+        <img src="kcci-us.jpg" alt="KCCI US Ministry" loading="lazy">
+        <h3>KCCI US</h3>
+      </div>
       <div class="picture-card hover-lift" onclick="openPage('department.html')"> <!-- CHANGED TO DEPARTMENT.HTML -->
         <img src="youth-ministry.jpg" alt="Youth Ministry" loading="lazy">
         <h3>Youth Ministry</h3>
@@ -1617,19 +1626,34 @@
       <h3 class="insta-title gradient-text">Our Service</h3>
       <div class="insta-track">
         <div class="insta-slide hover-lift" onclick="openPage('service.html')">
-          <img src="gallery1.jpg" alt="Sunday Service" loading="lazy">
+          <img src="sunday-school.jpg" alt="Sunday School 8am to 9am" loading="lazy">
         </div>
         <div class="insta-slide hover-lift" onclick="openPage('service.html')">
-          <img src="gallery2.jpg" alt="Youth Ministry" loading="lazy">
+          <img src="school-service.jpg" alt="School Service 9am to 11am (Jesus celebration service)" loading="lazy">
         </div>
         <div class="insta-slide hover-lift" onclick="openPage('service.html')">
-          <img src="gallery3.jpg" alt="Community Outreach" loading="lazy">
+          <img src="communion-service.jpg" alt="Wednesday Communion service 5 to 6:30" loading="lazy">
         </div>
         <div class="insta-slide hover-lift" onclick="openPage('service.html')">
-          <img src="gallery4.jpg" alt="Prayer Conference" loading="lazy">
+          <img src="health-outreach.jpg" alt="Community health outreach" loading="lazy">
         </div>
         <div class="insta-slide hover-lift" onclick="openPage('service.html')">
-          <img src="gallery5.jpg" alt="Family Fun Day" loading="lazy">
+          <img src="kingdom-harvest.jpg" alt="Kingdom harvest time convention October" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="youth-convention.jpg" alt="Youth convention September" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="judah-praise.jpg" alt="Judah praise festival July" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="december-outreach.jpg" alt="December 7 weekend outreach" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="easter-feast.jpg" alt="Easter love feast" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="crossover-service.jpg" alt="Months end cross over service 11:30 to 12:30" loading="lazy">
         </div>
       </div>
     </div>
@@ -1696,8 +1720,9 @@
         <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
         <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
         <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
-        <li><i class="fas fa-clock"></i> Sunday: Manna 8am, Royal Service 9am-11:30am</li>
-        <li><i class="fas fa-clock"></i> Wednesday: Word & Communion 5:30pm</li>
+        <li><i class="fas fa-clock"></i> Sunday School: 8am - 9am</li>
+        <li><i class="fas fa-clock"></i> Sunday Service: 9am - 11am (Jesus Celebration Service)</li>
+        <li><i class="fas fa-clock"></i> Wednesday: Communion Service 5pm - 6:30pm</li>
       </ul>
     </div>
   </div>
@@ -2177,29 +2202,3 @@ window.addEventListener('resize', function() {
 
 </body>
 </html>
-
-<!-- 
-LIST OF ALL IMAGE NAMES SAVED IN THE CODE:
-
-1. logo11.jpg (header logo and footer background)
-2. hero-poster.jpg (video poster)
-3. kingdom-video.mp4 (hero video)
-4. kingdom-video.webm (hero video alternative)
-5. youth-ministry.jpg (youth ministry)
-6. royal-piller.jpg (royal piller)
-7. royal-voice.jpg (royal voice)
-8. counselling.jpg (counselling)
-9. children-church.jpg (children church)
-10. foundation-class.jpg (foundation class)
-11. seed-royal.jpg (seed royal school)
-12. evangelism.jpg (evangelism ministry)
-13. gallery1.jpg (service - sunday service)
-14. gallery2.jpg (service - youth ministry)
-15. gallery3.jpg (service - community outreach)
-16. gallery4.jpg (service - prayer conference)
-17. gallery5.jpg (service - family fun day)
-18. location.jpg (location)
-19. services.jpg (service times)
-20. library.jpg (church library)
-21. contact.jpg (contact information)
--->
