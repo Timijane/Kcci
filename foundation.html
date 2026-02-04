@@ -1,0 +1,895 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#008751">
+<meta name="description" content="Foundation Class Registration - Kingdom Citizens Church INT'L's foundational Christian discipleship course for new believers and members.">
+<title>Foundation Class Registration - Kingdom Citizens Church INT'L</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  /* Import all CSS from previous forms */
+  
+  :root {
+    --primary: #008751;
+    --secondary: #FFD700;
+    --light: #f8f9fa;
+    --dark: #222;
+    --accent: #005a3a;
+    --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
+  }
+  
+  /* All the same base styles as previous forms */
+  
+  /* ============ FOUNDATION CLASS FORM STYLES ============ */
+  .form-hero {
+    background: linear-gradient(rgba(0, 90, 58, 0.85), rgba(0, 60, 40, 0.85)), url('foundation-bg.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .form-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-hero p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.95;
+  }
+  
+  .course-info-box {
+    background: linear-gradient(135deg, #f0f7f4, #e8f4f0);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border-left: 5px solid var(--primary);
+  }
+  
+  .course-info-box h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .module-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .module-card {
+    background: white;
+    border-radius: 10px;
+    padding: 1.5rem;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    border-top: 4px solid var(--primary);
+  }
+  
+  .module-card h4 {
+    color: var(--primary);
+    margin-bottom: 0.75rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .module-card ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .module-card li {
+    padding: 0.25rem 0;
+    color: #555;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+  }
+  
+  .module-card li i {
+    color: var(--primary);
+    font-size: 0.875rem;
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+  }
+  
+  .class-schedule-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .schedule-option {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .schedule-option:hover {
+    background: #f0f7f4;
+    border-color: var(--primary);
+    transform: translateY(-3px);
+  }
+  
+  .schedule-option.selected {
+    background: #e8f4f0;
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
+  }
+  
+  .schedule-option .day {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .schedule-option .time {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  .schedule-option .duration {
+    color: var(--accent);
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+    font-weight: 600;
+  }
+  
+  .spiritual-background {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .background-option {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .background-option:hover {
+    background: #f0f7f4;
+    border-color: var(--primary);
+  }
+  
+  .background-option.selected {
+    background: #e8f4f0;
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
+  }
+  
+  .background-option i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .background-option h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .background-option p {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .testimonial-slider {
+    background: #f9f9f9;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-top: 2rem;
+  }
+  
+  .testimonial-slider h3 {
+    color: var(--primary);
+    text-align: center;
+    margin-bottom: 1.5rem;
+  }
+  
+  .testimonial {
+    text-align: center;
+    padding: 1rem;
+  }
+  
+  .testimonial .quote {
+    font-style: italic;
+    color: #555;
+    margin-bottom: 1rem;
+    font-size: 1.1rem;
+  }
+  
+  .testimonial .author {
+    color: var(--primary);
+    font-weight: 600;
+  }
+</style>
+</head>
+<body>
+<!-- Loading animation -->
+<div class="loading"></div>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top" id="scrollTop">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<header id="mainHeader" class="glass-effect">
+  <div class="container header-container">
+    <div class="logo">
+      <div class="logo-frame">
+        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+      </div>
+      <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+    </div>
+    <div class="nav-container">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown"><a href="#about">About <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="about.html">Our Story</a>
+            <a href="beliefs.html">Beliefs</a>
+            <a href="leadership.html">Leadership</a>
+            <a href="vision.html">Vision & Mission</a>
+          </div>
+        </li>
+        <li><a href="department.html">Departments</a></li>
+        <li class="dropdown"><a href="#ministries">Ministries <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="foundation.html" class="active">Foundation Class</a>
+            <a href="counselling.html">Counselling</a>
+            <a href="evangelism.html">Evangelism</a>
+            <a href="seed-royal.html">Seed Royal School</a>
+          </div>
+        </li>
+        <li><a href="pastor-note.html">Pastor's Desk</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+        <li><a href="prayer.html">Prayer Request</a></li>
+        <li><a href="testimony.html">Share Testimony</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="form-hero">
+  <div class="container">
+    <h1>Foundation Class Registration</h1>
+    <p>Our foundational Christian discipleship course designed to establish new believers in the faith and equip all members for kingdom service.</p>
+  </div>
+</section>
+
+<!-- Form Section -->
+<section class="form-section">
+  <div class="container">
+    <!-- Course Information Box -->
+    <div class="course-info-box">
+      <h3><i class="fas fa-gem"></i> About Foundation Class</h3>
+      <p>The Foundation Class is a 12-week intensive discipleship program that covers the essential doctrines of the Christian faith. This course is mandatory for all new members and highly recommended for anyone wanting to deepen their understanding of biblical foundations.</p>
+      
+      <div class="module-grid">
+        <div class="module-card">
+          <h4><i class="fas fa-book-bible"></i> Module 1: Salvation & New Birth</h4>
+          <ul>
+            <li><i class="fas fa-check"></i> Understanding salvation</li>
+            <li><i class="fas fa-check"></i> The new birth experience</li>
+            <li><i class="fas fa-check"></i> Assurance of salvation</li>
+            <li><i class="fas fa-check"></i> The finished work of Christ</li>
+          </ul>
+        </div>
+        
+        <div class="module-card">
+          <h4><i class="fas fa-water"></i> Module 2: Water & Spirit Baptism</h4>
+          <ul>
+            <li><i class="fas fa-check"></i> Biblical basis for baptism</li>
+            <li><i class="fas fa-check"></i> Baptism of the Holy Spirit</li>
+            <li><i class="fas fa-check"></i> Speaking in tongues</li>
+            <li><i class="fas fa-check"></i> Gifts of the Spirit</li>
+          </ul>
+        </div>
+        
+        <div class="module-card">
+          <h4><i class="fas fa-church"></i> Module 3: Church & Kingdom</h4>
+          <ul>
+            <li><i class="fas fa-check"></i> Purpose of the church</li>
+            <li><i class="fas fa-check"></i> Kingdom citizenship</li>
+            <li><i class="fas fa-check"></i> Spiritual authority</li>
+            <li><i class="fas fa-check"></i> Fivefold ministry</li>
+          </ul>
+        </div>
+        
+        <div class="module-card">
+          <h4><i class="fas fa-pray"></i> Module 4: Prayer & Warfare</h4>
+          <ul>
+            <li><i class="fas fa-check"></i> Types of prayer</li>
+            <li><i class="fas fa-check"></i> Spiritual warfare</li>
+            <li><i class="fas fa-check"></i> Deliverance ministry</li>
+            <li><i class="fas fa-check"></i> Maintaining victory</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-container glass-effect">
+      <div class="form-header">
+        <h2>Foundation Class Registration Form</h2>
+        <p>Register for our next Foundation Class cohort. Classes run for 12 weeks with flexible schedule options.</p>
+      </div>
+      
+      <!-- Success Message (Initially Hidden) -->
+      <div class="success-message" id="successMessage">
+        <i class="fas fa-gem"></i>
+        <h3>Registration Successful!</h3>
+        <p>You have been registered for the Foundation Class. Our discipleship coordinator will contact you with class details and materials.</p>
+        <p><a href="index.html" style="color: #FFD700; text-decoration: underline;">Return to Homepage</a></p>
+      </div>
+      
+      <!-- Form -->
+      <form id="foundationForm" method="POST">
+        <div class="form-body">
+          <!-- Personal Information -->
+          <div class="form-group">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">Personal Information</h3>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="age">Age <span class="required">*</span></label>
+              <input type="number" id="age" name="age" class="form-control" placeholder="Enter your age" min="13" max="100" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="occupation">Occupation</label>
+              <input type="text" id="occupation" name="occupation" class="form-control" placeholder="What do you do?">
+            </div>
+            
+            <div class="form-group">
+              <label for="maritalStatus">Marital Status</label>
+              <select id="maritalStatus" name="maritalStatus" class="form-control">
+                <option value="" selected>Select marital status</option>
+                <option value="single">Single</option>
+                <option value="married">Married</option>
+                <option value="divorced">Divorced</option>
+                <option value="widowed">Widowed</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Spiritual Background -->
+          <div class="form-group">
+            <label>Spiritual Background <span class="required">*</span></label>
+            <p style="color: #666; margin-bottom: 1rem;">Which best describes your current spiritual journey?</p>
+            
+            <div class="spiritual-background">
+              <div class="background-option" data-background="new-believer">
+                <i class="fas fa-seedling"></i>
+                <h4>New Believer</h4>
+                <p>Recently accepted Christ (less than 1 year)</p>
+              </div>
+              
+              <div class="background-option" data-background="growing-christian">
+                <i class="fas fa-tree"></i>
+                <h4>Growing Christian</h4>
+                <p>Been a Christian for some time, want deeper foundations</p>
+              </div>
+              
+              <div class="background-option" data-background="returning-back">
+                <i class="fas fa-arrow-rotate-left"></i>
+                <h4>Returning to Faith</h4>
+                <p>Coming back to church after a period away</p>
+              </div>
+              
+              <div class="background-option" data-background="new-to-church">
+                <i class="fas fa-church"></i>
+                <h4>New to This Church</h4>
+                <p>New member wanting to understand church teachings</p>
+              </div>
+            </div>
+            <input type="hidden" id="spiritualBackground" name="spiritualBackground" required>
+          </div>
+          
+          <!-- Salvation Experience -->
+          <div class="form-group">
+            <label for="salvationExperience">Share Your Salvation Experience (Optional)</label>
+            <textarea id="salvationExperience" name="salvationExperience" class="form-control" rows="3" placeholder="Briefly share how you came to know Christ"></textarea>
+          </div>
+          
+          <!-- Class Schedule Selection -->
+          <div class="form-group">
+            <label>Preferred Class Schedule <span class="required">*</span></label>
+            <p style="color: #666; margin-bottom: 1rem;">Select your preferred class day and time:</p>
+            
+            <div class="class-schedule-grid">
+              <div class="schedule-option" data-day="Tuesday" data-time="6pm-8pm">
+                <div class="day">Tuesday Evening</div>
+                <div class="time">6:00 PM - 8:00 PM</div>
+                <div class="duration">12 weeks</div>
+              </div>
+              
+              <div class="schedule-option" data-day="Thursday" data-time="6pm-8pm">
+                <div class="day">Thursday Evening</div>
+                <div class="time">6:00 PM - 8:00 PM</div>
+                <div class="duration">12 weeks</div>
+              </div>
+              
+              <div class="schedule-option" data-day="Saturday" data-time="10am-12pm">
+                <div class="day">Saturday Morning</div>
+                <div class="time">10:00 AM - 12:00 PM</div>
+                <div class="duration">12 weeks</div>
+              </div>
+              
+              <div class="schedule-option" data-day="Sunday" data-time="3pm-5pm">
+                <div class="day">Sunday Afternoon</div>
+                <div class="time">3:00 PM - 5:00 PM</div>
+                <div class="duration">12 weeks</div>
+              </div>
+            </div>
+            <input type="hidden" id="classSchedule" name="classSchedule" required>
+          </div>
+          
+          <!-- Baptism Status -->
+          <div class="form-group">
+            <label>Have you been water baptized? <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="waterBaptized" value="yes" required> Yes
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="waterBaptized" value="no"> No, not yet
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="waterBaptized" value="unsure"> Not sure
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label>Have you been baptized in the Holy Spirit? <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="spiritBaptized" value="yes" required> Yes
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="spiritBaptized" value="no"> No, not yet
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="spiritBaptized" value="unsure"> Not sure what this means
+              </label>
+            </div>
+          </div>
+          
+          <!-- Church Involvement -->
+          <div class="form-group">
+            <label>Current Church Involvement</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="churchInvolvement" value="regular"> Regular attendee
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="churchInvolvement" value="member"> Official member
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="churchInvolvement" value="visitor"> First-time visitor
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="churchInvolvement" value="online"> Online participant
+              </label>
+            </div>
+          </div>
+          
+          <!-- Ministry Interests -->
+          <div class="form-group">
+            <label>Are you interested in joining any ministry after Foundation Class?</label>
+            <div class="checkbox-group" style="display: grid; grid-template-columns: repeat(auto-fill, minmax(200px, 1fr)); gap: 1rem; margin-top: 0.5rem;">
+              <label class="checkbox-label">
+                <input type="checkbox" name="ministryInterests" value="prayer"> Prayer Ministry
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="ministryInterests" value="evangelism"> Evangelism
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="ministryInterests" value="ushering"> Ushering
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="ministryInterests" value="choir"> Choir/Royal Voice
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="ministryInterests" value="media"> Media & Tech
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="ministryInterests" value="children"> Children Ministry
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="ministryInterests" value="youth"> Youth Ministry
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="ministryInterests" value="welfare"> Welfare/Social Justice
+              </label>
+              <label class="checkbox-label">
+                <input type="checkbox" name="ministryInterests" value="not-sure"> Not sure yet
+              </label>
+            </div>
+          </div>
+          
+          <!-- Expectations -->
+          <div class="form-group">
+            <label for="expectations">What do you hope to gain from Foundation Class?</label>
+            <textarea id="expectations" name="expectations" class="form-control" rows="3" placeholder="Share your expectations and what you hope to learn"></textarea>
+          </div>
+          
+          <!-- Prayer Requests -->
+          <div class="form-group">
+            <label for="prayerRequests">Current Prayer Requests (Optional)</label>
+            <textarea id="prayerRequests" name="prayerRequests" class="form-control" rows="3" placeholder="Share any specific prayer needs as you begin this discipleship journey"></textarea>
+          </div>
+          
+          <!-- Health Information -->
+          <div class="form-group">
+            <label>Do you have any health conditions we should be aware of?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="healthConditions" value="no"> No
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="healthConditions" value="yes"> Yes (please specify below)
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="healthDetails">Health Condition Details (If yes)</label>
+            <textarea id="healthDetails" name="healthDetails" class="form-control" rows="2" placeholder="Please specify any health conditions, allergies, or disabilities"></textarea>
+          </div>
+          
+          <!-- Special Needs -->
+          <div class="form-group">
+            <label>Do you require any special accommodations for the class?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="specialAccommodations" value="no"> No
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="specialAccommodations" value="yes"> Yes (please specify below)
+              </label>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="accommodationDetails">Accommodation Details (If yes)</label>
+            <textarea id="accommodationDetails" name="accommodationDetails" class="form-control" rows="2" placeholder="Please specify any special accommodations needed"></textarea>
+          </div>
+          
+          <!-- Agreement -->
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="attendanceAgreement" required>
+              <span>I commit to attending at least 10 out of 12 classes to graduate from the Foundation Class. <span class="required">*</span></span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="participationAgreement" required>
+              <span>I agree to actively participate in class discussions, assignments, and group activities. <span class="required">*</span></span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="materialsAgreement" required>
+              <span>I understand that class materials will be provided and I agree to complete assigned readings. <span class="required">*</span></span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="updates" checked>
+              <span>I would like to receive class updates, reminders, and supplementary materials via email/SMS.</span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="photoAgreement">
+              <span>I give permission for photos/videos taken during class to be used for church promotional materials.</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-footer">
+          <button type="submit" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem;">
+            <i class="fas fa-gem"></i> Register for Foundation Class
+          </button>
+          <p>Next cohort begins: <strong>March 15, 2025</strong>. Registration closes one week before start date.</p>
+          <p>For questions, contact our discipleship coordinator: <strong>+2348034280774</strong></p>
+        </div>
+      </form>
+    </div>
+    
+    <!-- Testimonials -->
+    <div class="testimonial-slider">
+      <h3>What Foundation Class Graduates Are Saying</h3>
+      
+      <div class="testimonial">
+        <div class="quote">"Foundation Class transformed my understanding of what it means to be a Christian. I went from just attending church to knowing why I believe what I believe."</div>
+        <div class="author">- Brother Ade, Class of 2024</div>
+      </div>
+      
+      <div class="testimonial">
+        <div class="quote">"As a new believer, this class gave me the solid foundation I needed. I'm now confident in my faith and actively serving in the evangelism ministry."</div>
+        <div class="author">- Sister Bola, Class of 2023</div>
+      </div>
+      
+      <div class="testimonial">
+        <div class="quote">"Even though I've been a Christian for years, Foundation Class deepened my walk with God in ways I never expected. Highly recommended for everyone!"</div>
+        <div class="author">- Deacon James, Class of 2024</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer (Same as previous forms) -->
+<footer id="contact">
+  <div class="container footer-content">
+    <div class="footer-column">
+      <h3>Kingdom Citizens Church INT'L</h3>
+      <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/kingdomcitizenschurchintl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/kingdomcitizens" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/kingdomcitizenschurchintl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/kingdomcitizenschurchintl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+        <li><a href="prayer.html">Prayer Request</a></li>
+        <li><a href="testimony.html">Share Testimony</a></li>
+        <li><a href="counselling.html">Counselling</a></li>
+        <li><a href="foundation.html">Foundation Class</a></li>
+        <li><a href="seed-royal.html">Seed Royal School</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <ul class="footer-links">
+        <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
+        <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
+        <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
+        <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
+        <li><i class="fas fa-envelope"></i> Foundation Class: foundation@kingdomcitizens.org</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+  </div>
+</footer>
+
+<script>
+// Same JavaScript as previous forms for header, menu, etc.
+
+// Spiritual background selection
+const backgroundOptions = document.querySelectorAll('.background-option');
+const spiritualBackgroundInput = document.getElementById('spiritualBackground');
+
+backgroundOptions.forEach(option => {
+  option.addEventListener('click', function() {
+    // Remove selection from all options
+    backgroundOptions.forEach(opt => opt.classList.remove('selected'));
+    
+    // Select this option
+    this.classList.add('selected');
+    
+    // Update hidden input
+    const background = this.getAttribute('data-background');
+    spiritualBackgroundInput.value = background;
+  });
+});
+
+// Class schedule selection
+const scheduleOptions = document.querySelectorAll('.schedule-option');
+const classScheduleInput = document.getElementById('classSchedule');
+
+scheduleOptions.forEach(option => {
+  option.addEventListener('click', function() {
+    // Remove selection from all options
+    scheduleOptions.forEach(opt => opt.classList.remove('selected'));
+    
+    // Select this option
+    this.classList.add('selected');
+    
+    // Update hidden input
+    const day = this.getAttribute('data-day');
+    const time = this.getAttribute('data-time');
+    classScheduleInput.value = `${day} ${time}`;
+  });
+});
+
+// Health conditions toggle
+const healthConditionsRadios = document.querySelectorAll('input[name="healthConditions"]');
+const healthDetailsTextarea = document.getElementById('healthDetails');
+
+healthConditionsRadios.forEach(radio => {
+  radio.addEventListener('change', function() {
+    if (this.value === 'yes') {
+      healthDetailsTextarea.style.display = 'block';
+      healthDetailsTextarea.setAttribute('required', 'required');
+    } else {
+      healthDetailsTextarea.style.display = 'none';
+      healthDetailsTextarea.removeAttribute('required');
+    }
+  });
+});
+
+// Special accommodations toggle
+const accommodationRadios = document.querySelectorAll('input[name="specialAccommodations"]');
+const accommodationDetailsTextarea = document.getElementById('accommodationDetails');
+
+accommodationRadios.forEach(radio => {
+  radio.addEventListener('change', function() {
+    if (this.value === 'yes') {
+      accommodationDetailsTextarea.style.display = 'block';
+      accommodationDetailsTextarea.setAttribute('required', 'required');
+    } else {
+      accommodationDetailsTextarea.style.display = 'none';
+      accommodationDetailsTextarea.removeAttribute('required');
+    }
+  });
+});
+
+// Form Submission Handler
+document.getElementById('foundationForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  // Validate spiritual background selection
+  if (!spiritualBackgroundInput.value) {
+    alert('Please select your spiritual background.');
+    return;
+  }
+  
+  // Validate class schedule selection
+  if (!classScheduleInput.value) {
+    alert('Please select a class schedule.');
+    return;
+  }
+  
+  const form = this;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.innerHTML;
+  
+  // Show loading state
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Registering...';
+  submitBtn.disabled = true;
+  
+  try {
+    // Collect form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // In a real implementation, send to your server/email
+    console.log('Foundation Class Registration Data:', data);
+    
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Show success message
+    document.getElementById('successMessage').style.display = 'block';
+    form.style.display = 'none';
+    
+    // Scroll to success message
+    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+    
+  } catch (error) {
+    alert('There was an error submitting your registration. Please try again or contact our discipleship coordinator.');
+    submitBtn.innerHTML = originalBtnText;
+    submitBtn.disabled = false;
+  }
+});
+
+// Phone number formatting
+const phoneInput = document.getElementById('phone');
+if (phoneInput) {
+  phoneInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    if (value.length > 0) {
+      if (value.startsWith('0')) {
+        value = '+234' + value.substring(1);
+      } else if (value.length === 10 && !value.startsWith('0')) {
+        value = '+234' + value;
+      }
+    }
+    
+    e.target.value = value;
+  });
+}
+
+// Age validation
+const ageInput = document.getElementById('age');
+if (ageInput) {
+  ageInput.addEventListener('blur', function() {
+    const age = parseInt(this.value);
+    if (age < 13) {
+      alert('Foundation Class is for individuals aged 13 and above. For younger children, please inquire about our children\'s discipleship program.');
+      this.value = '';
+      this.focus();
+    }
+  });
+}
+
+// Initialize like previous forms
+window.addEventListener('DOMContentLoaded', function() {
+  // Same initialization as previous forms
+  
+  // Initialize testimonials slider
+  const testimonials = document.querySelectorAll('.testimonial');
+  let currentTestimonial = 0;
+  
+  if (testimonials.length > 1) {
+    // Show only first testimonial initially
+    testimonials.forEach((testimonial, index) => {
+      if (index !== 0) testimonial.style.display = 'none';
+    });
+    
+    // Rotate testimonials every 5 seconds
+    setInterval(() => {
+      testimonials[currentTestimonial].style.display = 'none';
+      currentTestimonial = (currentTestimonial + 1) % testimonials.length;
+      testimonials[currentTestimonial].style.display = 'block';
+    }, 5000);
+  }
+});
+</script>
+</body>
+</html>
