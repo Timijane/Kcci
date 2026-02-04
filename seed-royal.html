@@ -1,0 +1,1149 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#008751">
+<meta name="description" content="Seed Royal School Registration - Kingdom Citizens Church INT'L's Christian educational institution offering quality academic and spiritual foundation.">
+<title>Seed Royal School Registration - Kingdom Citizens Church INT'L</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  /* Import all CSS from counselling.html, with adjustments for school form */
+  
+  :root {
+    --primary: #008751;
+    --secondary: #FFD700;
+    --light: #f8f9fa;
+    --dark: #222;
+    --accent: #005a3a;
+    --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
+  }
+  
+  /* All the same base styles as counselling.html */
+  
+  /* ============ SEED ROYAL SCHOOL FORM STYLES ============ */
+  .form-hero {
+    background: linear-gradient(rgba(255, 215, 0, 0.9), rgba(255, 193, 7, 0.9)), url('school-bg.jpg') center/cover no-repeat;
+    color: #333;
+    text-align: center;
+    padding: clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .form-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
+    color: #008751;
+    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
+  }
+  
+  .form-hero p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    max-width: 800px;
+    margin: 0 auto;
+    color: #333;
+    font-weight: 500;
+  }
+  
+  .school-info-box {
+    background: linear-gradient(135deg, #fff9e6, #fff3cc);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border-left: 5px solid var(--secondary);
+  }
+  
+  .school-info-box h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .school-info-box .info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .info-item {
+    text-align: center;
+    padding: 1.5rem;
+    background: white;
+    border-radius: 10px;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+  }
+  
+  .info-item i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .info-item h4 {
+    color: var(--accent);
+    margin-bottom: 0.5rem;
+  }
+  
+  .class-levels {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .class-level {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .class-level:hover {
+    background: #f0f7f4;
+    border-color: var(--primary);
+    transform: translateY(-3px);
+  }
+  
+  .class-level.selected {
+    background: #e8f4f0;
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
+  }
+  
+  .class-level .level {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .class-level .age {
+    color: #666;
+    font-size: 0.9rem;
+  }
+  
+  .class-level .fee {
+    color: var(--accent);
+    font-weight: 600;
+    margin-top: 0.5rem;
+    font-size: 0.9rem;
+  }
+  
+  .upload-area {
+    border: 2px dashed #ccc;
+    border-radius: 12px;
+    padding: 3rem 2rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+    margin-top: 1rem;
+  }
+  
+  .upload-area:hover {
+    border-color: var(--primary);
+    background: #f0f7f4;
+  }
+  
+  .upload-area i {
+    font-size: 3rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .upload-area.dragover {
+    border-color: var(--primary);
+    background: #e8f4f0;
+  }
+  
+  .file-list {
+    margin-top: 1rem;
+  }
+  
+  .file-item {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0.75rem 1rem;
+    background: #f0f7f4;
+    border-radius: 8px;
+    margin-bottom: 0.5rem;
+  }
+  
+  .file-item .file-name {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    color: var(--accent);
+  }
+  
+  .file-item .remove-file {
+    color: #e74c3c;
+    cursor: pointer;
+  }
+  
+  .payment-plan-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .payment-plan {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .payment-plan:hover {
+    background: #f0f7f4;
+    border-color: var(--primary);
+  }
+  
+  .payment-plan.selected {
+    background: #e8f4f0;
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
+  }
+  
+  .payment-plan i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .payment-plan h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .payment-plan .amount {
+    font-size: 1.5rem;
+    font-weight: 600;
+    color: var(--accent);
+    margin: 0.5rem 0;
+  }
+  
+  .payment-plan .details {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .parent-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
+  }
+  
+  .parent-section {
+    background: #f9f9f9;
+    padding: 1.5rem;
+    border-radius: 12px;
+    border: 1px solid #e0e0e0;
+  }
+  
+  .parent-section h4 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    padding-bottom: 0.5rem;
+    border-bottom: 2px solid var(--secondary);
+  }
+  
+  .success-message {
+    background: linear-gradient(135deg, #FFD700, #ffed4e);
+    color: #333;
+  }
+  
+  .success-message i {
+    color: var(--primary);
+  }
+</style>
+</head>
+<body>
+<!-- Loading animation -->
+<div class="loading"></div>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top" id="scrollTop">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<header id="mainHeader" class="glass-effect">
+  <div class="container header-container">
+    <div class="logo">
+      <div class="logo-frame">
+        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+      </div>
+      <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+    </div>
+    <div class="nav-container">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown"><a href="#about">About <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="about.html">Our Story</a>
+            <a href="beliefs.html">Beliefs</a>
+            <a href="leadership.html">Leadership</a>
+            <a href="vision.html">Vision & Mission</a>
+          </div>
+        </li>
+        <li><a href="department.html">Departments</a></li>
+        <li class="dropdown"><a href="#ministries">Ministries <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="foundation.html">Foundation Class</a>
+            <a href="counselling.html">Counselling</a>
+            <a href="evangelism.html">Evangelism</a>
+            <a href="seed-royal.html" class="active">Seed Royal School</a>
+          </div>
+        </li>
+        <li><a href="pastor-note.html">Pastor's Desk</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+        <li><a href="prayer.html">Prayer Request</a></li>
+        <li><a href="testimony.html">Share Testimony</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="form-hero">
+  <div class="container">
+    <h1>Seed Royal School Registration</h1>
+    <p>A Christian educational institution offering quality academic foundation integrated with spiritual development and moral values.</p>
+  </div>
+</section>
+
+<!-- Form Section -->
+<section class="form-section">
+  <div class="container">
+    <!-- School Information Box -->
+    <div class="school-info-box">
+      <h3><i class="fas fa-graduation-cap"></i> About Seed Royal School</h3>
+      <p>Seed Royal School is the educational arm of Kingdom Citizens Church INT'L, providing excellent Christian education from crèche to secondary school levels.</p>
+      
+      <div class="info-grid">
+        <div class="info-item">
+          <i class="fas fa-child"></i>
+          <h4>Age Range</h4>
+          <p>6 months - 16 years</p>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-book-open"></i>
+          <h4>Curriculum</h4>
+          <p>Nigerian & British Curriculum</p>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-user-graduate"></i>
+          <h4>Class Size</h4>
+          <p>15-20 students per class</p>
+        </div>
+        
+        <div class="info-item">
+          <i class="fas fa-cross"></i>
+          <h4>Foundation</h4>
+          <p>Christian values & principles</p>
+        </div>
+      </div>
+    </div>
+    
+    <div class="form-container glass-effect">
+      <div class="form-header">
+        <h2>School Registration Form</h2>
+        <p>Complete this form to register your child/ward for the upcoming academic session at Seed Royal School.</p>
+      </div>
+      
+      <!-- Success Message (Initially Hidden) -->
+      <div class="success-message" id="successMessage">
+        <i class="fas fa-graduation-cap"></i>
+        <h3>Registration Submitted Successfully!</h3>
+        <p>Your child's registration has been received. Our admissions team will contact you within 3-5 business days for assessment and next steps.</p>
+        <p><a href="index.html" style="color: var(--primary); text-decoration: underline;">Return to Homepage</a></p>
+      </div>
+      
+      <!-- Form -->
+      <form id="schoolForm" method="POST">
+        <div class="form-body">
+          <!-- Student Information -->
+          <div class="form-group">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">Student Information</h3>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="studentName">Student's Full Name <span class="required">*</span></label>
+              <input type="text" id="studentName" name="studentName" class="form-control" placeholder="Child's full name (as on birth certificate)" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="preferredName">Preferred Name/Nickname</label>
+              <input type="text" id="preferredName" name="preferredName" class="form-control" placeholder="What we should call your child">
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="dob">Date of Birth <span class="required">*</span></label>
+              <input type="date" id="dob" name="dob" class="form-control" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="gender">Gender <span class="required">*</span></label>
+              <select id="gender" name="gender" class="form-control" required>
+                <option value="" disabled selected>Select gender</option>
+                <option value="male">Male</option>
+                <option value="female">Female</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="placeOfBirth">Place of Birth</label>
+              <input type="text" id="placeOfBirth" name="placeOfBirth" class="form-control" placeholder="City and country of birth">
+            </div>
+            
+            <div class="form-group">
+              <label for="nationality">Nationality <span class="required">*</span></label>
+              <input type="text" id="nationality" name="nationality" class="form-control" placeholder="e.g., Nigerian, Ghanaian" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="language">First Language <span class="required">*</span></label>
+              <input type="text" id="language" name="language" class="form-control" placeholder="e.g., Yoruba, English, Hausa" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="religion">Religion <span class="required">*</span></label>
+              <select id="religion" name="religion" class="form-control" required>
+                <option value="" disabled selected>Select religion</option>
+                <option value="christianity">Christianity</option>
+                <option value="islam">Islam</option>
+                <option value="other">Other</option>
+              </select>
+            </div>
+          </div>
+          
+          <!-- Class Level Selection -->
+          <div class="form-group">
+            <label>Class Level Applying For <span class="required">*</span></label>
+            <p style="color: #666; margin-bottom: 1rem;">Select the appropriate class level based on child's age:</p>
+            
+            <div class="class-levels">
+              <div class="class-level" data-level="creche" data-age="6m-2y">
+                <div class="level">Crèche</div>
+                <div class="age">6 months - 2 years</div>
+                <div class="fee">₦50,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="nursery1" data-age="2-3y">
+                <div class="level">Nursery 1</div>
+                <div class="age">2 - 3 years</div>
+                <div class="fee">₦60,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="nursery2" data-age="3-4y">
+                <div class="level">Nursery 2</div>
+                <div class="age">3 - 4 years</div>
+                <div class="fee">₦65,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="kindergarten" data-age="4-5y">
+                <div class="level">Kindergarten</div>
+                <div class="age">4 - 5 years</div>
+                <div class="fee">₦70,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="primary1" data-age="5-6y">
+                <div class="level">Primary 1</div>
+                <div class="age">5 - 6 years</div>
+                <div class="fee">₦80,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="primary2" data-age="6-7y">
+                <div class="level">Primary 2</div>
+                <div class="age">6 - 7 years</div>
+                <div class="fee">₦85,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="primary3" data-age="7-8y">
+                <div class="level">Primary 3</div>
+                <div class="age">7 - 8 years</div>
+                <div class="fee">₦90,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="primary4" data-age="8-9y">
+                <div class="level">Primary 4</div>
+                <div class="age">8 - 9 years</div>
+                <div class="fee">₦95,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="primary5" data-age="9-10y">
+                <div class="level">Primary 5</div>
+                <div class="age">9 - 10 years</div>
+                <div class="fee">₦100,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="primary6" data-age="10-11y">
+                <div class="level">Primary 6</div>
+                <div class="age">10 - 11 years</div>
+                <div class="fee">₦110,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="jss1" data-age="11-12y">
+                <div class="level">JSS 1</div>
+                <div class="age">11 - 12 years</div>
+                <div class="fee">₦120,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="jss2" data-age="12-13y">
+                <div class="level">JSS 2</div>
+                <div class="age">12 - 13 years</div>
+                <div class="fee">₦125,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="jss3" data-age="13-14y">
+                <div class="level">JSS 3</div>
+                <div class="age">13 - 14 years</div>
+                <div class="fee">₦130,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="sss1" data-age="14-15y">
+                <div class="level">SSS 1</div>
+                <div class="age">14 - 15 years</div>
+                <div class="fee">₦140,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="sss2" data-age="15-16y">
+                <div class="level">SSS 2</div>
+                <div class="age">15 - 16 years</div>
+                <div class="fee">₦145,000/term</div>
+              </div>
+              
+              <div class="class-level" data-level="sss3" data-age="16-17y">
+                <div class="level">SSS 3</div>
+                <div class="age">16 - 17 years</div>
+                <div class="fee">₦150,000/term</div>
+              </div>
+            </div>
+            <input type="hidden" id="classLevel" name="classLevel" required>
+          </div>
+          
+          <!-- Previous School Information -->
+          <div class="form-group">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">Previous School Information</h3>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="previousSchool">Previous School Name</label>
+              <input type="text" id="previousSchool" name="previousSchool" class="form-control" placeholder="Name of previous school attended">
+            </div>
+            
+            <div class="form-group">
+              <label for="previousClass">Previous Class Level</label>
+              <input type="text" id="previousClass" name="previousClass" class="form-control" placeholder="Last class completed">
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="reasonForTransfer">Reason for Transfer/New Admission</label>
+            <textarea id="reasonForTransfer" name="reasonForTransfer" class="form-control" rows="3" placeholder="Why are you choosing Seed Royal School?"></textarea>
+          </div>
+          
+          <!-- Parent/Guardian Information -->
+          <div class="form-group">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">Parent/Guardian Information</h3>
+            <p style="color: #666; margin-bottom: 1rem;">Please provide information for at least one parent/guardian:</p>
+          </div>
+          
+          <div class="parent-grid">
+            <!-- Parent 1 -->
+            <div class="parent-section">
+              <h4>Parent/Guardian 1</h4>
+              
+              <div class="form-group">
+                <label for="parent1Name">Full Name <span class="required">*</span></label>
+                <input type="text" id="parent1Name" name="parent1Name" class="form-control" placeholder="Parent's full name" required>
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="parent1Relationship">Relationship <span class="required">*</span></label>
+                  <select id="parent1Relationship" name="parent1Relationship" class="form-control" required>
+                    <option value="" disabled selected>Select relationship</option>
+                    <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                    <option value="guardian">Guardian</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="parent1Phone">Phone Number <span class="required">*</span></label>
+                  <input type="tel" id="parent1Phone" name="parent1Phone" class="form-control" placeholder="Parent's phone number" required>
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="parent1Email">Email Address</label>
+                <input type="email" id="parent1Email" name="parent1Email" class="form-control" placeholder="Parent's email address">
+              </div>
+              
+              <div class="form-group">
+                <label for="parent1Occupation">Occupation</label>
+                <input type="text" id="parent1Occupation" name="parent1Occupation" class="form-control" placeholder="Parent's occupation">
+              </div>
+              
+              <div class="form-group">
+                <label for="parent1Address">Address</label>
+                <textarea id="parent1Address" name="parent1Address" class="form-control" rows="2" placeholder="Parent's address"></textarea>
+              </div>
+            </div>
+            
+            <!-- Parent 2 -->
+            <div class="parent-section">
+              <h4>Parent/Guardian 2 (Optional)</h4>
+              
+              <div class="form-group">
+                <label for="parent2Name">Full Name</label>
+                <input type="text" id="parent2Name" name="parent2Name" class="form-control" placeholder="Second parent's full name">
+              </div>
+              
+              <div class="form-row">
+                <div class="form-group">
+                  <label for="parent2Relationship">Relationship</label>
+                  <select id="parent2Relationship" name="parent2Relationship" class="form-control">
+                    <option value="" selected>Select relationship</option>
+                    <option value="father">Father</option>
+                    <option value="mother">Mother</option>
+                    <option value="guardian">Guardian</option>
+                    <option value="other">Other</option>
+                  </select>
+                </div>
+                
+                <div class="form-group">
+                  <label for="parent2Phone">Phone Number</label>
+                  <input type="tel" id="parent2Phone" name="parent2Phone" class="form-control" placeholder="Second parent's phone number">
+                </div>
+              </div>
+              
+              <div class="form-group">
+                <label for="parent2Email">Email Address</label>
+                <input type="email" id="parent2Email" name="parent2Email" class="form-control" placeholder="Second parent's email address">
+              </div>
+              
+              <div class="form-group">
+                <label for="parent2Occupation">Occupation</label>
+                <input type="text" id="parent2Occupation" name="parent2Occupation" class="form-control" placeholder="Second parent's occupation">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Emergency Contact -->
+          <div class="form-group">
+            <label for="emergencyContact">Emergency Contact (Other than parents)</label>
+            <div class="form-row">
+              <div class="form-group">
+                <input type="text" id="emergencyName" name="emergencyName" class="form-control" placeholder="Emergency contact name">
+              </div>
+              
+              <div class="form-group">
+                <input type="tel" id="emergencyPhone" name="emergencyPhone" class="form-control" placeholder="Emergency contact phone">
+              </div>
+              
+              <div class="form-group">
+                <input type="text" id="emergencyRelationship" name="emergencyRelationship" class="form-control" placeholder="Relationship to child">
+              </div>
+            </div>
+          </div>
+          
+          <!-- Medical Information -->
+          <div class="form-group">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">Medical Information</h3>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="bloodGroup">Blood Group</label>
+              <select id="bloodGroup" name="bloodGroup" class="form-control">
+                <option value="" selected>Select blood group</option>
+                <option value="A+">A+</option>
+                <option value="A-">A-</option>
+                <option value="B+">B+</option>
+                <option value="B-">B-</option>
+                <option value="AB+">AB+</option>
+                <option value="AB-">AB-</option>
+                <option value="O+">O+</option>
+                <option value="O-">O-</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+            
+            <div class="form-group">
+              <label for="genotype">Genotype</label>
+              <select id="genotype" name="genotype" class="form-control">
+                <option value="" selected>Select genotype</option>
+                <option value="AA">AA</option>
+                <option value="AS">AS</option>
+                <option value="AC">AC</option>
+                <option value="SC">SC</option>
+                <option value="SS">SS</option>
+                <option value="unknown">Unknown</option>
+              </select>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="allergies">Known Allergies</label>
+            <textarea id="allergies" name="allergies" class="form-control" rows="2" placeholder="List any known allergies (food, medication, environmental)"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="medicalConditions">Medical Conditions/Special Needs</label>
+            <textarea id="medicalConditions" name="medicalConditions" class="form-control" rows="3" placeholder="List any medical conditions, disabilities, or special needs"></textarea>
+          </div>
+          
+          <div class="form-group">
+            <label for="medications">Current Medications</label>
+            <textarea id="medications" name="medications" class="form-control" rows="2" placeholder="List any current medications"></textarea>
+          </div>
+          
+          <!-- Payment Plan -->
+          <div class="form-group">
+            <label>Preferred Payment Plan <span class="required">*</span></label>
+            <div class="payment-plan-options">
+              <div class="payment-plan" data-plan="full">
+                <i class="fas fa-money-bill-wave"></i>
+                <h4>Full Payment</h4>
+                <div class="amount">Save 5%</div>
+                <div class="details">Pay entire year's fees upfront</div>
+                <div class="benefit">No monthly worries</div>
+              </div>
+              
+              <div class="payment-plan" data-plan="termly">
+                <i class="fas fa-calendar-alt"></i>
+                <h4>Termly Payment</h4>
+                <div class="amount">Standard</div>
+                <div class="details">Pay per term (3 terms/year)</div>
+                <div class="benefit">Most popular option</div>
+              </div>
+              
+              <div class="payment-plan" data-plan="monthly">
+                <i class="fas fa-calendar-day"></i>
+                <h4>Monthly Installments</h4>
+                <div class="amount">+10% service fee</div>
+                <div class="details">Spread payments monthly</div>
+                <div class="benefit">Budget-friendly</div>
+              </div>
+            </div>
+            <input type="hidden" id="paymentPlan" name="paymentPlan" required>
+          </div>
+          
+          <!-- Document Upload -->
+          <div class="form-group">
+            <label>Required Documents</label>
+            <p style="color: #666; margin-bottom: 1rem;">Please upload the following documents (can be submitted later if not available now):</p>
+            
+            <div class="upload-area" id="uploadArea">
+              <i class="fas fa-cloud-upload-alt"></i>
+              <h4>Drag & Drop Files Here</h4>
+              <p>or click to browse</p>
+              <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">Supported: PDF, JPG, PNG (Max 5MB each)</p>
+              <input type="file" id="fileInput" multiple style="display: none;" accept=".pdf,.jpg,.jpeg,.png">
+            </div>
+            
+            <div class="file-list" id="fileList"></div>
+          </div>
+          
+          <!-- Additional Information -->
+          <div class="form-group">
+            <label for="additionalInfo">Additional Information</label>
+            <textarea id="additionalInfo" name="additionalInfo" class="form-control" rows="4" placeholder="Any other information you'd like us to know about your child"></textarea>
+          </div>
+          
+          <!-- How did you hear about us -->
+          <div class="form-group">
+            <label>How did you hear about Seed Royal School?</label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="hearAbout" value="church"> Church member
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="hearAbout" value="friend"> Friend/Family recommendation
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="hearAbout" value="social"> Social media
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="hearAbout" value="advertisement"> Advertisement
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="hearAbout" value="other"> Other
+              </label>
+            </div>
+          </div>
+          
+          <!-- Agreement -->
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="agreement1" required>
+              <span>I confirm that all information provided is accurate to the best of my knowledge. <span class="required">*</span></span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="agreement2" required>
+              <span>I agree to abide by the school's rules, regulations, and code of conduct. <span class="required">*</span></span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="agreement3" required>
+              <span>I understand that admission is subject to availability and assessment. <span class="required">*</span></span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="updates" checked>
+              <span>I would like to receive updates about school events, activities, and important notices.</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-footer">
+          <button type="submit" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem; background: linear-gradient(135deg, #FFD700, #ffed4e); color: #333;">
+            <i class="fas fa-graduation-cap"></i> Submit Registration
+          </button>
+          <p>For inquiries, call our admissions office: <strong>+2347027175427</strong> or email: <strong>admissions@seedroyalschool.org</strong></p>
+          <p>School hours: Monday-Friday, 7:30am - 3:30pm</p>
+        </div>
+      </form>
+    </div>
+    
+    <!-- School Facilities -->
+    <div class="form-container glass-effect" style="margin-top: 3rem; padding: 2rem;">
+      <h3 style="text-align: center; color: var(--primary); margin-bottom: 1.5rem;">Our School Facilities</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
+          <i class="fas fa-microscope" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Science Lab</h4>
+          <p>Well-equipped laboratory for practical science education.</p>
+        </div>
+        
+        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
+          <i class="fas fa-book" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Library</h4>
+          <p>Extensive collection of educational and Christian books.</p>
+        </div>
+        
+        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
+          <i class="fas fa-computer" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Computer Lab</h4>
+          <p>Modern computers with internet access for ICT education.</p>
+        </div>
+        
+        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
+          <i class="fas fa-futbol" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Sports Facilities</h4>
+          <p>Football field, basketball court, and indoor games.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer (Same as counselling.html) -->
+<footer id="contact">
+  <div class="container footer-content">
+    <div class="footer-column">
+      <h3>Kingdom Citizens Church INT'L</h3>
+      <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/kingdomcitizenschurchintl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/kingdomcitizens" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/kingdomcitizenschurchintl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/kingdomcitizenschurchintl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+        <li><a href="prayer.html">Prayer Request</a></li>
+        <li><a href="testimony.html">Share Testimony</a></li>
+        <li><a href="counselling.html">Counselling</a></li>
+        <li><a href="foundation.html">Foundation Class</a></li>
+        <li><a href="seed-royal.html">Seed Royal School</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <ul class="footer-links">
+        <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
+        <li><i class="fas fa-phone"></i> Church: +2347027175427</li>
+        <li><i class="fas fa-phone"></i> School: +2348034280774</li>
+        <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
+        <li><i class="fas fa-envelope"></i> School: admissions@seedroyalschool.org</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+  </div>
+</footer>
+
+<script>
+// Same JavaScript as counselling.html for header, menu, etc.
+
+// Class level selection
+const classLevels = document.querySelectorAll('.class-level');
+const classLevelInput = document.getElementById('classLevel');
+
+classLevels.forEach(level => {
+  level.addEventListener('click', function() {
+    // Remove selection from all levels
+    classLevels.forEach(lvl => lvl.classList.remove('selected'));
+    
+    // Select this level
+    this.classList.add('selected');
+    
+    // Update hidden input
+    const selectedLevel = this.getAttribute('data-level');
+    classLevelInput.value = selectedLevel;
+  });
+});
+
+// Payment plan selection
+const paymentPlans = document.querySelectorAll('.payment-plan');
+const paymentPlanInput = document.getElementById('paymentPlan');
+
+paymentPlans.forEach(plan => {
+  plan.addEventListener('click', function() {
+    // Remove selection from all plans
+    paymentPlans.forEach(pln => pln.classList.remove('selected'));
+    
+    // Select this plan
+    this.classList.add('selected');
+    
+    // Update hidden input
+    const selectedPlan = this.getAttribute('data-plan');
+    paymentPlanInput.value = selectedPlan;
+  });
+});
+
+// File upload functionality
+const uploadArea = document.getElementById('uploadArea');
+const fileInput = document.getElementById('fileInput');
+const fileList = document.getElementById('fileList');
+let uploadedFiles = [];
+
+uploadArea.addEventListener('click', () => {
+  fileInput.click();
+});
+
+uploadArea.addEventListener('dragover', (e) => {
+  e.preventDefault();
+  uploadArea.classList.add('dragover');
+});
+
+uploadArea.addEventListener('dragleave', () => {
+  uploadArea.classList.remove('dragover');
+});
+
+uploadArea.addEventListener('drop', (e) => {
+  e.preventDefault();
+  uploadArea.classList.remove('dragover');
+  
+  const files = e.dataTransfer.files;
+  handleFiles(files);
+});
+
+fileInput.addEventListener('change', (e) => {
+  const files = e.target.files;
+  handleFiles(files);
+});
+
+function handleFiles(files) {
+  for (let i = 0; i < files.length; i++) {
+    const file = files[i];
+    
+    // Check file size (max 5MB)
+    if (file.size > 5 * 1024 * 1024) {
+      alert(`File "${file.name}" is too large. Maximum size is 5MB.`);
+      continue;
+    }
+    
+    // Check file type
+    const validTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
+    if (!validTypes.includes(file.type)) {
+      alert(`File "${file.name}" is not a supported format. Please upload PDF, JPG, or PNG files.`);
+      continue;
+    }
+    
+    uploadedFiles.push(file);
+  }
+  
+  updateFileList();
+}
+
+function updateFileList() {
+  fileList.innerHTML = '';
+  
+  if (uploadedFiles.length === 0) {
+    fileList.innerHTML = '<p style="color: #666; text-align: center;">No files uploaded yet</p>';
+    return;
+  }
+  
+  uploadedFiles.forEach((file, index) => {
+    const fileItem = document.createElement('div');
+    fileItem.className = 'file-item';
+    
+    const fileIcon = file.type === 'application/pdf' ? 'fas fa-file-pdf' : 'fas fa-file-image';
+    
+    fileItem.innerHTML = `
+      <div class="file-name">
+        <i class="${fileIcon}"></i>
+        <span>${file.name} (${formatFileSize(file.size)})</span>
+      </div>
+      <div class="remove-file" onclick="removeFile(${index})">
+        <i class="fas fa-times"></i>
+      </div>
+    `;
+    
+    fileList.appendChild(fileItem);
+  });
+}
+
+function removeFile(index) {
+  uploadedFiles.splice(index, 1);
+  updateFileList();
+}
+
+function formatFileSize(bytes) {
+  if (bytes < 1024) return bytes + ' bytes';
+  else if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
+  else return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
+}
+
+// Form Submission Handler
+document.getElementById('schoolForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  // Validate class level selection
+  if (!classLevelInput.value) {
+    alert('Please select a class level.');
+    return;
+  }
+  
+  // Validate payment plan selection
+  if (!paymentPlanInput.value) {
+    alert('Please select a payment plan.');
+    return;
+  }
+  
+  const form = this;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.innerHTML;
+  
+  // Show loading state
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Submitting...';
+  submitBtn.disabled = true;
+  
+  try {
+    // Collect form data
+    const formData = new FormData(form);
+    
+    // Add uploaded files to form data
+    uploadedFiles.forEach((file, index) => {
+      formData.append(`file${index}`, file);
+    });
+    
+    // In a real implementation, send to your server/email
+    console.log('School Registration Data:', Object.fromEntries(formData));
+    
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Show success message
+    document.getElementById('successMessage').style.display = 'block';
+    form.style.display = 'none';
+    
+    // Scroll to success message
+    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+    
+  } catch (error) {
+    alert('There was an error submitting your registration. Please try again or contact our admissions office.');
+    submitBtn.innerHTML = originalBtnText;
+    submitBtn.disabled = false;
+  }
+});
+
+// Phone number formatting for parent phones
+const parent1Phone = document.getElementById('parent1Phone');
+const parent2Phone = document.getElementById('parent2Phone');
+const emergencyPhone = document.getElementById('emergencyPhone');
+
+[parent1Phone, parent2Phone, emergencyPhone].forEach(input => {
+  if (input) {
+    input.addEventListener('input', function(e) {
+      let value = e.target.value.replace(/\D/g, '');
+      
+      if (value.length > 0) {
+        if (value.startsWith('0')) {
+          value = '+234' + value.substring(1);
+        } else if (value.length === 10 && !value.startsWith('0')) {
+          value = '+234' + value;
+        }
+      }
+      
+      e.target.value = value;
+    });
+  }
+});
+
+// Date of birth validation
+const dobInput = document.getElementById('dob');
+if (dobInput) {
+  const today = new Date();
+  const minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
+  const maxDate = new Date(today.getFullYear() - 0.5, today.getMonth(), today.getDate()); // 6 months old minimum
+  
+  dobInput.max = maxDate.toISOString().split('T')[0];
+  dobInput.min = minDate.toISOString().split('T')[0];
+}
+
+// Initialize like counselling.html
+window.addEventListener('DOMContentLoaded', function() {
+  // Same initialization as counselling.html
+});
+</script>
+</body>
+</html>
