@@ -128,18 +128,19 @@
     transform: translateX(-50%);
   }
   
+  /* REDUCED LOGO SIZE */
   .logo-frame {
-    width: clamp(100px, 12vw, 140px);
-    height: clamp(100px, 12vw, 140px);
+    width: clamp(60px, 8vw, 80px);
+    height: clamp(60px, 8vw, 80px);
     border-radius: 50%;
     background: white;
-    border: 5px solid var(--secondary);
+    border: 3px solid var(--secondary);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: clamp(1rem, 2vw, 1.25rem);
+    margin-right: clamp(0.5rem, 1.5vw, 1rem);
     overflow: hidden;
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
   }
   
   .logo-frame img {
@@ -148,16 +149,17 @@
     object-fit: contain;
   }
   
+  /* REDUCED CHURCH NAME TEXT SIZE */
   .logo-text {
     font-family: 'Lobster', cursive;
-    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
     font-weight: 400;
     color: #008751;
-    letter-spacing: 1.5px;
+    letter-spacing: 1px;
     line-height: 1;
     text-align: center;
     white-space: nowrap;
-    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
   }
   
   .nav-container {
@@ -343,6 +345,17 @@
       position: static;
       transform: none;
       margin-right: auto;
+    }
+    
+    /* Adjust logo for mobile */
+    .logo-frame {
+      width: 60px;
+      height: 60px;
+      margin-right: 0.5rem;
+    }
+    
+    .logo-text {
+      font-size: clamp(1rem, 2vw, 1.3rem);
     }
   }
   
@@ -671,15 +684,7 @@
     margin-bottom: 0.5rem;
   }
   
-  .counsellor-option .specialty {
-    display: inline-block;
-    background: rgba(0, 135, 81, 0.1);
-    color: var(--primary);
-    padding: 0.25rem 0.75rem;
-    border-radius: 20px;
-    font-size: 0.8rem;
-    margin-top: 0.5rem;
-  }
+  /* REMOVED COUNSELOR NAMES - Removed the .specialty class styling */
   
   .privacy-note {
     background: #fff8e1;
@@ -882,12 +887,34 @@
     .counsellor-options {
       grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
     }
+    
+    /* Further reduce logo text on mobile */
+    .logo-text {
+      font-size: 1rem;
+    }
   }
   
   @media (max-width: 480px) {
     .time-slot-grid,
     .counsellor-options {
       grid-template-columns: 1fr;
+    }
+    
+    .logo {
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+    }
+    
+    .logo-frame {
+      margin-right: 0;
+      margin-bottom: 0.5rem;
+    }
+    
+    .logo-text {
+      font-size: 0.9rem;
+      white-space: normal;
+      line-height: 1.2;
     }
   }
 </style>
@@ -1026,28 +1053,28 @@
                 <i class="fas fa-heart"></i>
                 <h4>Marriage & Family</h4>
                 <p>Marital issues, parenting, family conflicts</p>
-                <span class="specialty">Rev. Dr. Johnson Ade</span>
+                <!-- REMOVED COUNSELOR NAME -->
               </div>
               
               <div class="counsellor-option" data-type="emotional">
                 <i class="fas fa-brain"></i>
                 <h4>Emotional & Mental</h4>
                 <p>Anxiety, depression, stress, grief</p>
-                <span class="specialty">Pastor Sarah Williams</span>
+                <!-- REMOVED COUNSELOR NAME -->
               </div>
               
               <div class="counsellor-option" data-type="spiritual">
                 <i class="fas fa-pray"></i>
                 <h4>Spiritual Guidance</h4>
                 <p>Faith questions, spiritual growth, calling</p>
-                <span class="specialty">Pastor Michael Chen</span>
+                <!-- REMOVED COUNSELOR NAME -->
               </div>
               
               <div class="counsellor-option" data-type="youth">
                 <i class="fas fa-users"></i>
                 <h4>Youth & Young Adults</h4>
                 <p>Teen issues, relationships, career guidance</p>
-                <span class="specialty">Sister Grace Okon</span>
+                <!-- REMOVED COUNSELOR NAME -->
               </div>
             </div>
             <input type="hidden" id="counsellingType" name="counsellingType" required>
