@@ -1,0 +1,1522 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
+<meta name="theme-color" content="#008751">
+<meta name="description" content="Book a counselling session at Kingdom Citizens Church INT'L - Professional spiritual and emotional guidance from our trained counsellors.">
+<title>Counselling Session Booking - Kingdom Citizens Church INT'L</title>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<style>
+  /* Import all CSS from previous forms */
+  :root {
+    --primary: #008751;
+    --secondary: #FFD700;
+    --light: #f8f9fa;
+    --dark: #222;
+    --accent: #005a3a;
+    --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+  }
+  
+  html {
+    font-size: clamp(14px, 1vw, 18px);
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    -webkit-text-size-adjust: 100%;
+    -moz-text-size-adjust: 100%;
+    -ms-text-size-adjust: 100%;
+  }
+  
+  body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #f8f9fa 0%, #ffffff 100%);
+    color: #333;
+    line-height: 1.6;
+    scroll-behavior: smooth;
+    overflow-x: hidden;
+    width: 100%;
+    max-width: 100vw;
+    min-width: 320px;
+    position: relative;
+    overflow-y: auto;
+  }
+  
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
+  
+  a {
+    text-decoration: none;
+    color: inherit;
+  }
+  
+  .container {
+    width: min(100% - clamp(1rem, 5vw, 3rem), 1200px);
+    margin: 0 auto;
+    padding: 0 clamp(0.5rem, 3vw, 1.5rem);
+  }
+  
+  .btn {
+    display: inline-block;
+    background: var(--primary);
+    color: white;
+    padding: clamp(0.75rem, 2vw, 0.875rem) clamp(1.25rem, 3vw, 1.75rem);
+    border: none;
+    border-radius: 30px;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    font-weight: 500;
+    letter-spacing: 0.5px;
+    box-shadow: 0 4px 15px rgba(0, 135, 81, 0.2);
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    min-height: 44px;
+    min-width: 44px;
+  }
+  
+  .btn:hover {
+    background: var(--accent);
+    transform: translateY(-3px);
+    box-shadow: 0 6px 20px rgba(0, 90, 58, 0.25);
+  }
+  
+  .glass-effect {
+    background: rgba(255, 255, 255, 0.95);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+  }
+  
+  /* HEADER STYLES */
+  header {
+    background: linear-gradient(90deg, #008751, #FFD700);
+    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    padding: 8px 0;
+    transition: all 0.3s ease;
+    width: 100%;
+  }
+  
+  .header-container {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+  }
+  
+  .logo {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    left: 50%;
+    transform: translateX(-50%);
+  }
+  
+  .logo-frame {
+    width: clamp(100px, 12vw, 140px);
+    height: clamp(100px, 12vw, 140px);
+    border-radius: 50%;
+    background: white;
+    border: 5px solid var(--secondary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: clamp(1rem, 2vw, 1.25rem);
+    overflow: hidden;
+    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.15);
+  }
+  
+  .logo-frame img {
+    width: 85%;
+    height: 85%;
+    object-fit: contain;
+  }
+  
+  .logo-text {
+    font-family: 'Lobster', cursive;
+    font-size: clamp(1.8rem, 4.5vw, 3rem);
+    font-weight: 400;
+    color: #008751;
+    letter-spacing: 1.5px;
+    line-height: 1;
+    text-align: center;
+    white-space: nowrap;
+    text-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .nav-container {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    width: 100%;
+  }
+  
+  @media (min-width: 993px) {
+    .nav-menu {
+      display: flex;
+      list-style: none;
+    }
+    
+    .nav-menu li {
+      margin-left: clamp(1rem, 2vw, 1.875rem);
+      position: relative;
+    }
+    
+    .nav-menu a {
+      color: white;
+      font-weight: 500;
+      font-size: clamp(0.875rem, 1vw, 0.9375rem);
+      transition: all 0.3s ease;
+      padding: 8px 0;
+      position: relative;
+      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+    }
+    
+    .nav-menu a::after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 0;
+      height: 2px;
+      background: white;
+      transition: width 0.3s ease;
+    }
+    
+    .nav-menu a:hover::after {
+      width: 100%;
+    }
+    
+    .dropdown-content {
+      display: none;
+      position: absolute;
+      background: white;
+      min-width: 200px;
+      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      z-index: 1;
+      border-radius: 10px;
+      overflow: hidden;
+      top: 100%;
+      left: 0;
+      padding: 10px 0;
+    }
+    
+    .dropdown:hover .dropdown-content {
+      display: block;
+    }
+  }
+  
+  .hamburger {
+    display: none;
+    cursor: pointer;
+    width: 44px;
+    height: 44px;
+    position: relative;
+    z-index: 1001;
+    margin-left: auto;
+    background: var(--accent);
+    border-radius: 5px;
+    padding: 8px;
+  }
+  
+  .hamburger span {
+    display: block;
+    position: absolute;
+    height: 3px;
+    width: 24px;
+    background: white;
+    border-radius: 3px;
+    opacity: 1;
+    left: 8px;
+    transform: rotate(0deg);
+    transition: .25s ease-in-out;
+  }
+  
+  .hamburger span:nth-child(1) { top: 12px; }
+  .hamburger span:nth-child(2) { top: 18.5px; }
+  .hamburger span:nth-child(3) { top: 25px; }
+  
+  .hamburger.active span:nth-child(1) {
+    top: 18.5px;
+    transform: rotate(45deg);
+  }
+  
+  .hamburger.active span:nth-child(2) {
+    opacity: 0;
+    left: -30px;
+  }
+  
+  .hamburger.active span:nth-child(3) {
+    top: 18.5px;
+    transform: rotate(-45deg);
+  }
+  
+  @media (max-width: 992px) {
+    .nav-menu {
+      position: fixed;
+      top: 0;
+      right: -100%;
+      width: min(85%, 400px);
+      height: 100vh;
+      background: linear-gradient(180deg, #008751, #FFD700);
+      backdrop-filter: blur(10px);
+      -webkit-backdrop-filter: blur(10px);
+      flex-direction: column;
+      justify-content: flex-start;
+      align-items: flex-start;
+      padding: 100px 30px 30px;
+      transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      box-shadow: -10px 0 30px rgba(0,0,0,0.15);
+      z-index: 1000;
+      overflow-y: auto;
+      overflow-x: hidden;
+    }
+    
+    .nav-menu.active {
+      right: 0;
+    }
+    
+    .nav-menu li {
+      margin: 0 0 25px 0;
+      width: 100%;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: all 0.3s ease;
+    }
+    
+    .nav-menu.active li {
+      opacity: 1;
+      transform: translateX(0);
+    }
+    
+    .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+    .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
+    .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
+    .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
+    .nav-menu li:nth-child(5) { transition-delay: 0.5s; }
+    .nav-menu li:nth-child(6) { transition-delay: 0.6s; }
+    
+    .nav-menu a {
+      font-size: 1.125rem;
+      display: block;
+      padding: 12px 0;
+      width: 100%;
+      border-bottom: 1px solid rgba(255,255,255,0.1);
+      color: white;
+    }
+    
+    .dropdown-content {
+      position: static;
+      display: none;
+      box-shadow: none;
+      background: rgba(255, 255, 255, 0.1);
+      margin-top: 10px;
+      border-radius: 8px;
+      padding: 5px 0;
+    }
+    
+    .dropdown.active .dropdown-content {
+      display: block;
+    }
+    
+    .hamburger {
+      display: block;
+    }
+    
+    .logo {
+      position: static;
+      transform: none;
+      margin-right: auto;
+    }
+  }
+  
+  /* ============ COUNSELLING FORM STYLES ============ */
+  .form-hero {
+    background: linear-gradient(rgba(0, 135, 81, 0.85), rgba(0, 90, 58, 0.85)), url('counselling-bg.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .form-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  }
+  
+  .form-hero p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    max-width: 800px;
+    margin: 0 auto;
+    opacity: 0.95;
+  }
+  
+  .form-section {
+    padding: clamp(3rem, 8vw, 5rem) 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  }
+  
+  .form-container {
+    max-width: 900px;
+    margin: 0 auto;
+    background: white;
+    border-radius: 25px;
+    box-shadow: 0 25px 60px rgba(0, 0, 0, 0.08);
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .form-container:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+  
+  .form-header {
+    padding: clamp(2rem, 5vw, 3rem) clamp(1.5rem, 4vw, 3rem) 0;
+    text-align: center;
+  }
+  
+  .form-header h2 {
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(1.8rem, 4vw, 2.5rem);
+    margin-bottom: 1rem;
+  }
+  
+  .form-header p {
+    color: #666;
+    font-size: clamp(1rem, 1.5vw, 1.1rem);
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  
+  .form-body {
+    padding: clamp(1.5rem, 4vw, 3rem) clamp(1.5rem, 4vw, 3rem);
+  }
+  
+  .form-group {
+    margin-bottom: clamp(1.5rem, 3vw, 2rem);
+    position: relative;
+  }
+  
+  .form-group label {
+    display: block;
+    margin-bottom: 0.5rem;
+    color: var(--primary);
+    font-weight: 500;
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+  }
+  
+  .form-control {
+    width: 100%;
+    padding: clamp(0.875rem, 2vw, 1rem) clamp(1rem, 2vw, 1.25rem);
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    font-family: 'Poppins', sans-serif;
+    font-size: clamp(0.95rem, 1.5vw, 1.05rem);
+    transition: all 0.3s ease;
+    background: #f9f9f9;
+  }
+  
+  .form-control:focus {
+    outline: none;
+    border-color: var(--primary);
+    background: white;
+    box-shadow: 0 0 0 3px rgba(0, 135, 81, 0.1);
+  }
+  
+  .form-control:hover {
+    border-color: #b0b0b0;
+  }
+  
+  .form-row {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: clamp(1rem, 2vw, 1.5rem);
+  }
+  
+  .required {
+    color: #e74c3c;
+    margin-left: 3px;
+  }
+  
+  .form-footer {
+    padding: clamp(1.5rem, 4vw, 2.5rem) clamp(1.5rem, 4vw, 3rem);
+    background: #f9f9f9;
+    text-align: center;
+    border-top: 1px solid #eee;
+  }
+  
+  .form-footer p {
+    color: #666;
+    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
+    margin-top: 1.5rem;
+  }
+  
+  .form-footer a {
+    color: var(--primary);
+    text-decoration: underline;
+  }
+  
+  .radio-group {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.5rem;
+    margin-top: 0.5rem;
+  }
+  
+  .radio-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-weight: normal;
+    color: #555;
+  }
+  
+  .radio-label input[type="radio"] {
+    margin-right: 0.5rem;
+    width: 18px;
+    height: 18px;
+    accent-color: var(--primary);
+  }
+  
+  .checkbox-label {
+    display: flex;
+    align-items: flex-start;
+    cursor: pointer;
+    font-weight: normal;
+    color: #555;
+    margin-top: 0.5rem;
+  }
+  
+  .checkbox-label input[type="checkbox"] {
+    margin-right: 0.75rem;
+    margin-top: 0.25rem;
+    width: 20px;
+    height: 20px;
+    accent-color: var(--primary);
+    flex-shrink: 0;
+  }
+  
+  .success-message {
+    display: none;
+    background: linear-gradient(135deg, #008751, #005a3a);
+    color: white;
+    padding: 2rem;
+    border-radius: 15px;
+    text-align: center;
+    margin-bottom: 2rem;
+    animation: fadeIn 0.5s ease;
+  }
+  
+  .success-message i {
+    font-size: 3.5rem;
+    margin-bottom: 1.5rem;
+    color: var(--secondary);
+  }
+  
+  .success-message h3 {
+    font-size: 1.8rem;
+    margin-bottom: 1rem;
+  }
+  
+  @keyframes fadeIn {
+    from { opacity: 0; transform: translateY(-20px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+  
+  /* Counselling-specific styles */
+  .counselling-info-box {
+    background: #f0f7f4;
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border-left: 5px solid var(--primary);
+  }
+  
+  .counselling-info-box h3 {
+    color: var(--primary);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .counselling-info-box ul {
+    list-style: none;
+    padding-left: 0;
+  }
+  
+  .counselling-info-box li {
+    padding: 0.5rem 0;
+    color: #555;
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+  }
+  
+  .counselling-info-box li i {
+    color: var(--primary);
+    margin-top: 0.25rem;
+    flex-shrink: 0;
+  }
+  
+  .time-slot-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+  }
+  
+  .time-slot {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 10px;
+    padding: 1.25rem;
+    text-align: center;
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .time-slot:hover {
+    background: #f0f7f4;
+    border-color: var(--primary);
+    transform: translateY(-3px);
+  }
+  
+  .time-slot.selected {
+    background: #e8f4f0;
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
+  }
+  
+  .time-slot .day {
+    font-weight: 600;
+    color: var(--primary);
+    font-size: 1.1rem;
+    margin-bottom: 0.25rem;
+  }
+  
+  .time-slot .time {
+    color: #666;
+    font-size: 0.95rem;
+  }
+  
+  .counsellor-options {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1rem;
+  }
+  
+  .counsellor-option {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
+    border-radius: 12px;
+    padding: 1.5rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-align: center;
+  }
+  
+  .counsellor-option:hover {
+    background: #f0f7f4;
+    border-color: var(--primary);
+  }
+  
+  .counsellor-option.selected {
+    background: #e8f4f0;
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
+  }
+  
+  .counsellor-option i {
+    font-size: 2.5rem;
+    color: var(--primary);
+    margin-bottom: 1rem;
+  }
+  
+  .counsellor-option h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+  }
+  
+  .counsellor-option p {
+    color: #666;
+    font-size: 0.9rem;
+    margin-bottom: 0.5rem;
+  }
+  
+  .counsellor-option .specialty {
+    display: inline-block;
+    background: rgba(0, 135, 81, 0.1);
+    color: var(--primary);
+    padding: 0.25rem 0.75rem;
+    border-radius: 20px;
+    font-size: 0.8rem;
+    margin-top: 0.5rem;
+  }
+  
+  .privacy-note {
+    background: #fff8e1;
+    border: 1px solid #ffd54f;
+    border-radius: 10px;
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+    text-align: center;
+  }
+  
+  .privacy-note i {
+    color: #ff9800;
+    margin-right: 0.5rem;
+  }
+  
+  /* FOOTER STYLES */
+  footer {
+    background: var(--dark);
+    color: white;
+    padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 1.875rem);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('logo11.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1;
+  }
+  
+  footer:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    z-index: 2;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: clamp(2rem, 5vw, 3.125rem);
+    position: relative;
+    z-index: 3;
+  }
+  
+  .footer-column h3 {
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--secondary);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.625rem;
+  }
+  
+  .footer-column h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+  }
+  
+  .footer-links {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-links a {
+    color: #ddd;
+    transition: 0.3s;
+    display: inline-block;
+  }
+  
+  .footer-links a:hover {
+    color: var(--secondary);
+    transform: translateX(5px);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: clamp(0.75rem, 2vw, 1rem);
+    margin-top: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(40px, 5vw, 45px);
+    height: clamp(40px, 5vw, 45px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  .social-links a:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+    color: var(--dark);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: clamp(1rem, 2.5vw, 1.875rem);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    color: #aaa;
+    position: relative;
+    z-index: 3;
+  }
+  
+  .scroll-top {
+    position: fixed;
+    bottom: clamp(1rem, 3vw, 1.875rem);
+    right: clamp(1rem, 3vw, 1.875rem);
+    width: clamp(45px, 5vw, 50px);
+    height: clamp(45px, 5vw, 50px);
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+  }
+  
+  .scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .scroll-top:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+  }
+  
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    z-index: 9999;
+    transform-origin: 0 50%;
+    animation: loading 2s ease-in-out infinite;
+  }
+  
+  @keyframes loading {
+    0% { transform: scaleX(0); transform-origin: 0 50%; }
+    50% { transform: scaleX(1); transform-origin: 0 50%; }
+    100% { transform: scaleX(0); transform-origin: 100% 50%; }
+  }
+  
+  @media (max-width: 768px) {
+    .form-row {
+      grid-template-columns: 1fr;
+    }
+    
+    .radio-group {
+      flex-direction: column;
+      gap: 1rem;
+    }
+    
+    .form-hero h1 {
+      font-size: clamp(2rem, 5vw, 2.8rem);
+    }
+    
+    .time-slot-grid,
+    .counsellor-options {
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .time-slot-grid,
+    .counsellor-options {
+      grid-template-columns: 1fr;
+    }
+  }
+</style>
+</head>
+<body>
+<!-- Loading animation -->
+<div class="loading"></div>
+
+<!-- Scroll to Top Button -->
+<div class="scroll-top" id="scrollTop">
+  <i class="fas fa-chevron-up"></i>
+</div>
+
+<header id="mainHeader" class="glass-effect">
+  <div class="container header-container">
+    <div class="logo">
+      <div class="logo-frame">
+        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+      </div>
+      <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+    </div>
+    <div class="nav-container">
+      <ul class="nav-menu">
+        <li><a href="index.html">Home</a></li>
+        <li class="dropdown"><a href="#about">About <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="about.html">Our Story</a>
+            <a href="beliefs.html">Beliefs</a>
+            <a href="leadership.html">Leadership</a>
+            <a href="vision.html">Vision & Mission</a>
+          </div>
+        </li>
+        <li><a href="department.html">Departments</a></li>
+        <li class="dropdown"><a href="#ministries">Ministries <i class="fas fa-chevron-down"></i></a>
+          <div class="dropdown-content">
+            <a href="foundation.html">Foundation Class</a>
+            <a href="counselling.html" class="active">Counselling</a>
+            <a href="evangelism.html">Evangelism</a>
+          </div>
+        </li>
+        <li><a href="pastor-note.html">Pastor's Desk</a></li>
+        <li><a href="#contact">Contact</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+        <li><a href="prayer.html">Prayer Request</a></li>
+        <li><a href="testimony.html">Share Testimony</a></li>
+        <li><a href="donate.html">Donate</a></li>
+      </ul>
+      <div class="hamburger"><span></span><span></span><span></span></div>
+    </div>
+  </div>
+</header>
+
+<!-- Hero Section -->
+<section class="form-hero">
+  <div class="container">
+    <h1>Professional Counselling Services</h1>
+    <p>Book a confidential counselling session with our trained Christian counsellors. We provide spiritual guidance, emotional support, and biblical wisdom for life's challenges.</p>
+  </div>
+</section>
+
+<!-- Form Section -->
+<section class="form-section">
+  <div class="container">
+    <!-- Counselling Information Box -->
+    <div class="counselling-info-box">
+      <h3><i class="fas fa-info-circle"></i> About Our Counselling Services</h3>
+      <ul>
+        <li><i class="fas fa-check-circle"></i> <strong>Confidential:</strong> All sessions are completely confidential</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Biblical Foundation:</strong> Counseling based on Scriptural principles</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Professional:</strong> Trained Christian counselors</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Flexible:</strong> In-person, phone, or video sessions available</li>
+        <li><i class="fas fa-check-circle"></i> <strong>Free Service:</strong> Available to all church members</li>
+      </ul>
+    </div>
+    
+    <div class="form-container glass-effect">
+      <div class="form-header">
+        <h2>Book a Counselling Session</h2>
+        <p>Fill out this form to schedule a counselling appointment. Our team will contact you to confirm your session.</p>
+      </div>
+      
+      <!-- Success Message (Initially Hidden) -->
+      <div class="success-message" id="successMessage">
+        <i class="fas fa-calendar-check"></i>
+        <h3>Counselling Session Booked!</h3>
+        <p>Your counselling session request has been submitted successfully. Our counselling team will contact you within 24-48 hours to confirm your appointment.</p>
+        <p><a href="index.html" style="color: #FFD700; text-decoration: underline;">Return to Homepage</a></p>
+      </div>
+      
+      <!-- Form -->
+      <form id="counsellingForm" method="POST">
+        <div class="form-body">
+          <!-- Personal Information -->
+          <div class="form-group">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">Personal Information</h3>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="fullName">Full Name <span class="required">*</span></label>
+              <input type="text" id="fullName" name="fullName" class="form-control" placeholder="Enter your full name" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="email">Email Address <span class="required">*</span></label>
+              <input type="email" id="email" name="email" class="form-control" placeholder="Enter your email address" required>
+            </div>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="phone">Phone Number <span class="required">*</span></label>
+              <input type="tel" id="phone" name="phone" class="form-control" placeholder="Enter your phone number" required>
+            </div>
+            
+            <div class="form-group">
+              <label for="age">Age <span class="required">*</span></label>
+              <input type="number" id="age" name="age" class="form-control" placeholder="Enter your age" min="13" max="100" required>
+            </div>
+          </div>
+          
+          <div class="form-group">
+            <label for="address">Address (Optional)</label>
+            <textarea id="address" name="address" class="form-control" rows="2" placeholder="Enter your address (optional)"></textarea>
+          </div>
+          
+          <!-- Counselling Details -->
+          <div class="form-group">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">Counselling Details</h3>
+          </div>
+          
+          <div class="form-group">
+            <label>Type of Counselling Needed <span class="required">*</span></label>
+            <div class="counsellor-options">
+              <div class="counsellor-option" data-type="marriage">
+                <i class="fas fa-heart"></i>
+                <h4>Marriage & Family</h4>
+                <p>Marital issues, parenting, family conflicts</p>
+                <span class="specialty">Rev. Dr. Johnson Ade</span>
+              </div>
+              
+              <div class="counsellor-option" data-type="emotional">
+                <i class="fas fa-brain"></i>
+                <h4>Emotional & Mental</h4>
+                <p>Anxiety, depression, stress, grief</p>
+                <span class="specialty">Pastor Sarah Williams</span>
+              </div>
+              
+              <div class="counsellor-option" data-type="spiritual">
+                <i class="fas fa-pray"></i>
+                <h4>Spiritual Guidance</h4>
+                <p>Faith questions, spiritual growth, calling</p>
+                <span class="specialty">Pastor Michael Chen</span>
+              </div>
+              
+              <div class="counsellor-option" data-type="youth">
+                <i class="fas fa-users"></i>
+                <h4>Youth & Young Adults</h4>
+                <p>Teen issues, relationships, career guidance</p>
+                <span class="specialty">Sister Grace Okon</span>
+              </div>
+            </div>
+            <input type="hidden" id="counsellingType" name="counsellingType" required>
+          </div>
+          
+          <!-- Preferred Session Type -->
+          <div class="form-group">
+            <label>Preferred Session Type <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="sessionType" value="in-person" required> In-person (at church)
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sessionType" value="phone"> Phone call
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="sessionType" value="video"> Video call (Zoom/WhatsApp)
+              </label>
+            </div>
+          </div>
+          
+          <!-- Preferred Time Slots -->
+          <div class="form-group">
+            <label>Preferred Time Slots <span class="required">*</span></label>
+            <p style="color: #666; margin-bottom: 1rem;">Select your preferred days and times (you can select multiple):</p>
+            
+            <div class="time-slot-grid">
+              <div class="time-slot" data-day="Monday" data-time="10am-12pm">
+                <div class="day">Monday</div>
+                <div class="time">10am - 12pm</div>
+              </div>
+              
+              <div class="time-slot" data-day="Tuesday" data-time="2pm-4pm">
+                <div class="day">Tuesday</div>
+                <div class="time">2pm - 4pm</div>
+              </div>
+              
+              <div class="time-slot" data-day="Wednesday" data-time="10am-12pm">
+                <div class="day">Wednesday</div>
+                <div class="time">10am - 12pm</div>
+              </div>
+              
+              <div class="time-slot" data-day="Thursday" data-time="2pm-4pm">
+                <div class="day">Thursday</div>
+                <div class="time">2pm - 4pm</div>
+              </div>
+              
+              <div class="time-slot" data-day="Friday" data-time="10am-12pm">
+                <div class="day">Friday</div>
+                <div class="time">10am - 12pm</div>
+              </div>
+              
+              <div class="time-slot" data-day="Saturday" data-time="9am-11am">
+                <div class="day">Saturday</div>
+                <div class="time">9am - 11am</div>
+              </div>
+            </div>
+            <input type="hidden" id="preferredTimes" name="preferredTimes">
+          </div>
+          
+          <!-- Urgency Level -->
+          <div class="form-group">
+            <label>How urgent is your need for counselling? <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="urgency" value="low" required> Low - Within 2-3 weeks is fine
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="urgency" value="medium"> Medium - Within 1-2 weeks preferred
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="urgency" value="high"> High - As soon as possible
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="urgency" value="crisis"> Crisis - Immediate attention needed
+              </label>
+            </div>
+          </div>
+          
+          <!-- Issue Description -->
+          <div class="form-group">
+            <label for="issueDescription">Brief Description of Issue <span class="required">*</span></label>
+            <textarea id="issueDescription" name="issueDescription" class="form-control" rows="5" placeholder="Please provide a brief description of what you'd like to discuss in counselling. This helps us match you with the right counsellor." required></textarea>
+            <small style="color: #666; display: block; margin-top: 0.5rem;">Your information is confidential. Please share only what you're comfortable with.</small>
+          </div>
+          
+          <!-- Previous Counselling -->
+          <div class="form-group">
+            <label>Have you received counselling before? <span class="required">*</span></label>
+            <div class="radio-group">
+              <label class="radio-label">
+                <input type="radio" name="previousCounselling" value="yes" required> Yes
+              </label>
+              <label class="radio-label">
+                <input type="radio" name="previousCounselling" value="no"> No, this is my first time
+              </label>
+            </div>
+          </div>
+          
+          <!-- Privacy Note -->
+          <div class="privacy-note">
+            <i class="fas fa-lock"></i>
+            <strong>Confidentiality Assurance:</strong> All counselling sessions are strictly confidential. Information is only shared with your permission or as required by law.
+          </div>
+          
+          <!-- Emergency Contact -->
+          <div class="form-group">
+            <h3 style="color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">Emergency Contact (Optional)</h3>
+          </div>
+          
+          <div class="form-row">
+            <div class="form-group">
+              <label for="emergencyName">Emergency Contact Name</label>
+              <input type="text" id="emergencyName" name="emergencyName" class="form-control" placeholder="Name of emergency contact">
+            </div>
+            
+            <div class="form-group">
+              <label for="emergencyPhone">Emergency Contact Phone</label>
+              <input type="tel" id="emergencyPhone" name="emergencyPhone" class="form-control" placeholder="Phone number of emergency contact">
+            </div>
+          </div>
+          
+          <!-- Agreement -->
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="agreement" required>
+              <span>I understand that counselling is a collaborative process and I agree to actively participate in my healing journey. <span class="required">*</span></span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="confidentiality" required>
+              <span>I understand and agree to the confidentiality policy outlined above. <span class="required">*</span></span>
+            </label>
+          </div>
+          
+          <div class="form-group">
+            <label class="checkbox-label">
+              <input type="checkbox" name="updates" checked>
+              <span>I would like to receive appointment reminders and counselling resources via email/SMS.</span>
+            </label>
+          </div>
+        </div>
+        
+        <div class="form-footer">
+          <button type="submit" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem;">
+            <i class="fas fa-calendar-plus"></i> Book Counselling Session
+          </button>
+          <p>For immediate crisis support, please call our 24/7 helpline: <strong>+2348034280774</strong></p>
+          <p>Normal response time: 24-48 hours during business days.</p>
+        </div>
+      </form>
+    </div>
+    
+    <!-- Additional Resources -->
+    <div class="form-container glass-effect" style="margin-top: 3rem; padding: 2rem;">
+      <h3 style="text-align: center; color: var(--primary); margin-bottom: 1.5rem;">Additional Counselling Resources</h3>
+      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
+        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
+          <i class="fas fa-book" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Biblical Resources</h4>
+          <p>Access our collection of scriptures and Christian books for various life challenges.</p>
+        </div>
+        
+        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
+          <i class="fas fa-users" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Support Groups</h4>
+          <p>Join our weekly support groups for grief, addiction recovery, and marriage enrichment.</p>
+        </div>
+        
+        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
+          <i class="fas fa-headset" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
+          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Crisis Helpline</h4>
+          <p>24/7 prayer and crisis support line available for immediate assistance.</p>
+          <p style="font-weight: bold; margin-top: 0.5rem;">+2348034280774</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="container footer-content">
+    <div class="footer-column">
+      <h3>Kingdom Citizens Church INT'L</h3>
+      <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/kingdomcitizenschurchintl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/kingdomcitizens" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/kingdomcitizenschurchintl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/kingdomcitizenschurchintl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="join-us.html">Join Us</a></li>
+        <li><a href="prayer.html">Prayer Request</a></li>
+        <li><a href="testimony.html">Share Testimony</a></li>
+        <li><a href="counselling.html">Counselling</a></li>
+        <li><a href="foundation.html">Foundation Class</a></li>
+        <li><a href="seed-royal.html">Seed Royal School</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <ul class="footer-links">
+        <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
+        <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
+        <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
+        <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
+        <li><i class="fas fa-headset"></i> Crisis Line: +2348034280774</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+  </div>
+</footer>
+
+<script>
+// Header scroll effect
+const header = document.getElementById('mainHeader');
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 50) {
+    header.classList.add('header-scrolled');
+  } else {
+    header.classList.remove('header-scrolled');
+  }
+});
+
+// HAMBURGER MENU
+const hamburger = document.querySelector('.hamburger');
+const navMenu = document.querySelector('.nav-menu');
+const dropdowns = document.querySelectorAll('.dropdown');
+
+hamburger.addEventListener('click', () => {
+  hamburger.classList.toggle('active');
+  navMenu.classList.toggle('active');
+  
+  if (navMenu.classList.contains('active')) {
+    document.body.classList.add('menu-open');
+    document.body.style.overflow = 'hidden';
+  } else {
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = 'auto';
+  }
+});
+
+// Dropdown menu on mobile
+dropdowns.forEach(dropdown => {
+  const trigger = dropdown.querySelector('a');
+  trigger.addEventListener('click', (e) => {
+    if (window.innerWidth <= 992) {
+      e.preventDefault();
+      dropdown.classList.toggle('active');
+    }
+  });
+});
+
+// Close menu when clicking outside on mobile
+document.addEventListener('click', (e) => {
+  if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
+    if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = 'auto';
+    }
+  }
+});
+
+// Close menu when clicking a link in the menu on mobile
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  link.addEventListener('click', () => {
+    if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = 'auto';
+    }
+  });
+});
+
+// Counselling type selection
+const counsellorOptions = document.querySelectorAll('.counsellor-option');
+const counsellingTypeInput = document.getElementById('counsellingType');
+
+counsellorOptions.forEach(option => {
+  option.addEventListener('click', function() {
+    // Remove selection from all options
+    counsellorOptions.forEach(opt => opt.classList.remove('selected'));
+    
+    // Select this option
+    this.classList.add('selected');
+    
+    // Update hidden input
+    const type = this.getAttribute('data-type');
+    counsellingTypeInput.value = type;
+  });
+});
+
+// Time slot selection
+const timeSlots = document.querySelectorAll('.time-slot');
+const preferredTimesInput = document.getElementById('preferredTimes');
+let selectedTimeSlots = [];
+
+timeSlots.forEach(slot => {
+  slot.addEventListener('click', function() {
+    const day = this.getAttribute('data-day');
+    const time = this.getAttribute('data-time');
+    const slotData = `${day} ${time}`;
+    
+    if (this.classList.contains('selected')) {
+      // Remove from selection
+      this.classList.remove('selected');
+      selectedTimeSlots = selectedTimeSlots.filter(s => s !== slotData);
+    } else {
+      // Add to selection (limit to 3 selections)
+      if (selectedTimeSlots.length < 3) {
+        this.classList.add('selected');
+        selectedTimeSlots.push(slotData);
+      } else {
+        alert('Please select a maximum of 3 preferred time slots.');
+      }
+    }
+    
+    // Update hidden input
+    preferredTimesInput.value = selectedTimeSlots.join('; ');
+  });
+});
+
+// Form Submission Handler
+document.getElementById('counsellingForm').addEventListener('submit', async function(e) {
+  e.preventDefault();
+  
+  // Validate counselling type selection
+  if (!counsellingTypeInput.value) {
+    alert('Please select a type of counselling needed.');
+    return;
+  }
+  
+  // Validate time slot selection
+  if (selectedTimeSlots.length === 0) {
+    alert('Please select at least one preferred time slot.');
+    return;
+  }
+  
+  const form = this;
+  const submitBtn = form.querySelector('button[type="submit"]');
+  const originalBtnText = submitBtn.innerHTML;
+  
+  // Show loading state
+  submitBtn.innerHTML = '<i class="fas fa-spinner fa-spin"></i> Booking...';
+  submitBtn.disabled = true;
+  
+  try {
+    // Collect form data
+    const formData = new FormData(form);
+    const data = Object.fromEntries(formData);
+    
+    // Add selected time slots
+    data.preferredTimes = selectedTimeSlots.join('; ');
+    
+    // In a real implementation, send to your server/email
+    console.log('Counselling Booking Data:', data);
+    
+    // Simulate API call delay
+    await new Promise(resolve => setTimeout(resolve, 1500));
+    
+    // Show success message
+    document.getElementById('successMessage').style.display = 'block';
+    form.style.display = 'none';
+    
+    // Scroll to success message
+    document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
+    
+    // In a real implementation, send email
+    // sendCounsellingBookingEmail(data);
+    
+  } catch (error) {
+    alert('There was an error submitting your booking. Please try again or call our helpline.');
+    submitBtn.innerHTML = originalBtnText;
+    submitBtn.disabled = false;
+  }
+});
+
+// Phone number formatting
+const phoneInput = document.getElementById('phone');
+if (phoneInput) {
+  phoneInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    if (value.length > 0) {
+      if (value.startsWith('0')) {
+        value = '+234' + value.substring(1);
+      } else if (value.length === 10 && !value.startsWith('0')) {
+        value = '+234' + value;
+      }
+    }
+    
+    e.target.value = value;
+  });
+}
+
+// Emergency phone formatting
+const emergencyPhoneInput = document.getElementById('emergencyPhone');
+if (emergencyPhoneInput) {
+  emergencyPhoneInput.addEventListener('input', function(e) {
+    let value = e.target.value.replace(/\D/g, '');
+    
+    if (value.length > 0) {
+      if (value.startsWith('0')) {
+        value = '+234' + value.substring(1);
+      } else if (value.length === 10 && !value.startsWith('0')) {
+        value = '+234' + value;
+      }
+    }
+    
+    e.target.value = value;
+  });
+}
+
+// Age validation
+const ageInput = document.getElementById('age');
+if (ageInput) {
+  ageInput.addEventListener('blur', function() {
+    const age = parseInt(this.value);
+    if (age < 13) {
+      alert('For counselling services, individuals must be 13 years or older. For younger children, please contact us directly.');
+      this.value = '';
+      this.focus();
+    }
+  });
+}
+
+// Scroll to top button
+const scrollTopBtn = document.getElementById('scrollTop');
+
+window.addEventListener('scroll', () => {
+  if (window.scrollY > 300) {
+    scrollTopBtn.classList.add('visible');
+  } else {
+    scrollTopBtn.classList.remove('visible');
+  }
+});
+
+scrollTopBtn.addEventListener('click', () => {
+  window.scrollTo({
+    top: 0,
+    behavior: 'smooth'
+  });
+});
+
+// Loading animation
+window.addEventListener('DOMContentLoaded', function() {
+  setTimeout(() => {
+    const loading = document.querySelector('.loading');
+    if (loading) {
+      loading.style.opacity = '0';
+      setTimeout(() => {
+        loading.style.display = 'none';
+      }, 300);
+    }
+  }, 1000);
+});
+</script>
+</body>
+</html>
