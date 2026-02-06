@@ -1,195 +1,1642 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Welcome – Kingdom Citizens Church INT'L</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&display=swap" rel="stylesheet">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-html,body{font-family:Roboto,Arial,sans-serif;background:#fff;color:#222;scroll-behavior:smooth}
-a{text-decoration:none;color:inherit}
-
-/* ===== Navigation ===== */
-nav{
-  position:fixed;top:0;left:0;width:100%;
-  display:flex;justify-content:space-between;align-items:center;
-  background:linear-gradient(90deg,#008751,#FFD700);
-  padding:12px 22px;z-index:1200;transition:.25s;
-}
-.nav-left{display:flex;align-items:center;gap:12px}
-.nav-left img{width:44px;height:44px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.15)}
-.brand-text{color:#fff;font-weight:900;font-size:1.2rem;text-shadow:0 2px 4px rgba(0,0,0,.4)}
-
-.nav-right ul{display:flex;gap:18px;list-style:none;align-items:center}
-.nav-right a{color:#fff;font-weight:700;padding:6px 8px;border-radius:6px;transition:.18s}
-.nav-right a:hover{background:rgba(255,255,255,.15)}
-
-.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer}
-.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px}
-
-@media(max-width:820px){
-  .nav-right{
-    position:fixed;top:0;right:-40%;width:40%;height:100%;
-    background:linear-gradient(180deg,#008751,#FFD700);
-    padding:60px 20px 20px;
-    flex-direction:column;justify-content:flex-start;
-    gap:22px;list-style:none;
-    transition:right .3s ease;
-  }
-  .nav-right.show{right:0;}
-  .nav-right ul{flex-direction:column;gap:18px;width:100%}
-  .hamburger{display:flex}
-  .close-btn{
-    position:absolute;top:16px;right:18px;
-    font-size:28px;font-weight:bold;
-    color:#fff;cursor:pointer;
-  }
-}
-
-/* ===== Hero ===== */
-.hero-welcome{
-  position:relative;
-  height:70vh;min-height:420px;
-  background:url('balogun2.jpg') center top/cover no-repeat;
-  display:flex;align-items:flex-end;justify-content:center;
-}
-.welcome-title{
-  margin-bottom:20px;
-  color:#fff;
-  font-family:'Lobster',cursive;
-  font-size:3.2rem;
-  text-shadow:0 4px 20px rgba(0,0,0,.55);
-}
-
-/* ===== Content ===== */
-main{padding:60px 20px;max-width:1000px;margin:auto}
-.section-card{
-  margin-bottom:60px;
-  background:#fff;
-  border-radius:16px;
-  padding:32px;
-  box-shadow:0 12px 28px rgba(0,0,0,0.08);
-}
-.section-card h2{
-  text-align:center;
-  font-family:'Lobster',cursive;
-  font-size:2rem;
-  color:#008751;
-  margin-bottom:18px;
-  position:relative;
-}
-.section-card h2::after{
-  content:"";
-  display:block;
-  width:80px;
-  height:3px;
-  background:#FFD700;
-  margin:8px auto 0;
-  border-radius:2px;
-}
-.section-card h3{
-  font-size:1.2rem;
-  margin-top:18px;
-  color:#0a5c34;
-}
-.section-card p{font-size:1rem;line-height:1.7;margin:12px 0;}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="theme-color" content="#008751">
+    <meta name="description" content="Welcome to Kingdom Citizens Church INT'L! Discover your identity as a Kingdom Citizen and learn about your rights, duties, and privileges in God's kingdom.">
+    <meta name="keywords" content="welcome to church, kingdom citizen, salvation prayer, Christian rights, church membership, foundation class, Christian discipleship">
+    <meta name="author" content="Kingdom Citizens Church INT'L">
+    <meta property="og:title" content="Welcome - Kingdom Citizens Church INT'L | Your Kingdom Identity">
+    <meta property="og:description" content="Discover your identity, rights, and duties as a Kingdom Citizen. Join our vibrant community of believers.">
+    <meta property="og:image" content="https://kingdomcitizenschurchintl.org/balogun2.jpg">
+    <meta property="og:url" content="https://kingdomcitizenschurchintl.org/welcome.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Welcome - Kingdom Citizens Church INT'L">
+    <meta name="twitter:description" content="Discover your identity as a Kingdom Citizen">
+    <meta name="twitter:image" content="https://kingdomcitizenschurchintl.org/balogun2.jpg">
+    
+    <title>Welcome - Kingdom Citizens Church INT'L | Discover Your Kingdom Identity</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+        :root {
+            --primary: #008751;
+            --secondary: #FFD700;
+            --light: #f8f9fa;
+            --dark: #222;
+            --accent: #005a3a;
+            --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFED4E 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: clamp(14px, 1vw, 18px);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            padding-top: 85px; /* For fixed header */
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Container */
+        .container {
+            width: min(100% - clamp(1rem, 5vw, 3rem), 1200px);
+            margin: 0 auto;
+            padding: 0 clamp(0.5rem, 3vw, 1.5rem);
+        }
+        
+        /* ========== HEADER (Same as index) ========== */
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 4px 0;
+            transition: all 0.4s ease;
+            height: 85px;
+        }
+        
+        .header-scrolled {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            height: 75px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 77px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1002;
+        }
+        
+        .logo-frame {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--secondary);
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-family: 'Lobster', cursive;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--primary);
+            letter-spacing: 1px;
+            line-height: 1.2;
+            white-space: nowrap;
+            display: none;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: auto;
+        }
+        
+        /* Desktop Navigation */
+        @media (min-width: 993px) {
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                background: rgba(0, 135, 81, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 4px;
+            }
+            
+            .nav-menu li {
+                margin: 0 4px;
+                position: relative;
+            }
+            
+            .nav-menu a {
+                color: var(--primary);
+                font-weight: 500;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+                padding: 8px 15px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .nav-menu a i {
+                margin-right: 6px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.15);
+                transform: translateY(-2px);
+            }
+            
+            .nav-menu a.active {
+                background: var(--secondary);
+                color: var(--primary);
+                font-weight: 600;
+            }
+            
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background: white;
+                min-width: 180px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                z-index: 1;
+                border-radius: 10px;
+                overflow: hidden;
+                top: 100%;
+                left: 0;
+                padding: 8px 0;
+                margin-top: 4px;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+            
+            .dropdown-content a {
+                color: var(--dark);
+                padding: 8px 16px;
+                display: block;
+                font-size: 0.8rem;
+                border-radius: 0;
+            }
+            
+            .dropdown-content a:hover {
+                background: #f8f9fa;
+                color: var(--primary);
+                transform: none;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 2.5rem;
+            }
+            
+            .logo-frame {
+                width: 75px;
+                height: 75px;
+            }
+        }
+        
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            z-index: 1001;
+            background: var(--primary);
+            border-radius: 50%;
+            padding: 8px;
+            border: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            background: white;
+            border-radius: 2px;
+            opacity: 1;
+            left: 10px;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .hamburger span:nth-child(1) { top: 14px; }
+        .hamburger span:nth-child(2) { top: 19px; }
+        .hamburger span:nth-child(3) { top: 24px; }
+        
+        .hamburger.active span:nth-child(1) {
+            top: 19px;
+            transform: rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            top: 19px;
+            transform: rotate(-45deg);
+        }
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: -100vh;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('logo11.jpg');
+                background-size: cover;
+                background-position: center;
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 100px 20px 30px;
+                transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                top: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0 0 10px 0;
+                width: 100%;
+                max-width: 300px;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu li:nth-child(2) { transition-delay: 0.15s; }
+            .nav-menu li:nth-child(3) { transition-delay: 0.2s; }
+            .nav-menu li:nth-child(4) { transition-delay: 0.25s; }
+            .nav-menu li:nth-child(5) { transition-delay: 0.3s; }
+            .nav-menu li:nth-child(6) { transition-delay: 0.35s; }
+            .nav-menu li:nth-child(7) { transition-delay: 0.4s; }
+            .nav-menu li:nth-child(8) { transition-delay: 0.45s; }
+            .nav-menu li:nth-child(9) { transition-delay: 0.5s; }
+            
+            .nav-menu a {
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                width: 100%;
+                border-radius: 10px;
+                color: var(--primary);
+                background: rgba(0, 135, 81, 0.1);
+                margin-bottom: 5px;
+                border-left: 3px solid transparent;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.2);
+                border-left: 3px solid var(--secondary);
+            }
+            
+            .nav-menu a i {
+                margin-right: 12px;
+                font-size: 1rem;
+                width: 20px;
+                text-align: center;
+            }
+            
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                background: rgba(0, 135, 81, 0.05);
+                margin: 5px 0 5px 15px;
+                border-radius: 8px;
+                padding: 5px 0;
+                border-left: 2px solid rgba(0, 135, 81, 0.1);
+            }
+            
+            .dropdown-content a {
+                padding: 10px 15px 10px 25px;
+                font-size: 0.9rem;
+                color: var(--primary);
+                border-radius: 0;
+                border-left: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 1.8rem;
+            }
+            
+            .logo-frame {
+                width: 65px;
+                height: 65px;
+                margin-right: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-frame {
+                width: 60px;
+                height: 60px;
+            }
+            
+            header {
+                height: 80px;
+            }
+            
+            .header-container {
+                height: 72px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .logo-frame {
+                width: 55px;
+                height: 55px;
+            }
+            
+            header {
+                height: 75px;
+            }
+            
+            .header-container {
+                height: 67px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo-frame {
+                width: 50px;
+                height: 50px;
+                margin-right: 8px;
+            }
+        }
+        
+        /* ========== WELCOME HERO SECTION ========== */
+        .welcome-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('balogun2.jpg') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: clamp(3rem, 8vw, 5rem);
+            overflow: hidden;
+        }
+        
+        .welcome-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, white, transparent);
+            z-index: 1;
+        }
+        
+        .hero-content-welcome {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-divider {
+            width: 120px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+        
+        /* ========== MAIN CONTENT ========== */
+        .welcome-main {
+            padding: 0 0 clamp(5rem, 12vw, 8rem) 0;
+        }
+        
+        /* Welcome Message Card */
+        .welcome-card {
+            background: white;
+            border-radius: 25px;
+            padding: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .welcome-salutation {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 4vw, 2.5rem);
+            color: var(--primary);
+            margin-bottom: 2rem;
+            text-align: center;
+            line-height: 1.3;
+        }
+        
+        .welcome-message {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 2.5rem;
+            text-align: justify;
+        }
+        
+        .welcome-message strong {
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: clamp(2rem, 6vw, 4rem);
+            position: relative;
+            padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(80px, 15vw, 120px);
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* Kingdom Citizen Definition */
+        .definition-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: clamp(4rem, 10vw, 6rem) 0;
+            border-radius: 30px;
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .definition-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .definition-content {
+            max-width: 900px;
+            margin: 0 auto;
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            line-height: 1.9;
+            color: #555;
+            text-align: justify;
+        }
+        
+        .definition-content p {
+            margin-bottom: 1.5rem;
+        }
+        
+        .salvation-prayer-card {
+            background: var(--gradient);
+            color: white;
+            padding: clamp(2rem, 5vw, 3rem);
+            border-radius: 20px;
+            margin: 3rem 0;
+            box-shadow: 0 15px 35px rgba(0, 135, 81, 0.3);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .salvation-prayer-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .prayer-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: 1.5rem;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .prayer-text {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            line-height: 1.9;
+            font-style: italic;
+            text-align: center;
+            position: relative;
+            z-index: 2;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 15px;
+            border-left: 4px solid var(--secondary);
+        }
+        
+        /* Rights and Duties Grid */
+        .rights-duties-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: clamp(2rem, 4vw, 3rem);
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+        }
+        
+        .rights-card, .duties-card {
+            background: white;
+            border-radius: 20px;
+            padding: clamp(2rem, 5vw, 3rem);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            position: relative;
+            overflow: hidden;
+            height: 100%;
+        }
+        
+        .rights-card {
+            border-top: 8px solid var(--primary);
+        }
+        
+        .duties-card {
+            border-top: 8px solid var(--secondary);
+        }
+        
+        .rights-card::before, .duties-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(135deg, rgba(0, 135, 81, 0.05) 0%, transparent 100%);
+            z-index: 1;
+        }
+        
+        .card-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            margin-bottom: 2rem;
+            color: var(--primary);
+            position: relative;
+            z-index: 2;
+            text-align: center;
+        }
+        
+        .right-item, .duty-item {
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .right-item:last-child, .duty-item:last-child {
+            margin-bottom: 0;
+        }
+        
+        .right-header, .duty-header {
+            display: flex;
+            align-items: center;
+            margin-bottom: 1rem;
+        }
+        
+        .right-number, .duty-number {
+            background: var(--primary);
+            color: white;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 700;
+            font-size: 1.1rem;
+            margin-right: 1rem;
+            flex-shrink: 0;
+        }
+        
+        .duty-number {
+            background: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .right-title, .duty-title {
+            font-size: clamp(1.3rem, 2vw, 1.5rem);
+            color: var(--primary);
+            font-weight: 600;
+        }
+        
+        .right-content, .duty-content {
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            line-height: 1.8;
+            color: #555;
+            padding-left: 3.5rem;
+        }
+        
+        /* Important Notes Section */
+        .notes-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: clamp(4rem, 10vw, 6rem) 0;
+            border-radius: 30px;
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+        }
+        
+        .notes-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: clamp(2rem, 4vw, 3rem);
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .note-card {
+            background: white;
+            border-radius: 20px;
+            padding: clamp(1.5rem, 4vw, 2.5rem);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            text-align: center;
+            transition: transform 0.3s ease;
+        }
+        
+        .note-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .note-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .note-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .note-content {
+            font-size: clamp(1rem, 1.5vw, 1.1rem);
+            line-height: 1.7;
+            color: #666;
+        }
+        
+        /* Founder's Message */
+        .founders-section {
+            background: var(--gradient);
+            padding: clamp(4rem, 10vw, 6rem) 0;
+            border-radius: 30px;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .founders-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .founders-content {
+            max-width: 800px;
+            margin: 0 auto;
+            text-align: center;
+            color: white;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .founders-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 2rem;
+        }
+        
+        .founders-message {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            font-style: italic;
+        }
+        
+        .founders-signature {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            margin-top: 2rem;
+        }
+        
+        /* Call to Action */
+        .cta-section {
+            text-align: center;
+            padding: clamp(3rem, 8vw, 5rem) 0;
+        }
+        
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+        }
+        
+        .cta-text {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            color: #666;
+            line-height: 1.8;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: clamp(0.875rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 135, 81, 0.3);
+        }
+        
+        .cta-btn:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 90, 58, 0.4);
+        }
+        
+        .cta-btn.secondary {
+            background: white;
+            color: var(--primary);
+            border: 2px solid var(--primary);
+        }
+        
+        .cta-btn.secondary:hover {
+            background: var(--primary);
+            color: white;
+        }
+        
+        /* ========== FOOTER (Same as index) ========== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 1.875rem);
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-image: url('logo11.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+        
+        footer:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: clamp(2rem, 5vw, 3.125rem);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--secondary);
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.625rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: clamp(0.75rem, 2vw, 1rem);
+            margin-top: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(40px, 5vw, 45px);
+            height: clamp(40px, 5vw, 45px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            color: var(--dark);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: clamp(1rem, 2.5vw, 1.875rem);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+            color: #aaa;
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: clamp(1rem, 3vw, 1.875rem);
+            right: clamp(1rem, 3vw, 1.875rem);
+            width: clamp(45px, 5vw, 50px);
+            height: clamp(45px, 5vw, 50px);
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Bible Verse Styling */
+        .bible-verse {
+            font-style: italic;
+            color: var(--primary);
+            border-left: 4px solid var(--secondary);
+            padding-left: 1.5rem;
+            margin: 1.5rem 0;
+            font-size: 1.1rem;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .welcome-hero {
+                height: 50vh;
+                min-height: 400px;
+            }
+            
+            .rights-duties-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .right-content, .duty-content {
+                padding-left: 0;
+            }
+            
+            .right-header, .duty-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .right-number, .duty-number {
+                margin-bottom: 0.5rem;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .welcome-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .welcome-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .notes-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.5;
+                background: white !important;
+            }
+            
+            .welcome-hero {
+                background: var(--primary);
+                color: white;
+                height: auto;
+                padding: 2rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
 
-<!-- ===== Navigation ===== -->
-<nav id="topNav">
-  <div class="nav-left">
-    <img src="logo1.jpg" alt="logo">
-    <div class="brand-text">Kingdom Citizens Church INT'L</div>
-  </div>
+    <!-- Header -->
+    <header id="mainHeader" class="glass-effect">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-frame">
+                        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+                    </div>
+                    <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="welcome.html" class="active"><i class="fas fa-door-open"></i> Welcome</a></li>
+                    <li><a href="department.html"><i class="fas fa-building"></i> Department</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-church"></i> Ministries <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="foundation.html">Foundation Class</a>
+                            <a href="counselling.html">Counselling</a>
+                            <a href="evangelism.html">Evangelism</a>
+                            <a href="library.html">Visit Library</a>
+                            <a href="sermon.html">Listen to Sermon</a>
+                            <a href="live.html">Watch Us Live</a>
+                        </div>
+                    </li>
+                    <li><a href="pastor-note.html"><i class="fas fa-user-tie"></i> Pastor's Desk</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join Us</a></li>
+                    <li><a href="donate.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </header>
 
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
+    <!-- Hero Section -->
+    <section class="welcome-hero">
+        <div class="hero-content-welcome animate-fadeInUp">
+            <h1 class="hero-title">Welcome</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Discover Your Identity as a Kingdom Citizen</p>
+        </div>
+    </section>
 
-  <div class="nav-right" id="navRight">
-    <span class="close-btn" id="closeBtn">&times;</span>
-    <ul>
-      <li><a href="index.html">Home</a></li>
-      <li><a href="about.html">About</a></li>
-      <li><a href="welcome.html">Welcome</a></li>
-      <li><a href="contact.html">Contact</a></li>
-    </ul>
-  </div>
-</nav>
+    <!-- Main Content -->
+    <main class="welcome-main container">
+        <!-- Welcome Message -->
+        <section class="welcome-card animate-fadeInUp">
+            <h2 class="welcome-salutation">Dear Kingdom Citizen,</h2>
+            <div class="welcome-message">
+                <p>It is not by accident that you are here today; we believe that God occasioned your presence because He loves you and wants to bless you richly. The entire congregation of Kingdom Citizens Church INT'L warmly welcomes you.</p>
+                
+                <p>By His grace He gave us the mandate to restore the lost souls and destinies back into Christ's Kingdom for preservation through the preaching of the word of faith. Therefore we are committed to helping you discover the great future that God has in store for you and ultimately recover what the devil has stolen from you.</p>
+            </div>
+        </section>
 
-<!-- ===== Hero ===== -->
-<section class="hero-welcome">
-  <div class="welcome-title">WELCOME</div>
-</section>
+        <!-- Who is a Kingdom Citizen? -->
+        <section class="definition-section animate-fadeInUp">
+            <div class="container">
+                <h2 class="section-title">Who is a Kingdom Citizen?</h2>
+                <div class="definition-content">
+                    <p>By creation man was made in the class of God. Adam in the Garden of Eden by God's wisdom named all the animals one by one, but when he fell his wisdom was corrupted. It did away with the nature of God for the nature of the devil in sin and wickedness. Every mortal being shared this nature with Adam by natural birth (John 3:5–6; Romans 3:23).</p>
+                    
+                    <p>But thank God for Jesus who died for you and wants to spend eternity with you. You have a part to play: accept Jesus Christ as your Lord and Savior.</p>
+                    
+                    <!-- Salvation Prayer Card -->
+                    <div class="salvation-prayer-card">
+                        <h3 class="prayer-title">Prayer of Salvation</h3>
+                        <div class="prayer-text">
+                            <p>Lord Jesus I am a sinner, forgive me my sin. I know you died for me, I know you rose on the third day. Lord Jesus wash me with your blood, come into my heart. I receive you today as my Lord and Savior. Write my name in the Book of Life. I am born again, I am now a Kingdom citizen. I am no longer an earthly being but a heavenly being.</p>
+                        </div>
+                        <p style="text-align: center; margin-top: 1rem; position: relative; z-index: 2;">If you prayed this prayer, you are now born again! Welcome to God's family!</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-<!-- ===== Main Content ===== -->
-<main>
-  <section class="section-card">
-    <p>Dear Kingdom citizen,<br>
-    It is not by accident that you are here today; we believe that God occasioned your presence in today's service because He loves you and wants to bless you richly. The entire congregation of Kingdom Citizens Church INT'L warmly welcomes you.</p>
+        <!-- Rights and Duties -->
+        <section class="rights-duties-section animate-fadeInUp">
+            <h2 class="section-title">Your Kingdom Identity</h2>
+            
+            <div class="rights-duties-grid">
+                <!-- Rights Card -->
+                <div class="rights-card">
+                    <h3 class="card-title">Your Rights as a Kingdom Citizen</h3>
+                    
+                    <div class="right-item">
+                        <div class="right-header">
+                            <div class="right-number">1</div>
+                            <h4 class="right-title">You Are a New Creation</h4>
+                        </div>
+                        <div class="right-content">
+                            <p>2 Corinthians 5:17 - "Therefore if any man be in Christ he is a new creature: old things are passed away; behold, all things are become new."</p>
+                            <p>As you have given your life to Christ, you become a new citizen of a new kingdom and a member of God's family on Earth. You possess Heaven's green card and are entitled to the second resurrection. The second death has no power over you (1 John 4:5).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="right-item">
+                        <div class="right-header">
+                            <div class="right-number">2</div>
+                            <h4 class="right-title">Your Sins Are Forgiven</h4>
+                        </div>
+                        <div class="right-content">
+                            <p>Romans 8:1 - "There is therefore now no condemnation to those who are in Christ Jesus."</p>
+                            <p>Salvation is a product of grace, not of works. Grace grants you justification in the sight of God. It is important for you to know that by the blood of Jesus your sins are forgiven. You are thoroughly made clean and perfect (2 Corinthians 5:21).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="right-item">
+                        <div class="right-header">
+                            <div class="right-number">3</div>
+                            <h4 class="right-title">Free from Curses</h4>
+                        </div>
+                        <div class="right-content">
+                            <p>Galatians 3:13 - "Christ has redeemed us from the curse of the law, being made a curse for us: for it is written, Cursed is every one that hangs on a tree."</p>
+                            <p>You are now free from every curse - poverty, failure, sickness, barrenness. Family curses or demonic agents can't place any curse on you, nor can any charm have effect on you (Numbers 23:23, Ephesians 23:25-26, Isaiah 54:17, Luke 10:19).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="right-item">
+                        <div class="right-header">
+                            <div class="right-number">4</div>
+                            <h4 class="right-title">Satan Is Under Your Feet</h4>
+                        </div>
+                        <div class="right-content">
+                            <p>Ephesians 1:21 - "And hath raised us up together, and made us sit together in heavenly places in Christ Jesus: Far above all principality, and power, and might, and dominion, and every name that is named, not only in this world, but also in that which is to come."</p>
+                            <p>As a heavenly citizen you are seated together with Jesus in heavenly places far above witches, wizards, occult powers, and Satan himself. Your new status makes you a god over the devil and his evil works (Psalm 82:5-6, John 10:34–35).</p>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Duties Card -->
+                <div class="duties-card">
+                    <h3 class="card-title">Your Duties as a Kingdom Citizen</h3>
+                    
+                    <div class="duty-item">
+                        <div class="duty-header">
+                            <div class="duty-number">1</div>
+                            <h4 class="duty-title">You Need Knowledge</h4>
+                        </div>
+                        <div class="duty-content">
+                            <p>Hosea 4:6 - "My people are destroyed for lack of knowledge."</p>
+                            <p>You are now born into the world of God (by salvation), the kingdom of God. So you need to know the way things work in this new Kingdom so that you are not a misfit or a stumbling block to others (John 8:32).</p>
+                        </div>
+                    </div>
+                    
+                    <div class="duty-item">
+                        <div class="duty-header">
+                            <div class="duty-number">2</div>
+                            <h4 class="duty-title">Attend Foundation Class</h4>
+                        </div>
+                        <div class="duty-content">
+                            <p>Rudiments of Christian Faith - This class holds every Saturday morning @8am. This is a discipleship school for beginners in the Kingdom. We teach believers the foundational truths of the Christian faith.</p>
+                            <p>Also attend Royal Crown Bible School for deeper biblical understanding.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="duty-item">
+                        <div class="duty-header">
+                            <div class="duty-number">3</div>
+                            <h4 class="duty-title">Study God's Word</h4>
+                        </div>
+                        <div class="duty-content">
+                            <p>2 Timothy 2:15 - "Study to show thyself approved unto God, a workman that needeth not to be ashamed, rightly dividing the word of truth."</p>
+                            <p>Everything you need to know about God and His ways and about your new life is in the Bible. Read your Bible more than any book in this world. The more you read, the more you know about God and His Kingdom, and the more you know about your rights and privileges as a Kingdom Citizen.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="duty-item">
+                        <div class="duty-header">
+                            <div class="duty-number">4</div>
+                            <h4 class="duty-title">Read Anointed Christian Books</h4>
+                        </div>
+                        <div class="duty-content">
+                            <p>Daniel 9:2 - "In the first year of his reign I Daniel understood by books..."</p>
+                            <p>Every anointed Christian book comes with revelation of hidden truth in the Bible. There are books written on marriage, business, Christian character, etc. Boost your faith by laying hold on any and read.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <p>By His grace He gave us the mandate to restore the lost souls and destinies back into Christ’s Kingdom for preservation through the preaching of the word of faith. Therefore we are committed to helping you discover the great future that God has in store for you and ultimately recover what the devil has stolen from you.</p>
+        <!-- Important Notes -->
+        <section class="notes-section animate-fadeInUp">
+            <div class="container">
+                <h2 class="section-title">Essential Practices</h2>
+                
+                <div class="notes-grid">
+                    <div class="note-card">
+                        <div class="note-icon">
+                            <i class="fas fa-church"></i>
+                        </div>
+                        <h3 class="note-title">Don't Miss Church Programs</h3>
+                        <div class="note-content">
+                            <p>Hebrews 10:25 - "Not forsaking the assembling of ourselves together, as the manner of some is..." Church is where kingdom citizens are trained and nurtured through the undiluted word of truth under the anointing of the Holy Spirit.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="note-card">
+                        <div class="note-icon">
+                            <i class="fas fa-users"></i>
+                        </div>
+                        <h3 class="note-title">Get Involved</h3>
+                        <div class="note-content">
+                            <p>Do not play with Church. Whenever there is a program in Church, don't prefer to be anywhere else. Get involved in church activities and make up your mind to join us every Sunday.</p>
+                        </div>
+                    </div>
+                    
+                    <div class="note-card">
+                        <div class="note-icon">
+                            <i class="fas fa-pray"></i>
+                        </div>
+                        <h3 class="note-title">Prayer Life</h3>
+                        <div class="note-content">
+                            <p>Develop a consistent prayer life. Prayer is your communication line with God. As a Kingdom Citizen, you have direct access to the throne of grace (Hebrews 4:16).</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <h2>Who is a Kingdom Citizen?</h2>
-    <p>By creation man was made in the class of God. Adam in the Garden of Eden by God's wisdom named all the animals one by one, but when he fell his wisdom was corrupted. It did away with the nature of God for the nature of the devil in sin and wickedness. Every mortal being shared this nature with Adam by natural birth (John 3:5–6; Romans 3:23).  
-    But thank God for Jesus who died for you and wants to spend eternity with you. You have a part to play: accept Jesus Christ as your Lord and Savior.  
-    Pray this prayer along with me:</p>
+        <!-- Founder's Message -->
+        <section class="founders-section animate-fadeInUp">
+            <div class="container">
+                <div class="founders-content">
+                    <h2 class="founders-title">From the Founder's Desk</h2>
+                    <div class="founders-message">
+                        <p>Welcome to the family of God! As you begin this new journey as a Kingdom Citizen, remember that you are now part of something eternal. You have been transferred from the kingdom of darkness into the Kingdom of God's dear Son (Colossians 1:13).</p>
+                        
+                        <p>Walk in your new identity, exercise your rights, fulfill your duties, and watch as God transforms every area of your life. We are here to help you grow and mature in your faith.</p>
+                    </div>
+                    <div class="founders-signature">
+                        <p>You're welcome,</p>
+                        <p><strong>Pastor Sam Balogun</strong></p>
+                        <p>Founder, Kingdom Citizens Church INT'L</p>
+                    </div>
+                </div>
+            </div>
+        </section>
 
-    <p><em>Lord Jesus I am a sinner, forgive me my sin. I know you died for me, I know you rose on the third day. Lord Jesus wash me with your blood, come into my heart. I receive you today as my Lord and Savior. Write my name in the Book of Life. I am born again, I am now a Kingdom citizen. I am no longer an earthly being but a heavenly being.</em></p>
+        <!-- Call to Action -->
+        <section class="cta-section animate-fadeInUp">
+            <div class="container">
+                <h2 class="cta-title">Take Your Next Step</h2>
+                <p class="cta-text">Now that you understand your identity as a Kingdom Citizen, take the next step in your spiritual journey. Join our community, attend our foundation class, and grow in your relationship with God.</p>
+                
+                <div class="cta-buttons">
+                    <a href="join.html" class="cta-btn">Join Our Community</a>
+                    <a href="foundation.html" class="cta-btn secondary">Attend Foundation Class</a>
+                </div>
+            </div>
+        </section>
+    </main>
 
-    <h2>Know Your Rights as a Kingdom Citizen</h2>
-    <h3>1. You Are a New Creation</h3>
-    <p>2 therefore if any man be in Christ he is a new Creature old things are passed away, behold all things are become new. As you have given your life to Christ, you become a new citizen of a new kingdom and a member of God's family on Earth. You posses Heaven's green card and entitled to Second resurrection, Second death has no power over you. 2Corinthian 5:17, 1john4:5</p>
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Kingdom Citizens Church INT'L</h3>
+                <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/kingdomcitizenschurchintl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/kingdomcitizens" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/kingdomcitizenschurchintl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/kingdomcitizenschurchintl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://tiktok.com/@kingdomcitizens" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="welcome.html">Welcome</a></li>
+                    <li><a href="department.html">Departments</a></li>
+                    <li><a href="service.html">Our Services</a></li>
+                    <li><a href="watch-live.html">Watch Live</a></li>
+                    <li><a href="donate.html">Give Online</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="pastor-note.html">Pastor's Desk</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
+                    <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
+                    <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
+                    <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
+                    <li><i class="fas fa-clock"></i> Sunday School: 8am - 9am</li>
+                    <li><i class="fas fa-clock"></i> Sunday Service: 9am - 11am (Jesus Celebration Service)</li>
+                    <li><i class="fas fa-clock"></i> Wednesday: Communion Service 5pm - 6:30pm</li>
+                    <li><i class="fas fa-clock"></i> Saturday: Foundation Class 8am - 10am</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+        </div>
+    </footer>
 
-    <h3>2. Your Sins Are Forgiven</h3>
-    <p>There is therefore now no condemn to those who are in Christ Jesus Rom. 8:1 Salvation is a product of grace not of works. Grace grant you Justification in the sight of God. It t is important for you to know that by the blood of Jesus your sins are forgiven. You are throughly made clean and perfect. Jesus Coming into your life has uprooted the seed of sin in you and replace with the seed of holiness, So when the devil comes to remind you or accuse you of your former Sins tell him to get lost. Recite.8omans 8:1 … 2 Corinthians 5:21</p>
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
 
-    <h3>3. Free from Curses</h3>
-    <p>Galatians 3:13 Christ has redeemed us from the curse of the law being made a curse for us for it is written cursed is every one that hangs on a Tree" You are now free from every curse. The Curse of poverty, failure, Sickness. Barrenness, Family Curses or Demonic agent can't place any curse on you nor can any charm have effect on you. Num 23:23 Eph: 23:25-26 Isa. 54:17 Luke 10:19</p>
+        // Mobile Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        let isMenuOpen = false;
 
-    <h3>4. Satan Is Under Your Feet</h3>
-    <p>Ephesians 1:21 And hath raise us up together and made us sit together in heavenly places in Christ Jesus"  "Far above all principality and power and might and dominion and every name that is named, not only in this age but also in that which is to come. As and heavenly citizen you are seated together with Jesus in heavenly places for above witches wizard accuutic  power, Satan himself. Your new Status makes you a god over the devil and his evil work name them. Ps 82:5-60John 10:34–35</p>
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isMenuOpen);
+            
+            if (isMenuOpen) {
+                document.body.classList.add('menu-open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+            }
+        });
 
-    <h2>Know Your Duties as a Kingdom Citizen</h2>
-    <p>Every member of a kingdom have what they stand to enjoy as right or benefits being a bonafide member of that kingdom or Society. At the same time membership right and duties are  well spell out in the constitution guiding the kingdom.
-For you as a kingdom citizen to enjoy the above stated privileges the followings are the list of your duties as indicated by our heavenly Constitution which is the Bible."
+        // Dropdown menu on mobile
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('a');
+            
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close all other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
 
-YOU NEED KNOWLEDGE:-
-You are now born into the world of God (by Salvation), The kingdom of God. So you need to know the way things work in this new Kingdom. So that you are not a misfit or a Stumbling blocks to other. Hosea 4.6 John 8:32 
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992 && isMenuOpen) {
+                if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+                    isMenuOpen = false;
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Also close any open dropdowns
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            }
+        });
 
-ATTEND FOUNDATION CLASS
- Rudiment of Christian Faith-This class holds everything Saturday Morning @8am .
-This is a discipleship School for beginners in the Kingdom. We Teach Believers. . Attend Royal Crown Bible school.
+        // Close menu when clicking a regular link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            if (!link.parentElement.classList.contains('dropdown')) {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992 && isMenuOpen) {
+                        isMenuOpen = false;
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
 
-HOW TO GET THIS KNOWLEDGE 2Tim. 2:15
-"Study to show thyself approved unto God, a work man that need, not to be ashamed. rightly dividing The word of truth.
-Read The Bible 2Tim3:16 Scriptures is given by inspiration of God and is profitable for doctrine, for reproof, for Correction for instruction in righteousness "Everything you need to know about God and his ways and about your new life is in the Bible. Read your Bible more than any book in this im world. The more you read the more you know about God and his Kingdom and the more you Know about your right and priviledges as a Kingdom Çitizen. Read Anointed Christians Books "In the first year of his reign Daniel Understood by book Dan.9.2  Every anointed Christians books we comes with revelation of an hidden truth in the Bible. There are some written on marriages, Business Christian Character ete boost your faith by laying hold on any and read.</p>
-    Read anointed Christian books (Daniel 9:2) …</p>
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
 
-    <h2>Don't Miss Any Church Programmes</h2>
-    <p>Hebrews 10:25 "Not forsaking the assembling of ourselves together as the manner of some is... Church is where kingdom citizens are trained and nurtured through the undiluted word of truth under the anointing of the holy Ghost. Do not play with Church, whenever there is programme in Church, don't prefer to be anywhere else.
-    Get involved in church activities and make up your mind to join us every Sunday.</p>
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
 
-    <p style="text-align:center;margin-top:1.5rem;">
-      You're welcome<br>
-      <strong>From founder's Desk</strong>
-      <strong>Pastor Sam Balogun</strong>
-    </p>
-  </section>
-</main>
+        // Observe elements for animation
+        document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+            observer.observe(el);
+        });
 
-<script>
-const navRight=document.getElementById('navRight');
-document.getElementById('hamburger').onclick=()=>navRight.classList.add('show');
-document.getElementById('closeBtn').onclick=()=>navRight.classList.remove('show');
-document.querySelectorAll('#navRight a').forEach(a=>{
-  a.addEventListener('click',()=>{ if(window.innerWidth<=820) navRight.classList.remove('show'); });
-});
-</script>
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Fix for window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && isMenuOpen) {
+                isMenuOpen = false;
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+                
+                // Close any open dropdowns
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                        el.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, 100);
+        });
+    </script>
 </body>
 </html>
