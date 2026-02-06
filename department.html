@@ -1,1182 +1,2052 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Departments & Ministers – Kingdom Citizens Church INT'L</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;700&family=Poppins:wght@300;400;500;600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
-<style>
-*{margin:0;padding:0;box-sizing:border-box}
-body{
-  font-family:'Poppins',Roboto,Arial,sans-serif;
-  background:#f8f9fa;
-  color:#222;
-  line-height:1.6;
-}
-a{text-decoration:none;color:inherit}
-
-/* ===== Navigation ===== */
-nav{
-  position:fixed;top:0;left:0;width:100%;
-  display:flex;justify-content:space-between;align-items:center;
-  background:linear-gradient(90deg,#0a5c34,#d4af37);
-  padding:12px 20px;z-index:1000;
-  box-shadow:0 3px 15px rgba(0,0,0,0.1);
-}
-.nav-left{display:flex;align-items:center;gap:12px}
-.nav-left img{width:46px;height:46px;border-radius:50%;object-fit:cover;border:2px solid rgba(255,255,255,.2)}
-.brand{
-  color:#fff;
-  font-weight:900;
-  font-size:1.2rem;
-  text-shadow:0 2px 4px rgba(0,0,0,.4);
-  font-family:'Lobster',cursive;
-}
-
-.nav-links ul{display:flex;gap:20px;list-style:none}
-.nav-links a{
-  color:#fff;
-  font-weight:700;
-  padding:6px 12px;
-  border-radius:6px;
-  transition:.18s;
-  font-size:0.95rem;
-}
-.nav-links a:hover{
-  background:rgba(255,255,255,.2);
-  transform:translateY(-2px);
-}
-
-.hamburger{display:none;flex-direction:column;gap:4px;cursor:pointer;padding:8px}
-.hamburger span{width:26px;height:3px;background:#fff;border-radius:2px;transition:0.3s}
-
-@media(max-width:820px){
-  .nav-links{
-    position:fixed;top:0;right:-100%;width:80%;height:100%;
-    background:linear-gradient(180deg,#0a5c34,#d4af37);
-    padding:80px 25px 30px;
-    flex-direction:column;gap:18px;
-    transition:right .4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-    box-shadow:-5px 0 25px rgba(0,0,0,0.15);
-  }
-  .nav-links.show{right:0;}
-  .nav-links ul{flex-direction:column;gap:25px}
-  .nav-links a{
-    font-size:1.1rem;
-    padding:12px 15px;
-    border-bottom:1px solid rgba(255,255,255,0.1);
-    border-radius:0;
-  }
-  .hamburger{display:flex}
-  .close-btn{
-    position:absolute;top:20px;right:20px;
-    font-size:32px;font-weight:bold;
-    color:#fff;cursor:pointer;
-    z-index:1001;
-  }
-  .hamburger.active span:nth-child(1){
-    transform:rotate(45deg) translate(6px, 6px);
-  }
-  .hamburger.active span:nth-child(2){
-    opacity:0;
-  }
-  .hamburger.active span:nth-child(3){
-    transform:rotate(-45deg) translate(7px, -6px);
-  }
-}
-
-/* ===== Hero ===== */
-.hero{
-  position:relative;
-  height:50vh;min-height:300px;
-  background:url('church1.jpg') center top/cover no-repeat;
-  display:flex;align-items:center;justify-content:center;
-  margin-top:70px;
-}
-.hero::after{
-  content:"";
-  position:absolute;
-  inset:0;
-  background:linear-gradient(to bottom, rgba(10, 92, 52, 0.7), rgba(212, 175, 55, 0.4));
-}
-.hero h1{
-  position:relative;
-  color:#fff;
-  font-family:'Lobster',cursive;
-  font-size:3.2rem;
-  text-shadow:0 4px 15px rgba(0,0,0,0.5);
-  z-index:1;
-  text-align:center;
-  padding:0 20px;
-}
-
-@media(max-width:768px){
-  .hero h1{font-size:2.4rem;}
-  .hero{height:40vh;min-height:250px;}
-}
-
-/* ===== Content ===== */
-main{
-  padding:70px 20px 60px;
-  max-width:1200px;
-  margin:auto;
-}
-section{
-  margin-bottom:70px;
-  background:white;
-  padding:40px 30px;
-  border-radius:20px;
-  box-shadow:0 10px 30px rgba(0,0,0,0.05);
-  border:1px solid rgba(0,0,0,0.05);
-}
-h2{
-  text-align:center;
-  font-family:'Lobster',cursive;
-  font-size:2.4rem;
-  color:#0a5c34;
-  margin:0 0 25px;
-  position:relative;
-  padding-bottom:15px;
-}
-h2::after{
-  content:"";
-  display:block;
-  width:100px;height:4px;
-  background:#d4af37;
-  margin:12px auto 0;
-  border-radius:2px;
-}
-.section-intro{
-  font-size:1.15rem;
-  line-height:1.8;
-  max-width:900px;
-  margin:0 auto 40px;
-  text-align:center;
-  color:#444;
-}
-
-/* ===== Pastoral Group ===== */
-.group-container{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
-  gap:35px;
-  margin-top:20px;
-}
-.member{
-  background:#fff;
-  border-radius:18px;
-  padding:0;
-  width:100%;
-  max-width:320px;
-  text-align:center;
-  box-shadow:0 12px 25px rgba(0,0,0,0.08);
-  overflow:hidden;
-  transition:transform 0.4s ease, box-shadow 0.4s ease;
-  border:1px solid rgba(0,0,0,0.05);
-}
-.member:hover{
-  transform:translateY(-10px);
-  box-shadow:0 20px 40px rgba(0,0,0,0.12);
-}
-.member-img{
-  width:100%;
-  height:320px;
-  object-fit:cover;
-  border-radius:0;
-  margin-bottom:0;
-  border-bottom:4px solid #0a5c34;
-}
-.member-content{
-  padding:25px;
-}
-.member h3{
-  font-size:1.3rem;
-  font-weight:700;
-  color:#0a5c34;
-  margin-bottom:8px;
-}
-.member-title{
-  color:#d4af37;
-  font-weight:600;
-  font-size:0.95rem;
-  margin-bottom:15px;
-  letter-spacing:0.5px;
-}
-.member p{
-  font-size:1rem;
-  line-height:1.7;
-  color:#555;
-  text-align:left;
-  margin-bottom:20px;
-}
-.member .short-text{
-  display:block;
-}
-.member .full-text{
-  display:none;
-  margin-top:15px;
-  padding-top:15px;
-  border-top:1px dashed #e0e0e0;
-}
-.member.expanded .short-text{
-  display:block;
-}
-.member.expanded .full-text{
-  display:block;
-}
-.read-more-btn{
-  background:linear-gradient(90deg,#0a5c34,#1e7d4d);
-  color:white;
-  border:none;
-  padding:10px 22px;
-  border-radius:30px;
-  font-weight:600;
-  font-size:0.9rem;
-  cursor:pointer;
-  transition:all 0.3s ease;
-  display:inline-flex;
-  align-items:center;
-  gap:8px;
-  margin-top:10px;
-}
-.read-more-btn:hover{
-  background:linear-gradient(90deg,#1e7d4d,#0a5c34);
-  transform:translateY(-2px);
-  box-shadow:0 5px 15px rgba(10, 92, 52, 0.2);
-}
-.read-more-btn i{
-  font-size:0.9rem;
-  transition:transform 0.3s ease;
-}
-.member.expanded .read-more-btn i{
-  transform:rotate(180deg);
-}
-
-/* ===== Departments ===== */
-.department{
-  margin-bottom:50px;
-  background:#fff;
-  padding:35px;
-  border-radius:18px;
-  box-shadow:0 8px 25px rgba(0,0,0,0.05);
-  border:1px solid rgba(0,0,0,0.03);
-}
-.department:last-child{margin-bottom:0;}
-.dept-header{
-  display:flex;
-  align-items:center;
-  gap:30px;
-  margin-bottom:25px;
-  flex-wrap:wrap;
-}
-.dept-img{
-  width:280px;
-  height:200px;
-  border-radius:15px;
-  object-fit:cover;
-  border:4px solid #0a5c34;
-  flex-shrink:0;
-}
-.dept-info{flex:1;}
-.dept-info h3{
-  font-family:'Lobster',cursive;
-  font-size:2rem;
-  color:#0a5c34;
-  margin-bottom:10px;
-}
-.dept-tagline{
-  color:#d4af37;
-  font-weight:600;
-  font-size:1rem;
-  margin-bottom:15px;
-  font-style:italic;
-}
-.dept-content p{
-  font-size:1.05rem;
-  line-height:1.8;
-  color:#444;
-  margin-bottom:20px;
-  text-align:left;
-}
-.dept-content .short-text{
-  display:block;
-}
-.dept-content .full-text{
-  display:none;
-  margin-top:20px;
-  padding-top:20px;
-  border-top:2px solid #f0f0f0;
-}
-.department.expanded .dept-content .short-text{
-  display:block;
-}
-.department.expanded .dept-content .full-text{
-  display:block;
-}
-.dept-features{
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(200px, 1fr));
-  gap:15px;
-  margin:20px 0;
-}
-.feature-item{
-  background:#f8f9fa;
-  padding:15px;
-  border-radius:10px;
-  border-left:4px solid #0a5c34;
-}
-.feature-item h4{
-  color:#0a5c34;
-  margin-bottom:8px;
-  font-size:1rem;
-}
-.feature-item p{
-  font-size:0.95rem;
-  margin-bottom:0;
-  color:#666;
-}
-
-@media(max-width:768px){
-  .dept-header{flex-direction:column;gap:20px;}
-  .dept-img{width:100%;height:180px;}
-  section{padding:30px 20px;}
-  .department{padding:25px;}
-  h2{font-size:2rem;}
-}
-
-/* ===== Footer ===== */
-footer{
-  background:linear-gradient(90deg,#0a5c34,#1e7d4d);
-  color:white;
-  padding:50px 20px 25px;
-  text-align:center;
-  margin-top:50px;
-}
-.footer-content{
-  max-width:1200px;
-  margin:0 auto 30px;
-  display:grid;
-  grid-template-columns:repeat(auto-fit, minmax(250px, 1fr));
-  gap:40px;
-}
-.footer-column h4{
-  font-family:'Lobster',cursive;
-  font-size:1.5rem;
-  margin-bottom:20px;
-  color:#d4af37;
-}
-.footer-links{
-  list-style:none;
-}
-.footer-links li{margin-bottom:12px;}
-.footer-links a{
-  color:#ddd;
-  transition:0.3s;
-  display:inline-block;
-}
-.footer-links a:hover{
-  color:#fff;
-  transform:translateX(5px);
-}
-.social-links{
-  display:flex;
-  gap:15px;
-  margin-top:20px;
-  justify-content:center;
-}
-.social-links a{
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  width:40px;
-  height:40px;
-  background:rgba(255,255,255,0.1);
-  border-radius:50%;
-  transition:0.3s;
-}
-.social-links a:hover{
-  background:#d4af37;
-  transform:translateY(-5px);
-}
-.copyright{
-  border-top:1px solid rgba(255,255,255,0.1);
-  padding-top:25px;
-  font-size:0.9rem;
-  color:#ccc;
-}
-</style>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="theme-color" content="#008751">
+    <meta name="description" content="Explore the departments and ministers of Kingdom Citizens Church INT'L. Meet our pastoral leadership and discover specialized ministries that build our vibrant community.">
+    <meta name="keywords" content="church departments, pastoral leadership, ministry teams, church ministers, youth ministry, women's ministry, men's fellowship, choir, evangelism, prayer ministry">
+    <meta name="author" content="Kingdom Citizens Church INT'L">
+    <meta property="og:title" content="Departments & Ministers - Kingdom Citizens Church INT'L">
+    <meta property="og:description" content="Meet our pastoral team and explore specialized ministries dedicated to nurturing kingdom citizens and building God's kingdom.">
+    <meta property="og:image" content="https://kingdomcitizenschurchintl.org/church1.jpg">
+    <meta property="og:url" content="https://kingdomcitizenschurchintl.org/departments.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Departments & Ministers - Kingdom Citizens Church INT'L">
+    <meta name="twitter:description" content="Discover our pastoral leadership and specialized ministries">
+    <meta name="twitter:image" content="https://kingdomcitizenschurchintl.org/church1.jpg">
+    
+    <title>Departments & Ministers - Kingdom Citizens Church INT'L | Our Leadership & Ministries</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+        :root {
+            --primary: #008751;
+            --secondary: #FFD700;
+            --light: #f8f9fa;
+            --dark: #222;
+            --accent: #005a3a;
+            --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFED4E 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: clamp(14px, 1vw, 18px);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            padding-top: 85px; /* For fixed header */
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Container */
+        .container {
+            width: min(100% - clamp(1rem, 5vw, 3rem), 1400px);
+            margin: 0 auto;
+            padding: 0 clamp(0.5rem, 3vw, 1.5rem);
+        }
+        
+        /* ========== HEADER (Same as index) ========== */
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 4px 0;
+            transition: all 0.4s ease;
+            height: 85px;
+        }
+        
+        .header-scrolled {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            height: 75px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 77px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1002;
+        }
+        
+        .logo-frame {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--secondary);
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-family: 'Lobster', cursive;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--primary);
+            letter-spacing: 1px;
+            line-height: 1.2;
+            white-space: nowrap;
+            display: none;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: auto;
+        }
+        
+        /* Desktop Navigation */
+        @media (min-width: 993px) {
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                background: rgba(0, 135, 81, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 4px;
+            }
+            
+            .nav-menu li {
+                margin: 0 4px;
+                position: relative;
+            }
+            
+            .nav-menu a {
+                color: var(--primary);
+                font-weight: 500;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+                padding: 8px 15px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .nav-menu a i {
+                margin-right: 6px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.15);
+                transform: translateY(-2px);
+            }
+            
+            .nav-menu a.active {
+                background: var(--secondary);
+                color: var(--primary);
+                font-weight: 600;
+            }
+            
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background: white;
+                min-width: 180px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                z-index: 1;
+                border-radius: 10px;
+                overflow: hidden;
+                top: 100%;
+                left: 0;
+                padding: 8px 0;
+                margin-top: 4px;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+            
+            .dropdown-content a {
+                color: var(--dark);
+                padding: 8px 16px;
+                display: block;
+                font-size: 0.8rem;
+                border-radius: 0;
+            }
+            
+            .dropdown-content a:hover {
+                background: #f8f9fa;
+                color: var(--primary);
+                transform: none;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 2.5rem;
+            }
+            
+            .logo-frame {
+                width: 75px;
+                height: 75px;
+            }
+        }
+        
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            z-index: 1001;
+            background: var(--primary);
+            border-radius: 50%;
+            padding: 8px;
+            border: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            background: white;
+            border-radius: 2px;
+            opacity: 1;
+            left: 10px;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .hamburger span:nth-child(1) { top: 14px; }
+        .hamburger span:nth-child(2) { top: 19px; }
+        .hamburger span:nth-child(3) { top: 24px; }
+        
+        .hamburger.active span:nth-child(1) {
+            top: 19px;
+            transform: rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            top: 19px;
+            transform: rotate(-45deg);
+        }
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: -100vh;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('logo11.jpg');
+                background-size: cover;
+                background-position: center;
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 100px 20px 30px;
+                transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                top: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0 0 10px 0;
+                width: 100%;
+                max-width: 300px;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu li:nth-child(2) { transition-delay: 0.15s; }
+            .nav-menu li:nth-child(3) { transition-delay: 0.2s; }
+            .nav-menu li:nth-child(4) { transition-delay: 0.25s; }
+            .nav-menu li:nth-child(5) { transition-delay: 0.3s; }
+            .nav-menu li:nth-child(6) { transition-delay: 0.35s; }
+            .nav-menu li:nth-child(7) { transition-delay: 0.4s; }
+            .nav-menu li:nth-child(8) { transition-delay: 0.45s; }
+            .nav-menu li:nth-child(9) { transition-delay: 0.5s; }
+            
+            .nav-menu a {
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                width: 100%;
+                border-radius: 10px;
+                color: var(--primary);
+                background: rgba(0, 135, 81, 0.1);
+                margin-bottom: 5px;
+                border-left: 3px solid transparent;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.2);
+                border-left: 3px solid var(--secondary);
+            }
+            
+            .nav-menu a i {
+                margin-right: 12px;
+                font-size: 1rem;
+                width: 20px;
+                text-align: center;
+            }
+            
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                background: rgba(0, 135, 81, 0.05);
+                margin: 5px 0 5px 15px;
+                border-radius: 8px;
+                padding: 5px 0;
+                border-left: 2px solid rgba(0, 135, 81, 0.1);
+            }
+            
+            .dropdown-content a {
+                padding: 10px 15px 10px 25px;
+                font-size: 0.9rem;
+                color: var(--primary);
+                border-radius: 0;
+                border-left: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 1.8rem;
+            }
+            
+            .logo-frame {
+                width: 65px;
+                height: 65px;
+                margin-right: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-frame {
+                width: 60px;
+                height: 60px;
+            }
+            
+            header {
+                height: 80px;
+            }
+            
+            .header-container {
+                height: 72px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .logo-frame {
+                width: 55px;
+                height: 55px;
+            }
+            
+            header {
+                height: 75px;
+            }
+            
+            .header-container {
+                height: 67px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo-frame {
+                width: 50px;
+                height: 50px;
+                margin-right: 8px;
+            }
+        }
+        
+        /* ========== HERO SECTION ========== */
+        .departments-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('church1.jpg') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: clamp(2rem, 6vw, 4rem);
+            overflow: hidden;
+        }
+        
+        .departments-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, white, transparent);
+            z-index: 1;
+        }
+        
+        .hero-content-departments {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.2rem);
+            margin-bottom: 1.5rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.6rem);
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .hero-divider {
+            width: 120px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+        
+        /* ========== MAIN CONTENT ========== */
+        .departments-main {
+            padding: 0 0 clamp(5rem, 12vw, 8rem) 0;
+        }
+        
+        .page-intro {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto clamp(4rem, 8vw, 6rem);
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            color: #555;
+            line-height: 1.8;
+            padding: 0 1rem;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            color: var(--primary);
+            margin-bottom: clamp(2rem, 6vw, 4rem);
+            position: relative;
+            padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(80px, 15vw, 120px);
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* ========== PASTORAL LEADERSHIP ========== */
+        .leadership-section {
+            margin-bottom: clamp(5rem, 10vw, 8rem);
+        }
+        
+        .leadership-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: clamp(2rem, 4vw, 3rem);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .leader-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .leader-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .leader-image {
+            height: 320px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .leader-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .leader-card:hover .leader-image img {
+            transform: scale(1.05);
+        }
+        
+        .leader-overlay {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 60px;
+            background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+        }
+        
+        .leader-info {
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .leader-name {
+            color: var(--primary);
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+        
+        .leader-title {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1.1rem;
+            margin-bottom: 1.5rem;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .leader-title i {
+            font-size: 0.9rem;
+        }
+        
+        .leader-bio {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .leader-bio.full {
+            display: none;
+        }
+        
+        .leader-card.expanded .leader-bio.short {
+            display: none;
+        }
+        
+        .leader-card.expanded .leader-bio.full {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .read-more-btn {
+            background: var(--gradient);
+            color: white;
+            border: none;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            margin-top: auto;
+            width: 100%;
+            max-width: 200px;
+            align-self: center;
+        }
+        
+        .read-more-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+        }
+        
+        .read-more-btn i {
+            font-size: 0.9rem;
+            transition: transform 0.3s ease;
+        }
+        
+        .leader-card.expanded .read-more-btn i {
+            transform: rotate(180deg);
+        }
+        
+        /* ========== MINISTRY DEPARTMENTS ========== */
+        .departments-section {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            padding: clamp(4rem, 10vw, 6rem) 0;
+            border-radius: 30px;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .departments-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+        }
+        
+        .departments-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: clamp(2rem, 4vw, 3rem);
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        .department-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.4s ease;
+            height: 100%;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .department-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .department-image {
+            height: 220px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .department-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.6s ease;
+        }
+        
+        .department-card:hover .department-image img {
+            transform: scale(1.05);
+        }
+        
+        .department-badge {
+            position: absolute;
+            top: 20px;
+            right: 20px;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
+        }
+        
+        .department-content {
+            padding: clamp(1.5rem, 3vw, 2.5rem);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .department-name {
+            color: var(--primary);
+            font-size: clamp(1.5rem, 3vw, 1.8rem);
+            margin-bottom: 0.5rem;
+            font-family: 'Playfair Display', serif;
+            line-height: 1.2;
+        }
+        
+        .department-tagline {
+            color: var(--secondary);
+            font-weight: 600;
+            font-size: 1rem;
+            margin-bottom: 1.5rem;
+            font-style: italic;
+        }
+        
+        .department-description {
+            color: #666;
+            line-height: 1.7;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .department-description.full {
+            display: none;
+        }
+        
+        .department-card.expanded .department-description.short {
+            display: none;
+        }
+        
+        .department-card.expanded .department-description.full {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        .department-features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 1rem;
+            margin: 1.5rem 0;
+            padding: 1rem;
+            background: rgba(0, 135, 81, 0.05);
+            border-radius: 10px;
+            border-left: 4px solid var(--primary);
+        }
+        
+        .feature-item h4 {
+            color: var(--primary);
+            font-size: 0.95rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .feature-item p {
+            color: #666;
+            font-size: 0.9rem;
+            line-height: 1.6;
+        }
+        
+        /* ========== JOIN MINISTRY CTA ========== */
+        .join-ministry-cta {
+            background: var(--gradient);
+            padding: clamp(4rem, 10vw, 6rem) 0;
+            text-align: center;
+            color: white;
+            border-radius: 30px;
+            margin: 5rem 0;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .join-ministry-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3.2rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-text {
+            font-size: clamp(1rem, 2vw, 1.3rem);
+            max-width: 700px;
+            margin: 0 auto 2.5rem;
+            opacity: 0.9;
+            line-height: 1.8;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: clamp(0.875rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(0, 0, 0, 0.2);
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.25);
+        }
+        
+        .cta-btn.secondary {
+            background: transparent;
+            color: white;
+            border: 2px solid white;
+        }
+        
+        .cta-btn.secondary:hover {
+            background: white;
+            color: var(--primary);
+        }
+        
+        /* ========== FOOTER (Same as index) ========== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 1.875rem);
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-image: url('logo11.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+        
+        footer:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: clamp(2rem, 5vw, 3.125rem);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--secondary);
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.625rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: clamp(0.75rem, 2vw, 1rem);
+            margin-top: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(40px, 5vw, 45px);
+            height: clamp(40px, 5vw, 45px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            color: var(--dark);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: clamp(1rem, 2.5vw, 1.875rem);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+            color: #aaa;
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: clamp(1rem, 3vw, 1.875rem);
+            right: clamp(1rem, 3vw, 1.875rem);
+            width: clamp(45px, 5vw, 50px);
+            height: clamp(45px, 5vw, 50px);
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+        }
+        
+        /* Animations */
+        @keyframes fadeIn {
+            from {
+                opacity: 0;
+                transform: translateY(10px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .leadership-grid,
+            .departments-grid {
+                grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .departments-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .leader-image {
+                height: 280px;
+            }
+            
+            .department-image {
+                height: 200px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .leadership-grid,
+            .departments-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .departments-hero {
+                height: 35vh;
+                min-height: 250px;
+            }
+            
+            .department-features {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.5;
+                background: white !important;
+            }
+            
+            .departments-hero {
+                background: var(--primary);
+                color: white;
+                height: auto;
+                padding: 2rem 0;
+            }
+        }
+    </style>
 </head>
 <body>
-
-<!-- ===== Nav ===== -->
-<nav>
-  <div class="nav-left">
-    <img src="logo11.jpg" alt="logo">
-    <div class="brand">Kingdom Citizens Church INT'L</div>
-  </div>
-  <div class="hamburger" id="hamburger">
-    <span></span><span></span><span></span>
-  </div>
-  <div class="nav-links" id="navLinks">
-    <span class="close-btn" id="closeBtn">&times;</span>
-    <ul>
-      <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
-      <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
-      <li><a href="departments.html" class="active"><i class="fas fa-users"></i> Departments</a></li>
-      <li><a href="service.html"><i class="fas fa-church"></i> Our Service</a></li>
-      <li><a href="contact.html"><i class="fas fa-envelope"></i> Contact</a></li>
-    </ul>
-  </div>
-</nav>
-
-<!-- ===== Hero ===== -->
-<section class="hero">
-  <h1>Departments & Ministers</h1>
-</section>
-
-<main>
-  <p class="section-intro">Explore the dynamic ministries and dedicated ministers of Kingdom Citizens Church International. Each department is uniquely designed to nurture faith, develop spiritual gifts, and advance God's kingdom through specialized ministries and passionate leadership.</p>
-
-  <!-- Pastoral Group -->
-  <section>
-    <h2>Pastoral Leadership</h2>
-    <p class="section-intro">Our pastoral team provides visionary leadership, spiritual guidance, and dedicated service to shepherd the flock of God at Kingdom Citizens Church INT'L.</p>
-    
-    <div class="group-container">
-      <!-- Pastor Sam Balogun -->
-      <div class="member">
-        <img src="balogun21.jpg" alt="Pastor Sam Balogun" class="member-img">
-        <div class="member-content">
-          <h3>Pastor Samuel Abiodun Balogun</h3>
-          <div class="member-title">Founder & Senior Pastor</div>
-          <p class="short-text">Visionary leader and founder of Kingdom Citizens Church INT'L with over 25 years of ministerial experience, dedicated to raising kingdom citizens who transform their world through faith and action.</p>
-          <div class="full-text">
-            <p>Pastor Samuel Abiodun Balogun is a dynamic apostolic leader called by God to establish kingdom principles in the lives of believers. As the founder and senior pastor of Kingdom Citizens Church INT'L, he has pioneered a ministry that emphasizes royal priesthood, divine inheritance, and kingdom citizenship.</p>
-            <p>He is also the founder of Seed Royal Bible Church and the International School of Kingdom Citizenship, through which he has trained and mentored hundreds of ministers and church planters. With a doctorate in Divinity and extensive theological training, Pastor Balogun combines deep biblical scholarship with practical kingdom application.</p>
-            <p>His ministry is characterized by prophetic accuracy, apostolic vision, and a relentless commitment to soul-winning and discipleship. He has authored several books including "The Kingdom Citizen's Mandate" and "Walking in Royal Authority." Under his leadership, Kingdom Citizens Church INT'L has grown from a home fellowship to a multinational ministry with multiple branches and significant community impact.</p>
-            <p>Pastor Balogun is married to Pastor Mrs. Felicia Balogun and they are blessed with children who are actively involved in ministry. His life motto is: "Every believer is a kingdom citizen with royal authority and divine responsibility."</p>
-          </div>
-          <button class="read-more-btn" onclick="toggleMember(this)">
-            <span>Read More</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Pastor Mrs Felicia Balogun -->
-      <div class="member">
-        <img src="felicia.jpg" alt="Pastor Mrs Felicia Balogun" class="member-img">
-        <div class="member-content">
-          <h3>Pastor Mrs. Felicia Balogun</h3>
-          <div class="member-title">Co-founder & Minister of Helps</div>
-          <p class="short-text">A retired Deputy Director of Nursing Services (DDNS) who brings administrative excellence and compassionate care to ministry, supporting the vision with wisdom and dedication.</p>
-          <div class="full-text">
-            <p>Pastor Mrs. Felicia Balogun is a woman of exceptional grace, wisdom, and spiritual depth. With a distinguished career as a Deputy Director of Nursing Services (DDNS) spanning over 30 years, she brings professional excellence, administrative acumen, and compassionate care to her ministerial calling.</p>
-            <p>As the co-founder of Kingdom Citizens Church INT'L, she provides crucial support to the senior pastor while leading the women's ministry, counseling department, and hospitality teams. Her nursing background uniquely equips her for the ministry of healing, both physical and emotional, as she oversees prayer and counseling sessions.</p>
-            <p>She is the founder of "Royal Women of Purpose," a ministry that empowers women to discover their God-given identity and fulfill their divine purpose. Through monthly meetings, annual retreats, and mentorship programs, she has impacted hundreds of women across different generations.</p>
-            <p>Pastor Mrs. Balogun holds a Master's degree in Public Administration and several certifications in Christian counseling. She is a sought-after speaker at women's conferences and marriage seminars. Her teaching series "The Proverbs 31 Woman in Today's World" has transformed countless homes and marriages.</p>
-            <p>A devoted mother and grandmother, she exemplifies balanced living—successfully managing family, career, and ministry while maintaining a vibrant prayer life. Her favorite scripture is Proverbs 31:25: "She is clothed with strength and dignity, and she laughs without fear of the future."</p>
-          </div>
-          <button class="read-more-btn" onclick="toggleMember(this)">
-            <span>Read More</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Pastor Wale Somoye -->
-      <div class="member">
-        <img src="wale11.jpg" alt="Pastor Wale Somoye" class="member-img">
-        <div class="member-content">
-          <h3>Pastor Wale Somoye</h3>
-          <div class="member-title">Resident Pastor (Osara Branch)</div>
-          <p class="short-text">Dedicated shepherd overseeing the Osara branch with commitment to discipleship, community outreach, and pastoral care for congregation members.</p>
-          <div class="full-text">
-            <p>Pastor Wale Somoye serves as the resident pastor of the Osara branch of Kingdom Citizens Church INT'L, providing dedicated pastoral oversight and spiritual leadership to the congregation. With over 15 years of ministerial experience, he brings a balanced approach to teaching, discipleship, and community engagement.</p>
-            <p>He holds a Bachelor's degree in Theology and a Master's in Christian Leadership, complemented by specialized training in church administration and small group dynamics. Under his leadership, the Osara branch has experienced significant growth in membership and community impact through various outreach programs.</p>
-            <p>Pastor Somoye is particularly gifted in expository teaching and practical application of biblical principles to everyday life. He oversees the church's discipleship program "Kingdom Foundations" which has trained over 300 believers in foundational Christian doctrines and kingdom principles.</p>
-            <p>He is married to Deaconess Grace Somoye, and together they lead the marriage enrichment ministry "Covenant Keepers." Their testimony of God's faithfulness in their 18-year marriage inspires many couples in the congregation.</p>
-          </div>
-          <button class="read-more-btn" onclick="toggleMember(this)">
-            <span>Read More</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Pastor Peter Oluwakunbi -->
-      <div class="member">
-        <img src="kumbi.jpg" alt="Pastor Peter Oluwakunbi" class="member-img">
-        <div class="member-content">
-          <h3>Pastor Peter Oluwakunbi</h3>
-          <div class="member-title">Youth Pastor & Campus Minister</div>
-          <p class="short-text">Dynamic youth minister passionate about raising a generation of young believers who walk in purpose, power, and spiritual authority.</p>
-          <div class="full-text">
-            <p>Pastor Peter Oluwakunbi, affectionately called "PK" by the youth, leads with contagious energy and deep spiritual insight. As the Youth Pastor of Kingdom Citizens Church INT'L, he oversees all youth and campus ministries with a vision to raise a generation of kingdom-minded young leaders.</p>
-            <p>With a background in Mass Communication and specialized training in youth ministry from the International Youth Ministry Institute, Pastor Peter connects authentically with young people while challenging them to higher spiritual standards. He pioneered the "NextGen Kingdom Leaders" program that has produced many youth leaders now serving in various capacities.</p>
-            <p>He also serves as the Campus Minister at the Federal University of Technology, Akure (FUTA), where he leads the Kingdom Citizens Campus Fellowship. Under his leadership, the campus ministry has grown to become one of the most vibrant Christian groups on campus, known for impactful evangelism and discipleship.</p>
-            <p>Pastor Peter is a gifted communicator and worship leader. He has released several worship songs and leads the youth worship team "Kingdom Youth Voices." His annual youth conference "Awaken Generation" attracts hundreds of young people from across the state.</p>
-          </div>
-          <button class="read-more-btn" onclick="toggleMember(this)">
-            <span>Read More</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-        </div>
-      </div>
-
-      <!-- Evangelist Daniel Onaleye -->
-      <div class="member">
-        <img src="daniel.jpg" alt="Evangelist Daniel Onaleye" class="member-img">
-        <div class="member-content">
-          <h3>Evangelist Daniel Onaleye</h3>
-          <div class="member-title">Head of Choir & Evangelism Director</div>
-          <p class="short-text">Anointed worship leader and passionate evangelist who combines musical excellence with fervent soul-winning to advance God's kingdom.</p>
-          <div class="full-text">
-            <p>Evangelist Daniel Onaleye is a multi-talented minister who combines musical excellence with evangelistic fervor. As the Head of the Kingdom Citizens Voices (Choir), he leads worship with anointing and excellence that ushers congregations into God's presence.</p>
-            <p>With formal training in Music from the Nigerian Institute of Music and over 20 years of worship ministry experience, Evangelist Daniel has developed the choir into a proficient worship team that ministers both locally and nationally. He has composed and arranged numerous worship songs that have become church favorites.</p>
-            <p>In his role as Evangelism Director, he coordinates weekly outreach programs, neighborhood evangelism, and special crusades. Under his leadership, the church's evangelism team has recorded over 5,000 decisions for Christ in the past three years. He pioneered the "Every Member Evangelist" training program that equips ordinary believers for effective soul-winning.</p>
-            <p>Evangelist Daniel is also a skilled music teacher who trains choir members in vocal techniques, harmony, and musical theory. He believes that "worship is warfare" and that "every convert should become a worshipper."</p>
-            <p>He is married to Sister Joy Onaleye, who serves as the assistant choir director. Together, they are raising their three children to love God and serve in ministry.</p>
-          </div>
-          <button class="read-more-btn" onclick="toggleMember(this)">
-            <span>Read More</span>
-            <i class="fas fa-chevron-down"></i>
-          </button>
-        </div>
-      </div>
-    </div>
-  </section>
-
-  <!-- ===== Departments ===== -->
-  <section>
-    <h2>Ministry Departments</h2>
-    <p class="section-intro">Our specialized departments work together to build a strong, vibrant church community where every member can grow, serve, and fulfill their God-given purpose.</p>
-
-    <!-- Children's Department -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church02.jpg" class="dept-img" alt="Children's Department">
-        <div class="dept-info">
-          <h3>Children's Department</h3>
-          <div class="dept-tagline">Raising Kingdom Kids for Divine Destiny</div>
-        </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">Our Children's church is dedicated to raising a godly generation of children who fear God, love humanity, and walk in their divine identity as kingdom citizens from an early age.</p>
-        <div class="full-text">
-          <p>The Children's Department, also known as "Kingdom Kids Academy," provides age-appropriate biblical teaching, worship, and discipleship for children ages 2-12. We believe children are not just the church of tomorrow but vital members of the church today.</p>
-          <p>Our curriculum is designed to teach children foundational biblical truths through interactive lessons, worship, drama, arts and crafts, and memory verses. Each class is staffed by trained, background-checked teachers who are passionate about children's spiritual development.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Age Groups</h4>
-              <p>Nursery (2-4), Pre-school (5-7), Juniors (8-10), Pre-teens (11-12)</p>
-            </div>
-            <div class="feature-item">
-              <h4>Weekly Programs</h4>
-              <p>Sunday School, Children's Church, Wednesday Bible Club, Vacation Bible School</p>
-            </div>
-            <div class="feature-item">
-              <h4>Special Events</h4>
-              <p>Annual Children's Convention, Easter Egg Hunt, Christmas Pageant, Back-to-School Blessing</p>
-            </div>
-          </div>
-          <p>Our vision is to see every child develop a personal relationship with Jesus, understand their identity in Christ, and begin to operate in their spiritual gifts. We partner with parents through regular parenting seminars and take-home materials to reinforce biblical values at home.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
     </div>
 
-    <!-- Teenagers' Department -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church03.jpg" class="dept-img" alt="Teenagers Department">
-        <div class="dept-info">
-          <h3>Teenagers' Department</h3>
-          <div class="dept-tagline">Equipping Teens for Purposeful Living</div>
+    <!-- Header -->
+    <header id="mainHeader" class="glass-effect">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-frame">
+                        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+                    </div>
+                    <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="department.html" class="active"><i class="fas fa-building"></i> Department</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-church"></i> Ministries <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="foundation.html">Foundation Class</a>
+                            <a href="counselling.html">Counselling</a>
+                            <a href="evangelism.html">Evangelism</a>
+                            <a href="library.html">Visit Library</a>
+                            <a href="sermon.html">Listen to Sermon</a>
+                            <a href="live.html">Watch Us Live</a>
+                        </div>
+                    </li>
+                    <li><a href="pastor-note.html"><i class="fas fa-user-tie"></i> Pastor's Desk</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join Us</a></li>
+                    <li><a href="donate.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                    <li><a href="sermon.html"><i class="fas fa-headphones"></i> Listen to Sermon</a></li>
+                    <li><a href="live.html"><i class="fas fa-video"></i> Watch Us Live</a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </div>
         </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">This unit is committed to guiding teenagers (ages 13-18) through the challenging transition to young adulthood with biblical principles, mentorship, and peer support.</p>
-        <div class="full-text">
-          <p>The Teenagers' Department, called "Kingdom Teens," creates a safe, engaging environment where teenagers can explore faith, ask tough questions, and develop their God-given identity during these formative years.</p>
-          <p>We address relevant issues facing today's teens including peer pressure, identity, relationships, social media, academics, and career choices from a biblical perspective. Our approach combines teaching, small group discussions, mentorship, and fun activities.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Core Programs</h4>
-              <p>Sunday Teen Service, Friday Night Live (FNL), Small Groups, Leadership Training</p>
-            </div>
-            <div class="feature-item">
-              <h4>Annual Events</h4>
-              <p>Teen Camp, Career Discovery Day, Youth Evangelism Outreach, Talent Showcase</p>
-            </div>
-            <div class="feature-item">
-              <h4>Development Areas</h4>
-              <p>Spiritual growth, Leadership skills, Academic excellence, Social responsibility</p>
-            </div>
-          </div>
-          <p>Each teen is paired with a caring adult mentor who provides guidance, prayer support, and accountability. We also offer specialized programs for teen guys ("Young Warriors") and teen girls ("Daughter of Zion") to address gender-specific issues.</p>
-          <p>Our goal is to produce teenagers who are spiritually grounded, academically excellent, socially responsible, and prepared to make a positive impact in their world.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
+    </header>
 
-    <!-- Youth Fellowship -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church04.jpg" class="dept-img" alt="Youth Fellowship">
-        <div class="dept-info">
-          <h3>Youth Fellowship</h3>
-          <div class="dept-tagline">Young Adults Walking in Wisdom and Purpose</div>
+    <!-- Hero Section -->
+    <section class="departments-hero">
+        <div class="hero-content-departments animate-fadeInUp">
+            <h1 class="hero-title">Departments & Ministers</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Meet Our Leadership Team & Explore Specialized Ministries</p>
         </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">A vibrant community of young adults (ages 19-35) committed to developing in God's wisdom, building authentic relationships, and impacting their spheres of influence.</p>
-        <div class="full-text">
-          <p>The Youth Fellowship, known as "Kingdom Young Adults (KYA)," provides spiritual nourishment, fellowship, and practical support for single and married young adults navigating early adulthood, careers, relationships, and family life.</p>
-          <p>We address real-life issues including career development, financial stewardship, relationships and marriage preparation, spiritual disciplines, and marketplace ministry. Our meetings feature relevant teaching, interactive workshops, and open discussions.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Meeting Schedule</h4>
-              <p>Sunday Service (9am), Thursday Bible Study (6pm), Monthly Socials, Quarterly Retreats</p>
-            </div>
-            <div class="feature-item">
-              <h4>Specialized Groups</h4>
-              <p>Career Professionals, Entrepreneurs, Students, Newly Marrieds, Singles</p>
-            </div>
-            <div class="feature-item">
-              <h4>Skill Development</h4>
-              <p>Leadership training, Financial literacy, Career counseling, Relationship coaching</p>
-            </div>
-          </div>
-          <p>We believe young adults are crucial to the advancement of God's kingdom in this generation. Through our "Kingdom Impact" initiative, members serve in various church ministries and community projects. Our annual "Young Leaders Summit" equips youth for greater influence and service.</p>
-          <p>Whether you're a student, professional, entrepreneur, or stay-at-home parent, you'll find a welcoming community where you can grow spiritually and build meaningful relationships.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
+    </section>
 
-    <!-- Women's Fellowship -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church05.jpg" class="dept-img" alt="Women Fellowship">
-        <div class="dept-info">
-          <h3>Women's Fellowship (Royal Pillars)</h3>
-          <div class="dept-tagline">Women of Strength, Wisdom, and Grace</div>
+    <!-- Main Content -->
+    <main class="departments-main container">
+        <!-- Page Introduction -->
+        <div class="page-intro animate-fadeInUp">
+            <p>Explore the dynamic ministries and dedicated ministers of Kingdom Citizens Church International. Each department is uniquely designed to nurture faith, develop spiritual gifts, and advance God's kingdom through specialized ministries and passionate leadership.</p>
         </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">Committed to the spiritual, emotional, and practical empowerment of women at every life stage through biblical teaching, fellowship, and supportive relationships.</p>
-        <div class="full-text">
-          <p>The Royal Pillars Women's Fellowship is a vibrant community where women find spiritual nourishment, authentic friendships, and practical support for every season of life. Led by Pastor Mrs. Felicia Balogun, this ministry addresses the unique needs and challenges women face today.</p>
-          <p>Our monthly meetings feature dynamic teaching on topics such as spiritual growth, marriage enrichment, parenting, health and wellness, financial stewardship, and personal development. We also offer specialized support groups for singles, married women, mothers, widows, and career women.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Monthly Programs</h4>
-              <p>First Saturday Fellowship, Weekly Prayer Meetings, Monthly Bible Study, Quarterly Seminars</p>
-            </div>
-            <div class="feature-item">
-              <h4>Annual Events</h4>
-              <p>Women's Conference, Mother-Daughter Banquet, Widows' Outreach, Skills Acquisition Workshop</p>
-            </div>
-            <div class="feature-item">
-              <h4>Support Ministries</h4>
-              <p>Prayer Warriors, Hospitality Team, Benevolence Committee, Mentorship Program</p>
-            </div>
-          </div>
-          <p>Through our "Sister-to-Sister" mentorship program, younger women are paired with mature women for guidance and discipleship. Our "Royal Business Women" network supports female entrepreneurs with training, networking, and resources.</p>
-          <p>We believe every woman is called to be a pillar of strength in her family, church, and community. Whether you're single, married, divorced, or widowed, you'll find acceptance, support, and opportunities to grow and serve.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
 
-    <!-- Men's Fellowship -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church06.jpg" class="dept-img" alt="Men Fellowship">
-        <div class="dept-info">
-          <h3>Men's Fellowship</h3>
-          <div class="dept-tagline">Men of Character, Courage, and Conviction</div>
-        </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">Equipping men to fulfill their God-given roles as spiritual leaders, faithful husbands, loving fathers, and influential kingdom agents in society.</p>
-        <div class="full-text">
-          <p>The Men's Fellowship at Kingdom Citizens Church INT'L consists of two complementary groups: the Business Men Fellowship and the Men of Issachar. Together, they provide spiritual, professional, and personal development for men of all ages and backgrounds.</p>
-          <p>The Business Men Fellowship focuses on integrating faith and work, providing networking opportunities, business mentoring, and financial wisdom from biblical principles. The Men of Issachar emphasizes spiritual leadership, family stewardship, and understanding the times (1 Chronicles 12:32).</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Business Men Fellowship</h4>
-              <p>Monthly breakfast meetings, Business networking, Entrepreneur training, Financial stewardship workshops</p>
-            </div>
-            <div class="feature-item">
-              <h4>Men of Issachar</h4>
-              <p>Monthly prayer breakfast, Leadership training, Family enrichment seminars, Community service projects</p>
-            </div>
-            <div class="feature-item">
-              <h4>Joint Activities</h4>
-              <p>Annual Men's Retreat, Father-Son Outing, Sports Fellowship, Skill Development Workshops</p>
-            </div>
-          </div>
-          <p>Our "Iron Sharpens Iron" mentorship program pairs younger men with mature Christian men for discipleship and accountability. Through our "Man Up" initiative, we train men to take spiritual responsibility in their homes, workplaces, and communities.</p>
-          <p>We believe godly men are catalysts for transformation in families, churches, and nations. Join us as we pursue biblical masculinity, authentic brotherhood, and kingdom impact.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
+        <!-- Pastoral Leadership Section -->
+        <section class="leadership-section">
+            <h2 class="section-title">Pastoral Leadership</h2>
+            <p class="page-intro">Our pastoral team provides visionary leadership, spiritual guidance, and dedicated service to shepherd the flock of God at Kingdom Citizens Church INT'L.</p>
+            
+            <div class="leadership-grid">
+                <!-- Pastor Samuel Balogun -->
+                <div class="leader-card animate-fadeInUp">
+                    <div class="leader-image">
+                        <img src="balogun21.jpg" alt="Pastor Samuel Abiodun Balogun">
+                        <div class="leader-overlay"></div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Pastor Samuel Abiodun Balogun</h3>
+                        <div class="leader-title"><i class="fas fa-crown"></i> Founder & Senior Pastor</div>
+                        <div class="leader-bio short">
+                            Visionary leader and founder of Kingdom Citizens Church INT'L with over 25 years of ministerial experience, dedicated to raising kingdom citizens who transform their world through faith and action.
+                        </div>
+                        <div class="leader-bio full">
+                            <p>Pastor Samuel Abiodun Balogun is a dynamic apostolic leader called by God to establish kingdom principles in the lives of believers. As the founder and senior pastor of Kingdom Citizens Church INT'L, he has pioneered a ministry that emphasizes royal priesthood, divine inheritance, and kingdom citizenship.</p>
+                            <p>He is also the founder of Seed Royal Bible Church and the International School of Kingdom Citizenship, through which he has trained and mentored hundreds of ministers and church planters. With a doctorate in Divinity and extensive theological training, Pastor Balogun combines deep biblical scholarship with practical kingdom application.</p>
+                            <p>His ministry is characterized by prophetic accuracy, apostolic vision, and a relentless commitment to soul-winning and discipleship. Under his leadership, Kingdom Citizens Church INT'L has grown from a home fellowship to a multinational ministry with multiple branches and significant community impact.</p>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleLeader(this)">
+                            <span>Read More</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
 
-    <!-- Choir -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church07.jpg" class="dept-img" alt="Choir">
-        <div class="dept-info">
-          <h3>Kingdom Citizens Voices (Choir)</h3>
-          <div class="dept-tagline">Ministering God's Presence Through Excellence in Worship</div>
-        </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">A dedicated team of worshippers who lead the congregation into God's presence through anointed music, vocals, and instruments, giving high premium to praise and worship.</p>
-        <div class="full-text">
-          <p>The Kingdom Citizens Voices, under the leadership of Evangelist Daniel Onaleye, is more than just a choir—it's a worship ministry dedicated to ushering God's people into His presence through Spirit-led, excellent worship.</p>
-          <p>Our choir consists of vocalists, instrumentalists, and technical crew who serve across multiple services and special events. We believe worship is both a weapon of spiritual warfare and a vehicle for divine encounter.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Ministry Teams</h4>
-              <p>Main Choir, Youth Choir, Instrumentalists, Technical Crew, Worship Leaders</p>
-            </div>
-            <div class="feature-item">
-              <h4>Rehearsal Schedule</h4>
-              <p>Tuesday (Sectionals), Thursday (Full Choir), Saturday (Full Rehearsal with Band)</p>
-            </div>
-            <div class="feature-item">
-              <h4>Musical Training</h4>
-              <p>Vocal techniques, Harmony training, Sight reading, Instrument proficiency</p>
-            </div>
-          </div>
-          <p>We regularly release original worship songs and have produced several albums that have blessed congregations beyond our local church. Our annual "Night of Worship" event draws worshippers from across the region for an unforgettable encounter with God.</p>
-          <p>Membership in the choir requires commitment to spiritual growth, musical development, and team unity. Auditions are held quarterly, and new members undergo a training period before joining the main choir.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
+                <!-- Pastor Mrs Felicia Balogun -->
+                <div class="leader-card animate-fadeInUp">
+                    <div class="leader-image">
+                        <img src="felicia.jpg" alt="Pastor Mrs Felicia Balogun">
+                        <div class="leader-overlay"></div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Pastor Mrs. Felicia Balogun</h3>
+                        <div class="leader-title"><i class="fas fa-hands-helping"></i> Co-founder & Minister of Helps</div>
+                        <div class="leader-bio short">
+                            A retired Deputy Director of Nursing Services (DDNS) who brings administrative excellence and compassionate care to ministry, supporting the vision with wisdom and dedication.
+                        </div>
+                        <div class="leader-bio full">
+                            <p>Pastor Mrs. Felicia Balogun is a woman of exceptional grace, wisdom, and spiritual depth. With a distinguished career as a Deputy Director of Nursing Services (DDNS) spanning over 30 years, she brings professional excellence, administrative acumen, and compassionate care to her ministerial calling.</p>
+                            <p>As the co-founder of Kingdom Citizens Church INT'L, she provides crucial support to the senior pastor while leading the women's ministry, counseling department, and hospitality teams. Her nursing background uniquely equips her for the ministry of healing, both physical and emotional.</p>
+                            <p>She is the founder of "Royal Women of Purpose," a ministry that empowers women to discover their God-given identity and fulfill their divine purpose. Through monthly meetings, annual retreats, and mentorship programs, she has impacted hundreds of women across different generations.</p>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleLeader(this)">
+                            <span>Read More</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
 
-    <!-- Ushering Group -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church08.jpg" class="dept-img" alt="Ushering Group">
-        <div class="dept-info">
-          <h3>Ushering Group</h3>
-          <div class="dept-tagline">Creating a Worship-Friendly Atmosphere with Excellence</div>
+                <!-- Pastor Wale Somoye -->
+                <div class="leader-card animate-fadeInUp">
+                    <div class="leader-image">
+                        <img src="wale11.jpg" alt="Pastor Wale Somoye">
+                        <div class="leader-overlay"></div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Pastor Wale Somoye</h3>
+                        <div class="leader-title"><i class="fas fa-church"></i> Resident Pastor (Osara Branch)</div>
+                        <div class="leader-bio short">
+                            Dedicated shepherd overseeing the Osara branch with commitment to discipleship, community outreach, and pastoral care for congregation members.
+                        </div>
+                        <div class="leader-bio full">
+                            <p>Pastor Wale Somoye serves as the resident pastor of the Osara branch of Kingdom Citizens Church INT'L, providing dedicated pastoral oversight and spiritual leadership to the congregation. With over 15 years of ministerial experience, he brings a balanced approach to teaching, discipleship, and community engagement.</p>
+                            <p>He holds a Bachelor's degree in Theology and a Master's in Christian Leadership, complemented by specialized training in church administration and small group dynamics. Under his leadership, the Osara branch has experienced significant growth in membership and community impact through various outreach programs.</p>
+                            <p>Pastor Somoye is particularly gifted in expository teaching and practical application of biblical principles to everyday life. He oversees the church's discipleship program "Kingdom Foundations" which has trained hundreds of believers in foundational Christian doctrines and kingdom principles.</p>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleLeader(this)">
+                            <span>Read More</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Pastor Peter Oluwakunbi -->
+                <div class="leader-card animate-fadeInUp">
+                    <div class="leader-image">
+                        <img src="kumbi.jpg" alt="Pastor Peter Oluwakunbi">
+                        <div class="leader-overlay"></div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Pastor Peter Oluwakunbi</h3>
+                        <div class="leader-title"><i class="fas fa-users"></i> Youth Pastor & Campus Minister</div>
+                        <div class="leader-bio short">
+                            Dynamic youth minister passionate about raising a generation of young believers who walk in purpose, power, and spiritual authority.
+                        </div>
+                        <div class="leader-bio full">
+                            <p>Pastor Peter Oluwakunbi, affectionately called "PK" by the youth, leads with contagious energy and deep spiritual insight. As the Youth Pastor of Kingdom Citizens Church INT'L, he oversees all youth and campus ministries with a vision to raise a generation of kingdom-minded young leaders.</p>
+                            <p>With a background in Mass Communication and specialized training in youth ministry, Pastor Peter connects authentically with young people while challenging them to higher spiritual standards. He pioneered the "NextGen Kingdom Leaders" program that has produced many youth leaders now serving in various capacities.</p>
+                            <p>He also serves as the Campus Minister at the Federal University of Technology, Akure (FUTA), where he leads the Kingdom Citizens Campus Fellowship. Under his leadership, the campus ministry has grown to become one of the most vibrant Christian groups on campus, known for impactful evangelism and discipleship.</p>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleLeader(this)">
+                            <span>Read More</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+
+                <!-- Evangelist Daniel Onaleye -->
+                <div class="leader-card animate-fadeInUp">
+                    <div class="leader-image">
+                        <img src="daniel.jpg" alt="Evangelist Daniel Onaleye">
+                        <div class="leader-overlay"></div>
+                    </div>
+                    <div class="leader-info">
+                        <h3 class="leader-name">Evangelist Daniel Onaleye</h3>
+                        <div class="leader-title"><i class="fas fa-music"></i> Head of Choir & Evangelism Director</div>
+                        <div class="leader-bio short">
+                            Anointed worship leader and passionate evangelist who combines musical excellence with fervent soul-winning to advance God's kingdom.
+                        </div>
+                        <div class="leader-bio full">
+                            <p>Evangelist Daniel Onaleye is a multi-talented minister who combines musical excellence with evangelistic fervor. As the Head of the Kingdom Citizens Voices (Choir), he leads worship with anointing and excellence that ushers congregations into God's presence.</p>
+                            <p>With formal training in Music and over 20 years of worship ministry experience, Evangelist Daniel has developed the choir into a proficient worship team that ministers both locally and nationally. He has composed and arranged numerous worship songs that have become church favorites.</p>
+                            <p>In his role as Evangelism Director, he coordinates weekly outreach programs, neighborhood evangelism, and special crusades. Under his leadership, the church's evangelism team has recorded thousands of decisions for Christ. He pioneered the "Every Member Evangelist" training program that equips ordinary believers for effective soul-winning.</p>
+                        </div>
+                        <button class="read-more-btn" onclick="toggleLeader(this)">
+                            <span>Read More</span>
+                            <i class="fas fa-chevron-down"></i>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Ministry Departments Section -->
+        <section class="departments-section">
+            <div class="container">
+                <h2 class="section-title">Ministry Departments</h2>
+                <p class="page-intro">Our specialized departments work together to build a strong, vibrant church community where every member can grow, serve, and fulfill their God-given purpose.</p>
+                
+                <div class="departments-grid">
+                    <!-- Children's Department -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church02.jpg" alt="Children's Department">
+                            <div class="department-badge">Ages 2-12</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Children's Department</h3>
+                            <div class="department-tagline">Raising Kingdom Kids for Divine Destiny</div>
+                            <div class="department-description short">
+                                Our Children's church is dedicated to raising a godly generation of children who fear God, love humanity, and walk in their divine identity as kingdom citizens from an early age.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Children's Department, also known as "Kingdom Kids Academy," provides age-appropriate biblical teaching, worship, and discipleship for children ages 2-12. We believe children are not just the church of tomorrow but vital members of the church today.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Age Groups</h4>
+                                        <p>Nursery (2-4), Pre-school (5-7), Juniors (8-10), Pre-teens (11-12)</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Weekly Programs</h4>
+                                        <p>Sunday School, Children's Church, Wednesday Bible Club</p>
+                                    </div>
+                                </div>
+                                <p>Our vision is to see every child develop a personal relationship with Jesus, understand their identity in Christ, and begin to operate in their spiritual gifts.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Teenagers' Department -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church03.jpg" alt="Teenagers Department">
+                            <div class="department-badge">Ages 13-18</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Teenagers' Department</h3>
+                            <div class="department-tagline">Equipping Teens for Purposeful Living</div>
+                            <div class="department-description short">
+                                This unit is committed to guiding teenagers through the challenging transition to young adulthood with biblical principles, mentorship, and peer support.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Teenagers' Department, called "Kingdom Teens," creates a safe, engaging environment where teenagers can explore faith, ask tough questions, and develop their God-given identity during these formative years.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Core Programs</h4>
+                                        <p>Sunday Teen Service, Friday Night Live (FNL), Small Groups</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Annual Events</h4>
+                                        <p>Teen Camp, Career Discovery Day, Youth Evangelism Outreach</p>
+                                    </div>
+                                </div>
+                                <p>Each teen is paired with a caring adult mentor who provides guidance, prayer support, and accountability. We address relevant issues facing today's teens including peer pressure, identity, relationships, social media, academics, and career choices from a biblical perspective.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Youth Fellowship -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church04.jpg" alt="Youth Fellowship">
+                            <div class="department-badge">Ages 19-35</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Youth Fellowship</h3>
+                            <div class="department-tagline">Young Adults Walking in Wisdom and Purpose</div>
+                            <div class="department-description short">
+                                A vibrant community of young adults committed to developing in God's wisdom, building authentic relationships, and impacting their spheres of influence.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Youth Fellowship, known as "Kingdom Young Adults (KYA)," provides spiritual nourishment, fellowship, and practical support for single and married young adults navigating early adulthood, careers, relationships, and family life.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Specialized Groups</h4>
+                                        <p>Career Professionals, Entrepreneurs, Students, Newly Marrieds</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Skill Development</h4>
+                                        <p>Leadership training, Financial literacy, Career counseling</p>
+                                    </div>
+                                </div>
+                                <p>We believe young adults are crucial to the advancement of God's kingdom in this generation. Through our "Kingdom Impact" initiative, members serve in various church ministries and community projects.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Women's Fellowship -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church05.jpg" alt="Women Fellowship">
+                            <div class="department-badge">Royal Pillars</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Women's Fellowship</h3>
+                            <div class="department-tagline">Women of Strength, Wisdom, and Grace</div>
+                            <div class="department-description short">
+                                Committed to the spiritual, emotional, and practical empowerment of women at every life stage through biblical teaching, fellowship, and supportive relationships.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Royal Pillars Women's Fellowship is a vibrant community where women find spiritual nourishment, authentic friendships, and practical support for every season of life. Led by Pastor Mrs. Felicia Balogun, this ministry addresses the unique needs and challenges women face today.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Monthly Programs</h4>
+                                        <p>First Saturday Fellowship, Weekly Prayer Meetings, Quarterly Seminars</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Support Ministries</h4>
+                                        <p>Prayer Warriors, Hospitality Team, Benevolence Committee</p>
+                                    </div>
+                                </div>
+                                <p>Through our "Sister-to-Sister" mentorship program, younger women are paired with mature women for guidance and discipleship. Our "Royal Business Women" network supports female entrepreneurs with training and resources.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Men's Fellowship -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church06.jpg" alt="Men Fellowship">
+                            <div class="department-badge">Men of Issachar</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Men's Fellowship</h3>
+                            <div class="department-tagline">Men of Character, Courage, and Conviction</div>
+                            <div class="department-description short">
+                                Equipping men to fulfill their God-given roles as spiritual leaders, faithful husbands, loving fathers, and influential kingdom agents in society.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Men's Fellowship at Kingdom Citizens Church INT'L consists of two complementary groups: the Business Men Fellowship and the Men of Issachar. Together, they provide spiritual, professional, and personal development for men of all ages and backgrounds.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Business Men Fellowship</h4>
+                                        <p>Monthly breakfast meetings, Business networking, Financial stewardship</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Men of Issachar</h4>
+                                        <p>Monthly prayer breakfast, Leadership training, Family enrichment</p>
+                                    </div>
+                                </div>
+                                <p>Our "Iron Sharpens Iron" mentorship program pairs younger men with mature Christian men for discipleship and accountability. Through our "Man Up" initiative, we train men to take spiritual responsibility in their homes, workplaces, and communities.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Choir -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church07.jpg" alt="Choir">
+                            <div class="department-badge">Kingdom Voices</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Kingdom Citizens Voices</h3>
+                            <div class="department-tagline">Ministering God's Presence Through Excellence in Worship</div>
+                            <div class="department-description short">
+                                A dedicated team of worshippers who lead the congregation into God's presence through anointed music, vocals, and instruments, giving high premium to praise and worship.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Kingdom Citizens Voices, under the leadership of Evangelist Daniel Onaleye, is more than just a choir—it's a worship ministry dedicated to ushering God's people into His presence through Spirit-led, excellent worship.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Ministry Teams</h4>
+                                        <p>Main Choir, Youth Choir, Instrumentalists, Technical Crew</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Musical Training</h4>
+                                        <p>Vocal techniques, Harmony training, Sight reading</p>
+                                    </div>
+                                </div>
+                                <p>We regularly release original worship songs and have produced several albums that have blessed congregations beyond our local church. Our annual "Night of Worship" event draws worshippers from across the region for an unforgettable encounter with God.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Ushering Group -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church08.jpg" alt="Ushering Group">
+                            <div class="department-badge">First Impressions</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Ushering Group</h3>
+                            <div class="department-tagline">Creating a Worship-Friendly Atmosphere with Excellence</div>
+                            <div class="department-description short">
+                                The frontline ministry team that maintains order, welcomes worshippers, assists with seating, distributes materials, and ensures a conducive atmosphere for worship.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Ushering Group serves as the "first face" of Kingdom Citizens Church INT'L, creating welcoming, orderly, and worship-friendly environments for all services and events. We understand that effective ushering enhances the worship experience and facilitates ministry.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Service Areas</h4>
+                                        <p>Greeting & Welcome, Seating Assistance, Offering Collection</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Training Programs</h4>
+                                        <p>Monthly training sessions, Quarterly workshops, Annual retreat</p>
+                                    </div>
+                                </div>
+                                <p>Our ushers are trained in hospitality, crowd management, basic first aid, emergency response, and conflict resolution. They serve not only as greeters but as ministers of helps who discreetly attend to needs during services.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Security Unit -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church09.jpg" alt="Royal Security">
+                            <div class="department-badge">Safety First</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Royal Security Unit</h3>
+                            <div class="department-tagline">Ensuring Safety and Order for Worry-Free Worship</div>
+                            <div class="department-description short">
+                                The kingdom law-enforcement agents dedicated to maintaining security, orderly parking, and overall safety during all church activities and events.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Royal Security Unit is a team of trained volunteers committed to providing a safe, secure environment for worship and ministry activities. We understand that people cannot worship freely if they feel unsafe, so we work diligently to prevent and respond to security concerns.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Security Zones</h4>
+                                        <p>Parking Lot Security, Building Perimeter, Children's Area</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Training & Equipment</h4>
+                                        <p>CPR/First Aid certified, Conflict de-escalation, Emergency procedures</p>
+                                    </div>
+                                </div>
+                                <p>All security team members undergo background checks and receive regular training in safety protocols, emergency response, and professional conduct. We work closely with the ushering team and church leadership to ensure comprehensive coverage.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Evangelism Team -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church010.jpg" alt="Evangelism Team">
+                            <div class="department-badge">Soul Winners</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Evangelism Team</h3>
+                            <div class="department-tagline">Fulfilling the Great Commission Through Strategic Outreach</div>
+                            <div class="department-description short">
+                                Passionate soul-winners committed to spreading the gospel through personal evangelism, neighborhood outreach, crusades, and innovative evangelistic strategies.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Evangelism Team, under the leadership of Evangelist Daniel Onaleye, is dedicated to fulfilling Matthew 28:19-20—the Great Commission. We believe evangelism is not just an activity but the heartbeat of the church and every believer's responsibility.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Weekly Outreach</h4>
+                                        <p>Saturday Evangelism, Sunday Follow-up, Wednesday Prayer Walk</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Special Ministries</h4>
+                                        <p>Prison Ministry, Hospital Visitation, Campus Evangelism</p>
+                                    </div>
+                                </div>
+                                <p>We track our outreach efforts and follow up diligently with new converts through our "New Believers' Care" program. Each new believer is assigned a mentor who disciples them for the first 90 days after conversion.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Prayer Group -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church011.jpg" alt="Burden Bearers">
+                            <div class="department-badge">Prayer Warriors</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Burden Bearers (Prayer Group)</h3>
+                            <div class="department-tagline">Interceding for Breakthrough, Revival, and Divine Intervention</div>
+                            <div class="department-description short">
+                                Dynamic individuals devoted to praying for the church, pastors, members, community, and nations—standing in the gap through fervent, strategic intercession.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Burden Bearers Prayer Group is the spiritual engine room of Kingdom Citizens Church INT'L. We understand that prayer is not preparation for the work—it is the work. Through consistent, fervent intercession, we contend for God's purposes in our church, city, and nation.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Prayer Schedule</h4>
+                                        <p>Monday-Friday (6am-7am), Wednesday (5pm-6pm), Friday All-Night</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Prayer Focus Areas</h4>
+                                        <p>Church Leadership, Membership Needs, Community Transformation</p>
+                                    </div>
+                                </div>
+                                <p>We maintain a 24/7 prayer chain for emergency prayer requests and operate a prayer hotline for those needing immediate intercession. Our prayer warriors are also available after services for personal prayer ministry.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Sanctuary Keepers -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church012.jpg" alt="Sanctuary Keepers">
+                            <div class="department-badge">Housekeepers</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Sanctuary Keepers & Decorators</h3>
+                            <div class="department-tagline">Maintaining Beauty and Order in God's House</div>
+                            <div class="department-description short">
+                                Dedicated teams that keep the church building and environment clean, beautiful, and welcoming—creating an atmosphere conducive to worship and ministry.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Sanctuary Keepers & Decorators understand that the physical environment of worship matters. We believe God deserves our best in every area, including the cleanliness, maintenance, and aesthetic presentation of His house.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Sanctuary Keepers</h4>
+                                        <p>Weekly cleaning teams, Building maintenance, Grounds keeping</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Decorators Team</h4>
+                                        <p>Seasonal decorations, Special event setups, Floral arrangements</p>
+                                    </div>
+                                </div>
+                                <p>We operate on a rotating schedule with teams serving weekly, monthly, and for special events. Our "Adopt-a-Space" program allows individuals or families to take responsibility for specific areas of the church facility.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Media Unit -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church013.jpg" alt="Media Unit">
+                            <div class="department-badge">Tech Ministry</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Media Unit (ICT Group)</h3>
+                            <div class="department-tagline">Amplifying God's Message Through Technology and Creativity</div>
+                            <div class="department-description short">
+                                Handles visual/audio production, publications, and internet outreach—leveraging technology to spread the gospel and enhance ministry effectiveness.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Media Unit, also known as the ICT Group, serves as the technological arm of Kingdom Citizens Church INT'L. We harness the power of media and technology to amplify the gospel, document ministry activities, and enhance worship experiences.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Production Areas</h4>
+                                        <p>Audio Engineering, Video Production, Livestream Broadcasting</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Digital Platforms</h4>
+                                        <p>Church Website, Mobile App, Social Media, Podcast</p>
+                                    </div>
+                                </div>
+                                <p>We provide comprehensive coverage of all services and events, producing high-quality recordings for distribution and archival purposes. Our livestream ministry reaches thousands of viewers weekly across multiple platforms.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+
+                    <!-- Home Fellowship -->
+                    <div class="department-card animate-fadeInUp">
+                        <div class="department-image">
+                            <img src="church014.jpg" alt="Home Fellowship">
+                            <div class="department-badge">Small Groups</div>
+                        </div>
+                        <div class="department-content">
+                            <h3 class="department-name">Prayer Centre – Home Fellowship</h3>
+                            <div class="department-tagline">The Church in Homes: Building Community Beyond Sunday</div>
+                            <div class="department-description short">
+                                Neighborhood-based small groups that foster pastoral relationships, extend love and care, and provide midweek spiritual nourishment in homes across the community.
+                            </div>
+                            <div class="department-description full">
+                                <p>The Prayer Centre – Home Fellowship ministry extends the church beyond the four walls of the building into homes across our community. We believe that authentic Christian community happens best in smaller settings where people can connect, care for one another, and grow together.</p>
+                                <div class="department-features">
+                                    <div class="feature-item">
+                                        <h4>Group Types</h4>
+                                        <p>Geographic (by neighborhood), Demographic, Language groups</p>
+                                    </div>
+                                    <div class="feature-item">
+                                        <h4>Care Ministries</h4>
+                                        <p>Member visitation, Crisis support, New member integration</p>
+                                    </div>
+                                </div>
+                                <p>Home fellowships serve as the primary care structure for our congregation. Leaders are trained to identify needs, provide pastoral support, and connect members with appropriate church resources. They also serve as evangelistic outreach points in their communities.</p>
+                            </div>
+                            <button class="read-more-btn" onclick="toggleDepartment(this)">
+                                <span>Read More</span>
+                                <i class="fas fa-chevron-down"></i>
+                            </button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Join Ministry CTA -->
+        <section class="join-ministry-cta animate-fadeInUp">
+            <div class="container">
+                <h2 class="cta-title">Join a Ministry Team</h2>
+                <p class="cta-text">Every member has unique gifts and talents to contribute. Discover where you fit in God's kingdom work and join a ministry team where you can grow, serve, and make an eternal impact.</p>
+                <div class="cta-buttons">
+                    <a href="join.html" class="cta-btn">Join Our Community</a>
+                    <a href="contact.html" class="cta-btn secondary">Contact Ministry Leader</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Kingdom Citizens Church INT'L</h3>
+                <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/kingdomcitizenschurchintl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/kingdomcitizens" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/kingdomcitizenschurchintl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/kingdomcitizenschurchintl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://tiktok.com/@kingdomcitizens" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="department.html">Departments</a></li>
+                    <li><a href="service.html">Our Services</a></li>
+                    <li><a href="watch-live.html">Watch Live</a></li>
+                    <li><a href="donate.html">Give Online</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="pastor-note.html">Pastor's Desk</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
+                    <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
+                    <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
+                    <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
+                    <li><i class="fas fa-clock"></i> Sunday School: 8am - 9am</li>
+                    <li><i class="fas fa-clock"></i> Sunday Service: 9am - 11am (Jesus Celebration Service)</li>
+                    <li><i class="fas fa-clock"></i> Wednesday: Communion Service 5pm - 6:30pm</li>
+                </ul>
+            </div>
         </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">The frontline ministry team that maintains order, welcomes worshippers, assists with seating, distributes materials, and ensures a conducive atmosphere for worship.</p>
-        <div class="full-text">
-          <p>The Ushering Group serves as the "first face" of Kingdom Citizens Church INT'L, creating welcoming, orderly, and worship-friendly environments for all services and events. We understand that effective ushering enhances the worship experience and facilitates ministry.</p>
-          <p>Our ushers are trained in hospitality, crowd management, basic first aid, emergency response, and conflict resolution. They serve not only as greeters but as ministers of helps who discreetly attend to needs during services.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Service Areas</h4>
-              <p>Greeting & Welcome, Seating Assistance, Offering Collection, Communion Service, Special Events</p>
-            </div>
-            <div class="feature-item">
-              <h4>Training Programs</h4>
-              <p>Monthly training sessions, Quarterly workshops, Annual retreat, Continuous evaluation</p>
-            </div>
-            <div class="feature-item">
-              <h4>Specialized Teams</h4>
-              <p>Welcome Team, Seating Team, Offering Team, First Aid Team, Emergency Response Team</p>
-            </div>
-          </div>
-          <p>We believe every usher is an ambassador of Christ's love and a facilitator of worship. Our motto is "Service with a Smile, Excellence in Execution." Through regular training and team building, we strive for continuous improvement in our service.</p>
-          <p>New ushers undergo a comprehensive training program covering biblical principles of hospitality, practical ushering skills, and church policies. Join us in creating memorable first impressions and seamless worship experiences.</p>
+        <div class="footer-bottom">
+            &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
         </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
+    </footer>
 
-    <!-- Security Unit -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church09.jpg" class="dept-img" alt="Royal Security">
-        <div class="dept-info">
-          <h3>Royal Security Unit</h3>
-          <div class="dept-tagline">Ensuring Safety and Order for Worry-Free Worship</div>
-        </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">The kingdom law-enforcement agents dedicated to maintaining security, orderly parking, and overall safety during all church activities and events.</p>
-        <div class="full-text">
-          <p>The Royal Security Unit is a team of trained volunteers committed to providing a safe, secure environment for worship and ministry activities. We understand that people cannot worship freely if they feel unsafe, so we work diligently to prevent and respond to security concerns.</p>
-          <p>Our responsibilities include parking lot management, building security during services, crowd control at events, emergency response coordination, and liaison with local law enforcement when necessary.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Security Zones</h4>
-              <p>Parking Lot Security, Building Perimeter, Children's Area, Main Auditorium, Special Events</p>
-            </div>
-            <div class="feature-item">
-              <h4>Training & Equipment</h4>
-              <p>CPR/First Aid certified, Conflict de-escalation, Emergency procedures, Communication systems</p>
-            </div>
-            <div class="feature-item">
-              <h4>Special Protocols</h4>
-              <p>Missing child procedure, Medical emergency response, Severe weather plan, Fire evacuation</p>
-            </div>
-          </div>
-          <p>All security team members undergo background checks and receive regular training in safety protocols, emergency response, and professional conduct. We work closely with the ushering team and church leadership to ensure comprehensive coverage.</p>
-          <p>Our approach combines vigilance with hospitality—we aim to be both watchful and welcoming. By maintaining order and safety, we create an atmosphere where worshippers can focus on encountering God without distraction or concern.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Evangelism Team -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church010.jpg" class="dept-img" alt="Evangelism Team">
-        <div class="dept-info">
-          <h3>Evangelism Team</h3>
-          <div class="dept-tagline">Fulfilling the Great Commission Through Strategic Outreach</div>
-        </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">Passionate soul-winners committed to spreading the gospel through personal evangelism, neighborhood outreach, crusades, and innovative evangelistic strategies.</p>
-        <div class="full-text">
-          <p>The Evangelism Team, under the leadership of Evangelist Daniel Onaleye, is dedicated to fulfilling Matthew 28:19-20—the Great Commission. We believe evangelism is not just an activity but the heartbeat of the church and every believer's responsibility.</p>
-          <p>Our team employs multiple approaches to reach people with the gospel: door-to-door evangelism, street preaching, marketplace ministry, literature distribution, social media evangelism, and special outreach events.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Weekly Outreach</h4>
-              <p>Saturday Evangelism (10am), Sunday Follow-up Visitation, Wednesday Prayer Walk, Friday Youth Outreach</p>
-            </div>
-            <div class="feature-item">
-              <h4>Training Programs</h4>
-              <p>Monthly Evangelism Training, Quarterly Soul-winning Seminar, Annual Evangelism Conference</p>
-            </div>
-            <div class="feature-item">
-              <h4>Special Ministries</h4>
-              <p>Prison Ministry, Hospital Visitation, Campus Evangelism, Community Service Projects</p>
-            </div>
-          </div>
-          <p>We track our outreach efforts and follow up diligently with new converts through our "New Believers' Care" program. Each new believer is assigned a mentor who disciples them for the first 90 days after conversion.</p>
-          <p>Our annual "Harvest Crusade" brings together multiple churches for city-wide evangelism. Through partnerships with other ministries, we've seen thousands come to Christ and integrated into local churches.</p>
-          <p>We believe every member is an evangelist. Through our "Every Member Evangelist" training, we equip ordinary believers with simple, effective tools for sharing their faith in everyday contexts.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Prayer Group -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church011.jpg" class="dept-img" alt="Burden Bearers">
-        <div class="dept-info">
-          <h3>Burden Bearers (Prayer Group)</h3>
-          <div class="dept-tagline">Interceding for Breakthrough, Revival, and Divine Intervention</div>
-        </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">Dynamic individuals devoted to praying for the church, pastors, members, community, and nations—standing in the gap through fervent, strategic intercession.</p>
-        <div class="full-text">
-          <p>The Burden Bearers Prayer Group is the spiritual engine room of Kingdom Citizens Church INT'L. We understand that prayer is not preparation for the work—it is the work. Through consistent, fervent intercession, we contend for God's purposes in our church, city, and nation.</p>
-          <p>Our prayer meetings are characterized by biblical praying, prophetic declarations, worship-infused intercession, and travail for breakthrough. We pray according to specific themes each month, aligning our prayers with the church's vision and current needs.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Prayer Schedule</h4>
-              <p>Monday-Friday (6am-7am), Wednesday (5pm-6pm), Friday All-Night (Monthly), Sunday Pre-service (8am)</p>
-            </div>
-            <div class="feature-item">
-              <h4>Prayer Focus Areas</h4>
-              <p>Church Leadership, Membership Needs, Community Transformation, National Issues, World Missions</p>
-            </div>
-            <div class="feature-item">
-              <h4>Special Prayer Initiatives</h4>
-              <p>21-Day Fast (January), 40-Day Lenten Fast, Prayer Walks, Prayer Chains, Emergency Prayer Network</p>
-            </div>
-          </div>
-          <p>We maintain a 24/7 prayer chain for emergency prayer requests and operate a prayer hotline for those needing immediate intercession. Our prayer warriors are also available after services for personal prayer ministry.</p>
-          <p>Through our "School of Prayer" training, we teach members how to pray effectively according to biblical patterns. We believe every believer is called to a life of prayer, and we equip them to fulfill this calling.</p>
-          <p>Join us as we build a wall of prayer around our church, community, and nation. Together, we can move the hand of God through believing, persistent prayer.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Sanctuary Keepers -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church012.jpg" class="dept-img" alt="Sanctuary Keepers">
-        <div class="dept-info">
-          <h3>Sanctuary Keepers & Decorators</h3>
-          <div class="dept-tagline">Maintaining Beauty and Order in God's House</div>
-        </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">Dedicated teams that keep the church building and environment clean, beautiful, and welcoming—creating an atmosphere conducive to worship and ministry.</p>
-        <div class="full-text">
-          <p>The Sanctuary Keepers & Decorators understand that the physical environment of worship matters. We believe God deserves our best in every area, including the cleanliness, maintenance, and aesthetic presentation of His house.</p>
-          <p>Our ministry is divided into two complementary teams: the Sanctuary Keepers focus on cleaning and maintenance, while the Decorators focus on aesthetic enhancement and seasonal decorations.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Sanctuary Keepers</h4>
-              <p>Weekly cleaning teams, Building maintenance, Grounds keeping, Setup/teardown for events</p>
-            </div>
-            <div class="feature-item">
-              <h4>Decorators Team</h4>
-              <p>Seasonal decorations, Special event setups, Floral arrangements, Visual design for services</p>
-            </div>
-            <div class="feature-item">
-              <h4>Maintenance Areas</h4>
-              <p>Sanctuary, Classrooms, Offices, Restrooms, Grounds, Parking areas</p>
-            </div>
-          </div>
-          <p>We operate on a rotating schedule with teams serving weekly, monthly, and for special events. Our "Adopt-a-Space" program allows individuals or families to take responsibility for specific areas of the church facility.</p>
-          <p>Through careful attention to detail, we create environments that honor God and enhance worship. Whether it's ensuring spotless facilities or creating beautiful seasonal displays, we serve joyfully as unto the Lord.</p>
-          <p>We believe that excellence in maintaining God's house reflects our reverence for Him and creates a welcoming atmosphere for both members and visitors. Join us in this practical but vital ministry of helps.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Media Unit -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church013.jpg" class="dept-img" alt="Media Unit">
-        <div class="dept-info">
-          <h3>Media Unit (ICT Group)</h3>
-          <div class="dept-tagline">Amplifying God's Message Through Technology and Creativity</div>
-        </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">Handles visual/audio production, publications, and internet outreach—leveraging technology to spread the gospel and enhance ministry effectiveness.</p>
-        <div class="full-text">
-          <p>The Media Unit, also known as the ICT Group, serves as the technological arm of Kingdom Citizens Church INT'L. We harness the power of media and technology to amplify the gospel, document ministry activities, and enhance worship experiences.</p>
-          <p>Our team consists of photographers, videographers, sound engineers, graphic designers, web developers, social media managers, and livestream technicians. We work behind the scenes to ensure that both in-person and online attendees have excellent experiences.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Production Areas</h4>
-              <p>Audio Engineering, Video Production, Livestream Broadcasting, Photography, Graphic Design</p>
-            </div>
-            <div class="feature-item">
-              <h4>Digital Platforms</h4>
-              <p>Church Website, Mobile App, Social Media, Podcast, YouTube Channel, Email Newsletter</p>
-            </div>
-            <div class="feature-item">
-              <h4>Publications</h4>
-              <p>Weekly Bulletin, Monthly Magazine, Event Programs, Promotional Materials, Ministry Resources</p>
-            </div>
-          </div>
-          <p>We provide comprehensive coverage of all services and events, producing high-quality recordings for distribution and archival purposes. Our livestream ministry reaches thousands of viewers weekly across multiple platforms.</p>
-          <p>Through our "Media Academy" training program, we equip members with technical skills in various media disciplines. We believe every church should harness technology for kingdom advancement, and we're committed to excellence in this area.</p>
-          <p>Whether you're tech-savvy or just willing to learn, there's a place for you in the Media Unit. Join us as we use our gifts and skills to spread the gospel in the digital age.</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
-
-    <!-- Home Fellowship -->
-    <div class="department">
-      <div class="dept-header">
-        <img src="church014.jpg" class="dept-img" alt="Home Fellowship">
-        <div class="dept-info">
-          <h3>Prayer Centre – Home Fellowship</h3>
-          <div class="dept-tagline">The Church in Homes: Building Community Beyond Sunday</div>
-        </div>
-      </div>
-      <div class="dept-content">
-        <p class="short-text">Neighborhood-based small groups that foster pastoral relationships, extend love and care, and provide midweek spiritual nourishment in homes across the community.</p>
-        <div class="full-text">
-          <p>The Prayer Centre – Home Fellowship ministry extends the church beyond the four walls of the building into homes across our community. We believe that authentic Christian community happens best in smaller settings where people can connect, care for one another, and grow together.</p>
-          <p>Our home fellowships meet weekly in various neighborhoods, providing convenient locations for midweek Bible study, prayer, fellowship, and pastoral care. Each group is led by trained leaders who shepherd their members with love and diligence.</p>
-          <div class="dept-features">
-            <div class="feature-item">
-              <h4>Meeting Structure</h4>
-              <p>Weekly gatherings (various days), Bible study discussion, Prayer time, Fellowship & refreshments</p>
-            </div>
-            <div class="feature-item">
-              <h4>Group Types</h4>
-              <p>Geographic (by neighborhood), Demographic (men, women, couples, singles), Language groups</p>
-            </div>
-            <div class="feature-item">
-              <h4>Care Ministries</h4>
-              <p>Member visitation, Crisis support, New member integration, Prayer support, Practical helps</p>
-            </div>
-          </div>
-          <p>Home fellowships serve as the primary care structure for our congregation. Leaders are trained to identify needs, provide pastoral support, and connect members with appropriate church resources. They also serve as evangelistic outreach points in their communities.</p>
-          <p>We offer specialized training for home fellowship leaders through our "Shepherd's Heart" program, covering topics such as facilitating group discussions, providing basic counseling, leading prayer, and identifying member needs.</p>
-          <p>Whether you're new to the church or a long-time member, joining a home fellowship will deepen your connections and accelerate your spiritual growth. Find your home away from home today!</p>
-        </div>
-        <button class="read-more-btn" onclick="toggleDept(this)">
-          <span>Read More</span>
-          <i class="fas fa-chevron-down"></i>
-        </button>
-      </div>
-    </div>
-  </section>
-</main>
-
-<footer>
-  <div class="footer-content">
-    <div class="footer-column">
-      <h4>Kingdom Citizens Church INT'L</h4>
-      <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
-      <div class="social-links">
-        <a href="#"><i class="fab fa-facebook-f"></i></a>
-        <a href="#"><i class="fab fa-twitter"></i></a>
-        <a href="#"><i class="fab fa-instagram"></i></a>
-        <a href="#"><i class="fab fa-youtube"></i></a>
-        <a href="#"><i class="fab fa-whatsapp"></i></a>
-      </div>
-    </div>
-    <div class="footer-column">
-      <h4>Quick Links</h4>
-      <ul class="footer-links">
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About Us</a></li>
-        <li><a href="departments.html">Departments</a></li>
-        <li><a href="service.html">Our Services</a></li>
-        <li><a href="contact.html">Contact Us</a></li>
-      </ul>
-    </div>
-    <div class="footer-column">
-      <h4>Contact Info</h4>
-      <ul class="footer-links">
-        <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta</li>
-        <li><i class="fas fa-phone"></i> +2347027175427</li>
-        <li><i class="fas fa-envelope"></i> info@kingdomcitizenschurchintl.org</li>
-        <li><i class="fas fa-clock"></i> Sunday: 8am & 9am | Wednesday: 5:30pm</li>
-      </ul>
-    </div>
-  </div>
-  <div class="copyright">
-    &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved.
-  </div>
-</footer>
-
-<script>
-// Mobile Navigation
-const hamburger = document.getElementById('hamburger');
-const navLinks = document.getElementById('navLinks');
-const closeBtn = document.getElementById('closeBtn');
-
-hamburger.addEventListener('click', () => {
-  navLinks.classList.add('show');
-  hamburger.classList.add('active');
-});
-
-closeBtn.addEventListener('click', () => {
-  navLinks.classList.remove('show');
-  hamburger.classList.remove('active');
-});
-
-// Close menu when clicking a link
-document.querySelectorAll('#navLinks a').forEach(a => {
-  a.addEventListener('click', () => {
-    navLinks.classList.remove('show');
-    hamburger.classList.remove('active');
-  });
-});
-
-// Toggle member expanded content
-function toggleMember(button) {
-  const member = button.closest('.member');
-  const isExpanded = member.classList.contains('expanded');
-  const span = button.querySelector('span');
-  
-  member.classList.toggle('expanded');
-  
-  if (isExpanded) {
-    span.textContent = 'Read More';
-  } else {
-    span.textContent = 'Read Less';
-  }
-}
-
-// Toggle department expanded content
-function toggleDept(button) {
-  const dept = button.closest('.department');
-  const isExpanded = dept.classList.contains('expanded');
-  const span = button.querySelector('span');
-  
-  dept.classList.toggle('expanded');
-  
-  if (isExpanded) {
-    span.textContent = 'Read More';
-  } else {
-    span.textContent = 'Read Less';
-  }
-}
-
-// Close mobile menu when clicking outside
-document.addEventListener('click', (e) => {
-  if (!navLinks.contains(e.target) && !hamburger.contains(e.target)) {
-    navLinks.classList.remove('show');
-    hamburger.classList.remove('active');
-  }
-});
-
-// Smooth scroll for anchor links
-document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-  anchor.addEventListener('click', function(e) {
-    if(this.getAttribute('href') === '#') return;
-    
-    e.preventDefault();
-    const targetId = this.getAttribute('href');
-    
-    if(targetId === '#home') {
-      window.scrollTo({ top: 0, behavior: 'smooth' });
-    } else {
-      const targetElement = document.querySelector(targetId);
-      if(targetElement) {
-        window.scrollTo({
-          top: targetElement.offsetTop - 80,
-          behavior: 'smooth'
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
         });
-      }
-    }
-  });
-});
-</script>
+
+        // Mobile Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        let isMenuOpen = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isMenuOpen);
+            
+            if (isMenuOpen) {
+                document.body.classList.add('menu-open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Dropdown menu on mobile
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('a');
+            
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close all other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992 && isMenuOpen) {
+                if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+                    isMenuOpen = false;
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Also close any open dropdowns
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            }
+        });
+
+        // Close menu when clicking a regular link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            if (!link.parentElement.classList.contains('dropdown')) {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992 && isMenuOpen) {
+                        isMenuOpen = false;
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+
+        // Toggle leader expanded content
+        function toggleLeader(button) {
+            const card = button.closest('.leader-card');
+            const isExpanded = card.classList.contains('expanded');
+            const span = button.querySelector('span');
+            
+            card.classList.toggle('expanded');
+            
+            if (isExpanded) {
+                span.textContent = 'Read More';
+            } else {
+                span.textContent = 'Read Less';
+                // Scroll to show full content
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        }
+
+        // Toggle department expanded content
+        function toggleDepartment(button) {
+            const card = button.closest('.department-card');
+            const isExpanded = card.classList.contains('expanded');
+            const span = button.querySelector('span');
+            
+            card.classList.toggle('expanded');
+            
+            if (isExpanded) {
+                span.textContent = 'Read More';
+            } else {
+                span.textContent = 'Read Less';
+                // Scroll to show full content
+                setTimeout(() => {
+                    card.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+                }, 100);
+            }
+        }
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Fix for window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && isMenuOpen) {
+                isMenuOpen = false;
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+                
+                // Close any open dropdowns
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                        el.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, 100);
+        });
+    </script>
 </body>
 </html>
