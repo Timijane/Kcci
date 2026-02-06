@@ -50,7 +50,12 @@
     overflow-y: auto;
   }
   
-  /* REMOVED body.menu-open CLASS - This was causing the right space issue */
+  body.menu-open {
+    overflow: hidden;
+    position: fixed;
+    width: 100%;
+    height: 100%;
+  }
   
   a {
     text-decoration: none;
@@ -94,9 +99,9 @@
     -webkit-backdrop-filter: blur(10px);
   }
   
-  /* ========== UPDATED HEADER - BIGGER LOGO AND CHURCH NAME IN STRAIGHT LINE ========== */
+  /* ========== UPDATED HEADER WITH BIGGER LOGO AND CHANGES ========== */
   header {
-    background: linear-gradient(rgba(0, 135, 81, 0.95), rgba(0, 90, 58, 0.95)), url('logo11.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.95), rgba(255, 255, 255, 0.95)), url('logo11.jpg');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -106,15 +111,15 @@
     left: 0;
     width: 100%;
     z-index: 1000;
-    padding: 8px 0;
+    padding: 4px 0;
     transition: all 0.4s ease;
     height: 80px; /* Increased height for bigger logo */
   }
   
   .header-scrolled {
-    background: linear-gradient(rgba(0, 135, 81, 0.98), rgba(0, 90, 58, 0.98)), url('logo11.jpg');
+    background: linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98)), url('logo11.jpg');
     box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
-    height: 70px; /* Adjusted for scrolled state */
+    height: 70px;
   }
   
   .header-container {
@@ -125,24 +130,27 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 64px; /* Increased container height */
+    height: 72px; /* Increased container height */
   }
   
   .logo {
     display: flex;
     align-items: center;
     z-index: 1002;
+    background: #f5f5f5; /* Light grey background for logo */
+    padding: 8px 15px;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.1);
   }
   
-  /* 1. BIGGER LOGO FRAME */
   .logo-frame {
-    width: 65px; /* Increased from 48px */
-    height: 65px; /* Increased from 48px */
+    width: 60px; /* Increased by 25% from original */
+    height: 60px; /* Increased by 25% from original */
     border-radius: 50%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: 12px; /* Increased margin */
+    margin-right: 12px;
     overflow: hidden;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
     border: 2px solid var(--secondary);
@@ -162,17 +170,16 @@
     text-decoration: none;
   }
   
-  /* 2. CHURCH NAME ON STRAIGHT LINE WITH LOBSTER FONT */
   .logo-text {
     font-family: 'Lobster', cursive;
-    font-size: 1.6rem; /* Increased from 1.2rem */
+    font-size: 1.8rem; /* Increased font size */
     font-weight: 400;
-    color: white;
-    letter-spacing: 0.5px;
-    line-height: 1;
+    color: var(--primary);
+    letter-spacing: 1px;
+    line-height: 1.2;
     white-space: nowrap;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.3);
-    display: none; /* Hide on mobile initially */
+    display: none;
+    text-shadow: none;
   }
   
   /* Updated Navigation - New Design */
@@ -188,7 +195,7 @@
     .nav-menu {
       display: flex;
       list-style: none;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(0, 135, 81, 0.1);
       backdrop-filter: blur(10px);
       border-radius: 30px;
       padding: 4px;
@@ -200,15 +207,15 @@
     }
     
     .nav-menu a {
-      color: white;
+      color: var(--primary);
       font-weight: 500;
-      font-size: 0.75rem; /* Reduced font size */
+      font-size: 0.85rem;
       transition: all 0.3s ease;
-      padding: 6px 12px;
+      padding: 8px 15px;
       border-radius: 20px;
       display: flex;
       align-items: center;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      text-shadow: none;
     }
     
     .nav-menu a i {
@@ -217,7 +224,7 @@
     }
     
     .nav-menu a:hover {
-      background: rgba(255, 255, 255, 0.2);
+      background: rgba(0, 135, 81, 0.15);
       transform: translateY(-2px);
     }
     
@@ -262,13 +269,13 @@
     }
     
     .logo-text {
-      display: block; /* Show on desktop */
-      font-size: 1.8rem; /* Increased from 1.5rem */
+      display: block;
+      font-size: 2rem; /* Even bigger on desktop */
     }
     
     .logo-frame {
-      width: 60px; /* Increased from 44px */
-      height: 60px; /* Increased from 44px */
+      width: 65px;
+      height: 65px;
     }
   }
   
@@ -276,37 +283,36 @@
   .hamburger {
     display: none;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     position: relative;
     z-index: 1001;
-    background: var(--secondary);
+    background: var(--primary);
     border-radius: 50%;
     padding: 8px;
     border: none;
     box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   }
   
-  /* 6. WHITE HAMBURGER ICON */
   .hamburger span {
     display: block;
     position: absolute;
-    height: 3px; /* Slightly thicker */
-    width: 20px;
-    background: white; /* Changed to white */
+    height: 3px;
+    width: 24px;
+    background: white; /* Changed to white as requested */
     border-radius: 2px;
     opacity: 1;
-    left: 10px;
+    left: 13px;
     transform: rotate(0deg);
     transition: .25s ease-in-out;
   }
   
-  .hamburger span:nth-child(1) { top: 14px; }
-  .hamburger span:nth-child(2) { top: 19px; }
-  .hamburger span:nth-child(3) { top: 24px; }
+  .hamburger span:nth-child(1) { top: 17px; }
+  .hamburger span:nth-child(2) { top: 24px; }
+  .hamburger span:nth-child(3) { top: 31px; }
   
   .hamburger.active span:nth-child(1) {
-    top: 19px;
+    top: 24px;
     transform: rotate(45deg);
   }
   
@@ -316,25 +322,27 @@
   }
   
   .hamburger.active span:nth-child(3) {
-    top: 19px;
+    top: 24px;
     transform: rotate(-45deg);
   }
   
-  /* 5. UPDATED MOBILE MENU DESIGN - LIGHT GREY BACKGROUND FOR LOGO AREA */
+  /* NEW MOBILE MENU DESIGN - SLIDES FROM TOP */
   @media (max-width: 992px) {
     .nav-menu {
       position: fixed;
-      top: -100vh; /* Start above viewport */
+      top: -100vh;
       left: 0;
       width: 100%;
       height: 100vh;
-      background: #f8f9fa; /* Changed to light grey as requested */
+      background: linear-gradient(rgba(255, 255, 255, 0.98), rgba(255, 255, 255, 0.98)), url('logo11.jpg');
+      background-size: cover;
+      background-position: center;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       flex-direction: column;
       justify-content: flex-start;
       align-items: center;
-      padding: 100px 20px 30px; /* Increased top padding */
+      padding: 100px 20px 30px;
       transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
       box-shadow: 0 10px 30px rgba(0,0,0,0.2);
       z-index: 999;
@@ -343,7 +351,7 @@
     }
     
     .nav-menu.active {
-      top: 0; /* Slide down into view */
+      top: 0;
     }
     
     .nav-menu li {
@@ -381,17 +389,15 @@
       padding: 12px 15px;
       width: 100%;
       border-radius: 10px;
-      color: #333; /* Dark text for better contrast on light grey */
-      background: rgba(255, 255, 255, 0.8); /* Slightly transparent white */
+      color: var(--primary);
+      background: rgba(0, 135, 81, 0.1);
       margin-bottom: 5px;
       border-left: 3px solid transparent;
-      box-shadow: 0 2px 5px rgba(0,0,0,0.05);
     }
     
     .nav-menu a:hover {
-      background: rgba(255, 255, 255, 1);
-      border-left: 3px solid var(--primary);
-      color: var(--primary);
+      background: rgba(0, 135, 81, 0.2);
+      border-left: 3px solid var(--secondary);
     }
     
     .nav-menu a i {
@@ -399,24 +405,23 @@
       font-size: 1rem;
       width: 20px;
       text-align: center;
-      color: var(--primary);
     }
     
     .dropdown-content {
       position: static;
       display: none;
       box-shadow: none;
-      background: rgba(255, 255, 255, 0.9);
+      background: rgba(0, 135, 81, 0.05);
       margin: 5px 0 5px 15px;
       border-radius: 8px;
       padding: 5px 0;
-      border-left: 2px solid var(--primary);
+      border-left: 2px solid rgba(0, 135, 81, 0.1);
     }
     
     .dropdown-content a {
       padding: 10px 15px 10px 25px;
       font-size: 0.9rem;
-      color: #555;
+      color: var(--primary);
       border-radius: 0;
       border-left: none;
     }
@@ -431,84 +436,72 @@
     
     .logo-text {
       display: block;
-      font-size: 1.4rem; /* Increased from 1.1rem */
+      font-size: 1.3rem;
     }
     
     .logo-frame {
-      width: 55px; /* Increased from 40px */
-      height: 55px; /* Increased from 40px */
-      margin-right: 8px; /* Increased margin */
+      width: 50px;
+      height: 50px;
+      margin-right: 8px;
     }
   }
   
   @media (max-width: 768px) {
     .logo-text {
-      font-size: 1.3rem; /* Increased from 1rem */
+      font-size: 1.1rem;
     }
     
     .logo-frame {
-      width: 50px; /* Increased from 36px */
-      height: 50px; /* Increased from 36px */
+      width: 45px;
+      height: 45px;
     }
     
     header {
-      height: 75px; /* Increased from 60px */
+      height: 70px;
     }
     
     .header-container {
-      height: 60px; /* Increased from 52px */
+      height: 62px;
     }
   }
   
   @media (max-width: 576px) {
     .logo-text {
-      font-size: 1.2rem; /* Increased from 0.9rem */
+      font-size: 1rem;
     }
     
     .logo-frame {
-      width: 45px; /* Increased from 32px */
-      height: 45px; /* Increased from 32px */
+      width: 40px;
+      height: 40px;
     }
     
     header {
-      height: 70px; /* Increased from 56px */
+      height: 65px;
     }
     
     .header-container {
-      height: 56px; /* Increased from 48px */
+      height: 57px;
     }
   }
   
   @media (max-width: 400px) {
     .logo-text {
       display: block; /* Keep text visible on very small screens */
-      font-size: 1rem;
+      font-size: 0.9rem;
     }
     
     .logo-frame {
-      width: 40px; /* Increased from 28px */
-      height: 40px; /* Increased from 28px */
+      width: 35px;
+      height: 35px;
       margin-right: 5px;
     }
   }
   
   /* Add padding to body to account for fixed header */
   body {
-    padding-top: 80px; /* Increased from 64px for bigger header */
+    padding-top: 80px; /* Increased to match larger header */
   }
   
-  /* 4. FIX FOR EXTRA SPACE ON RIGHT WHEN MENU IS CLOSED */
-  html, body {
-    overflow-x: hidden;
-    width: 100%;
-    position: relative;
-  }
-  
-  .nav-menu.active {
-    overflow-y: auto;
-  }
-  
-  /* Rest of the CSS remains the same... */
   /* Hero Section */
   .hero {
     position: relative;
@@ -525,10 +518,1009 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    margin-top: -80px; /* Increased from -64px to compensate for bigger header */
+    margin-top: -80px; /* Compensate for increased header padding */
   }
   
-  /* ... Rest of the CSS remains unchanged until the script section ... */
+  .hero-overlay {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.15);
+    z-index: 1;
+  }
+  
+  /* 7. FASTER VIDEO LOADING */
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    preload: auto;
+    playsinline: true;
+    muted: true;
+    loop: true;
+    autoplay: true;
+  }
+  
+  /* 4. LOWER HERO TEXT */
+  .hero-content {
+    max-width: min(90%, 800px);
+    padding: 0 clamp(1rem, 3vw, 2rem);
+    z-index: 2;
+    position: relative;
+    margin-top: clamp(100px, 20vh, 140px);
+  }
+  
+  .hero p {
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    margin-bottom: clamp(2rem, 5vh, 2.5rem);
+    opacity: 0.95;
+    font-weight: 300;
+    line-height: 1.8;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+  }
+  
+  /* 5. FASTER & SLANTED BIBLE TICKER */
+  .scripture-ticker {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    color: var(--secondary);
+    padding: clamp(0.5rem, 1.5vw, 0.625rem) 0;
+    z-index: 3;
+    overflow: hidden;
+    transform: skewY(-3deg);
+  }
+  
+  .ticker-container {
+    display: flex;
+    animation: ticker-scroll 20s linear infinite;
+    white-space: nowrap;
+    transform: skewY(3deg);
+  }
+  
+  .ticker-item {
+    padding: 0 clamp(1rem, 2vw, 1.875rem);
+    font-size: clamp(0.875rem, 1.5vw, 1.1rem);
+    font-style: italic;
+    font-weight: 500;
+    display: flex;
+    align-items: center;
+  }
+  
+  @keyframes ticker-scroll {
+    0% {
+      transform: translateX(0) skewY(3deg);
+    }
+    100% {
+      transform: translateX(-50%) skewY(3deg);
+    }
+  }
+  
+  /* Professional touch: Scroll progress indicator */
+  .scroll-progress {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 0%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    z-index: 1001;
+    transition: width 0.1s ease;
+  }
+  
+  /* ====== 1. FIXED CIRCLE BUTTONS SECTION ====== */
+  .circle-buttons-section {
+    padding: clamp(3rem, 8vw, 4.375rem) 0;
+    background: white;
+    position: relative;
+  }
+  
+  .circle-buttons-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(180px, 100%), 1fr));
+    gap: clamp(1.5rem, 4vw, 2rem);
+    max-width: 800px;
+    margin: 0 auto;
+  }
+  
+  .circle-button {
+    width: clamp(150px, 20vw, 180px);
+    height: clamp(150px, 20vw, 180px);
+    margin: 0 auto;
+    border-radius: 50%;
+    background: linear-gradient(135deg, var(--primary) 0%, #005a3a 100%);
+    color: white;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    cursor: pointer;
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    box-shadow: 0 15px 35px rgba(0, 135, 81, 0.2);
+    text-align: center;
+    padding: 1.25rem;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .circle-button:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(135deg, var(--secondary) 0%, #ffed4e 100%);
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    z-index: 1;
+  }
+  
+  .circle-button:hover {
+    transform: scale(1.08);
+    box-shadow: 0 20px 40px rgba(0, 135, 81, 0.3);
+  }
+  
+  .circle-button:hover:before {
+    opacity: 1;
+  }
+  
+  .circle-button.square {
+    border-radius: 20px;
+    width: clamp(160px, 22vw, 200px);
+    height: clamp(160px, 22vw, 200px);
+    background: linear-gradient(135deg, var(--secondary) 0%, #ffed4e 100%);
+  }
+  
+  .circle-button i {
+    font-size: clamp(2.5rem, 5vw, 2.75rem);
+    margin-bottom: clamp(0.75rem, 1.5vw, 0.9375rem);
+    position: relative;
+    z-index: 2;
+  }
+  
+  .circle-button h3 {
+    font-size: clamp(0.875rem, 1.5vw, 1rem);
+    font-weight: 500;
+    position: relative;
+    z-index: 2;
+    line-height: 1.3;
+  }
+  
+  /* ====== DYNAMIC BUTTON ANIMATIONS ====== */
+  @keyframes bounce {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-15px); }
+  }
+  
+  @keyframes pulse {
+    0%, 100% { transform: scale(1); }
+    50% { transform: scale(1.05); }
+  }
+  
+  @keyframes rotate {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  @keyframes glow {
+    0%, 100% { box-shadow: 0 15px 35px rgba(0, 135, 81, 0.2); }
+    50% { box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3); }
+  }
+  
+  @keyframes shake {
+    0%, 100% { transform: translateX(0); }
+    25% { transform: translateX(-5px); }
+    75% { transform: translateX(5px); }
+  }
+  
+  @keyframes float {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-10px); }
+  }
+  
+  @keyframes sparkle {
+    0%, 100% { opacity: 0.7; }
+    50% { opacity: 1; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+  }
+  
+  .circle-button.bounce {
+    animation: bounce var(--animation-time, 2s) ease-in-out infinite;
+  }
+  
+  .circle-button.pulse {
+    animation: pulse var(--animation-time, 1.5s) ease-in-out infinite;
+  }
+  
+  .circle-button.rotate i {
+    animation: rotate var(--animation-time, 8s) linear infinite;
+  }
+  
+  .circle-button.glow {
+    animation: glow var(--animation-time, 2s) ease-in-out infinite;
+  }
+  
+  .circle-button.shake {
+    animation: shake var(--animation-time, 1s) ease-in-out infinite;
+  }
+  
+  .circle-button.float {
+    animation: float var(--animation-time, 3s) ease-in-out infinite;
+  }
+  
+  .circle-button.sparkle i {
+    animation: sparkle var(--animation-time, 1.5s) ease-in-out infinite;
+  }
+  
+  .circle-button.hover-active {
+    transform: scale(1.1) !important;
+    z-index: 10;
+  }
+  
+  .ripple {
+    position: absolute;
+    border-radius: 50%;
+    background: rgba(255, 255, 255, 0.7);
+    transform: scale(0);
+    animation: ripple-animation 0.8s linear;
+    pointer-events: none;
+  }
+  
+  @keyframes ripple-animation {
+    to {
+      transform: scale(4);
+      opacity: 0;
+    }
+  }
+  
+  .circle-button.clicked {
+    animation: none !important;
+    transform: scale(0.95);
+    transition: transform 0.2s ease;
+  }
+  
+  @media (max-width: 768px) {
+    .circle-buttons-container {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 1.5rem;
+    }
+    
+    .circle-button {
+      width: clamp(130px, 35vw, 160px);
+      height: clamp(130px, 35vw, 160px);
+    }
+    
+    .circle-button i {
+      font-size: clamp(2rem, 6vw, 2.5rem);
+      margin-bottom: 0.75rem;
+    }
+    
+    .circle-button h3 {
+      font-size: clamp(0.75rem, 2vw, 0.875rem);
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .circle-buttons-container {
+      grid-template-columns: 1fr;
+      gap: 1.5rem;
+    }
+    
+    .circle-button {
+      width: 160px;
+      height: 160px;
+    }
+  }
+  
+  /* Logo Section */
+  .logo-section {
+    padding: clamp(4rem, 10vw, 7.5rem) 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .logo-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+  
+  .big-logo {
+    max-width: min(90%, 600px);
+    margin: 0 auto clamp(2rem, 5vw, 3.125rem);
+    animation: float 4s ease-in-out infinite;
+    position: relative;
+  }
+  
+  .big-logo img {
+    width: 100%;
+    height: auto;
+    filter: drop-shadow(0 10px 20px rgba(0,0,0,0.1));
+    border-radius: 50%;
+  }
+  
+  .we-are-spac {
+    font-family: 'Lobster', cursive;
+    font-size: clamp(2.5rem, 6vw, 4.5rem);
+    color: var(--primary);
+    margin-bottom: clamp(1.5rem, 4vw, 1.875rem);
+    font-weight: 400;
+    letter-spacing: 1.5px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.1);
+    position: relative;
+    display: inline-block;
+  }
+  
+  .we-are-spac:after {
+    content: '';
+    position: absolute;
+    bottom: -10px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(100px, 20vw, 150px);
+    height: 3px;
+    background: var(--secondary);
+  }
+  
+  /* About Card */
+  .about-card-section {
+    padding: clamp(3rem, 8vw, 5rem) 0 clamp(5rem, 12vw, 8.75rem);
+    background: white;
+    position: relative;
+  }
+  
+  .floating-card {
+    background: white;
+    max-width: min(95%, 900px);
+    margin: 0 auto;
+    padding: clamp(2rem, 5vw, 3.75rem) clamp(1.5rem, 4vw, 3.125rem);
+    border-radius: 25px;
+    box-shadow: 0 25px 60px rgba(0,0,0,0.08);
+    position: relative;
+    overflow: hidden;
+    border: 1px solid rgba(0,0,0,0.05);
+  }
+  
+  .floating-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 8px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+  
+  .floating-card h2 {
+    color: var(--primary);
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 4vw, 2.8rem);
+    margin-bottom: clamp(1.5rem, 4vw, 1.875rem);
+    text-align: center;
+    font-weight: 600;
+  }
+  
+  .floating-card p {
+    font-size: clamp(1rem, 1.5vw, 1.15rem);
+    color: #555;
+    line-height: 1.9;
+    margin-bottom: clamp(1rem, 2.5vw, 1.875rem);
+    text-align: center;
+  }
+  
+  .card-btn-container {
+    text-align: center;
+  }
+  
+  /* ====== 2. ENHANCED DYNAMIC PICTURES SECTION ====== */
+  .dynamic-pictures {
+    padding: clamp(4rem, 10vw, 7.5rem) 0;
+    background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
+  }
+  
+  .section-title {
+    text-align: center;
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2rem, 5vw, 3rem);
+    color: var(--primary);
+    margin-bottom: clamp(2rem, 6vw, 5rem);
+    position: relative;
+    padding-bottom: clamp(1rem, 2.5vw, 1.25rem);
+  }
+  
+  .section-title:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translateX(-50%);
+    width: clamp(80px, 15vw, 100px);
+    height: 4px;
+    background: var(--secondary);
+  }
+  
+  .picture-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(280px, 100%), 1fr));
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+    width: 100%;
+  }
+  
+  .picture-card {
+    background: white;
+    border-radius: 18px;
+    overflow: hidden;
+    box-shadow: 0 15px 35px rgba(0,0,0,0.08);
+    transition: all 0.5s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    opacity: 0;
+    cursor: pointer;
+    position: relative;
+    transform-origin: center;
+    will-change: transform, opacity;
+  }
+  
+  .picture-card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: linear-gradient(to bottom, transparent 60%, rgba(0,0,0,0.7) 100%);
+    z-index: 1;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .picture-card:hover:before {
+    opacity: 1;
+  }
+  
+  .picture-card:hover {
+    transform: translateY(-15px) scale(1.02);
+    box-shadow: 0 25px 50px rgba(0,0,0,0.15);
+  }
+  
+  .picture-card.from-left {
+    transform: translateX(-200px) rotateY(-30deg);
+  }
+  
+  .picture-card.from-right {
+    transform: translateX(200px) rotateY(30deg);
+  }
+  
+  .picture-card.from-up {
+    transform: translateY(-200px) rotateX(-30deg);
+  }
+  
+  .picture-card.from-down {
+    transform: translateY(200px) rotateX(30deg);
+  }
+  
+  .picture-card.from-diagonal-left {
+    transform: translateX(-150px) translateY(150px) rotate(-15deg);
+  }
+  
+  .picture-card.from-diagonal-right {
+    transform: translateX(150px) translateY(150px) rotate(15deg);
+  }
+  
+  .picture-card.visible {
+    opacity: 1;
+    transform: translateX(0) translateY(0) rotate(0) rotateX(0) rotateY(0) !important;
+  }
+  
+  .picture-card img {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+    transition: transform 0.5s ease;
+  }
+  
+  .picture-card:hover img {
+    transform: scale(1.05);
+  }
+  
+  .picture-card h3 {
+    padding: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--primary);
+    text-align: center;
+    font-size: clamp(1.25rem, 2vw, 1.6rem);
+    font-weight: 600;
+    position: relative;
+    z-index: 2;
+  }
+  
+  .picture-card.large {
+    grid-column: span 2;
+  }
+  
+  .picture-card.large img {
+    height: 380px;
+  }
+  
+  @media (max-width: 1100px) {
+    .picture-card.large {
+      grid-column: span 1;
+    }
+    
+    .picture-card.large img {
+      height: 280px;
+    }
+  }
+  
+  @media (max-width: 768px) {
+    .picture-grid {
+      grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    }
+    
+    .picture-card img {
+      height: 200px;
+    }
+    
+    .picture-card.large img {
+      height: 220px;
+    }
+  }
+  
+  @media (max-width: 480px) {
+    .picture-grid {
+      grid-template-columns: 1fr;
+    }
+    
+    .picture-card img {
+      height: 180px;
+    }
+  }
+  
+  /* Instagram-like Slider */
+  .insta-slider {
+    margin: clamp(2rem, 5vw, 3.75rem) 0 clamp(1.5rem, 4vw, 2.5rem);
+    padding: clamp(1.5rem, 4vw, 2.5rem);
+    background: white;
+    border-radius: 20px;
+    box-shadow: 0 15px 40px rgba(0,0,0,0.05);
+    position: relative;
+  }
+  
+  .insta-title {
+    text-align: center;
+    color: var(--primary);
+    margin-bottom: clamp(1.5rem, 4vw, 1.875rem);
+    font-size: clamp(1.5rem, 3vw, 2.2rem);
+    font-family: 'Playfair Display', serif;
+  }
+  
+  .insta-track {
+    display: flex;
+    gap: clamp(1rem, 2.5vw, 1.5rem);
+    overflow-x: auto;
+    padding: clamp(1rem, 2.5vw, 1.5rem) 0;
+    scroll-behavior: smooth;
+    scrollbar-width: none;
+    -ms-overflow-style: none;
+  }
+  
+  .insta-track::-webkit-scrollbar {
+    display: none;
+  }
+  
+  .insta-slide {
+    flex: 0 0 auto;
+    width: clamp(180px, 25vw, 220px);
+    height: clamp(180px, 25vw, 220px);
+    border-radius: 15px;
+    overflow: hidden;
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    cursor: pointer;
+    transition: all 0.3s ease;
+  }
+  
+  .insta-slide:hover {
+    transform: scale(1.05);
+    box-shadow: 0 15px 35px rgba(0,0,0,0.15);
+  }
+  
+  .insta-slide img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  /* Location Section */
+  .location-section {
+    padding: clamp(4rem, 10vw, 7.5rem) 0;
+    background: white;
+    position: relative;
+  }
+  
+  .location-section:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+  }
+  
+  .location-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(min(280px, 100%), 1fr));
+    gap: clamp(1rem, 3vw, 2rem);
+    margin-top: clamp(2rem, 5vw, 3.75rem);
+  }
+  
+  /* ====== MODAL FOR GALLERY POPUP ====== */
+  .modal {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.9);
+    z-index: 2000;
+    justify-content: center;
+    align-items: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+  }
+  
+  .modal.active {
+    display: flex;
+    opacity: 1;
+  }
+  
+  .modal-content {
+    background: white;
+    border-radius: 20px;
+    max-width: min(90%, 800px);
+    width: 90%;
+    overflow: hidden;
+    transform: scale(0.9);
+    transition: transform 0.3s ease;
+  }
+  
+  .modal.active .modal-content {
+    transform: scale(1);
+  }
+  
+  .modal-image {
+    width: 100%;
+    height: 400px;
+    object-fit: cover;
+  }
+  
+  .modal-caption {
+    padding: clamp(1.5rem, 4vw, 2rem);
+    text-align: center;
+  }
+  
+  .modal-caption h3 {
+    color: var(--primary);
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 1rem;
+  }
+  
+  .modal-caption p {
+    color: #555;
+    line-height: 1.6;
+    font-size: clamp(1rem, 1.5vw, 1.2rem);
+  }
+  
+  .close-modal {
+    position: absolute;
+    top: 20px;
+    right: 30px;
+    color: white;
+    font-size: 40px;
+    cursor: pointer;
+    z-index: 2001;
+    transition: transform 0.3s ease;
+  }
+  
+  .close-modal:hover {
+    transform: scale(1.1);
+  }
+  
+  @media (max-width: 768px) {
+    .modal-image {
+      height: 300px;
+    }
+    
+    .close-modal {
+      top: 10px;
+      right: 20px;
+      font-size: 30px;
+    }
+  }
+  
+  /* Footer */
+  footer {
+    background: var(--dark);
+    color: white;
+    padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 1.875rem);
+    position: relative;
+    width: 100%;
+    overflow: hidden;
+    background-image: url('logo11.jpg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-blend-mode: overlay;
+    background-color: rgba(0, 0, 0, 0.7);
+  }
+  
+  footer::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(5px);
+    -webkit-backdrop-filter: blur(5px);
+    z-index: 1;
+  }
+  
+  footer:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    z-index: 2;
+  }
+  
+  .footer-content {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+    gap: clamp(1.5rem, 4vw, 2.5rem);
+    margin-bottom: clamp(2rem, 5vw, 3.125rem);
+    position: relative;
+    z-index: 3;
+  }
+  
+  .footer-column h3 {
+    margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+    color: var(--secondary);
+    font-size: clamp(1.25rem, 2vw, 1.5rem);
+    font-weight: 600;
+    position: relative;
+    padding-bottom: 0.625rem;
+  }
+  
+  .footer-column h3:after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 50px;
+    height: 3px;
+    background: var(--primary);
+  }
+  
+  .footer-links {
+    list-style: none;
+  }
+  
+  .footer-links li {
+    margin-bottom: 0.75rem;
+  }
+  
+  .footer-links a {
+    color: #ddd;
+    transition: 0.3s;
+    display: inline-block;
+  }
+  
+  .footer-links a:hover {
+    color: var(--secondary);
+    transform: translateX(5px);
+  }
+  
+  .social-links {
+    display: flex;
+    gap: clamp(0.75rem, 2vw, 1rem);
+    margin-top: clamp(1rem, 2.5vw, 1.5rem);
+  }
+  
+  .social-links a {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: clamp(40px, 5vw, 45px);
+    height: clamp(40px, 5vw, 45px);
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 50%;
+    transition: 0.3s;
+  }
+  
+  .social-links a:hover {
+    background: var(--secondary);
+    transform: translateY(-5px);
+    color: var(--dark);
+  }
+  
+  .footer-bottom {
+    text-align: center;
+    padding-top: clamp(1rem, 2.5vw, 1.875rem);
+    border-top: 1px solid rgba(255,255,255,0.1);
+    font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+    color: #aaa;
+    position: relative;
+    z-index: 3;
+  }
+  
+  /* Scroll to top button */
+  .scroll-top {
+    position: fixed;
+    bottom: clamp(1rem, 3vw, 1.875rem);
+    right: clamp(1rem, 3vw, 1.875rem);
+    width: clamp(45px, 5vw, 50px);
+    height: clamp(45px, 5vw, 50px);
+    background: var(--primary);
+    color: white;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    z-index: 999;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.3s ease;
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+  }
+  
+  .scroll-top.visible {
+    opacity: 1;
+    visibility: visible;
+  }
+  
+  .scroll-top:hover {
+    background: var(--accent);
+    transform: translateY(-5px);
+    box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+  }
+  
+  /* Professional touch: Loading animation */
+  .loading {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    z-index: 9999;
+    transform-origin: 0 50%;
+    animation: loading 2s ease-in-out infinite;
+  }
+  
+  @keyframes loading {
+    0% { transform: scaleX(0); transform-origin: 0 50%; }
+    50% { transform: scaleX(1); transform-origin: 0 50%; }
+    100% { transform: scaleX(0); transform-origin: 100% 50%; }
+  }
+  
+  /* Professional touch: Modern hover effects */
+  .hover-lift {
+    transition: transform 0.3s cubic-bezier(0.34, 1.56, 0.64, 1);
+  }
+  
+  .hover-lift:hover {
+    transform: translateY(-8px);
+  }
+  
+  /* Professional touch: Gradient text */
+  .gradient-text {
+    background: linear-gradient(135deg, var(--primary), var(--secondary));
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
+  }
+  
+  /* Professional touch: Modern focus states */
+  *:focus-visible {
+    outline: 2px solid var(--secondary);
+    outline-offset: 3px;
+    border-radius: 4px;
+  }
+  
+  /* Professional touch: Custom scrollbar */
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  
+  ::-webkit-scrollbar-track {
+    background: rgba(0, 0, 0, 0.05);
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb {
+    background: linear-gradient(var(--primary), var(--secondary));
+    border-radius: 10px;
+  }
+  
+  ::-webkit-scrollbar-thumb:hover {
+    background: linear-gradient(var(--secondary), var(--primary));
+  }
+  
+  /* Professional touch: Reduced motion */
+  @media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+      animation-duration: 0.01ms !important;
+      animation-iteration-count: 1 !important;
+      transition-duration: 0.01ms !important;
+      scroll-behavior: auto !important;
+    }
+  }
+  
+  /* Professional touch: Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    body {
+      font-size: 12pt;
+      line-height: 1.5;
+      background: white !important;
+    }
+    
+    .hero-video {
+      display: none;
+    }
+    
+    .hero {
+      background: var(--primary);
+      color: white;
+    }
+  }
+  
+  /* Ensure all images are responsive */
+  img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+  }
+  
+  /* Professional touch: Skip to main content */
+  .skip-to-main {
+    position: absolute;
+    top: -40px;
+    left: 0;
+    background: var(--primary);
+    color: white;
+    padding: 8px 16px;
+    z-index: 9999;
+    transition: top 0.3s ease;
+  }
+  
+  .skip-to-main:focus {
+    top: 0;
+  }
 </style>
 </head>
 <body>
@@ -639,7 +1631,224 @@
   </div>
 </section>
 
-<!-- Rest of the HTML remains the same... -->
+<!-- Circle Buttons Section -->
+<section class="circle-buttons-section" id="quick-links">
+  <div class="container">
+    <div class="circle-buttons-container">
+      <div class="circle-button dynamic hover-lift" id="new-button" onclick="navigateToPage('join.html', this)">
+        <i class="fas fa-user-plus"></i>
+        <h3>Join Us</h3>
+      </div>
+      <div class="circle-button dynamic hover-lift" id="prayer-button" onclick="navigateToPage('prayer.html', this)">
+        <i class="fas fa-praying-hands"></i>
+        <h3>Prayer Request</h3>
+      </div>
+      <div class="circle-button dynamic hover-lift" id="testimony-button" onclick="navigateToPage('testimony.html', this)">
+        <i class="fas fa-bullhorn"></i>
+        <h3>Share Testimony</h3>
+      </div>
+      <div class="circle-button hover-lift" id="resources-button" onclick="navigateToPage('donate.html', this)">
+        <i class="fas fa-hand-holding-heart"></i>
+        <h3>Give/Donate</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Logo and About Section -->
+<section class="logo-section">
+  <div class="container">
+    <div class="big-logo">
+      <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+    </div>
+    <div class="we-are-spac gradient-text">We are Kingdom Citizens</div>
+  </div>
+</section>
+
+<section class="about-card-section" id="about">
+  <div class="container">
+    <div class="floating-card glass-effect">
+      <h2>Welcome to Kingdom Citizens Church INT'L</h2>
+      <p>Kingdom Citizens Church INT'L is a vibrant, multicultural community of believers committed to nurturing heirs of God's kingdom through the gospel of Jesus Christ. Founded on the principles of faith, royalty, and divine inheritance, we are dedicated to worship, fellowship, and kingdom service.</p>
+      <p>Our mission is to raise kingdom citizens and nurture leaders who will transform their world through the power of the Holy Spirit. Through dynamic worship, sound biblical teaching, and compassionate outreach, we strive to impact our community and beyond with kingdom values.</p>
+      <p>Join us as we worship, learn, and serve together in unity and love, building a church that reflects God's kingdom here on earth and prepares citizens for eternity.</p>
+      <div class="card-btn-container">
+        <a href="about.html" class="btn">Read More</a>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Dynamic Pictures Section -->
+<section class="dynamic-pictures">
+  <div class="container">
+    <h2 class="section-title gradient-text">Our Ministries & Services</h2>
+    <div class="picture-grid">
+      <!-- Added KCCI UK and KCCI US as requested -->
+      <div class="picture-card hover-lift" onclick="openPage('kcci-uk.html')">
+        <img src="kcci-uk.jpg" alt="KCCI UK Ministry" loading="lazy">
+        <h3>KCCI UK</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('kcci-us.html')">
+        <img src="kcci-us.jpg" alt="KCCI US Ministry" loading="lazy">
+        <h3>KCCI US</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('department.html')">
+        <img src="youth-ministry.jpg" alt="Youth Ministry" loading="lazy">
+        <h3>Youth Ministry</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('department.html')">
+        <img src="royal-piller.jpg" alt="Royal Piller" loading="lazy">
+        <h3>Royal Piller</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('department.html')">
+        <img src="royal-voice.jpg" alt="Royal Voice" loading="lazy">
+        <h3>Royal Voice</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('counselling.html')">
+        <img src="counselling.jpg" alt="Counselling" loading="lazy">
+        <h3>Counselling</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('department.html')">
+        <img src="children-church.jpg" alt="Children Church" loading="lazy">
+        <h3>Children Church</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('foundation.html')">
+        <img src="foundation-class.jpg" alt="Foundation Class" loading="lazy">
+        <h3>Foundation Class</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('seed.html')">
+        <img src="seed-royal.jpg" alt="Seed Royal School" loading="lazy">
+        <h3>Seed Royal School</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('evangelism.html')">
+        <img src="evangelism.jpg" alt="Evangelism Ministry" loading="lazy">
+        <h3>Evangelism Ministry</h3>
+      </div>
+      <!-- Added new items as requested -->
+      <div class="picture-card hover-lift" onclick="openPage('library.html')">
+        <img src="library.jpg" alt="Visit Library" loading="lazy">
+        <h3>Visit Library</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('sermon.html')">
+        <img src="sermon.jpg" alt="Listen to Sermon" loading="lazy">
+        <h3>Listen to Sermon</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('live.html')">
+        <img src="live.jpg" alt="Watch Us Live" loading="lazy">
+        <h3>Watch Us Live</h3>
+      </div>
+    </div>
+    
+    <!-- CHANGED FROM "OUR CHURCH GALLERY" TO "OUR SERVICE" -->
+    <div class="insta-slider glass-effect">
+      <h3 class="insta-title gradient-text">Our Service</h3>
+      <div class="insta-track">
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="sunday-school.jpg" alt="Sunday School 8am to 9am" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="school-service.jpg" alt="School Service 9am to 11am (Jesus celebration service)" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="communion-service.jpg" alt="Wednesday Communion service 5 to 6:30" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="health-outreach.jpg" alt="Community health outreach" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="kingdom-harvest.jpg" alt="Kingdom harvest time convention October" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="youth-convention.jpg" alt="Youth convention September" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="judah-praise.jpg" alt="Judah praise festival July" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="december-outreach.jpg" alt="December 7 weekend outreach" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="easter-feast.jpg" alt="Easter love feast" loading="lazy">
+        </div>
+        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+          <img src="crossover-service.jpg" alt="Months end cross over service 11:30 to 12:30" loading="lazy">
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Location Section -->
+<section class="location-section" id="locations">
+  <div class="container">
+    <h2 class="section-title gradient-text">CHURCH LOCATION AND INFORMATION</h2>
+    <div class="location-grid">
+      <div class="picture-card hover-lift" onclick="openPage('location.html')">
+        <img src="location.jpg" alt="Our Location" loading="lazy">
+        <h3>Our Location</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('services.html')">
+        <img src="services.jpg" alt="Service Times" loading="lazy">
+        <h3>Service Times</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('library.html')">
+        <img src="library.jpg" alt="Church Library" loading="lazy">
+        <h3>Church Library</h3>
+      </div>
+      <div class="picture-card hover-lift" onclick="openPage('contact-info.html')">
+        <img src="contact.jpg" alt="Contact Information" loading="lazy">
+        <h3>Contact Information</h3>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer id="contact">
+  <div class="container footer-content">
+    <div class="footer-column">
+      <h3>Kingdom Citizens Church INT'L</h3>
+      <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
+      <div class="social-links">
+        <a href="https://facebook.com/kingdomcitizenschurchintl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+        <a href="https://twitter.com/kingdomcitizens" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+        <a href="https://instagram.com/kingdomcitizenschurchintl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+        <a href="https://youtube.com/kingdomcitizenschurchintl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+        <a href="https://tiktok.com/@kingdomcitizens" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+      </div>
+    </div>
+    <div class="footer-column">
+      <h3>Quick Links</h3>
+      <ul class="footer-links">
+        <li><a href="#home">Home</a></li>
+        <li><a href="#quick-links">Quick Access</a></li>
+        <li><a href="#locations">Location</a></li>
+        <li><a href="department.html">Departments</a></li>
+        <li><a href="service.html">Our Service</a></li>
+        <li><a href="watch-live.html">Watch Live</a></li>
+        <li><a href="donate.html">Give Online</a></li>
+        <li><a href="join.html">Join Us</a></li>
+        <li><a href="pastor-note.html">Pastor's Desk</a></li>
+      </ul>
+    </div>
+    <div class="footer-column">
+      <h3>Contact Us</h3>
+      <ul class="footer-links">
+        <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
+        <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
+        <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
+        <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
+        <li><i class="fas fa-clock"></i> Sunday School: 8am - 9am</li>
+        <li><i class="fas fa-clock"></i> Sunday Service: 9am - 11am (Jesus Celebration Service)</li>
+        <li><i class="fas fa-clock"></i> Wednesday: Communion Service 5pm - 6:30pm</li>
+      </ul>
+    </div>
+  </div>
+  <div class="footer-bottom">
+    &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+  </div>
+</footer>
 
 <script>
 // Header scroll effect
@@ -652,67 +1861,88 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// HAMBURGER MENU - UPDATED FOR PROPER FUNCTIONALITY
+// HAMBURGER MENU - UPDATED WITH FIXES
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const dropdowns = document.querySelectorAll('.dropdown');
-const ministryDropdown = document.querySelector('.dropdown');
 
 hamburger.addEventListener('click', () => {
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
   
-  // 4. FIX FOR EXTRA SPACE ON RIGHT - Use scrollbar-gutter instead of overflow hidden
+  // Fix for screen width issue
   if (navMenu.classList.contains('active')) {
-    // Only hide overflow-y, not overflow-x
-    document.body.style.overflowY = 'hidden';
-    document.body.style.scrollbarGutter = 'stable';
+    document.body.classList.add('menu-open');
+    document.body.style.overflow = 'hidden';
+    // Prevent horizontal scrollbar
+    document.body.style.width = '100%';
+    document.body.style.position = 'fixed';
   } else {
-    document.body.style.overflowY = 'auto';
-    document.body.style.scrollbarGutter = 'auto';
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = 'auto';
+    document.body.style.width = '';
+    document.body.style.position = '';
   }
 });
 
-// 3. FIX FOR MINISTRIES DROPDOWN - Only opens submenu, doesn't close menu or go to homepage
+// Dropdown menu on mobile - FIXED: Only opens dropdown, doesn't close menu
 dropdowns.forEach(dropdown => {
   const trigger = dropdown.querySelector('a');
+  const chevron = trigger.querySelector('.fa-chevron-down');
+  
   trigger.addEventListener('click', (e) => {
     if (window.innerWidth <= 992) {
       e.preventDefault();
-      e.stopPropagation(); // Prevent event from bubbling up
-      dropdown.classList.toggle('active');
+      e.stopPropagation();
       
-      // Close other dropdowns if open
+      // Close all other dropdowns
       dropdowns.forEach(otherDropdown => {
         if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
           otherDropdown.classList.remove('active');
         }
       });
+      
+      // Toggle current dropdown
+      dropdown.classList.toggle('active');
+      
+      // Rotate chevron
+      if (chevron) {
+        chevron.style.transform = dropdown.classList.contains('active') ? 'rotate(180deg)' : 'rotate(0deg)';
+      }
     }
   });
 });
 
-// Close dropdown when clicking outside on mobile
+// Close menu ONLY when clicking X (hamburger) button or outside the menu
 document.addEventListener('click', (e) => {
-  if (window.innerWidth <= 992) {
-    dropdowns.forEach(dropdown => {
-      if (!dropdown.contains(e.target) && dropdown.classList.contains('active')) {
-        dropdown.classList.remove('active');
-      }
-    });
+  if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
+    // If clicking outside the menu AND not on a dropdown item
+    if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+      hamburger.classList.remove('active');
+      navMenu.classList.remove('active');
+      document.body.classList.remove('menu-open');
+      document.body.style.overflow = 'auto';
+      document.body.style.width = '';
+      document.body.style.position = '';
+    }
   }
 });
 
-// Close menu only when clicking on non-dropdown links
-document.querySelectorAll('.nav-menu a:not(.dropdown > a)').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-      document.body.style.overflowY = 'auto';
-      document.body.style.scrollbarGutter = 'auto';
-    }
-  });
+// Close menu when clicking a regular link (not dropdown) in the menu on mobile
+document.querySelectorAll('.nav-menu a').forEach(link => {
+  // Skip dropdown triggers
+  if (!link.parentElement.classList.contains('dropdown')) {
+    link.addEventListener('click', () => {
+      if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
+        hamburger.classList.remove('active');
+        navMenu.classList.remove('active');
+        document.body.classList.remove('menu-open');
+        document.body.style.overflow = 'auto';
+        document.body.style.width = '';
+        document.body.style.position = '';
+      }
+    });
+  }
 });
 
 // Professional touch: Scroll progress indicator
@@ -1104,6 +2334,18 @@ window.addEventListener('resize', function() {
     initializeDynamicButtons();
     updateScroll();
   }, 250);
+});
+
+// Fix for extra space on right when closing menu
+window.addEventListener('resize', function() {
+  if (window.innerWidth > 992 && navMenu.classList.contains('active')) {
+    hamburger.classList.remove('active');
+    navMenu.classList.remove('active');
+    document.body.classList.remove('menu-open');
+    document.body.style.overflow = 'auto';
+    document.body.style.width = '';
+    document.body.style.position = '';
+  }
 });
 </script>
 
