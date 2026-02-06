@@ -18,7 +18,7 @@
     --dark: #222;
     --accent: #005a3a;
     --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
-    --menu-height: 70px; /* Slightly increased for better design */
+    --menu-height: 65px; /* Slightly increased for better design */
     --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFED4E 100%);
   }
   
@@ -96,14 +96,14 @@
   
   /* Professional touch: Glass morphism effect */
   .glass-effect {
-    background: rgba(255, 255, 255, 0.95);
-    backdrop-filter: blur(10px);
-    -webkit-backdrop-filter: blur(10px);
+    background: rgba(255, 255, 255, 0.98);
+    backdrop-filter: blur(15px);
+    -webkit-backdrop-filter: blur(15px);
   }
   
-  /* ========== ENHANCED MENU BAR WITH MORE DESIGN & FASHION ========== */
+  /* ========== STYLISH MENU BAR REDESIGN ========== */
   header {
-    background: linear-gradient(135deg, rgba(0, 135, 81, 0.98) 0%, rgba(0, 90, 58, 0.98) 100%);
+    background: linear-gradient(135deg, rgba(255, 255, 255, 0.98) 0%, rgba(255, 255, 255, 0.95) 100%);
     position: fixed;
     top: 0;
     left: 0;
@@ -112,8 +112,7 @@
     height: var(--menu-height);
     transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
     border-bottom: 3px solid var(--secondary);
-    box-shadow: 0 8px 32px rgba(0, 135, 81, 0.3);
-    padding: 0 20px;
+    box-shadow: 0 8px 32px rgba(0, 135, 81, 0.15);
   }
   
   .header-container {
@@ -121,12 +120,12 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    max-width: 1400px;
+    max-width: 1300px;
     margin: 0 auto;
     padding: 0 clamp(1rem, 3vw, 2rem);
   }
   
-  /* ENHANCED LOGO */
+  /* STYLISH LOGO */
   .logo {
     display: flex;
     align-items: center;
@@ -136,44 +135,41 @@
   }
   
   .logo-frame {
-    width: 55px;
-    height: 55px;
-    border-radius: 50%;
+    width: 50px;
+    height: 50px;
+    border-radius: 12px;
     overflow: hidden;
-    border: 3px solid var(--secondary);
+    border: 2px solid var(--primary);
     display: flex;
     align-items: center;
     justify-content: center;
     transition: all 0.4s ease;
     background: white;
-    padding: 3px;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    padding: 2px;
+    box-shadow: 0 4px 15px rgba(0, 135, 81, 0.2);
   }
   
   .logo-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
-    border-radius: 50%;
+    border-radius: 10px;
   }
   
   .logo-text {
     font-family: 'Lobster', cursive;
-    font-size: 1.8rem;
-    color: white;
+    font-size: 1.6rem;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-clip: text;
     font-weight: 500;
-    letter-spacing: 1px;
+    letter-spacing: 0.5px;
     white-space: nowrap;
     transition: all 0.3s ease;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
   
-  .logo-text span {
-    color: var(--secondary);
-    font-weight: bold;
-  }
-  
-  /* ENHANCED NAVIGATION DESIGN */
+  /* STYLISH NAVIGATION DESIGN */
   .nav-container {
     display: flex;
     align-items: center;
@@ -184,15 +180,14 @@
     .nav-menu {
       display: flex;
       list-style: none;
-      gap: 3px;
+      gap: 2px;
       height: 100%;
       align-items: center;
-      background: rgba(255, 255, 255, 0.1);
+      background: rgba(255, 255, 255, 0.9);
       backdrop-filter: blur(10px);
-      border-radius: 35px;
-      padding: 5px;
-      box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.1),
-                  0 4px 20px rgba(0, 0, 0, 0.1);
+      border-radius: 30px;
+      padding: 4px;
+      box-shadow: 0 4px 20px rgba(0, 0, 0, 0.08);
     }
     
     .nav-menu li {
@@ -203,16 +198,16 @@
     }
     
     .nav-menu a {
-      color: white;
+      color: #333;
       font-weight: 500;
-      font-size: 0.9rem;
-      padding: 10px 18px;
+      font-size: 0.85rem;
+      padding: 10px 16px;
       border-radius: 25px;
       transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       display: flex;
       align-items: center;
       gap: 8px;
-      height: 42px;
+      height: 38px;
       position: relative;
       overflow: hidden;
     }
@@ -224,7 +219,7 @@
       left: -100%;
       width: 100%;
       height: 100%;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      background: linear-gradient(90deg, transparent, rgba(0, 135, 81, 0.1), transparent);
       transition: left 0.6s ease;
     }
     
@@ -233,67 +228,66 @@
     }
     
     .nav-menu a i {
-      font-size: 1rem;
+      font-size: 0.95rem;
       transition: transform 0.3s ease;
     }
     
     .nav-menu a:hover {
-      background: rgba(255, 255, 255, 0.15);
-      color: var(--secondary);
+      background: linear-gradient(135deg, rgba(0, 135, 81, 0.1) 0%, rgba(0, 90, 58, 0.1) 100%);
+      color: var(--primary);
       transform: translateY(-2px);
-      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+      box-shadow: 0 6px 15px rgba(0, 135, 81, 0.15);
     }
     
     .nav-menu a:hover i {
-      transform: scale(1.2);
+      transform: scale(1.1);
     }
     
     .nav-menu .active a {
-      background: var(--gold-gradient);
-      color: #333;
-      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
-      font-weight: 600;
+      background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
+      color: white;
+      box-shadow: 0 4px 15px rgba(0, 135, 81, 0.3);
     }
     
-    /* ENHANCED DROPDOWN DESIGN */
+    /* STYLISH DROPDOWN DESIGN */
     .dropdown-content {
       display: none;
       position: absolute;
-      top: calc(100% + 10px);
-      left: 50%;
-      transform: translateX(-50%);
-      background: rgba(0, 135, 81, 0.95);
+      top: calc(100% + 8px);
+      left: 0;
+      background: rgba(255, 255, 255, 0.98);
       backdrop-filter: blur(15px);
-      min-width: 240px;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      min-width: 230px;
+      box-shadow: 0 15px 35px rgba(0, 0, 0, 0.15);
       border-radius: 15px;
       overflow: hidden;
       z-index: 1001;
-      border: 1px solid rgba(255, 215, 0, 0.2);
-      padding: 10px 0;
+      border: 1px solid rgba(0, 135, 81, 0.1);
+      padding: 8px 0;
       opacity: 0;
+      transform: translateY(10px);
       animation: fadeInDropdown 0.3s ease forwards;
     }
     
     @keyframes fadeInDropdown {
       from {
         opacity: 0;
-        transform: translateX(-50%) translateY(-10px);
+        transform: translateY(10px);
       }
       to {
         opacity: 1;
-        transform: translateX(-50%) translateY(0);
+        transform: translateY(0);
       }
     }
     
     .dropdown-content a {
-      padding: 12px 24px;
+      padding: 12px 20px;
       border-radius: 0;
       height: auto;
-      font-size: 0.9rem;
-      color: white;
+      font-size: 0.85rem;
+      color: #555;
       justify-content: flex-start;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
       transition: all 0.3s ease;
     }
     
@@ -302,10 +296,10 @@
     }
     
     .dropdown-content a:hover {
-      background: rgba(255, 255, 255, 0.1);
-      color: var(--secondary);
+      background: rgba(0, 135, 81, 0.05);
+      color: var(--primary);
       transform: translateX(5px);
-      padding-left: 28px;
+      padding-left: 25px;
     }
     
     .dropdown-content a:before {
@@ -316,37 +310,27 @@
       display: block;
     }
     
-    .dropdown:after {
-      content: '';
-      position: absolute;
-      bottom: -10px;
-      left: 0;
-      width: 100%;
-      height: 10px;
-      background: transparent;
-    }
-    
-    /* Special style for donate button */
+    /* Donate button special style */
     .nav-menu li:nth-child(3) a {
       background: var(--gold-gradient);
       color: #333;
       font-weight: 600;
-      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.2);
     }
     
     .nav-menu li:nth-child(3) a:hover {
-      transform: translateY(-3px);
-      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
     }
   }
   
-  /* ENHANCED MOBILE MENU DESIGN */
+  /* ========== STYLISH MOBILE MENU SLIDE WITH LOGO BACKGROUND ========== */
   .mobile-menu-toggle {
     display: none;
-    width: 50px;
-    height: 50px;
-    border-radius: 50%;
-    background: var(--gold-gradient);
+    width: 48px;
+    height: 48px;
+    border-radius: 12px;
+    background: linear-gradient(135deg, var(--primary) 0%, var(--accent) 100%);
     border: none;
     cursor: pointer;
     flex-direction: column;
@@ -356,29 +340,25 @@
     transition: all 0.3s ease;
     position: relative;
     z-index: 1002;
-    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 135, 81, 0.2);
   }
   
   .mobile-menu-toggle span {
     display: block;
-    width: 24px;
-    height: 3px;
-    background: #333;
-    border-radius: 3px;
+    width: 22px;
+    height: 2.5px;
+    background: white;
+    border-radius: 2px;
     transition: all 0.3s ease;
   }
   
   .mobile-menu-toggle.active {
-    background: linear-gradient(135deg, #333 0%, #555 100%);
-  }
-  
-  .mobile-menu-toggle.active span {
-    background: white;
+    background: linear-gradient(135deg, var(--accent) 0%, var(--primary) 100%);
   }
   
   .mobile-menu-toggle.active span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
-    width: 24px;
+    width: 22px;
   }
   
   .mobile-menu-toggle.active span:nth-child(2) {
@@ -387,7 +367,7 @@
   
   .mobile-menu-toggle.active span:nth-child(3) {
     transform: rotate(-45deg) translate(7px, -6px);
-    width: 24px;
+    width: 22px;
   }
   
   @media (max-width: 992px) {
@@ -400,13 +380,14 @@
       top: var(--menu-height);
       left: 0;
       right: 0;
-      background: linear-gradient(135deg, rgba(0, 135, 81, 0.98) 0%, rgba(0, 90, 58, 0.98) 100%);
-      backdrop-filter: blur(15px);
+      background: rgba(255, 255, 255, 0.98);
+      backdrop-filter: blur(20px);
+      -webkit-backdrop-filter: blur(20px);
       flex-direction: column;
       gap: 0;
-      padding: 20px 0;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
-      transform: translateY(-100%);
+      padding: 30px 0;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.15);
+      transform: translateX(100%);
       opacity: 0;
       visibility: hidden;
       transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
@@ -414,10 +395,28 @@
       overflow-y: auto;
       z-index: 999;
       border-top: 3px solid var(--secondary);
+      /* Logo as faded background for mobile menu slide */
+      background-image: url('logo11.jpg');
+      background-size: 50%;
+      background-position: center;
+      background-repeat: no-repeat;
+      background-blend-mode: overlay;
+      background-color: rgba(255, 255, 255, 0.95);
+    }
+    
+    .nav-menu::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      background: rgba(255, 255, 255, 0.85);
+      z-index: -1;
     }
     
     .nav-menu.active {
-      transform: translateY(0);
+      transform: translateX(0);
       opacity: 1;
       visibility: visible;
     }
@@ -429,21 +428,34 @@
     }
     
     .nav-menu a {
-      padding: 18px 0;
+      padding: 20px 0;
       font-size: 1.1rem;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+      border-bottom: 1px solid rgba(0, 135, 81, 0.1);
       border-radius: 0;
       height: auto;
       justify-content: space-between;
-      color: white;
+      color: var(--primary);
+      font-weight: 500;
+      background: rgba(255, 255, 255, 0.7);
+      margin: 5px 0;
+      border-radius: 10px;
+      padding: 18px 20px;
+      transition: all 0.3s ease;
     }
     
     .nav-menu a i:first-child {
       margin-right: 15px;
+      color: var(--primary);
     }
     
     .nav-menu a i.fa-chevron-down {
       transition: transform 0.3s ease;
+      color: var(--primary);
+    }
+    
+    .nav-menu a:hover {
+      background: rgba(0, 135, 81, 0.1);
+      transform: translateX(5px);
     }
     
     .dropdown.active a i.fa-chevron-down {
@@ -453,10 +465,10 @@
     .dropdown-content {
       display: none;
       padding-left: 30px;
-      background: rgba(0, 0, 0, 0.1);
+      background: rgba(255, 255, 255, 0.9);
       border-left: 3px solid var(--secondary);
       margin: 10px 0;
-      border-radius: 0;
+      border-radius: 0 10px 10px 0;
       box-shadow: none;
       position: static;
       transform: none;
@@ -464,9 +476,15 @@
     }
     
     .dropdown-content a {
-      padding: 15px 0;
+      padding: 15px 20px;
       font-size: 1rem;
-      color: rgba(255, 255, 255, 0.9);
+      color: #555;
+      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+    }
+    
+    .dropdown-content a:hover {
+      background: rgba(0, 135, 81, 0.05);
+      color: var(--primary);
     }
     
     .dropdown.active .dropdown-content {
@@ -487,23 +505,23 @@
     
     /* Logo adjustments for mobile */
     .logo-text {
-      font-size: 1.4rem;
+      font-size: 1.3rem;
     }
     
     .logo-frame {
-      width: 48px;
-      height: 48px;
+      width: 45px;
+      height: 45px;
     }
   }
   
   @media (max-width: 576px) {
     .logo-text {
-      font-size: 1.2rem;
+      font-size: 1.1rem;
     }
     
     .logo-frame {
-      width: 44px;
-      height: 44px;
+      width: 40px;
+      height: 40px;
     }
     
     .header-container {
@@ -516,6 +534,7 @@
     
     .nav-menu a {
       font-size: 1rem;
+      padding: 16px 15px;
     }
   }
   
@@ -525,12 +544,12 @@
     }
     
     .logo-frame {
-      width: 40px;
-      height: 40px;
+      width: 36px;
+      height: 36px;
     }
   }
   
-  /* ========== ENHANCED HERO SECTION WITH FADED LOGO BACKGROUND ========== */
+  /* Hero Section */
   .hero {
     position: relative;
     height: clamp(500px, 85vh, 800px);
@@ -540,7 +559,7 @@
     justify-content: center;
     text-align: center;
     color: white;
-    background: linear-gradient(135deg, rgba(0, 135, 81, 0.9) 0%, rgba(0, 90, 58, 0.9) 100%);
+    background: #000;
     width: 100vw;
     left: 50%;
     right: 50%;
@@ -549,54 +568,35 @@
     margin-top: var(--menu-height);
   }
   
-  /* Faded Logo Background */
-  .hero::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: url('logo11.jpg');
-    background-size: 50%;
-    background-position: center;
-    background-repeat: no-repeat;
-    opacity: 0.15;
-    z-index: 0;
-  }
-  
-  /* Diamond pattern overlay */
-  .hero::after {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-image: 
-      linear-gradient(45deg, rgba(0, 135, 81, 0.1) 25%, transparent 25%),
-      linear-gradient(-45deg, rgba(0, 135, 81, 0.1) 25%, transparent 25%),
-      linear-gradient(45deg, transparent 75%, rgba(0, 135, 81, 0.1) 75%),
-      linear-gradient(-45deg, transparent 75%, rgba(0, 135, 81, 0.1) 75%);
-    background-size: 40px 40px;
-    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
-    opacity: 0.3;
-    z-index: 0;
-  }
-  
   .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
+    background: rgba(0, 0, 0, 0.15);
     z-index: 1;
+  }
+  
+  /* 7. FASTER VIDEO LOADING */
+  .hero-video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+    preload: auto;
+    playsinline: true;
+    muted: true;
+    loop: true;
+    autoplay: true;
   }
   
   /* 4. LOWER HERO TEXT */
   .hero-content {
-    max-width: min(90%, 900px);
+    max-width: min(90%, 800px);
     padding: 0 clamp(1rem, 3vw, 2rem);
     z-index: 2;
     position: relative;
@@ -604,29 +604,12 @@
   }
   
   .hero p {
-    font-size: clamp(1.3rem, 2.8vw, 1.8rem);
+    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
     margin-bottom: clamp(2rem, 5vh, 2.5rem);
     opacity: 0.95;
-    font-weight: 400;
+    font-weight: 300;
     line-height: 1.8;
-    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
-    background: rgba(0, 0, 0, 0.3);
-    backdrop-filter: blur(5px);
-    padding: 30px;
-    border-radius: 20px;
-    border: 1px solid rgba(255, 255, 255, 0.1);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .hero p::before {
-    content: '';
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 5px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
   
   /* 5. FASTER & SLANTED BIBLE TICKER */
@@ -635,13 +618,12 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: linear-gradient(135deg, rgba(0, 135, 81, 0.9) 0%, rgba(0, 90, 58, 0.9) 100%);
+    background: rgba(0, 0, 0, 0.7);
     color: var(--secondary);
     padding: clamp(0.5rem, 1.5vw, 0.625rem) 0;
     z-index: 3;
     overflow: hidden;
     transform: skewY(-3deg);
-    border-top: 2px solid rgba(255, 215, 0, 0.3);
   }
   
   .ticker-container {
@@ -653,17 +635,11 @@
   
   .ticker-item {
     padding: 0 clamp(1rem, 2vw, 1.875rem);
-    font-size: clamp(0.9rem, 1.6vw, 1.2rem);
+    font-size: clamp(0.875rem, 1.5vw, 1.1rem);
     font-style: italic;
     font-weight: 500;
     display: flex;
     align-items: center;
-    gap: 10px;
-  }
-  
-  .ticker-item i {
-    color: white;
-    font-size: 0.9em;
   }
   
   @keyframes ticker-scroll {
@@ -681,8 +657,8 @@
     top: var(--menu-height);
     left: 0;
     width: 0%;
-    height: 4px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
+    height: 3px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
     z-index: 1001;
     transition: width 0.1s ease;
   }
@@ -1621,7 +1597,7 @@
   <i class="fas fa-chevron-up"></i>
 </div>
 
-<header id="mainHeader">
+<header id="mainHeader" class="glass-effect">
   <div class="container header-container">
     <div class="logo">
       <!-- Make logo a home button -->
@@ -1629,7 +1605,7 @@
         <div class="logo-frame">
           <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
         </div>
-        <span class="logo-text">KINGDOM <span>CITIZENS</span> CHURCH INT'L</span>
+        <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
       </a>
     </div>
     <div class="nav-container">
@@ -1669,7 +1645,12 @@
 
 <!-- Hero Section -->
 <section class="hero" id="home" id="main-content">
-  <!-- Hero content with faded logo background -->
+  <!-- 7. FASTER VIDEO LOADING WITH OPTIMIZED ATTRIBUTES -->
+  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
+    <source src="kingdom-video.mp4" type="video/mp4">
+    <source src="kingdom-video.webm" type="video/webm">
+    Your browser does not support the video tag.
+  </video>
   <div class="hero-overlay"></div>
   
   <div class="hero-content">
@@ -1925,11 +1906,9 @@
 const header = document.getElementById('mainHeader');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
-    header.style.background = 'linear-gradient(135deg, rgba(0, 135, 81, 0.98) 0%, rgba(0, 90, 58, 0.98) 100%)';
-    header.style.boxShadow = '0 8px 32px rgba(0, 135, 81, 0.3)';
+    header.style.boxShadow = '0 8px 32px rgba(0, 135, 81, 0.2)';
   } else {
-    header.style.background = 'linear-gradient(135deg, rgba(0, 135, 81, 0.98) 0%, rgba(0, 90, 58, 0.98) 100%)';
-    header.style.boxShadow = '0 8px 32px rgba(0, 135, 81, 0.3)';
+    header.style.boxShadow = '0 8px 32px rgba(0, 135, 81, 0.15)';
   }
 });
 
@@ -2166,6 +2145,10 @@ window.addEventListener('scroll', requestTick, { passive: true });
 
 // Initialize on load
 window.addEventListener('DOMContentLoaded', function() {
+  // Preload video
+  const heroVideo = document.querySelector('.hero-video');
+  if (heroVideo) heroVideo.load();
+  
   // Initialize dynamic buttons
   initializeDynamicButtons();
   
