@@ -18,7 +18,8 @@
     --dark: #222;
     --accent: #005a3a;
     --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
-    --menu-height: 60px; /* 40% reduced height */
+    --menu-height: 70px; /* Slightly increased for better design */
+    --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFED4E 100%);
   }
   
   * {
@@ -100,19 +101,19 @@
     -webkit-backdrop-filter: blur(10px);
   }
   
-  /* ========== COMPLETELY REDESIGNED MENU BAR ========== */
-  /* 40% reduced height and completely new design */
+  /* ========== ENHANCED MENU BAR WITH MORE DESIGN & FASHION ========== */
   header {
-    background: white;
-    box-shadow: 0 2px 20px rgba(0, 135, 81, 0.15);
+    background: linear-gradient(135deg, rgba(0, 135, 81, 0.98) 0%, rgba(0, 90, 58, 0.98) 100%);
     position: fixed;
     top: 0;
     left: 0;
     right: 0;
     z-index: 1000;
     height: var(--menu-height);
-    transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-    border-bottom: 3px solid var(--primary);
+    transition: all 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+    border-bottom: 3px solid var(--secondary);
+    box-shadow: 0 8px 32px rgba(0, 135, 81, 0.3);
+    padding: 0 20px;
   }
   
   .header-container {
@@ -120,48 +121,59 @@
     align-items: center;
     justify-content: space-between;
     height: 100%;
-    max-width: 1200px;
+    max-width: 1400px;
     margin: 0 auto;
     padding: 0 clamp(1rem, 3vw, 2rem);
   }
   
-  /* COMPACT LOGO - REDESIGNED */
+  /* ENHANCED LOGO */
   .logo {
     display: flex;
     align-items: center;
-    gap: 12px;
+    gap: 15px;
     height: 100%;
+    padding: 5px 0;
   }
   
   .logo-frame {
-    width: 45px;
-    height: 45px;
+    width: 55px;
+    height: 55px;
     border-radius: 50%;
     overflow: hidden;
-    border: 2px solid var(--primary);
+    border: 3px solid var(--secondary);
     display: flex;
     align-items: center;
     justify-content: center;
-    transition: all 0.3s ease;
+    transition: all 0.4s ease;
+    background: white;
+    padding: 3px;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
   }
   
   .logo-frame img {
     width: 100%;
     height: 100%;
     object-fit: cover;
+    border-radius: 50%;
   }
   
   .logo-text {
     font-family: 'Lobster', cursive;
-    font-size: 1.4rem;
-    color: var(--primary);
+    font-size: 1.8rem;
+    color: white;
     font-weight: 500;
-    letter-spacing: 0.5px;
+    letter-spacing: 1px;
     white-space: nowrap;
     transition: all 0.3s ease;
+    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   }
   
-  /* NEW COMPACT NAVIGATION DESIGN */
+  .logo-text span {
+    color: var(--secondary);
+    font-weight: bold;
+  }
+  
+  /* ENHANCED NAVIGATION DESIGN */
   .nav-container {
     display: flex;
     align-items: center;
@@ -172,9 +184,15 @@
     .nav-menu {
       display: flex;
       list-style: none;
-      gap: 8px;
+      gap: 3px;
       height: 100%;
       align-items: center;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 35px;
+      padding: 5px;
+      box-shadow: inset 0 2px 10px rgba(255, 255, 255, 0.1),
+                  0 4px 20px rgba(0, 0, 0, 0.1);
     }
     
     .nav-menu li {
@@ -185,122 +203,182 @@
     }
     
     .nav-menu a {
-      color: #333;
+      color: white;
       font-weight: 500;
-      font-size: 0.85rem;
-      padding: 8px 12px;
-      border-radius: 20px;
-      transition: all 0.3s ease;
+      font-size: 0.9rem;
+      padding: 10px 18px;
+      border-radius: 25px;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
       display: flex;
       align-items: center;
-      gap: 6px;
-      height: 36px;
+      gap: 8px;
+      height: 42px;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .nav-menu a:before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: -100%;
+      width: 100%;
+      height: 100%;
+      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.1), transparent);
+      transition: left 0.6s ease;
+    }
+    
+    .nav-menu a:hover:before {
+      left: 100%;
     }
     
     .nav-menu a i {
-      font-size: 0.9rem;
+      font-size: 1rem;
+      transition: transform 0.3s ease;
     }
     
     .nav-menu a:hover {
-      background: rgba(0, 135, 81, 0.1);
-      color: var(--primary);
-      transform: translateY(-1px);
+      background: rgba(255, 255, 255, 0.15);
+      color: var(--secondary);
+      transform: translateY(-2px);
+      box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+    }
+    
+    .nav-menu a:hover i {
+      transform: scale(1.2);
     }
     
     .nav-menu .active a {
-      background: var(--gradient);
-      color: white;
-      box-shadow: 0 4px 12px rgba(0, 135, 81, 0.3);
+      background: var(--gold-gradient);
+      color: #333;
+      box-shadow: 0 4px 20px rgba(255, 215, 0, 0.4);
+      font-weight: 600;
     }
     
-    /* NEW COMPACT DROPDOWN DESIGN */
+    /* ENHANCED DROPDOWN DESIGN */
     .dropdown-content {
       display: none;
       position: absolute;
-      top: 100%;
-      left: 0;
-      background: white;
-      min-width: 220px;
-      box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
-      border-radius: 12px;
+      top: calc(100% + 10px);
+      left: 50%;
+      transform: translateX(-50%);
+      background: rgba(0, 135, 81, 0.95);
+      backdrop-filter: blur(15px);
+      min-width: 240px;
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
+      border-radius: 15px;
       overflow: hidden;
       z-index: 1001;
-      border: 1px solid rgba(0, 135, 81, 0.1);
-      padding: 8px 0;
+      border: 1px solid rgba(255, 215, 0, 0.2);
+      padding: 10px 0;
+      opacity: 0;
+      animation: fadeInDropdown 0.3s ease forwards;
+    }
+    
+    @keyframes fadeInDropdown {
+      from {
+        opacity: 0;
+        transform: translateX(-50%) translateY(-10px);
+      }
+      to {
+        opacity: 1;
+        transform: translateX(-50%) translateY(0);
+      }
     }
     
     .dropdown-content a {
-      padding: 12px 20px;
+      padding: 12px 24px;
       border-radius: 0;
       height: auto;
-      font-size: 0.85rem;
-      color: #555;
+      font-size: 0.9rem;
+      color: white;
       justify-content: flex-start;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+      transition: all 0.3s ease;
+    }
+    
+    .dropdown-content a:last-child {
+      border-bottom: none;
     }
     
     .dropdown-content a:hover {
-      background: rgba(0, 135, 81, 0.08);
-      transform: none;
+      background: rgba(255, 255, 255, 0.1);
+      color: var(--secondary);
+      transform: translateX(5px);
+      padding-left: 28px;
+    }
+    
+    .dropdown-content a:before {
+      display: none;
     }
     
     .dropdown:hover .dropdown-content {
       display: block;
-      animation: slideDown 0.3s ease;
     }
     
-    @keyframes slideDown {
-      from {
-        opacity: 0;
-        transform: translateY(-10px);
-      }
-      to {
-        opacity: 1;
-        transform: translateY(0);
-      }
+    .dropdown:after {
+      content: '';
+      position: absolute;
+      bottom: -10px;
+      left: 0;
+      width: 100%;
+      height: 10px;
+      background: transparent;
     }
     
-    /* Donate button special style */
+    /* Special style for donate button */
     .nav-menu li:nth-child(3) a {
-      background: linear-gradient(135deg, var(--secondary) 0%, #ffed4e 100%);
+      background: var(--gold-gradient);
       color: #333;
       font-weight: 600;
+      box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
     }
     
     .nav-menu li:nth-child(3) a:hover {
-      transform: translateY(-2px);
-      box-shadow: 0 6px 20px rgba(255, 215, 0, 0.3);
+      transform: translateY(-3px);
+      box-shadow: 0 8px 25px rgba(255, 215, 0, 0.4);
     }
   }
   
-  /* NEW MOBILE MENU DESIGN */
+  /* ENHANCED MOBILE MENU DESIGN */
   .mobile-menu-toggle {
     display: none;
-    width: 40px;
-    height: 40px;
+    width: 50px;
+    height: 50px;
     border-radius: 50%;
-    background: var(--gradient);
+    background: var(--gold-gradient);
     border: none;
     cursor: pointer;
     flex-direction: column;
     align-items: center;
     justify-content: center;
-    gap: 4px;
+    gap: 5px;
     transition: all 0.3s ease;
     position: relative;
     z-index: 1002;
+    box-shadow: 0 4px 15px rgba(255, 215, 0, 0.3);
   }
   
   .mobile-menu-toggle span {
     display: block;
-    width: 20px;
-    height: 2px;
-    background: white;
-    border-radius: 2px;
+    width: 24px;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
     transition: all 0.3s ease;
   }
   
+  .mobile-menu-toggle.active {
+    background: linear-gradient(135deg, #333 0%, #555 100%);
+  }
+  
+  .mobile-menu-toggle.active span {
+    background: white;
+  }
+  
   .mobile-menu-toggle.active span:nth-child(1) {
-    transform: rotate(45deg) translate(4px, 4px);
+    transform: rotate(45deg) translate(5px, 5px);
+    width: 24px;
   }
   
   .mobile-menu-toggle.active span:nth-child(2) {
@@ -308,7 +386,8 @@
   }
   
   .mobile-menu-toggle.active span:nth-child(3) {
-    transform: rotate(-45deg) translate(4px, -4px);
+    transform: rotate(-45deg) translate(7px, -6px);
+    width: 24px;
   }
   
   @media (max-width: 992px) {
@@ -321,11 +400,12 @@
       top: var(--menu-height);
       left: 0;
       right: 0;
-      background: white;
+      background: linear-gradient(135deg, rgba(0, 135, 81, 0.98) 0%, rgba(0, 90, 58, 0.98) 100%);
+      backdrop-filter: blur(15px);
       flex-direction: column;
       gap: 0;
       padding: 20px 0;
-      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.1);
+      box-shadow: 0 20px 40px rgba(0, 0, 0, 0.2);
       transform: translateY(-100%);
       opacity: 0;
       visibility: hidden;
@@ -333,6 +413,7 @@
       height: calc(100vh - var(--menu-height));
       overflow-y: auto;
       z-index: 999;
+      border-top: 3px solid var(--secondary);
     }
     
     .nav-menu.active {
@@ -348,16 +429,17 @@
     }
     
     .nav-menu a {
-      padding: 16px 0;
-      font-size: 1rem;
-      border-bottom: 1px solid rgba(0, 0, 0, 0.05);
+      padding: 18px 0;
+      font-size: 1.1rem;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
       border-radius: 0;
       height: auto;
       justify-content: space-between;
+      color: white;
     }
     
     .nav-menu a i:first-child {
-      margin-right: 12px;
+      margin-right: 15px;
     }
     
     .nav-menu a i.fa-chevron-down {
@@ -370,19 +452,21 @@
     
     .dropdown-content {
       display: none;
-      padding-left: 20px;
-      background: rgba(0, 135, 81, 0.03);
-      border-left: 3px solid var(--primary);
+      padding-left: 30px;
+      background: rgba(0, 0, 0, 0.1);
+      border-left: 3px solid var(--secondary);
       margin: 10px 0;
       border-radius: 0;
       box-shadow: none;
       position: static;
+      transform: none;
+      animation: none;
     }
     
     .dropdown-content a {
-      padding: 12px 0;
-      font-size: 0.95rem;
-      color: #666;
+      padding: 15px 0;
+      font-size: 1rem;
+      color: rgba(255, 255, 255, 0.9);
     }
     
     .dropdown.active .dropdown-content {
@@ -403,23 +487,23 @@
     
     /* Logo adjustments for mobile */
     .logo-text {
-      font-size: 1.2rem;
+      font-size: 1.4rem;
     }
     
     .logo-frame {
-      width: 40px;
-      height: 40px;
+      width: 48px;
+      height: 48px;
     }
   }
   
   @media (max-width: 576px) {
     .logo-text {
-      font-size: 1rem;
+      font-size: 1.2rem;
     }
     
     .logo-frame {
-      width: 36px;
-      height: 36px;
+      width: 44px;
+      height: 44px;
     }
     
     .header-container {
@@ -429,19 +513,24 @@
     .nav-menu li {
       padding: 0 1rem;
     }
+    
+    .nav-menu a {
+      font-size: 1rem;
+    }
   }
   
   @media (max-width: 400px) {
     .logo-text {
-      display: none;
+      font-size: 1rem;
     }
     
-    .logo {
-      gap: 0;
+    .logo-frame {
+      width: 40px;
+      height: 40px;
     }
   }
   
-  /* Hero Section */
+  /* ========== ENHANCED HERO SECTION WITH FADED LOGO BACKGROUND ========== */
   .hero {
     position: relative;
     height: clamp(500px, 85vh, 800px);
@@ -451,7 +540,7 @@
     justify-content: center;
     text-align: center;
     color: white;
-    background: #000;
+    background: linear-gradient(135deg, rgba(0, 135, 81, 0.9) 0%, rgba(0, 90, 58, 0.9) 100%);
     width: 100vw;
     left: 50%;
     right: 50%;
@@ -460,35 +549,54 @@
     margin-top: var(--menu-height);
   }
   
+  /* Faded Logo Background */
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: url('logo11.jpg');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    opacity: 0.15;
+    z-index: 0;
+  }
+  
+  /* Diamond pattern overlay */
+  .hero::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-image: 
+      linear-gradient(45deg, rgba(0, 135, 81, 0.1) 25%, transparent 25%),
+      linear-gradient(-45deg, rgba(0, 135, 81, 0.1) 25%, transparent 25%),
+      linear-gradient(45deg, transparent 75%, rgba(0, 135, 81, 0.1) 75%),
+      linear-gradient(-45deg, transparent 75%, rgba(0, 135, 81, 0.1) 75%);
+    background-size: 40px 40px;
+    background-position: 0 0, 0 20px, 20px -20px, -20px 0px;
+    opacity: 0.3;
+    z-index: 0;
+  }
+  
   .hero-overlay {
     position: absolute;
     top: 0;
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0, 0, 0, 0.15);
+    background: linear-gradient(135deg, rgba(0, 0, 0, 0.4) 0%, rgba(0, 0, 0, 0.2) 100%);
     z-index: 1;
-  }
-  
-  /* 7. FASTER VIDEO LOADING */
-  .hero-video {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    z-index: 0;
-    preload: auto;
-    playsinline: true;
-    muted: true;
-    loop: true;
-    autoplay: true;
   }
   
   /* 4. LOWER HERO TEXT */
   .hero-content {
-    max-width: min(90%, 800px);
+    max-width: min(90%, 900px);
     padding: 0 clamp(1rem, 3vw, 2rem);
     z-index: 2;
     position: relative;
@@ -496,12 +604,29 @@
   }
   
   .hero p {
-    font-size: clamp(1.125rem, 2.5vw, 1.5rem);
+    font-size: clamp(1.3rem, 2.8vw, 1.8rem);
     margin-bottom: clamp(2rem, 5vh, 2.5rem);
     opacity: 0.95;
-    font-weight: 300;
+    font-weight: 400;
     line-height: 1.8;
-    text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
+    text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+    background: rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(5px);
+    padding: 30px;
+    border-radius: 20px;
+    border: 1px solid rgba(255, 255, 255, 0.1);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .hero p::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 5px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary));
   }
   
   /* 5. FASTER & SLANTED BIBLE TICKER */
@@ -510,12 +635,13 @@
     bottom: 0;
     left: 0;
     width: 100%;
-    background: rgba(0, 0, 0, 0.7);
+    background: linear-gradient(135deg, rgba(0, 135, 81, 0.9) 0%, rgba(0, 90, 58, 0.9) 100%);
     color: var(--secondary);
     padding: clamp(0.5rem, 1.5vw, 0.625rem) 0;
     z-index: 3;
     overflow: hidden;
     transform: skewY(-3deg);
+    border-top: 2px solid rgba(255, 215, 0, 0.3);
   }
   
   .ticker-container {
@@ -527,11 +653,17 @@
   
   .ticker-item {
     padding: 0 clamp(1rem, 2vw, 1.875rem);
-    font-size: clamp(0.875rem, 1.5vw, 1.1rem);
+    font-size: clamp(0.9rem, 1.6vw, 1.2rem);
     font-style: italic;
     font-weight: 500;
     display: flex;
     align-items: center;
+    gap: 10px;
+  }
+  
+  .ticker-item i {
+    color: white;
+    font-size: 0.9em;
   }
   
   @keyframes ticker-scroll {
@@ -549,8 +681,8 @@
     top: var(--menu-height);
     left: 0;
     width: 0%;
-    height: 3px;
-    background: linear-gradient(90deg, var(--primary), var(--secondary));
+    height: 4px;
+    background: linear-gradient(90deg, var(--primary), var(--secondary), var(--primary));
     z-index: 1001;
     transition: width 0.1s ease;
   }
@@ -1489,7 +1621,7 @@
   <i class="fas fa-chevron-up"></i>
 </div>
 
-<header id="mainHeader" class="glass-effect">
+<header id="mainHeader">
   <div class="container header-container">
     <div class="logo">
       <!-- Make logo a home button -->
@@ -1497,7 +1629,7 @@
         <div class="logo-frame">
           <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
         </div>
-        <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+        <span class="logo-text">KINGDOM <span>CITIZENS</span> CHURCH INT'L</span>
       </a>
     </div>
     <div class="nav-container">
@@ -1537,12 +1669,7 @@
 
 <!-- Hero Section -->
 <section class="hero" id="home" id="main-content">
-  <!-- 7. FASTER VIDEO LOADING WITH OPTIMIZED ATTRIBUTES -->
-  <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
-    <source src="kingdom-video.mp4" type="video/mp4">
-    <source src="kingdom-video.webm" type="video/webm">
-    Your browser does not support the video tag.
-  </video>
+  <!-- Hero content with faded logo background -->
   <div class="hero-overlay"></div>
   
   <div class="hero-content">
@@ -1798,9 +1925,11 @@
 const header = document.getElementById('mainHeader');
 window.addEventListener('scroll', () => {
   if (window.scrollY > 50) {
-    header.classList.add('header-scrolled');
+    header.style.background = 'linear-gradient(135deg, rgba(0, 135, 81, 0.98) 0%, rgba(0, 90, 58, 0.98) 100%)';
+    header.style.boxShadow = '0 8px 32px rgba(0, 135, 81, 0.3)';
   } else {
-    header.classList.remove('header-scrolled');
+    header.style.background = 'linear-gradient(135deg, rgba(0, 135, 81, 0.98) 0%, rgba(0, 90, 58, 0.98) 100%)';
+    header.style.boxShadow = '0 8px 32px rgba(0, 135, 81, 0.3)';
   }
 });
 
@@ -2037,10 +2166,6 @@ window.addEventListener('scroll', requestTick, { passive: true });
 
 // Initialize on load
 window.addEventListener('DOMContentLoaded', function() {
-  // Preload video
-  const heroVideo = document.querySelector('.hero-video');
-  if (heroVideo) heroVideo.load();
-  
   // Initialize dynamic buttons
   initializeDynamicButtons();
   
