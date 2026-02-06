@@ -1,0 +1,2553 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="theme-color" content="#008751">
+    <meta name="description" content="Listen to powerful sermons from Kingdom Citizens Church INT'L. Biblical teaching from Pastor Sam Balogun and other ministers. Stream or download messages.">
+    <meta name="keywords" content="sermons, preaching, Bible teaching, audio messages, Christian sermons, Pastor Sam Balogun, Kingdom Citizens Church">
+    <meta name="author" content="Kingdom Citizens Church INT'L">
+    <meta property="og:title" content="Sermons - Kingdom Citizens Church INT'L | Biblical Teaching & Preaching">
+    <meta property="og:description" content="Listen to life-changing sermons from Kingdom Citizens Church INT'L. Stream or download audio messages.">
+    <meta property="og:image" content="https://kingdomcitizenschurchintl.org/sermon-cover.jpg">
+    <meta property="og:url" content="https://kingdomcitizenschurchintl.org/sermon.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Sermons - Kingdom Citizens Church INT'L">
+    <meta name="twitter:description" content="Listen to biblical teaching and preaching">
+    <meta name="twitter:image" content="https://kingdomcitizenschurchintl.org/sermon-cover.jpg">
+    
+    <title>Sermons - Kingdom Citizens Church INT'L | Listen to Biblical Teaching</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <!-- PWA Manifest for Background Audio -->
+    <link rel="manifest" href="manifest.json">
+    
+    <style>
+        :root {
+            --primary: #008751;
+            --secondary: #FFD700;
+            --light: #f8f9fa;
+            --dark: #222;
+            --accent: #005a3a;
+            --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFED4E 100%);
+            --dark-gradient: linear-gradient(135deg, #111 0%, #333 100%);
+            --player-height: 90px;
+            --sidebar-width: 280px;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: clamp(14px, 1vw, 18px);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #0a0a0a 0%, #111 100%);
+            color: #fff;
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            padding-top: 85px; /* For fixed header */
+            padding-bottom: var(--player-height); /* For fixed player */
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Container */
+        .container {
+            width: min(100% - clamp(1rem, 5vw, 3rem), 1400px);
+            margin: 0 auto;
+            padding: 0 clamp(0.5rem, 3vw, 1.5rem);
+        }
+        
+        /* ========== HEADER (Same as index) ========== */
+        header {
+            background: rgba(0, 0, 0, 0.95);
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.3);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 4px 0;
+            transition: all 0.4s ease;
+            height: 85px;
+            backdrop-filter: blur(10px);
+            -webkit-backdrop-filter: blur(10px);
+        }
+        
+        .header-scrolled {
+            background: rgba(0, 0, 0, 0.98);
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.5);
+            height: 75px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 77px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1002;
+        }
+        
+        .logo-frame {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+            border: 2px solid var(--secondary);
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-family: 'Lobster', cursive;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: white;
+            letter-spacing: 1px;
+            line-height: 1.2;
+            white-space: nowrap;
+            display: none;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: auto;
+        }
+        
+        /* Desktop Navigation */
+        @media (min-width: 993px) {
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                background: rgba(255, 255, 255, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 4px;
+            }
+            
+            .nav-menu li {
+                margin: 0 4px;
+                position: relative;
+            }
+            
+            .nav-menu a {
+                color: white;
+                font-weight: 500;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+                padding: 8px 15px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .nav-menu a i {
+                margin-right: 6px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(255, 255, 255, 0.15);
+                transform: translateY(-2px);
+            }
+            
+            .nav-menu a.active {
+                background: var(--secondary);
+                color: var(--primary);
+                font-weight: 600;
+            }
+            
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background: rgba(0, 0, 0, 0.95);
+                min-width: 180px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.5);
+                z-index: 1;
+                border-radius: 10px;
+                overflow: hidden;
+                top: 100%;
+                left: 0;
+                padding: 8px 0;
+                margin-top: 4px;
+                border: 1px solid rgba(255,255,255,0.1);
+                backdrop-filter: blur(10px);
+            }
+            
+            .dropdown-content a {
+                color: white;
+                padding: 8px 16px;
+                display: block;
+                font-size: 0.8rem;
+                border-radius: 0;
+            }
+            
+            .dropdown-content a:hover {
+                background: rgba(255, 255, 255, 0.1);
+                color: var(--secondary);
+                transform: none;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 2.5rem;
+            }
+            
+            .logo-frame {
+                width: 75px;
+                height: 75px;
+            }
+        }
+        
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            z-index: 1001;
+            background: var(--primary);
+            border-radius: 50%;
+            padding: 8px;
+            border: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.3);
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            background: white;
+            border-radius: 2px;
+            opacity: 1;
+            left: 10px;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .hamburger span:nth-child(1) { top: 14px; }
+        .hamburger span:nth-child(2) { top: 19px; }
+        .hamburger span:nth-child(3) { top: 24px; }
+        
+        .hamburger.active span:nth-child(1) {
+            top: 19px;
+            transform: rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            top: 19px;
+            transform: rotate(-45deg);
+        }
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: -100vh;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(rgba(0, 0, 0, 0.95), rgba(0, 0, 0, 0.95)), url('logo11.jpg');
+                background-size: cover;
+                background-position: center;
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 100px 20px 30px;
+                transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.5);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                top: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0 0 10px 0;
+                width: 100%;
+                max-width: 300px;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu li:nth-child(2) { transition-delay: 0.15s; }
+            .nav-menu li:nth-child(3) { transition-delay: 0.2s; }
+            .nav-menu li:nth-child(4) { transition-delay: 0.25s; }
+            .nav-menu li:nth-child(5) { transition-delay: 0.3s; }
+            .nav-menu li:nth-child(6) { transition-delay: 0.35s; }
+            .nav-menu li:nth-child(7) { transition-delay: 0.4s; }
+            .nav-menu li:nth-child(8) { transition-delay: 0.45s; }
+            .nav-menu li:nth-child(9) { transition-delay: 0.5s; }
+            
+            .nav-menu a {
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                width: 100%;
+                border-radius: 10px;
+                color: white;
+                background: rgba(255, 255, 255, 0.1);
+                margin-bottom: 5px;
+                border-left: 3px solid transparent;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(255, 255, 255, 0.2);
+                border-left: 3px solid var(--secondary);
+            }
+            
+            .nav-menu a i {
+                margin-right: 12px;
+                font-size: 1rem;
+                width: 20px;
+                text-align: center;
+            }
+            
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                background: rgba(255, 255, 255, 0.05);
+                margin: 5px 0 5px 15px;
+                border-radius: 8px;
+                padding: 5px 0;
+                border-left: 2px solid rgba(255, 255, 255, 0.1);
+            }
+            
+            .dropdown-content a {
+                padding: 10px 15px 10px 25px;
+                font-size: 0.9rem;
+                color: white;
+                border-radius: 0;
+                border-left: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 1.8rem;
+            }
+            
+            .logo-frame {
+                width: 65px;
+                height: 65px;
+                margin-right: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-frame {
+                width: 60px;
+                height: 60px;
+            }
+            
+            header {
+                height: 80px;
+            }
+            
+            .header-container {
+                height: 72px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .logo-frame {
+                width: 55px;
+                height: 55px;
+            }
+            
+            header {
+                height: 75px;
+            }
+            
+            .header-container {
+                height: 67px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo-frame {
+                width: 50px;
+                height: 50px;
+                margin-right: 8px;
+            }
+        }
+        
+        /* ========== SERMON HERO SECTION ========== */
+        .sermon-hero {
+            position: relative;
+            height: 50vh;
+            min-height: 400px;
+            background: linear-gradient(rgba(0, 0, 0, 0.8), rgba(0, 0, 0, 0.7)), url('sermon-bg.jpg') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: clamp(3rem, 8vw, 5rem);
+            overflow: hidden;
+        }
+        
+        .hero-content-sermon {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-divider {
+            width: 120px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+        
+        /* ========== MAIN CONTENT LAYOUT ========== */
+        .sermon-main {
+            padding: 0 0 2rem 0;
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 2rem;
+            max-width: 1400px;
+            margin: 0 auto;
+        }
+        
+        @media (min-width: 1200px) {
+            .sermon-main {
+                grid-template-columns: var(--sidebar-width) 1fr;
+            }
+        }
+        
+        /* ========== SIDEBAR - FILTERS & PREACHERS ========== */
+        .sermon-sidebar {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            height: fit-content;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sidebar-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.5rem;
+            margin-bottom: 1.5rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .sidebar-title i {
+            color: var(--secondary);
+        }
+        
+        /* Filter Section */
+        .filter-section {
+            margin-bottom: 2rem;
+        }
+        
+        .filter-title {
+            font-size: 1rem;
+            color: #aaa;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            margin-bottom: 1rem;
+        }
+        
+        .filter-options {
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+        
+        .filter-option {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            padding: 0.75rem 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .filter-option:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .filter-option.active {
+            background: rgba(0, 135, 81, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .filter-option i {
+            color: var(--secondary);
+            font-size: 0.9rem;
+        }
+        
+        /* Preachers Section */
+        .preachers-section {
+            margin-bottom: 2rem;
+        }
+        
+        .preacher-card {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 1rem;
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 10px;
+            margin-bottom: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border: 1px solid transparent;
+        }
+        
+        .preacher-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateX(5px);
+        }
+        
+        .preacher-card.active {
+            background: rgba(0, 135, 81, 0.2);
+            border-color: var(--primary);
+        }
+        
+        .preacher-avatar {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            overflow: hidden;
+            border: 2px solid var(--secondary);
+        }
+        
+        .preacher-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .preacher-info h4 {
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            color: white;
+        }
+        
+        .preacher-info p {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        /* Download Section */
+        .download-section {
+            background: rgba(0, 135, 81, 0.1);
+            border-radius: 15px;
+            padding: 1.5rem;
+            border: 1px solid rgba(0, 135, 81, 0.3);
+        }
+        
+        .download-title {
+            font-size: 1.2rem;
+            margin-bottom: 1rem;
+            color: white;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .download-title i {
+            color: var(--secondary);
+        }
+        
+        .download-btn {
+            display: inline-block;
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+            width: 100%;
+            text-align: center;
+        }
+        
+        .download-btn:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 90, 58, 0.4);
+        }
+        
+        /* ========== SERMON LISTING ========== */
+        .sermon-content {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 20px;
+            padding: 2rem;
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .content-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 2rem;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        .content-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            color: white;
+        }
+        
+        .sort-options {
+            display: flex;
+            gap: 1rem;
+            align-items: center;
+        }
+        
+        .sort-label {
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        .sort-select {
+            background: rgba(255, 255, 255, 0.1);
+            border: 1px solid rgba(255, 255, 255, 0.2);
+            color: white;
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-family: 'Poppins', sans-serif;
+            cursor: pointer;
+        }
+        
+        .sort-select:focus {
+            outline: none;
+            border-color: var(--secondary);
+        }
+        
+        /* Sermon Grid */
+        .sermon-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+            gap: 1.5rem;
+        }
+        
+        .sermon-card {
+            background: rgba(255, 255, 255, 0.05);
+            border-radius: 15px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .sermon-card:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-5px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.3);
+            border-color: rgba(255, 255, 255, 0.2);
+        }
+        
+        .sermon-card.active {
+            background: rgba(0, 135, 81, 0.15);
+            border-color: var(--primary);
+        }
+        
+        .sermon-cover {
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .sermon-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .sermon-card:hover .sermon-cover img {
+            transform: scale(1.05);
+        }
+        
+        .play-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .sermon-card:hover .play-overlay {
+            opacity: 1;
+        }
+        
+        .play-btn {
+            width: 60px;
+            height: 60px;
+            background: var(--secondary);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: var(--primary);
+            font-size: 1.5rem;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.5);
+            transition: transform 0.3s ease;
+        }
+        
+        .play-btn:hover {
+            transform: scale(1.1);
+        }
+        
+        .sermon-info {
+            padding: 1.5rem;
+        }
+        
+        .sermon-title {
+            font-size: 1.2rem;
+            margin-bottom: 0.5rem;
+            color: white;
+            line-height: 1.3;
+        }
+        
+        .sermon-preacher {
+            font-size: 0.9rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        .sermon-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        .sermon-date, .sermon-duration {
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        
+        /* ========== FIXED AUDIO PLAYER (Apple Music Style) ========== */
+        .audio-player {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: var(--player-height);
+            background: rgba(20, 20, 20, 0.98);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            display: flex;
+            align-items: center;
+            padding: 0 1.5rem;
+            z-index: 1001;
+            backdrop-filter: blur(20px);
+            -webkit-backdrop-filter: blur(20px);
+            transition: transform 0.3s ease;
+            box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.5);
+        }
+        
+        .audio-player.hidden {
+            transform: translateY(100%);
+        }
+        
+        /* Player Sections */
+        .player-section {
+            flex: 1;
+            display: flex;
+            align-items: center;
+        }
+        
+        .player-left {
+            flex: 2;
+            justify-content: flex-start;
+        }
+        
+        .player-center {
+            flex: 3;
+            justify-content: center;
+            flex-direction: column;
+            max-width: 700px;
+        }
+        
+        .player-right {
+            flex: 2;
+            justify-content: flex-end;
+        }
+        
+        /* Now Playing Info */
+        .now-playing {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+        
+        .now-playing-cover {
+            width: 60px;
+            height: 60px;
+            border-radius: 8px;
+            overflow: hidden;
+            flex-shrink: 0;
+        }
+        
+        .now-playing-cover img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .now-playing-info {
+            display: flex;
+            flex-direction: column;
+            gap: 5px;
+        }
+        
+        .now-playing-title {
+            font-size: 1rem;
+            font-weight: 500;
+            color: white;
+            white-space: nowrap;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            max-width: 250px;
+        }
+        
+        .now-playing-preacher {
+            font-size: 0.85rem;
+            color: #aaa;
+        }
+        
+        /* Playback Controls */
+        .playback-controls {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            gap: 20px;
+            width: 100%;
+        }
+        
+        .control-btn {
+            background: transparent;
+            border: none;
+            color: white;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            transition: all 0.2s ease;
+        }
+        
+        .control-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .control-btn.play-pause {
+            width: 50px;
+            height: 50px;
+            background: var(--secondary);
+            color: var(--primary);
+        }
+        
+        .control-btn.play-pause:hover {
+            transform: scale(1.05);
+        }
+        
+        .control-btn:disabled {
+            opacity: 0.5;
+            cursor: not-allowed;
+        }
+        
+        .control-btn:disabled:hover {
+            background: transparent;
+            transform: none;
+        }
+        
+        /* Progress Bar */
+        .progress-container {
+            width: 100%;
+            margin-top: 10px;
+        }
+        
+        .progress-bar {
+            width: 100%;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .progress {
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 2px;
+            width: 0%;
+            transition: width 0.1s linear;
+        }
+        
+        .progress-time {
+            display: flex;
+            justify-content: space-between;
+            margin-top: 5px;
+            font-size: 0.75rem;
+            color: #aaa;
+        }
+        
+        /* Volume Controls */
+        .volume-controls {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            max-width: 200px;
+        }
+        
+        .volume-icon {
+            color: #aaa;
+            font-size: 1rem;
+        }
+        
+        .volume-bar {
+            width: 100px;
+            height: 4px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 2px;
+            cursor: pointer;
+            position: relative;
+        }
+        
+        .volume-level {
+            height: 100%;
+            background: var(--secondary);
+            border-radius: 2px;
+            width: 70%;
+        }
+        
+        /* ========== MODAL FOR SERMON DETAILS ========== */
+        .sermon-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+        
+        .sermon-modal.active {
+            display: flex;
+            opacity: 1;
+        }
+        
+        .modal-content {
+            background: rgba(30, 30, 30, 0.95);
+            border-radius: 20px;
+            max-width: min(90%, 800px);
+            width: 90%;
+            overflow: hidden;
+            transform: scale(0.9);
+            transition: transform 0.3s ease;
+            backdrop-filter: blur(20px);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .sermon-modal.active .modal-content {
+            transform: scale(1);
+        }
+        
+        .modal-header {
+            padding: 2rem 2rem 1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+        }
+        
+        .modal-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            color: white;
+            margin-bottom: 0.5rem;
+        }
+        
+        .modal-preacher {
+            color: var(--secondary);
+            font-size: 1.1rem;
+        }
+        
+        .close-modal {
+            background: transparent;
+            border: none;
+            color: white;
+            font-size: 1.5rem;
+            cursor: pointer;
+            padding: 0.5rem;
+            border-radius: 50%;
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            transition: background 0.3s ease;
+        }
+        
+        .close-modal:hover {
+            background: rgba(255, 255, 255, 0.1);
+        }
+        
+        .modal-body {
+            padding: 1rem 2rem 2rem;
+        }
+        
+        .modal-description {
+            color: #ddd;
+            line-height: 1.7;
+            margin-bottom: 2rem;
+        }
+        
+        .modal-actions {
+            display: flex;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .modal-btn {
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+        
+        .modal-btn.primary {
+            background: var(--gradient);
+            color: white;
+        }
+        
+        .modal-btn.secondary {
+            background: transparent;
+            color: white;
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .modal-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* ========== FOOTER (Same as index but dark) ========== */
+        footer {
+            background: rgba(10, 10, 10, 0.95);
+            color: white;
+            padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 1.875rem);
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-image: url('logo11.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.8);
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.8);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+        
+        footer:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: clamp(2rem, 5vw, 3.125rem);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--secondary);
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.625rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: clamp(0.75rem, 2vw, 1rem);
+            margin-top: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(40px, 5vw, 45px);
+            height: clamp(40px, 5vw, 45px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            color: var(--dark);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: clamp(1rem, 2.5vw, 1.875rem);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+            color: #aaa;
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: calc(var(--player-height) + 20px);
+            right: clamp(1rem, 3vw, 1.875rem);
+            width: clamp(45px, 5vw, 50px);
+            height: clamp(45px, 5vw, 50px);
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Loading Animation */
+        .loading {
+            display: inline-block;
+            width: 20px;
+            height: 20px;
+            border: 2px solid rgba(255, 255, 255, 0.3);
+            border-radius: 50%;
+            border-top-color: var(--secondary);
+            animation: spin 1s ease-in-out infinite;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 992px) {
+            .sermon-main {
+                grid-template-columns: 1fr;
+            }
+            
+            .sermon-sidebar {
+                order: 2;
+            }
+            
+            .sermon-content {
+                order: 1;
+            }
+            
+            .audio-player {
+                flex-direction: column;
+                height: auto;
+                padding: 1rem;
+                gap: 1rem;
+            }
+            
+            .player-section {
+                width: 100%;
+                justify-content: center;
+            }
+            
+            .player-left, .player-center, .player-right {
+                flex: none;
+                width: 100%;
+            }
+            
+            .now-playing {
+                justify-content: center;
+                text-align: center;
+            }
+            
+            .volume-controls {
+                justify-content: center;
+                max-width: none;
+            }
+            
+            .scroll-top {
+                bottom: calc(var(--player-height) + 80px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .sermon-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .content-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .sort-options {
+                width: 100%;
+                justify-content: space-between;
+            }
+            
+            .sermon-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .sermon-hero {
+                height: 35vh;
+                min-height: 250px;
+            }
+            
+            .modal-actions {
+                flex-direction: column;
+            }
+            
+            .modal-btn {
+                width: 100%;
+                justify-content: center;
+            }
+        }
+        
+        /* Print styles */
+        @media print {
+            .no-print {
+                display: none !important;
+            }
+            
+            body {
+                font-size: 12pt;
+                line-height: 1.5;
+                background: white !important;
+                color: black !important;
+            }
+            
+            .sermon-hero {
+                background: var(--primary);
+                color: white;
+                height: auto;
+                padding: 2rem 0;
+            }
+            
+            .audio-player {
+                display: none !important;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header id="mainHeader" class="glass-effect">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-frame">
+                        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+                    </div>
+                    <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="department.html"><i class="fas fa-building"></i> Department</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-church"></i> Ministries <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="foundation.html">Foundation Class</a>
+                            <a href="counselling.html">Counselling</a>
+                            <a href="evangelism.html">Evangelism</a>
+                            <a href="library.html">Visit Library</a>
+                            <a href="sermon.html" class="active">Listen to Sermon</a>
+                            <a href="live.html">Watch Us Live</a>
+                        </div>
+                    </li>
+                    <li><a href="pastor-note.html"><i class="fas fa-user-tie"></i> Pastor's Desk</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join Us</a></li>
+                    <li><a href="donate.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                    <li><a href="sermon.html" class="active"><i class="fas fa-headphones"></i> Sermons</a></li>
+                    <li><a href="live.html"><i class="fas fa-video"></i> Watch Live</a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="sermon-hero">
+        <div class="hero-content-sermon animate-fadeInUp">
+            <h1 class="hero-title">Sermons</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Listen to Life-Changing Biblical Teaching</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="sermon-main container">
+        <!-- Sidebar with Filters and Preachers -->
+        <aside class="sermon-sidebar animate-fadeInUp">
+            <!-- Filter Section -->
+            <div class="filter-section">
+                <h3 class="sidebar-title"><i class="fas fa-filter"></i> Filter By</h3>
+                
+                <div class="filter-options">
+                    <div class="filter-option active" data-filter="all">
+                        <i class="fas fa-list"></i>
+                        <span>All Sermons</span>
+                    </div>
+                    <div class="filter-option" data-filter="recent">
+                        <i class="fas fa-clock"></i>
+                        <span>Recent</span>
+                    </div>
+                    <div class="filter-option" data-filter="popular">
+                        <i class="fas fa-fire"></i>
+                        <span>Most Popular</span>
+                    </div>
+                    <div class="filter-option" data-filter="series">
+                        <i class="fas fa-layer-group"></i>
+                        <span>Series</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Preachers Section -->
+            <div class="preachers-section">
+                <h3 class="sidebar-title"><i class="fas fa-users"></i> Preachers</h3>
+                
+                <div class="preacher-card active" data-preacher="all">
+                    <div class="preacher-avatar">
+                        <img src="logo11.jpg" alt="All Preachers">
+                    </div>
+                    <div class="preacher-info">
+                        <h4>All Preachers</h4>
+                        <p>All Messages</p>
+                    </div>
+                </div>
+                
+                <div class="preacher-card" data-preacher="sam-balogun">
+                    <div class="preacher-avatar">
+                        <img src="balogun21.jpg" alt="Pastor Sam Balogun">
+                    </div>
+                    <div class="preacher-info">
+                        <h4>Pastor Sam Balogun</h4>
+                        <p>Senior Pastor</p>
+                    </div>
+                </div>
+                
+                <div class="preacher-card" data-preacher="felicia-balogun">
+                    <div class="preacher-avatar">
+                        <img src="felicia.jpg" alt="Pastor Mrs Felicia Balogun">
+                    </div>
+                    <div class="preacher-info">
+                        <h4>Pastor Mrs. Felicia Balogun</h4>
+                        <p>Co-founder</p>
+                    </div>
+                </div>
+                
+                <div class="preacher-card" data-preacher="wale-somoye">
+                    <div class="preacher-avatar">
+                        <img src="wale11.jpg" alt="Pastor Wale Somoye">
+                    </div>
+                    <div class="preacher-info">
+                        <h4>Pastor Wale Somoye</h4>
+                        <p>Resident Pastor</p>
+                    </div>
+                </div>
+                
+                <div class="preacher-card" data-preacher="peter-oluwakunbi">
+                    <div class="preacher-avatar">
+                        <img src="kumbi.jpg" alt="Pastor Peter Oluwakunbi">
+                    </div>
+                    <div class="preacher-info">
+                        <h4>Pastor Peter Oluwakunbi</h4>
+                        <p>Youth Pastor</p>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Download App Section -->
+            <div class="download-section">
+                <h3 class="download-title"><i class="fas fa-mobile-alt"></i> Take Sermons With You</h3>
+                <p style="color: #aaa; font-size: 0.9rem; margin-bottom: 1rem;">Download our app to listen offline</p>
+                <a href="#" class="download-btn">
+                    <i class="fas fa-download"></i> Download App (Coming Soon)
+                </a>
+            </div>
+        </aside>
+        
+        <!-- Main Sermon Content -->
+        <section class="sermon-content animate-fadeInUp">
+            <div class="content-header">
+                <h2 class="content-title">Latest Sermons</h2>
+                <div class="sort-options">
+                    <span class="sort-label">Sort by:</span>
+                    <select class="sort-select" id="sortSelect">
+                        <option value="newest">Newest First</option>
+                        <option value="oldest">Oldest First</option>
+                        <option value="popular">Most Popular</option>
+                        <option value="duration">Duration</option>
+                    </select>
+                </div>
+            </div>
+            
+            <!-- Sermon Grid -->
+            <div class="sermon-grid" id="sermonGrid">
+                <!-- Sermons will be dynamically loaded here -->
+            </div>
+        </section>
+    </main>
+
+    <!-- Fixed Audio Player (Apple Music Style) -->
+    <div class="audio-player hidden" id="audioPlayer">
+        <!-- Left Section: Now Playing -->
+        <div class="player-section player-left">
+            <div class="now-playing">
+                <div class="now-playing-cover">
+                    <img src="sermon-cover1.jpg" alt="Now Playing" id="nowPlayingCover">
+                </div>
+                <div class="now-playing-info">
+                    <div class="now-playing-title" id="nowPlayingTitle">Select a sermon to play</div>
+                    <div class="now-playing-preacher" id="nowPlayingPreacher">Kingdom Citizens Church</div>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Center Section: Playback Controls -->
+        <div class="player-section player-center">
+            <div class="playback-controls">
+                <button class="control-btn" id="prevBtn" title="Previous" disabled>
+                    <i class="fas fa-step-backward"></i>
+                </button>
+                <button class="control-btn play-pause" id="playPauseBtn" title="Play/Pause">
+                    <i class="fas fa-play" id="playPauseIcon"></i>
+                </button>
+                <button class="control-btn" id="nextBtn" title="Next" disabled>
+                    <i class="fas fa-step-forward"></i>
+                </button>
+            </div>
+            
+            <div class="progress-container">
+                <div class="progress-bar" id="progressBar">
+                    <div class="progress" id="progress"></div>
+                </div>
+                <div class="progress-time">
+                    <span id="currentTime">0:00</span>
+                    <span id="duration">0:00</span>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Right Section: Volume & Settings -->
+        <div class="player-section player-right">
+            <div class="volume-controls">
+                <i class="fas fa-volume-up volume-icon"></i>
+                <div class="volume-bar" id="volumeBar">
+                    <div class="volume-level" id="volumeLevel"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Sermon Detail Modal -->
+    <div class="sermon-modal" id="sermonModal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <div>
+                    <h2 class="modal-title" id="modalTitle">Sermon Title</h2>
+                    <div class="modal-preacher" id="modalPreacher">Preacher Name</div>
+                </div>
+                <button class="close-modal" id="closeModal">
+                    <i class="fas fa-times"></i>
+                </button>
+            </div>
+            <div class="modal-body">
+                <div class="modal-description" id="modalDescription">
+                    Sermon description will appear here...
+                </div>
+                <div class="modal-actions">
+                    <button class="modal-btn primary" id="modalPlayBtn">
+                        <i class="fas fa-play"></i> Play Now
+                    </button>
+                    <button class="modal-btn secondary" id="modalDownloadBtn">
+                        <i class="fas fa-download"></i> Download
+                    </button>
+                    <button class="modal-btn secondary" id="modalShareBtn">
+                        <i class="fas fa-share-alt"></i> Share
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Kingdom Citizens Church INT'L</h3>
+                <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/kingdomcitizenschurchintl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/kingdomcitizens" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/kingdomcitizenschurchintl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/kingdomcitizenschurchintl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://tiktok.com/@kingdomcitizens" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="welcome.html">Welcome</a></li>
+                    <li><a href="department.html">Departments</a></li>
+                    <li><a href="service.html">Our Services</a></li>
+                    <li><a href="watch-live.html">Watch Live</a></li>
+                    <li><a href="donate.html">Give Online</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="pastor-note.html">Pastor's Desk</a></li>
+                    <li><a href="sermon.html">Listen to Sermons</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
+                    <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
+                    <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
+                    <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
+                    <li><i class="fas fa-clock"></i> Sunday School: 8am - 9am</li>
+                    <li><i class="fas fa-clock"></i> Sunday Service: 9am - 11am (Jesus Celebration Service)</li>
+                    <li><i class="fas fa-clock"></i> Wednesday: Communion Service 5pm - 6:30pm</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+        </div>
+    </footer>
+
+    <!-- Hidden Audio Element for Background Playback -->
+    <audio id="audioElement" preload="metadata" crossorigin="anonymous"></audio>
+
+    <!-- Service Worker Registration for Background Audio -->
+    <script>
+        // Register service worker for PWA capabilities (background audio)
+        if ('serviceWorker' in navigator) {
+            window.addEventListener('load', () => {
+                navigator.serviceWorker.register('/sw.js').then(registration => {
+                    console.log('ServiceWorker registration successful');
+                }).catch(err => {
+                    console.log('ServiceWorker registration failed: ', err);
+                });
+            });
+        }
+    </script>
+
+    <script>
+        // ========== SERMON DATA ==========
+        const sermons = [
+            {
+                id: 1,
+                title: "The Kingdom Citizen's Identity",
+                preacher: "Pastor Sam Balogun",
+                preacherId: "sam-balogun",
+                date: "2025-03-15",
+                duration: "45:22",
+                cover: "sermon-cover1.jpg",
+                audio: "sermons/kingdom-identity.mp3",
+                description: "Discover your true identity as a citizen of God's kingdom. Learn how to walk in your royal authority and fulfill your divine purpose on earth.",
+                series: "Kingdom Identity",
+                plays: 1245,
+                isRecent: true,
+                isPopular: true
+            },
+            {
+                id: 2,
+                title: "Walking in Divine Health",
+                preacher: "Pastor Mrs. Felicia Balogun",
+                preacherId: "felicia-balogun",
+                date: "2025-03-08",
+                duration: "38:15",
+                cover: "sermon-cover2.jpg",
+                audio: "sermons/divine-health.mp3",
+                description: "Understanding God's plan for your health and wellness. Practical steps to walk in divine health and healing every day.",
+                series: "Health and Wholeness",
+                plays: 987,
+                isRecent: true,
+                isPopular: true
+            },
+            {
+                id: 3,
+                title: "The Power of Kingdom Prayer",
+                preacher: "Pastor Wale Somoye",
+                preacherId: "wale-somoye",
+                date: "2025-03-01",
+                duration: "52:10",
+                cover: "sermon-cover3.jpg",
+                audio: "sermons/kingdom-prayer.mp3",
+                description: "Learn how to pray effectively as a kingdom citizen. Understanding the principles of intercession and spiritual warfare.",
+                series: "Prayer Series",
+                plays: 856,
+                isRecent: true,
+                isPopular: false
+            },
+            {
+                id: 4,
+                title: "Youth and Kingdom Purpose",
+                preacher: "Pastor Peter Oluwakunbi",
+                preacherId: "peter-oluwakunbi",
+                date: "2025-02-22",
+                duration: "41:33",
+                cover: "sermon-cover4.jpg",
+                audio: "sermons/youth-purpose.mp3",
+                description: "Discovering God's purpose for the younger generation. How to live purposefully in a changing world as a kingdom youth.",
+                series: "Youth Empowerment",
+                plays: 1123,
+                isRecent: true,
+                isPopular: true
+            },
+            {
+                id: 5,
+                title: "Financial Wisdom for Kingdom Citizens",
+                preacher: "Pastor Sam Balogun",
+                preacherId: "sam-balogun",
+                date: "2025-02-15",
+                duration: "49:45",
+                cover: "sermon-cover5.jpg",
+                audio: "sermons/financial-wisdom.mp3",
+                description: "Biblical principles of wealth creation and financial management for kingdom citizens seeking to prosper God's way.",
+                series: "Kingdom Prosperity",
+                plays: 1345,
+                isRecent: false,
+                isPopular: true
+            },
+            {
+                id: 6,
+                title: "The Royal Woman",
+                preacher: "Pastor Mrs. Felicia Balogun",
+                preacherId: "felicia-balogun",
+                date: "2025-02-08",
+                duration: "36:20",
+                cover: "sermon-cover6.jpg",
+                audio: "sermons/royal-woman.mp3",
+                description: "Embracing your identity as a royal woman in God's kingdom. Balancing grace, strength, and purpose in today's world.",
+                series: "Women of Purpose",
+                plays: 765,
+                isRecent: false,
+                isPopular: false
+            },
+            {
+                id: 7,
+                title: "Building Kingdom Families",
+                preacher: "Pastor Wale Somoye",
+                preacherId: "wale-somoye",
+                date: "2025-02-01",
+                duration: "47:18",
+                cover: "sermon-cover7.jpg",
+                audio: "sermons/kingdom-families.mp3",
+                description: "Principles for building godly families that reflect God's kingdom values and raise kingdom-minded children.",
+                series: "Family Series",
+                plays: 923,
+                isRecent: false,
+                isPopular: true
+            },
+            {
+                id: 8,
+                title: "Next Generation Leadership",
+                preacher: "Pastor Peter Oluwakunbi",
+                preacherId: "peter-oluwakunbi",
+                date: "2025-01-25",
+                duration: "39:55",
+                cover: "sermon-cover8.jpg",
+                audio: "sermons/nextgen-leadership.mp3",
+                description: "Equipping the next generation with leadership skills rooted in kingdom principles for effective ministry and influence.",
+                series: "Leadership Development",
+                plays: 678,
+                isRecent: false,
+                isPopular: false
+            },
+            {
+                id: 9,
+                title: "The Authority of the Believer",
+                preacher: "Pastor Sam Balogun",
+                preacherId: "sam-balogun",
+                date: "2025-01-18",
+                duration: "51:30",
+                cover: "sermon-cover9.jpg",
+                audio: "sermons/believers-authority.mp3",
+                description: "Understanding and exercising the spiritual authority given to every believer in Christ over circumstances and spiritual forces.",
+                series: "Spiritual Authority",
+                plays: 1543,
+                isRecent: false,
+                isPopular: true
+            },
+            {
+                id: 10,
+                title: "Overcoming Life's Challenges",
+                preacher: "Pastor Mrs. Felicia Balogun",
+                preacherId: "felicia-balogun",
+                date: "2025-01-11",
+                duration: "42:15",
+                cover: "sermon-cover10.jpg",
+                audio: "sermons/overcoming-challenges.mp3",
+                description: "Biblical strategies for overcoming life's challenges and emerging stronger through faith and perseverance.",
+                series: "Victory Series",
+                plays: 832,
+                isRecent: false,
+                isPopular: true
+            }
+        ];
+
+        // ========== AUDIO PLAYER STATE ==========
+        let currentSermon = null;
+        let isPlaying = false;
+        let currentTime = 0;
+        let volume = 0.7;
+        let currentFilter = 'all';
+        let currentPreacher = 'all';
+        let currentSort = 'newest';
+
+        // ========== DOM ELEMENTS ==========
+        const audioPlayer = document.getElementById('audioPlayer');
+        const audioElement = document.getElementById('audioElement');
+        const playPauseBtn = document.getElementById('playPauseBtn');
+        const playPauseIcon = document.getElementById('playPauseIcon');
+        const prevBtn = document.getElementById('prevBtn');
+        const nextBtn = document.getElementById('nextBtn');
+        const progressBar = document.getElementById('progressBar');
+        const progress = document.getElementById('progress');
+        const currentTimeEl = document.getElementById('currentTime');
+        const durationEl = document.getElementById('duration');
+        const volumeBar = document.getElementById('volumeBar');
+        const volumeLevel = document.getElementById('volumeLevel');
+        const nowPlayingCover = document.getElementById('nowPlayingCover');
+        const nowPlayingTitle = document.getElementById('nowPlayingTitle');
+        const nowPlayingPreacher = document.getElementById('nowPlayingPreacher');
+        const sermonGrid = document.getElementById('sermonGrid');
+        const sortSelect = document.getElementById('sortSelect');
+        const sermonModal = document.getElementById('sermonModal');
+        const closeModal = document.getElementById('closeModal');
+        const modalTitle = document.getElementById('modalTitle');
+        const modalPreacher = document.getElementById('modalPreacher');
+        const modalDescription = document.getElementById('modalDescription');
+        const modalPlayBtn = document.getElementById('modalPlayBtn');
+        const modalDownloadBtn = document.getElementById('modalDownloadBtn');
+        const modalShareBtn = document.getElementById('modalShareBtn');
+
+        // ========== HEADER SCROLL EFFECT ==========
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // ========== MOBILE MENU FUNCTIONALITY ==========
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        let isMenuOpen = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isMenuOpen);
+            
+            if (isMenuOpen) {
+                document.body.classList.add('menu-open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Dropdown menu on mobile
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('a');
+            
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close all other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992 && isMenuOpen) {
+                if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+                    isMenuOpen = false;
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Also close any open dropdowns
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            }
+        });
+
+        // Close menu when clicking a regular link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            if (!link.parentElement.classList.contains('dropdown')) {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992 && isMenuOpen) {
+                        isMenuOpen = false;
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+
+        // ========== FILTER AND SORT FUNCTIONALITY ==========
+        document.querySelectorAll('.filter-option').forEach(option => {
+            option.addEventListener('click', () => {
+                // Remove active class from all filter options
+                document.querySelectorAll('.filter-option').forEach(opt => {
+                    opt.classList.remove('active');
+                });
+                
+                // Add active class to clicked option
+                option.classList.add('active');
+                
+                // Update current filter
+                currentFilter = option.dataset.filter;
+                
+                // Render filtered sermons
+                renderSermons();
+            });
+        });
+
+        document.querySelectorAll('.preacher-card').forEach(card => {
+            card.addEventListener('click', () => {
+                // Remove active class from all preacher cards
+                document.querySelectorAll('.preacher-card').forEach(c => {
+                    c.classList.remove('active');
+                });
+                
+                // Add active class to clicked card
+                card.classList.add('active');
+                
+                // Update current preacher
+                currentPreacher = card.dataset.preacher;
+                
+                // Render filtered sermons
+                renderSermons();
+            });
+        });
+
+        sortSelect.addEventListener('change', () => {
+            currentSort = sortSelect.value;
+            renderSermons();
+        });
+
+        // ========== RENDER SERMONS ==========
+        function renderSermons() {
+            // Filter sermons
+            let filteredSermons = sermons.filter(sermon => {
+                // Apply filter
+                if (currentFilter === 'recent' && !sermon.isRecent) return false;
+                if (currentFilter === 'popular' && !sermon.isPopular) return false;
+                if (currentFilter === 'series') return sermon.series !== undefined;
+                
+                // Apply preacher filter
+                if (currentPreacher !== 'all' && sermon.preacherId !== currentPreacher) return false;
+                
+                return true;
+            });
+            
+            // Sort sermons
+            filteredSermons.sort((a, b) => {
+                switch (currentSort) {
+                    case 'newest':
+                        return new Date(b.date) - new Date(a.date);
+                    case 'oldest':
+                        return new Date(a.date) - new Date(b.date);
+                    case 'popular':
+                        return b.plays - a.plays;
+                    case 'duration':
+                        return parseFloat(b.duration.replace(':', '.')) - parseFloat(a.duration.replace(':', '.'));
+                    default:
+                        return new Date(b.date) - new Date(a.date);
+                }
+            });
+            
+            // Clear grid
+            sermonGrid.innerHTML = '';
+            
+            // Render sermons
+            filteredSermons.forEach(sermon => {
+                const sermonCard = document.createElement('div');
+                sermonCard.className = 'sermon-card';
+                if (currentSermon && currentSermon.id === sermon.id) {
+                    sermonCard.classList.add('active');
+                }
+                sermonCard.dataset.id = sermon.id;
+                
+                sermonCard.innerHTML = `
+                    <div class="sermon-cover">
+                        <img src="${sermon.cover}" alt="${sermon.title}">
+                        <div class="play-overlay">
+                            <div class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="sermon-info">
+                        <h3 class="sermon-title">${sermon.title}</h3>
+                        <div class="sermon-preacher">
+                            <i class="fas fa-user"></i> ${sermon.preacher}
+                        </div>
+                        <div class="sermon-meta">
+                            <div class="sermon-date">
+                                <i class="far fa-calendar"></i> ${formatDate(sermon.date)}
+                            </div>
+                            <div class="sermon-duration">
+                                <i class="far fa-clock"></i> ${sermon.duration}
+                            </div>
+                        </div>
+                    </div>
+                `;
+                
+                sermonCard.addEventListener('click', () => {
+                    openSermonModal(sermon);
+                });
+                
+                sermonGrid.appendChild(sermonCard);
+            });
+        }
+
+        function formatDate(dateString) {
+            const date = new Date(dateString);
+            return date.toLocaleDateString('en-US', { 
+                year: 'numeric', 
+                month: 'short', 
+                day: 'numeric' 
+            });
+        }
+
+        // ========== MODAL FUNCTIONALITY ==========
+        function openSermonModal(sermon) {
+            modalTitle.textContent = sermon.title;
+            modalPreacher.textContent = sermon.preacher;
+            modalDescription.textContent = sermon.description;
+            
+            // Update modal buttons
+            modalPlayBtn.innerHTML = `<i class="fas fa-play"></i> ${currentSermon && currentSermon.id === sermon.id && isPlaying ? 'Pause' : 'Play Now'}`;
+            modalDownloadBtn.innerHTML = `<i class="fas fa-download"></i> Download`;
+            modalShareBtn.innerHTML = `<i class="fas fa-share-alt"></i> Share`;
+            
+            // Add event listeners
+            modalPlayBtn.onclick = () => {
+                playSermon(sermon);
+                sermonModal.classList.remove('active');
+            };
+            
+            modalDownloadBtn.onclick = () => {
+                downloadSermon(sermon);
+            };
+            
+            modalShareBtn.onclick = () => {
+                shareSermon(sermon);
+            };
+            
+            sermonModal.classList.add('active');
+        }
+
+        closeModal.addEventListener('click', () => {
+            sermonModal.classList.remove('active');
+        });
+
+        sermonModal.addEventListener('click', (e) => {
+            if (e.target === sermonModal) {
+                sermonModal.classList.remove('active');
+            }
+        });
+
+        // ========== AUDIO PLAYER FUNCTIONALITY ==========
+        function playSermon(sermon) {
+            // If the same sermon is already playing, toggle play/pause
+            if (currentSermon && currentSermon.id === sermon.id) {
+                togglePlayPause();
+                return;
+            }
+            
+            // Stop current audio if playing
+            if (isPlaying) {
+                audioElement.pause();
+            }
+            
+            // Set new sermon
+            currentSermon = sermon;
+            audioElement.src = sermon.audio;
+            
+            // Update UI
+            nowPlayingCover.src = sermon.cover;
+            nowPlayingTitle.textContent = sermon.title;
+            nowPlayingPreacher.textContent = sermon.preacher;
+            
+            // Show player
+            audioPlayer.classList.remove('hidden');
+            
+            // Play audio
+            audioElement.play().then(() => {
+                isPlaying = true;
+                playPauseIcon.className = 'fas fa-pause';
+                updateActiveSermonCard();
+            }).catch(error => {
+                console.error('Error playing audio:', error);
+                alert('Unable to play audio. Please check your internet connection.');
+            });
+            
+            // Enable/disable navigation buttons
+            updateNavigationButtons();
+        }
+
+        function togglePlayPause() {
+            if (!currentSermon) return;
+            
+            if (isPlaying) {
+                audioElement.pause();
+                playPauseIcon.className = 'fas fa-play';
+            } else {
+                audioElement.play().then(() => {
+                    playPauseIcon.className = 'fas fa-pause';
+                }).catch(error => {
+                    console.error('Error playing audio:', error);
+                });
+            }
+            
+            isPlaying = !isPlaying;
+            
+            // Update modal button if open
+            if (sermonModal.classList.contains('active')) {
+                modalPlayBtn.innerHTML = `<i class="fas fa-${isPlaying ? 'pause' : 'play'}"></i> ${isPlaying ? 'Pause' : 'Play Now'}`;
+            }
+        }
+
+        function playNextSermon() {
+            if (!currentSermon) return;
+            
+            const currentIndex = sermons.findIndex(s => s.id === currentSermon.id);
+            const nextIndex = (currentIndex + 1) % sermons.length;
+            
+            playSermon(sermons[nextIndex]);
+        }
+
+        function playPreviousSermon() {
+            if (!currentSermon) return;
+            
+            const currentIndex = sermons.findIndex(s => s.id === currentSermon.id);
+            const prevIndex = (currentIndex - 1 + sermons.length) % sermons.length;
+            
+            playSermon(sermons[prevIndex]);
+        }
+
+        function updateNavigationButtons() {
+            if (currentSermon) {
+                prevBtn.disabled = false;
+                nextBtn.disabled = false;
+            } else {
+                prevBtn.disabled = true;
+                nextBtn.disabled = true;
+            }
+        }
+
+        function updateActiveSermonCard() {
+            // Remove active class from all sermon cards
+            document.querySelectorAll('.sermon-card').forEach(card => {
+                card.classList.remove('active');
+            });
+            
+            // Add active class to current sermon card
+            if (currentSermon) {
+                const activeCard = document.querySelector(`.sermon-card[data-id="${currentSermon.id}"]`);
+                if (activeCard) {
+                    activeCard.classList.add('active');
+                }
+            }
+        }
+
+        // ========== AUDIO EVENT LISTENERS ==========
+        audioElement.addEventListener('loadedmetadata', () => {
+            durationEl.textContent = formatTime(audioElement.duration);
+        });
+
+        audioElement.addEventListener('timeupdate', () => {
+            if (!isNaN(audioElement.duration)) {
+                currentTime = audioElement.currentTime;
+                const progressPercent = (currentTime / audioElement.duration) * 100;
+                progress.style.width = `${progressPercent}%`;
+                currentTimeEl.textContent = formatTime(currentTime);
+            }
+        });
+
+        audioElement.addEventListener('ended', () => {
+            // Auto-play next sermon
+            playNextSermon();
+        });
+
+        audioElement.addEventListener('error', (e) => {
+            console.error('Audio error:', e);
+            alert('Error loading audio. Please try again or select another sermon.');
+        });
+
+        // ========== PLAYER CONTROLS ==========
+        playPauseBtn.addEventListener('click', togglePlayPause);
+
+        prevBtn.addEventListener('click', playPreviousSermon);
+
+        nextBtn.addEventListener('click', playNextSermon);
+
+        // Progress bar click to seek
+        progressBar.addEventListener('click', (e) => {
+            if (!currentSermon || isNaN(audioElement.duration)) return;
+            
+            const rect = progressBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            audioElement.currentTime = percent * audioElement.duration;
+        });
+
+        // Volume control
+        volumeBar.addEventListener('click', (e) => {
+            const rect = volumeBar.getBoundingClientRect();
+            const percent = (e.clientX - rect.left) / rect.width;
+            volume = Math.max(0, Math.min(1, percent));
+            audioElement.volume = volume;
+            volumeLevel.style.width = `${volume * 100}%`;
+        });
+
+        // Set initial volume
+        audioElement.volume = volume;
+        volumeLevel.style.width = `${volume * 100}%`;
+
+        // ========== UTILITY FUNCTIONS ==========
+        function formatTime(seconds) {
+            if (isNaN(seconds)) return '0:00';
+            
+            const mins = Math.floor(seconds / 60);
+            const secs = Math.floor(seconds % 60);
+            return `${mins}:${secs.toString().padStart(2, '0')}`;
+        }
+
+        function downloadSermon(sermon) {
+            // In a real implementation, this would trigger a download
+            alert(`Downloading: ${sermon.title}\n\nIn a production environment, this would start the download of the audio file.`);
+            
+            // For demo purposes, we'll simulate a download
+            const link = document.createElement('a');
+            link.href = sermon.audio;
+            link.download = `${sermon.title.replace(/\s+/g, '_')}.mp3`;
+            document.body.appendChild(link);
+            link.click();
+            document.body.removeChild(link);
+        }
+
+        function shareSermon(sermon) {
+            if (navigator.share) {
+                navigator.share({
+                    title: sermon.title,
+                    text: `Listen to "${sermon.title}" by ${sermon.preacher} from Kingdom Citizens Church INT'L`,
+                    url: window.location.href
+                }).catch(error => {
+                    console.log('Error sharing:', error);
+                });
+            } else {
+                // Fallback: Copy to clipboard
+                const shareText = `Listen to "${sermon.title}" by ${sermon.preacher} from Kingdom Citizens Church INT'L: ${window.location.href}`;
+                navigator.clipboard.writeText(shareText).then(() => {
+                    alert('Link copied to clipboard!');
+                }).catch(error => {
+                    console.error('Error copying to clipboard:', error);
+                    prompt('Copy this link to share:', window.location.href);
+                });
+            }
+        }
+
+        // ========== KEYBOARD SHORTCUTS ==========
+        document.addEventListener('keydown', (e) => {
+            // Space bar to play/pause
+            if (e.code === 'Space' && !e.target.matches('input, textarea, button, a')) {
+                e.preventDefault();
+                togglePlayPause();
+            }
+            
+            // Left/Right arrow for seeking
+            if (e.code === 'ArrowLeft' && currentSermon) {
+                e.preventDefault();
+                audioElement.currentTime = Math.max(0, audioElement.currentTime - 10);
+            }
+            
+            if (e.code === 'ArrowRight' && currentSermon) {
+                e.preventDefault();
+                audioElement.currentTime = Math.min(audioElement.duration, audioElement.currentTime + 10);
+            }
+        });
+
+        // ========== SCROLL TO TOP BUTTON ==========
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // ========== INITIALIZE ==========
+        // Render sermons on load
+        renderSermons();
+        
+        // Set up Media Session API for background playback controls
+        if ('mediaSession' in navigator) {
+            navigator.mediaSession.setActionHandler('play', () => {
+                if (currentSermon && !isPlaying) {
+                    togglePlayPause();
+                }
+            });
+            
+            navigator.mediaSession.setActionHandler('pause', () => {
+                if (currentSermon && isPlaying) {
+                    togglePlayPause();
+                }
+            });
+            
+            navigator.mediaSession.setActionHandler('previoustrack', () => {
+                if (currentSermon) {
+                    playPreviousSermon();
+                }
+            });
+            
+            navigator.mediaSession.setActionHandler('nexttrack', () => {
+                if (currentSermon) {
+                    playNextSermon();
+                }
+            });
+            
+            // Update metadata when playing
+            audioElement.addEventListener('play', () => {
+                if (currentSermon) {
+                    navigator.mediaSession.metadata = new MediaMetadata({
+                        title: currentSermon.title,
+                        artist: currentSermon.preacher,
+                        album: 'Kingdom Citizens Church INT\'L',
+                        artwork: [
+                            { src: currentSermon.cover, sizes: '96x96', type: 'image/jpeg' },
+                            { src: currentSermon.cover, sizes: '128x128', type: 'image/jpeg' },
+                            { src: currentSermon.cover, sizes: '192x192', type: 'image/jpeg' },
+                            { src: currentSermon.cover, sizes: '256x256', type: 'image/jpeg' },
+                            { src: currentSermon.cover, sizes: '384x384', type: 'image/jpeg' },
+                            { src: currentSermon.cover, sizes: '512x512', type: 'image/jpeg' }
+                        ]
+                    });
+                }
+            });
+        }
+        
+        // Fix for window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && isMenuOpen) {
+                isMenuOpen = false;
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+                
+                // Close any open dropdowns
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        // Initialize animations
+        window.addEventListener('DOMContentLoaded', function() {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                        el.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, 100);
+        });
+    </script>
+</body>
+</html>
