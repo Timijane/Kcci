@@ -4,14 +4,13 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
 <meta name="theme-color" content="#008751">
-<meta name="description" content="Seed Royal School Registration - Kingdom Citizens Church INT'L's Christian educational institution offering quality academic and spiritual foundation.">
-<title>Seed Royal School Registration - Kingdom Citizens Church INT'L</title>
+<meta name="description" content="Seed Royal Bible Study - Kingdom Citizens Church INT'L's program teaching God's Word to young people ages 7-20.">
+<title>Seed Royal Bible Study Registration - Kingdom Citizens Church INT'L</title>
 <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600&display=swap" rel="stylesheet">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <style>
-  /* ============ BASE STYLES ============ */
   :root {
     --primary: #008751;
     --secondary: #FFD700;
@@ -53,9 +52,6 @@
   
   body.menu-open {
     overflow: hidden;
-    position: fixed;
-    width: 100%;
-    height: 100%;
   }
   
   a {
@@ -63,6 +59,7 @@
     color: inherit;
   }
   
+  /* Enhanced container for better responsiveness */
   .container {
     width: min(100% - clamp(1rem, 5vw, 3rem), 1200px);
     margin: 0 auto;
@@ -92,170 +89,220 @@
     box-shadow: 0 6px 20px rgba(0, 90, 58, 0.25);
   }
   
+  /* Professional touch: Glass morphism effect */
   .glass-effect {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
   
-  /* ============ HEADER STYLES ============ */
+  /* ========== UPDATED HEADER ========== */
   header {
-    background: linear-gradient(90deg, #008751, #FFD700);
-    box-shadow: 0 3px 20px rgba(0, 0, 0, 0.08);
-    position: sticky;
+    background: white;
+    box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+    position: fixed;
     top: 0;
-    z-index: 1000;
-    padding: 8px 0;
-    transition: all 0.3s ease;
+    left: 0;
     width: 100%;
+    z-index: 1000;
+    padding: 4px 0;
+    transition: all 0.4s ease;
+    height: 85px; /* Increased height for bigger logo */
+  }
+  
+  .header-scrolled {
+    background: white;
+    box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+    height: 75px;
   }
   
   .header-container {
     display: flex;
     justify-content: space-between;
     align-items: center;
-    padding: 0 clamp(1rem, 3vw, 2rem);
+    padding: 0 clamp(0.75rem, 2vw, 1.5rem);
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
+    height: 77px; /* Increased container height */
   }
   
   .logo {
     display: flex;
     align-items: center;
-    position: absolute;
-    left: 50%;
-    transform: translateX(-50%);
+    z-index: 1002;
   }
   
-  /* REDUCED LOGO SIZE */
   .logo-frame {
-    width: clamp(60px, 8vw, 80px);
-    height: clamp(60px, 8vw, 80px);
+    width: 70px; /* Increased by 46% from original */
+    height: 70px; /* Increased by 46% from original */
     border-radius: 50%;
-    background: white;
-    border: 3px solid var(--secondary);
     display: flex;
     align-items: center;
     justify-content: center;
-    margin-right: clamp(0.5rem, 1.5vw, 1rem);
+    margin-right: 15px;
     overflow: hidden;
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+    border: 2px solid var(--secondary);
+    background: white;
+    transition: all 0.3s ease;
   }
   
   .logo-frame img {
-    width: 85%;
-    height: 85%;
-    object-fit: contain;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
   }
   
-  /* REDUCED CHURCH NAME TEXT SIZE */
+  .logo-link {
+    display: flex;
+    align-items: center;
+    text-decoration: none;
+  }
+  
   .logo-text {
     font-family: 'Lobster', cursive;
-    font-size: clamp(1.2rem, 2.5vw, 1.8rem);
+    font-size: 2.2rem; /* Increased font size */
     font-weight: 400;
-    color: #008751;
+    color: var(--primary);
     letter-spacing: 1px;
-    line-height: 1;
-    text-align: center;
+    line-height: 1.2;
     white-space: nowrap;
-    text-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    display: none;
+    text-shadow: none;
   }
   
+  /* Updated Navigation - New Design */
   .nav-container {
     display: flex;
     align-items: center;
     justify-content: flex-end;
-    width: 100%;
+    width: auto;
   }
   
+  /* Desktop Navigation - Updated Design */
   @media (min-width: 993px) {
     .nav-menu {
       display: flex;
       list-style: none;
+      background: rgba(0, 135, 81, 0.1);
+      backdrop-filter: blur(10px);
+      border-radius: 30px;
+      padding: 4px;
     }
     
     .nav-menu li {
-      margin-left: clamp(1rem, 2vw, 1.875rem);
+      margin: 0 4px;
       position: relative;
     }
     
     .nav-menu a {
-      color: white;
+      color: var(--primary);
       font-weight: 500;
-      font-size: clamp(0.875rem, 1vw, 0.9375rem);
+      font-size: 0.85rem;
       transition: all 0.3s ease;
-      padding: 8px 0;
-      position: relative;
-      text-shadow: 0 1px 2px rgba(0, 0, 0, 0.3);
+      padding: 8px 15px;
+      border-radius: 20px;
+      display: flex;
+      align-items: center;
+      text-shadow: none;
     }
     
-    .nav-menu a::after {
-      content: '';
-      position: absolute;
-      bottom: 0;
-      left: 0;
-      width: 0;
-      height: 2px;
-      background: white;
-      transition: width 0.3s ease;
+    .nav-menu a i {
+      margin-right: 6px;
+      font-size: 0.9rem;
     }
     
-    .nav-menu a:hover::after {
-      width: 100%;
+    .nav-menu a:hover {
+      background: rgba(0, 135, 81, 0.15);
+      transform: translateY(-2px);
+    }
+    
+    .nav-menu a.active {
+      background: var(--secondary);
+      color: var(--primary);
+      font-weight: 600;
     }
     
     .dropdown-content {
       display: none;
       position: absolute;
       background: white;
-      min-width: 200px;
-      box-shadow: 0 15px 30px rgba(0, 0, 0, 0.1);
+      min-width: 180px;
+      box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
       z-index: 1;
       border-radius: 10px;
       overflow: hidden;
       top: 100%;
       left: 0;
-      padding: 10px 0;
+      padding: 8px 0;
+      margin-top: 4px;
+      border: 1px solid rgba(0,0,0,0.05);
+    }
+    
+    .dropdown-content a {
+      color: var(--dark);
+      padding: 8px 16px;
+      display: block;
+      font-size: 0.8rem;
+      border-radius: 0;
+    }
+    
+    .dropdown-content a:hover {
+      background: #f8f9fa;
+      color: var(--primary);
+      transform: none;
     }
     
     .dropdown:hover .dropdown-content {
       display: block;
     }
+    
+    .logo-text {
+      display: block;
+      font-size: 2.5rem; /* Even bigger on desktop */
+    }
+    
+    .logo-frame {
+      width: 75px;
+      height: 75px;
+    }
   }
   
+  /* Mobile Menu - COMPLETELY REDESIGNED TO SLIDE FROM TOP */
   .hamburger {
     display: none;
     cursor: pointer;
-    width: 44px;
-    height: 44px;
+    width: 40px; /* Fixed: Made smaller */
+    height: 40px; /* Fixed: Made smaller */
     position: relative;
     z-index: 1001;
-    margin-left: auto;
-    background: var(--accent);
-    border-radius: 5px;
+    background: var(--primary);
+    border-radius: 50%;
     padding: 8px;
+    border: none;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
   }
   
   .hamburger span {
     display: block;
     position: absolute;
-    height: 3px;
-    width: 24px;
+    height: 2px; /* Made thinner */
+    width: 20px; /* Made shorter */
     background: white;
-    border-radius: 3px;
+    border-radius: 2px;
     opacity: 1;
-    left: 8px;
+    left: 10px;
     transform: rotate(0deg);
     transition: .25s ease-in-out;
   }
   
-  .hamburger span:nth-child(1) { top: 12px; }
-  .hamburger span:nth-child(2) { top: 18.5px; }
-  .hamburger span:nth-child(3) { top: 25px; }
+  .hamburger span:nth-child(1) { top: 14px; }
+  .hamburger span:nth-child(2) { top: 19px; }
+  .hamburger span:nth-child(3) { top: 24px; }
   
   .hamburger.active span:nth-child(1) {
-    top: 18.5px;
+    top: 19px;
     transform: rotate(45deg);
   }
   
@@ -265,72 +312,109 @@
   }
   
   .hamburger.active span:nth-child(3) {
-    top: 18.5px;
+    top: 19px;
     transform: rotate(-45deg);
   }
   
+  /* NEW MOBILE MENU DESIGN - SLIDES FROM TOP */
   @media (max-width: 992px) {
     .nav-menu {
       position: fixed;
-      top: 0;
-      right: -100%;
-      width: min(85%, 400px);
+      top: -100vh;
+      left: 0;
+      width: 100%;
       height: 100vh;
-      background: linear-gradient(180deg, #008751, #FFD700);
+      /* Fixed: Added church logo as background with proper opacity */
+      background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('logo11.jpg');
+      background-size: cover;
+      background-position: center;
       backdrop-filter: blur(10px);
       -webkit-backdrop-filter: blur(10px);
       flex-direction: column;
       justify-content: flex-start;
-      align-items: flex-start;
-      padding: 100px 30px 30px;
-      transition: right 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
-      box-shadow: -10px 0 30px rgba(0,0,0,0.15);
-      z-index: 1000;
+      align-items: center;
+      padding: 100px 20px 30px;
+      transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+      box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+      z-index: 999;
       overflow-y: auto;
       overflow-x: hidden;
     }
     
     .nav-menu.active {
-      right: 0;
+      top: 0;
     }
     
     .nav-menu li {
-      margin: 0 0 25px 0;
+      margin: 0 0 10px 0;
       width: 100%;
+      max-width: 300px;
       opacity: 0;
-      transform: translateX(20px);
+      transform: translateY(-20px);
       transition: all 0.3s ease;
     }
     
     .nav-menu.active li {
       opacity: 1;
-      transform: translateX(0);
+      transform: translateY(0);
     }
     
+    /* Staggered animation delay */
     .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
-    .nav-menu li:nth-child(2) { transition-delay: 0.2s; }
-    .nav-menu li:nth-child(3) { transition-delay: 0.3s; }
-    .nav-menu li:nth-child(4) { transition-delay: 0.4s; }
-    .nav-menu li:nth-child(5) { transition-delay: 0.5s; }
-    .nav-menu li:nth-child(6) { transition-delay: 0.6s; }
+    .nav-menu li:nth-child(2) { transition-delay: 0.15s; }
+    .nav-menu li:nth-child(3) { transition-delay: 0.2s; }
+    .nav-menu li:nth-child(4) { transition-delay: 0.25s; }
+    .nav-menu li:nth-child(5) { transition-delay: 0.3s; }
+    .nav-menu li:nth-child(6) { transition-delay: 0.35s; }
+    .nav-menu li:nth-child(7) { transition-delay: 0.4s; }
+    .nav-menu li:nth-child(8) { transition-delay: 0.45s; }
+    .nav-menu li:nth-child(9) { transition-delay: 0.5s; }
+    .nav-menu li:nth-child(10) { transition-delay: 0.55s; }
+    .nav-menu li:nth-child(11) { transition-delay: 0.6s; }
+    .nav-menu li:nth-child(12) { transition-delay: 0.65s; }
     
     .nav-menu a {
-      font-size: 1.125rem;
-      display: block;
-      padding: 12px 0;
+      font-size: 1rem;
+      display: flex;
+      align-items: center;
+      padding: 12px 15px;
       width: 100%;
-      border-bottom: 1px solid rgba(255,255,255,0.1);
-      color: white;
+      border-radius: 10px;
+      color: var(--primary);
+      background: rgba(0, 135, 81, 0.1);
+      margin-bottom: 5px;
+      border-left: 3px solid transparent;
+    }
+    
+    .nav-menu a:hover {
+      background: rgba(0, 135, 81, 0.2);
+      border-left: 3px solid var(--secondary);
+    }
+    
+    .nav-menu a i {
+      margin-right: 12px;
+      font-size: 1rem;
+      width: 20px;
+      text-align: center;
     }
     
     .dropdown-content {
       position: static;
       display: none;
       box-shadow: none;
-      background: rgba(255, 255, 255, 0.1);
-      margin-top: 10px;
+      background: rgba(0, 135, 81, 0.05);
+      margin: 5px 0 5px 15px;
       border-radius: 8px;
       padding: 5px 0;
+      border-left: 2px solid rgba(0, 135, 81, 0.1);
+    }
+    
+    .dropdown-content a {
+      padding: 10px 15px 10px 25px;
+      font-size: 0.9rem;
+      color: var(--primary);
+      border-radius: 0;
+      border-left: none;
     }
     
     .dropdown.active .dropdown-content {
@@ -341,25 +425,101 @@
       display: block;
     }
     
-    .logo {
-      position: static;
-      transform: none;
-      margin-right: auto;
-    }
-    
-    /* Adjust logo for mobile */
-    .logo-frame {
-      width: 60px;
-      height: 60px;
-      margin-right: 0.5rem;
-    }
-    
     .logo-text {
-      font-size: clamp(1rem, 2vw, 1.3rem);
+      display: block;
+      font-size: 1.8rem; /* Increased for mobile */
+    }
+    
+    .logo-frame {
+      width: 65px;
+      height: 65px;
+      margin-right: 10px;
     }
   }
   
-  /* ============ FORM BASE STYLES ============ */
+  @media (max-width: 768px) {
+    .logo-text {
+      font-size: 1.5rem;
+    }
+    
+    .logo-frame {
+      width: 60px;
+      height: 60px;
+    }
+    
+    header {
+      height: 80px;
+    }
+    
+    .header-container {
+      height: 72px;
+    }
+  }
+  
+  @media (max-width: 576px) {
+    .logo-text {
+      font-size: 1.3rem;
+    }
+    
+    .logo-frame {
+      width: 55px;
+      height: 55px;
+    }
+    
+    header {
+      height: 75px;
+    }
+    
+    .header-container {
+      height: 67px;
+    }
+  }
+  
+  @media (max-width: 400px) {
+    .logo-text {
+      display: block;
+      font-size: 1.1rem;
+    }
+    
+    .logo-frame {
+      width: 50px;
+      height: 50px;
+      margin-right: 8px;
+    }
+  }
+  
+  /* Add padding to body to account for fixed header */
+  body {
+    padding-top: 85px; /* Increased to match larger header */
+  }
+  
+  /* Hero Section for Bible Study */
+  .bible-hero {
+    background: linear-gradient(rgba(0, 135, 81, 0.9), rgba(0, 90, 58, 0.9)), url('bible-bg.jpg') center/cover no-repeat;
+    color: white;
+    text-align: center;
+    padding: clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
+    position: relative;
+    overflow: hidden;
+  }
+  
+  .bible-hero h1 {
+    font-family: 'Playfair Display', serif;
+    font-size: clamp(2.5rem, 6vw, 4rem);
+    margin-bottom: 1.5rem;
+    color: var(--secondary);
+    text-shadow: 0 2px 10px rgba(0, 0, 0, 0.5);
+  }
+  
+  .bible-hero p {
+    font-size: clamp(1.1rem, 2vw, 1.4rem);
+    max-width: 800px;
+    margin: 0 auto;
+    color: white;
+    font-weight: 300;
+  }
+  
+  /* Form Section */
   .form-section {
     padding: clamp(3rem, 8vw, 5rem) 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -461,17 +621,6 @@
     border-top: 1px solid #eee;
   }
   
-  .form-footer p {
-    color: #666;
-    font-size: clamp(0.85rem, 1.5vw, 0.95rem);
-    margin-top: 1.5rem;
-  }
-  
-  .form-footer a {
-    color: var(--primary);
-    text-decoration: underline;
-  }
-  
   .radio-group {
     display: flex;
     flex-wrap: wrap;
@@ -512,13 +661,6 @@
     flex-shrink: 0;
   }
   
-  .checkbox-group {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
-    gap: 1rem;
-    margin-top: 0.5rem;
-  }
-  
   .success-message {
     display: none;
     background: linear-gradient(135deg, #008751, #005a3a);
@@ -546,33 +688,8 @@
     to { opacity: 1; transform: translateY(0); }
   }
   
-  /* ============ SEED ROYAL SCHOOL SPECIFIC STYLES ============ */
-  .form-hero {
-    background: linear-gradient(rgba(255, 215, 0, 0.9), rgba(255, 193, 7, 0.9)), url('school-bg.jpg') center/cover no-repeat;
-    color: #333;
-    text-align: center;
-    padding: clamp(5rem, 10vw, 8rem) 0 clamp(3rem, 6vw, 5rem);
-    position: relative;
-    overflow: hidden;
-  }
-  
-  .form-hero h1 {
-    font-family: 'Playfair Display', serif;
-    font-size: clamp(2.5rem, 6vw, 4rem);
-    margin-bottom: 1.5rem;
-    color: #008751;
-    text-shadow: 0 2px 10px rgba(255, 255, 255, 0.5);
-  }
-  
-  .form-hero p {
-    font-size: clamp(1.1rem, 2vw, 1.4rem);
-    max-width: 800px;
-    margin: 0 auto;
-    color: #333;
-    font-weight: 500;
-  }
-  
-  .school-info-box {
+  /* Bible Study Info Section */
+  .bible-info-box {
     background: linear-gradient(135deg, #fff9e6, #fff3cc);
     border-radius: 15px;
     padding: 2rem;
@@ -580,7 +697,7 @@
     border-left: 5px solid var(--secondary);
   }
   
-  .school-info-box h3 {
+  .bible-info-box h3 {
     color: var(--accent);
     margin-bottom: 1rem;
     display: flex;
@@ -588,7 +705,7 @@
     gap: 0.75rem;
   }
   
-  .school-info-box .info-grid {
+  .bible-info-box .info-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     gap: 1.5rem;
@@ -614,130 +731,44 @@
     margin-bottom: 0.5rem;
   }
   
-  /* Bible Study Focus Styles */
-  .bible-study-section {
-    background: linear-gradient(135deg, #e8f4f0, #f0f7f4);
-    border-radius: 15px;
-    padding: 2rem;
-    margin-bottom: 2.5rem;
-    border-left: 5px solid var(--primary);
-  }
-  
-  .bible-study-section h3 {
-    color: var(--accent);
-    margin-bottom: 1rem;
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-  }
-  
-  .bible-study-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1.5rem;
-  }
-  
-  .bible-study-level {
-    background: white;
+  /* Age Group Selection */
+  .age-group {
+    background: #f9f9f9;
+    border: 2px solid #e0e0e0;
     border-radius: 12px;
     padding: 1.5rem;
     text-align: center;
-    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
-    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    border: 2px solid transparent;
+    transition: all 0.3s ease;
   }
   
-  .bible-study-level:hover {
-    transform: translateY(-5px);
-    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
-    border-color: var(--primary);
-  }
-  
-  .bible-study-level.selected {
-    border-color: var(--primary);
+  .age-group:hover {
     background: #f0f7f4;
+    border-color: var(--primary);
   }
   
-  .bible-study-level i {
+  .age-group.selected {
+    background: #e8f4f0;
+    border-color: var(--primary);
+    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
+  }
+  
+  .age-group i {
     font-size: 2.5rem;
     color: var(--primary);
     margin-bottom: 1rem;
   }
   
-  .bible-study-level h4 {
+  .age-group h4 {
     color: var(--primary);
     margin-bottom: 0.5rem;
-    font-size: 1.2rem;
   }
   
-  .bible-study-level .age-range {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
-  }
-  
-  .bible-study-level .focus-area {
+  .age-group .age-range {
     color: var(--accent);
-    font-weight: 500;
-    font-size: 0.9rem;
-    margin-top: 0.75rem;
-    padding-top: 0.75rem;
-    border-top: 1px dashed #e0e0e0;
-  }
-  
-  .upload-area {
-    border: 2px dashed #ccc;
-    border-radius: 12px;
-    padding: 3rem 2rem;
-    text-align: center;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    background: #f9f9f9;
-    margin-top: 1rem;
-  }
-  
-  .upload-area:hover {
-    border-color: var(--primary);
-    background: #f0f7f4;
-  }
-  
-  .upload-area i {
-    font-size: 3rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-  }
-  
-  .upload-area.dragover {
-    border-color: var(--primary);
-    background: #e8f4f0;
-  }
-  
-  .file-list {
-    margin-top: 1rem;
-  }
-  
-  .file-item {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 0.75rem 1rem;
-    background: #f0f7f4;
-    border-radius: 8px;
+    font-weight: 600;
+    font-size: 1.1rem;
     margin-bottom: 0.5rem;
-  }
-  
-  .file-item .file-name {
-    display: flex;
-    align-items: center;
-    gap: 0.75rem;
-    color: var(--accent);
-  }
-  
-  .file-item .remove-file {
-    color: #e74c3c;
-    cursor: pointer;
   }
   
   .parent-grid {
@@ -761,7 +792,7 @@
     border-bottom: 2px solid var(--secondary);
   }
   
-  .school-success-message {
+  .bible-success-message {
     display: none;
     background: linear-gradient(135deg, #FFD700, #ffed4e);
     color: #333;
@@ -772,19 +803,19 @@
     animation: fadeIn 0.5s ease;
   }
   
-  .school-success-message i {
+  .bible-success-message i {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
     color: var(--primary);
   }
   
-  .school-success-message h3 {
+  .bible-success-message h3 {
     font-size: 1.8rem;
     margin-bottom: 1rem;
     color: var(--accent);
   }
   
-  /* ============ FOOTER STYLES ============ */
+  /* Footer */
   footer {
     background: var(--dark);
     color: white;
@@ -904,7 +935,7 @@
     z-index: 3;
   }
   
-  /* ============ UTILITY STYLES ============ */
+  /* Scroll to top button */
   .scroll-top {
     position: fixed;
     bottom: clamp(1rem, 3vw, 1.875rem);
@@ -936,6 +967,7 @@
     box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
   }
   
+  /* Professional touch: Loading animation */
   .loading {
     position: fixed;
     top: 0;
@@ -954,7 +986,7 @@
     100% { transform: scaleX(0); transform-origin: 100% 50%; }
   }
   
-  /* ============ MEDIA QUERIES ============ */
+  /* Media Queries */
   @media (max-width: 768px) {
     .form-row {
       grid-template-columns: 1fr;
@@ -965,13 +997,8 @@
       gap: 1rem;
     }
     
-    .form-hero h1 {
+    .bible-hero h1 {
       font-size: clamp(2rem, 5vw, 2.8rem);
-    }
-    
-    .bible-study-grid,
-    .checkbox-group {
-      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
     
     .parent-grid {
@@ -981,18 +1008,9 @@
     .info-grid {
       grid-template-columns: 1fr;
     }
-    
-    /* Further reduce logo text on mobile */
-    .logo-text {
-      font-size: 1rem;
-    }
   }
   
   @media (max-width: 480px) {
-    .bible-study-grid {
-      grid-template-columns: 1fr;
-    }
-    
     .logo {
       flex-direction: column;
       align-items: center;
@@ -1016,6 +1034,9 @@
 <!-- Loading animation -->
 <div class="loading"></div>
 
+<!-- Scroll progress indicator -->
+<div class="scroll-progress" id="scrollProgress"></div>
+
 <!-- Scroll to Top Button -->
 <div class="scroll-top" id="scrollTop">
   <i class="fas fa-chevron-up"></i>
@@ -1024,37 +1045,39 @@
 <header id="mainHeader" class="glass-effect">
   <div class="container header-container">
     <div class="logo">
-      <div class="logo-frame">
-        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
-      </div>
-      <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+      <!-- Make logo a home button -->
+      <a href="index.html" class="logo-link">
+        <div class="logo-frame">
+          <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+        </div>
+        <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+      </a>
     </div>
     <div class="nav-container">
       <ul class="nav-menu">
-        <li><a href="index.html">Home</a></li>
-        <li class="dropdown"><a href="#about">About <i class="fas fa-chevron-down"></i></a>
-          <div class="dropdown-content">
-            <a href="about.html">Our Story</a>
-            <a href="beliefs.html">Beliefs</a>
-            <a href="leadership.html">Leadership</a>
-            <a href="vision.html">Vision & Mission</a>
-          </div>
-        </li>
-        <li><a href="department.html">Departments</a></li>
-        <li class="dropdown"><a href="#ministries">Ministries <i class="fas fa-chevron-down"></i></a>
+        <!-- Updated menu items with icons -->
+        <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="donate.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+        <li><a href="department.html"><i class="fas fa-building"></i> Department</a></li>
+        <li class="dropdown">
+          <a href="#"><i class="fas fa-church"></i> Ministries <i class="fas fa-chevron-down"></i></a>
           <div class="dropdown-content">
             <a href="foundation.html">Foundation Class</a>
             <a href="counselling.html">Counselling</a>
             <a href="evangelism.html">Evangelism</a>
-            <a href="seed-royal.html" class="active">Seed Royal School</a>
+            <!-- Added new items to ministries dropdown -->
+            <a href="library.html">Visit Library</a>
+            <a href="sermon.html">Listen to Sermon</a>
+            <a href="live.html">Watch Us Live</a>
           </div>
         </li>
-        <li><a href="pastor-note.html">Pastor's Desk</a></li>
-        <li><a href="#contact">Contact</a></li>
-        <li><a href="join-us.html">Join Us</a></li>
-        <li><a href="prayer.html">Prayer Request</a></li>
-        <li><a href="testimony.html">Share Testimony</a></li>
-        <li><a href="donate.html">Donate</a></li>
+        <li><a href="pastor-note.html"><i class="fas fa-user-tie"></i> Pastor's Desk</a></li>
+        <li><a href="join.html"><i class="fas fa-user-plus"></i> Join Us</a></li>
+        <!-- Added new menu items -->
+        <li><a href="library.html"><i class="fas fa-book-reader"></i> Visit Library</a></li>
+        <li><a href="sermon.html"><i class="fas fa-headphones"></i> Listen to Sermon</a></li>
+        <li><a href="live.html"><i class="fas fa-video"></i> Watch Us Live</a></li>
       </ul>
       <div class="hamburger"><span></span><span></span><span></span></div>
     </div>
@@ -1062,104 +1085,64 @@
 </header>
 
 <!-- Hero Section -->
-<section class="form-hero">
+<section class="bible-hero">
   <div class="container">
-    <h1>Seed Royal School Registration</h1>
-    <p>A Christian educational institution offering quality academic foundation integrated with spiritual development and moral values.</p>
+    <h1>Seed Royal Bible Study</h1>
+    <p>A specialized program teaching God's Word to young people ages 7-20, helping them build a strong spiritual foundation through engaging Bible lessons and Christian fellowship.</p>
   </div>
 </section>
 
 <!-- Form Section -->
 <section class="form-section">
   <div class="container">
-    <!-- School Information Box -->
-    <div class="school-info-box">
-      <h3><i class="fas fa-graduation-cap"></i> About Seed Royal School</h3>
-      <p>Seed Royal School is the educational arm of Kingdom Citizens Church INT'L, providing excellent Christian education from crèche to secondary school levels.</p>
+    <!-- Bible Study Info Box -->
+    <div class="bible-info-box">
+      <h3><i class="fas fa-bible"></i> About Seed Royal Bible Study</h3>
+      <p>Seed Royal Bible Study is dedicated to teaching God's Word to young people in an engaging, age-appropriate way. Our program focuses on building strong biblical foundations and developing young disciples for Christ.</p>
       
       <div class="info-grid">
         <div class="info-item">
           <i class="fas fa-child"></i>
           <h4>Age Range</h4>
-          <p>6 months - 16 years</p>
+          <p>7 - 20 years</p>
         </div>
         
         <div class="info-item">
-          <i class="fas fa-book-open"></i>
-          <h4>Curriculum</h4>
-          <p>Nigerian & British Curriculum</p>
+          <i class="fas fa-users"></i>
+          <h4>Group Size</h4>
+          <p>Small groups for personal attention</p>
         </div>
         
         <div class="info-item">
-          <i class="fas fa-user-graduate"></i>
-          <h4>Class Size</h4>
-          <p>15-20 students per class</p>
+          <i class="fas fa-pray"></i>
+          <h4>Focus</h4>
+          <p>Biblical knowledge & spiritual growth</p>
         </div>
         
         <div class="info-item">
-          <i class="fas fa-cross"></i>
-          <h4>Foundation</h4>
-          <p>Christian values & principles</p>
-        </div>
-      </div>
-    </div>
-    
-    <!-- Bible Study Focus Section -->
-    <div class="bible-study-section">
-      <h3><i class="fas fa-bible"></i> Seed Royal Bible Study Program</h3>
-      <p>Our comprehensive Bible study curriculum is integrated into daily school activities, helping students develop a strong spiritual foundation alongside academic excellence.</p>
-      
-      <div class="bible-study-grid">
-        <div class="bible-study-level" data-level="creche">
-          <i class="fas fa-baby"></i>
-          <h4>Crèche Level</h4>
-          <div class="age-range">6 months - 2 years</div>
-          <p>Introduction to Bible stories through songs, pictures, and simple prayers</p>
-          <div class="focus-area">Focus: God's love & creation</div>
-        </div>
-        
-        <div class="bible-study-level" data-level="nursery">
-          <i class="fas fa-child"></i>
-          <h4>Nursery Level</h4>
-          <div class="age-range">2 - 4 years</div>
-          <p>Basic Bible stories, Christian values, and character development</p>
-          <div class="focus-area">Focus: Obedience & kindness</div>
-        </div>
-        
-        <div class="bible-study-level" data-level="primary">
-          <i class="fas fa-book-reader"></i>
-          <h4>Primary Level</h4>
-          <div class="age-range">5 - 11 years</div>
-          <p>Systematic Bible study, memory verses, and Christian leadership principles</p>
-          <div class="focus-area">Focus: Faith & service</div>
-        </div>
-        
-        <div class="bible-study-level" data-level="secondary">
-          <i class="fas fa-user-graduate"></i>
-          <h4>Secondary Level</h4>
-          <div class="age-range">11 - 17 years</div>
-          <p>Advanced Bible study, apologetics, Christian worldview, and discipleship</p>
-          <div class="focus-area">Focus: Kingdom citizenship</div>
+          <i class="fas fa-hands-helping"></i>
+          <h4>Community</h4>
+          <p>Christian fellowship & support</p>
         </div>
       </div>
     </div>
     
     <div class="form-container glass-effect">
       <div class="form-header">
-        <h2>School Registration Form</h2>
-        <p>Complete this form to register your child/ward for the upcoming academic session at Seed Royal School.</p>
+        <h2>Bible Study Registration</h2>
+        <p>Register your child/ward for the Seed Royal Bible Study program. This program is designed to teach God's Word to young people in an engaging and meaningful way.</p>
       </div>
       
       <!-- Success Message (Initially Hidden) -->
-      <div class="school-success-message" id="successMessage">
-        <i class="fas fa-graduation-cap"></i>
+      <div class="bible-success-message" id="successMessage">
+        <i class="fas fa-bible"></i>
         <h3>Registration Submitted Successfully!</h3>
-        <p>Your child's registration has been received. Our admissions team will contact you within 3-5 business days for assessment and next steps.</p>
+        <p>Your child's registration for Bible Study has been received. We will contact you with details about meeting times and locations.</p>
         <p><a href="index.html" style="color: var(--primary); text-decoration: underline;">Return to Homepage</a></p>
       </div>
       
       <!-- Form -->
-      <form id="schoolForm" method="POST">
+      <form id="bibleForm" method="POST">
         <div class="form-body">
           <!-- Student Information -->
           <div class="form-group">
@@ -1169,7 +1152,7 @@
           <div class="form-row">
             <div class="form-group">
               <label for="studentName">Student's Full Name <span class="required">*</span></label>
-              <input type="text" id="studentName" name="studentName" class="form-control" placeholder="Child's full name (as on birth certificate)" required>
+              <input type="text" id="studentName" name="studentName" class="form-control" placeholder="Child's full name" required>
             </div>
             
             <div class="form-group">
@@ -1223,28 +1206,41 @@
             </div>
           </div>
           
-          <!-- Class Level Selection -->
+          <!-- Age Group Selection -->
           <div class="form-group">
-            <label for="classLevel">Class Level Applying For <span class="required">*</span></label>
-            <select id="classLevel" name="classLevel" class="form-control" required>
-              <option value="" disabled selected>Select appropriate class level</option>
-              <option value="creche">Crèche (6 months - 2 years)</option>
-              <option value="nursery1">Nursery 1 (2 - 3 years)</option>
-              <option value="nursery2">Nursery 2 (3 - 4 years)</option>
-              <option value="kindergarten">Kindergarten (4 - 5 years)</option>
-              <option value="primary1">Primary 1 (5 - 6 years)</option>
-              <option value="primary2">Primary 2 (6 - 7 years)</option>
-              <option value="primary3">Primary 3 (7 - 8 years)</option>
-              <option value="primary4">Primary 4 (8 - 9 years)</option>
-              <option value="primary5">Primary 5 (9 - 10 years)</option>
-              <option value="primary6">Primary 6 (10 - 11 years)</option>
-              <option value="jss1">JSS 1 (11 - 12 years)</option>
-              <option value="jss2">JSS 2 (12 - 13 years)</option>
-              <option value="jss3">JSS 3 (13 - 14 years)</option>
-              <option value="sss1">SSS 1 (14 - 15 years)</option>
-              <option value="sss2">SSS 2 (15 - 16 years)</option>
-              <option value="sss3">SSS 3 (16 - 17 years)</option>
-            </select>
+            <label>Age Group <span class="required">*</span></label>
+            <p style="color: #666; margin-bottom: 1rem;">Select the appropriate age group for Bible study:</p>
+            
+            <div class="form-row">
+              <div class="age-group" data-age="7-10">
+                <i class="fas fa-child"></i>
+                <h4>Juniors</h4>
+                <div class="age-range">7 - 10 years</div>
+                <p>Basic Bible stories & values</p>
+              </div>
+              
+              <div class="age-group" data-age="11-13">
+                <i class="fas fa-user"></i>
+                <h4>Pre-Teens</h4>
+                <div class="age-range">11 - 13 years</div>
+                <p>Bible principles & character</p>
+              </div>
+              
+              <div class="age-group" data-age="14-16">
+                <i class="fas fa-user-graduate"></i>
+                <h4>Teens</h4>
+                <div class="age-range">14 - 16 years</div>
+                <p>Biblical understanding & faith</p>
+              </div>
+              
+              <div class="age-group" data-age="17-20">
+                <i class="fas fa-users"></i>
+                <h4>Young Adults</h4>
+                <div class="age-range">17 - 20 years</div>
+                <p>Deep Bible study & discipleship</p>
+              </div>
+            </div>
+            <input type="hidden" id="ageGroup" name="ageGroup" required>
           </div>
           
           <!-- Parent/Guardian Information -->
@@ -1290,11 +1286,6 @@
                 <label for="parent1Occupation">Occupation</label>
                 <input type="text" id="parent1Occupation" name="parent1Occupation" class="form-control" placeholder="Parent's occupation">
               </div>
-              
-              <div class="form-group">
-                <label for="parent1Address">Address</label>
-                <textarea id="parent1Address" name="parent1Address" class="form-control" rows="2" placeholder="Parent's address"></textarea>
-              </div>
             </div>
             
             <!-- Parent 2 -->
@@ -1327,11 +1318,6 @@
               <div class="form-group">
                 <label for="parent2Email">Email Address</label>
                 <input type="email" id="parent2Email" name="parent2Email" class="form-control" placeholder="Second parent's email address">
-              </div>
-              
-              <div class="form-group">
-                <label for="parent2Occupation">Occupation</label>
-                <input type="text" id="parent2Occupation" name="parent2Occupation" class="form-control" placeholder="Second parent's occupation">
               </div>
             </div>
           </div>
@@ -1405,33 +1391,9 @@
             <textarea id="medications" name="medications" class="form-control" rows="2" placeholder="List any current medications"></textarea>
           </div>
           
-          <!-- Document Upload -->
-          <div class="form-group">
-            <label>Required Documents</label>
-            <p style="color: #666; margin-bottom: 1rem;">Please upload the following documents (can be submitted later if not available now):</p>
-            
-            <div class="upload-area" id="uploadArea">
-              <i class="fas fa-cloud-upload-alt"></i>
-              <h4>Drag & Drop Files Here</h4>
-              <p>or click to browse</p>
-              <p style="font-size: 0.9rem; color: #666; margin-top: 1rem;">Supported: PDF, JPG, PNG (Max 5MB each)</p>
-              <input type="file" id="fileInput" multiple style="display: none;" accept=".pdf,.jpg,.jpeg,.png">
-            </div>
-            
-            <div class="file-list" id="fileList">
-              <p style="color: #666; text-align: center;">No files uploaded yet</p>
-            </div>
-          </div>
-          
-          <!-- Additional Information -->
-          <div class="form-group">
-            <label for="additionalInfo">Additional Information</label>
-            <textarea id="additionalInfo" name="additionalInfo" class="form-control" rows="4" placeholder="Any other information you'd like us to know about your child"></textarea>
-          </div>
-          
           <!-- How did you hear about us -->
           <div class="form-group">
-            <label>How did you hear about Seed Royal School?</label>
+            <label>How did you hear about Seed Royal Bible Study?</label>
             <div class="radio-group">
               <label class="radio-label">
                 <input type="radio" name="hearAbout" value="church"> Church member
@@ -1461,64 +1423,26 @@
           
           <div class="form-group">
             <label class="checkbox-label">
-              <input type="checkbox" name="agreement2" required>
-              <span>I agree to abide by the school's rules, regulations, and code of conduct. <span class="required">*</span></span>
-            </label>
-          </div>
-          
-          <div class="form-group">
-            <label class="checkbox-label">
               <input type="checkbox" name="agreement3" required>
-              <span>I understand that admission is subject to availability and assessment. <span class="required">*</span></span>
+              <span>I understand that participation is subject to availability and assessment. <span class="required">*</span></span>
             </label>
           </div>
           
           <div class="form-group">
             <label class="checkbox-label">
               <input type="checkbox" name="updates" checked>
-              <span>I would like to receive updates about school events, activities, and important notices.</span>
+              <span>I would like to receive updates about Bible study events and activities.</span>
             </label>
           </div>
         </div>
         
         <div class="form-footer">
           <button type="submit" class="btn" style="padding: 1rem 2.5rem; font-size: 1.1rem; background: linear-gradient(135deg, #FFD700, #ffed4e); color: #333;">
-            <i class="fas fa-graduation-cap"></i> Submit Registration
+            <i class="fas fa-bible"></i> Submit Registration
           </button>
-          <p>For inquiries, call our admissions office: <strong>+2347027175427</strong> or email: <strong>admissions@seedroyalschool.org</strong></p>
-          <p>School hours: Monday-Friday, 7:30am - 3:30pm</p>
+          <p>For inquiries, call: <strong>+2347027175427</strong></p>
         </div>
       </form>
-    </div>
-    
-    <!-- School Facilities -->
-    <div class="form-container glass-effect" style="margin-top: 3rem; padding: 2rem;">
-      <h3 style="text-align: center; color: var(--primary); margin-bottom: 1.5rem;">Our School Facilities</h3>
-      <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(250px, 1fr)); gap: 1.5rem;">
-        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
-          <i class="fas fa-microscope" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
-          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Science Lab</h4>
-          <p>Well-equipped laboratory for practical science education.</p>
-        </div>
-        
-        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
-          <i class="fas fa-book" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
-          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Library</h4>
-          <p>Extensive collection of educational and Christian books.</p>
-        </div>
-        
-        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
-          <i class="fas fa-computer" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
-          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Computer Lab</h4>
-          <p>Modern computers with internet access for ICT education.</p>
-        </div>
-        
-        <div style="text-align: center; padding: 1.5rem; background: #f9f9f9; border-radius: 10px;">
-          <i class="fas fa-futbol" style="color: var(--primary); font-size: 2rem; margin-bottom: 1rem;"></i>
-          <h4 style="color: var(--primary); margin-bottom: 0.5rem;">Sports Facilities</h4>
-          <p>Football field, basketball court, and indoor games.</p>
-        </div>
-      </div>
     </div>
   </div>
 </section>
@@ -1540,27 +1464,25 @@
       <h3>Quick Links</h3>
       <ul class="footer-links">
         <li><a href="index.html">Home</a></li>
-        <li><a href="join-us.html">Join Us</a></li>
+        <li><a href="join.html">Join Us</a></li>
         <li><a href="prayer.html">Prayer Request</a></li>
         <li><a href="testimony.html">Share Testimony</a></li>
         <li><a href="counselling.html">Counselling</a></li>
         <li><a href="foundation.html">Foundation Class</a></li>
-        <li><a href="seed-royal.html">Seed Royal School</a></li>
+        <li><a href="seed-royal.html">Seed Royal Bible Study</a></li>
       </ul>
     </div>
     <div class="footer-column">
       <h3>Contact Us</h3>
       <ul class="footer-links">
         <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
-        <li><i class="fas fa-phone"></i> Church: +2347027175427</li>
-        <li><i class="fas fa-phone"></i> School: +2348034280774</li>
-        <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
-        <li><i class="fas fa-envelope"></i> School: admissions@seedroyalschool.org</li>
+        <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
+        <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
       </ul>
     </div>
   </div>
   <div class="footer-bottom">
-    &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+    &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved.
   </div>
 </footer>
 
@@ -1580,11 +1502,15 @@ const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const dropdowns = document.querySelectorAll('.dropdown');
 
-hamburger.addEventListener('click', () => {
+let isMenuOpen = false;
+
+hamburger.addEventListener('click', (e) => {
+  e.stopPropagation();
+  isMenuOpen = !isMenuOpen;
   hamburger.classList.toggle('active');
   navMenu.classList.toggle('active');
   
-  if (navMenu.classList.contains('active')) {
+  if (isMenuOpen) {
     document.body.classList.add('menu-open');
     document.body.style.overflow = 'hidden';
   } else {
@@ -1596,9 +1522,18 @@ hamburger.addEventListener('click', () => {
 // Dropdown menu on mobile
 dropdowns.forEach(dropdown => {
   const trigger = dropdown.querySelector('a');
+  
   trigger.addEventListener('click', (e) => {
     if (window.innerWidth <= 992) {
       e.preventDefault();
+      e.stopPropagation();
+      
+      dropdowns.forEach(otherDropdown => {
+        if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+          otherDropdown.classList.remove('active');
+        }
+      });
+      
       dropdown.classList.toggle('active');
     }
   });
@@ -1606,141 +1541,48 @@ dropdowns.forEach(dropdown => {
 
 // Close menu when clicking outside on mobile
 document.addEventListener('click', (e) => {
-  if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
+  if (window.innerWidth <= 992 && isMenuOpen) {
     if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+      isMenuOpen = false;
       hamburger.classList.remove('active');
       navMenu.classList.remove('active');
       document.body.classList.remove('menu-open');
       document.body.style.overflow = 'auto';
+      
+      dropdowns.forEach(dropdown => {
+        dropdown.classList.remove('active');
+      });
     }
   }
 });
 
-// Close menu when clicking a link in the menu on mobile
-document.querySelectorAll('.nav-menu a').forEach(link => {
-  link.addEventListener('click', () => {
-    if (window.innerWidth <= 992 && navMenu.classList.contains('active')) {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-      document.body.classList.remove('menu-open');
-      document.body.style.overflow = 'auto';
-    }
-  });
-});
+// ============ AGE GROUP SELECTION ============
+const ageGroups = document.querySelectorAll('.age-group');
+const ageGroupInput = document.getElementById('ageGroup');
 
-// ============ BIBLE STUDY LEVEL SELECTION ============
-const bibleStudyLevels = document.querySelectorAll('.bible-study-level');
-
-bibleStudyLevels.forEach(level => {
-  level.addEventListener('click', function() {
-    // Remove selection from all levels
-    bibleStudyLevels.forEach(lvl => lvl.classList.remove('selected'));
+ageGroups.forEach(group => {
+  group.addEventListener('click', function() {
+    // Remove selection from all groups
+    ageGroups.forEach(grp => grp.classList.remove('selected'));
     
-    // Select this level
+    // Select this group
     this.classList.add('selected');
     
-    // Scroll to form for better UX
-    document.querySelector('#schoolForm').scrollIntoView({ behavior: 'smooth' });
+    // Update hidden input
+    const selectedAge = this.getAttribute('data-age');
+    ageGroupInput.value = selectedAge;
   });
 });
-
-// ============ FILE UPLOAD FUNCTIONALITY ============
-const uploadArea = document.getElementById('uploadArea');
-const fileInput = document.getElementById('fileInput');
-const fileList = document.getElementById('fileList');
-let uploadedFiles = [];
-
-uploadArea.addEventListener('click', () => {
-  fileInput.click();
-});
-
-uploadArea.addEventListener('dragover', (e) => {
-  e.preventDefault();
-  uploadArea.classList.add('dragover');
-});
-
-uploadArea.addEventListener('dragleave', () => {
-  uploadArea.classList.remove('dragover');
-});
-
-uploadArea.addEventListener('drop', (e) => {
-  e.preventDefault();
-  uploadArea.classList.remove('dragover');
-  
-  const files = e.dataTransfer.files;
-  handleFiles(files);
-});
-
-fileInput.addEventListener('change', (e) => {
-  const files = e.target.files;
-  handleFiles(files);
-});
-
-function handleFiles(files) {
-  for (let i = 0; i < files.length; i++) {
-    const file = files[i];
-    
-    // Check file size (max 5MB)
-    if (file.size > 5 * 1024 * 1024) {
-      alert(`File "${file.name}" is too large. Maximum size is 5MB.`);
-      continue;
-    }
-    
-    // Check file type
-    const validTypes = ['application/pdf', 'image/jpeg', 'image/jpg', 'image/png'];
-    if (!validTypes.includes(file.type)) {
-      alert(`File "${file.name}" is not a supported format. Please upload PDF, JPG, or PNG files.`);
-      continue;
-    }
-    
-    uploadedFiles.push(file);
-  }
-  
-  updateFileList();
-}
-
-function updateFileList() {
-  fileList.innerHTML = '';
-  
-  if (uploadedFiles.length === 0) {
-    fileList.innerHTML = '<p style="color: #666; text-align: center;">No files uploaded yet</p>';
-    return;
-  }
-  
-  uploadedFiles.forEach((file, index) => {
-    const fileItem = document.createElement('div');
-    fileItem.className = 'file-item';
-    
-    const fileIcon = file.type === 'application/pdf' ? 'fas fa-file-pdf' : 'fas fa-file-image';
-    
-    fileItem.innerHTML = `
-      <div class="file-name">
-        <i class="${fileIcon}"></i>
-        <span>${file.name} (${formatFileSize(file.size)})</span>
-      </div>
-      <div class="remove-file" onclick="removeFile(${index})">
-        <i class="fas fa-times"></i>
-      </div>
-    `;
-    
-    fileList.appendChild(fileItem);
-  });
-}
-
-function removeFile(index) {
-  uploadedFiles.splice(index, 1);
-  updateFileList();
-}
-
-function formatFileSize(bytes) {
-  if (bytes < 1024) return bytes + ' bytes';
-  else if (bytes < 1024 * 1024) return (bytes / 1024).toFixed(1) + ' KB';
-  else return (bytes / (1024 * 1024)).toFixed(1) + ' MB';
-}
 
 // ============ FORM SUBMISSION ============
-document.getElementById('schoolForm').addEventListener('submit', async function(e) {
+document.getElementById('bibleForm').addEventListener('submit', async function(e) {
   e.preventDefault();
+  
+  // Validate age group selection
+  if (!ageGroupInput.value) {
+    alert('Please select an age group.');
+    return;
+  }
   
   const form = this;
   const submitBtn = form.querySelector('button[type="submit"]');
@@ -1754,13 +1596,8 @@ document.getElementById('schoolForm').addEventListener('submit', async function(
     // Collect form data
     const formData = new FormData(form);
     
-    // Add uploaded files to form data
-    uploadedFiles.forEach((file, index) => {
-      formData.append(`file${index}`, file);
-    });
-    
     // In a real implementation, send to your server/email
-    console.log('School Registration Data:', Object.fromEntries(formData));
+    console.log('Bible Study Registration Data:', Object.fromEntries(formData));
     
     // Simulate API call delay
     await new Promise(resolve => setTimeout(resolve, 1500));
@@ -1773,14 +1610,14 @@ document.getElementById('schoolForm').addEventListener('submit', async function(
     document.getElementById('successMessage').scrollIntoView({ behavior: 'smooth' });
     
   } catch (error) {
-    alert('There was an error submitting your registration. Please try again or contact our admissions office.');
+    alert('There was an error submitting your registration. Please try again or contact us.');
     submitBtn.innerHTML = originalBtnText;
     submitBtn.disabled = false;
   }
 });
 
 // ============ FORM VALIDATIONS ============
-// Phone number formatting for parent phones
+// Phone number formatting
 const parent1Phone = document.getElementById('parent1Phone');
 const parent2Phone = document.getElementById('parent2Phone');
 const emergencyPhoneInput = document.getElementById('emergencyPhone');
@@ -1803,12 +1640,12 @@ const emergencyPhoneInput = document.getElementById('emergencyPhone');
   }
 });
 
-// Date of birth validation
+// Date of birth validation (age 7-20)
 const dobInput = document.getElementById('dob');
 if (dobInput) {
   const today = new Date();
-  const minDate = new Date(today.getFullYear() - 18, today.getMonth(), today.getDate());
-  const maxDate = new Date(today.getFullYear() - 0.5, today.getMonth(), today.getDate()); // 6 months old minimum
+  const minDate = new Date(today.getFullYear() - 20, today.getMonth(), today.getDate());
+  const maxDate = new Date(today.getFullYear() - 7, today.getMonth(), today.getDate());
   
   dobInput.max = maxDate.toISOString().split('T')[0];
   dobInput.min = minDate.toISOString().split('T')[0];
