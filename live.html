@@ -1,0 +1,1800 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="theme-color" content="#008751">
+    <meta name="description" content="Watch Kingdom Citizens Church INT'L Live | Join our live services, watch sermons, and connect with our online community.">
+    <meta name="keywords" content="watch church live, online church service, live streaming church, Kingdom Citizens Church live, Facebook live church, YouTube church live">
+    <meta name="author" content="Kingdom Citizens Church INT'L">
+    <meta property="og:title" content="Watch Us Live - Kingdom Citizens Church INT'L | Online Services">
+    <meta property="og:description" content="Join our live worship services online. Watch sermons, teachings, and church events from anywhere.">
+    <meta property="og:image" content="https://kingdomcitizenschurchintl.org/live-bg.jpg">
+    <meta property="og:url" content="https://kingdomcitizenschurchintl.org/live.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Watch Us Live - Kingdom Citizens Church INT'L">
+    <meta name="twitter:description" content="Join our live worship services and watch sermons online">
+    <meta name="twitter:image" content="https://kingdomcitizenschurchintl.org/live-bg.jpg">
+    
+    <title>Watch Us Live - Kingdom Citizens Church INT'L | Join Our Online Services</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+        :root {
+            --primary: #008751;
+            --secondary: #FFD700;
+            --light: #f8f9fa;
+            --dark: #222;
+            --accent: #005a3a;
+            --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFED4E 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: clamp(14px, 1vw, 18px);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            padding-top: 85px; /* For fixed header */
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Container */
+        .container {
+            width: min(100% - clamp(1rem, 5vw, 3rem), 1200px);
+            margin: 0 auto;
+            padding: 0 clamp(0.5rem, 3vw, 1.5rem);
+        }
+        
+        /* ========== HEADER ========== */
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 4px 0;
+            transition: all 0.4s ease;
+            height: 85px;
+        }
+        
+        .header-scrolled {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            height: 75px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 77px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1002;
+        }
+        
+        .logo-frame {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--secondary);
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-family: 'Lobster', cursive;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--primary);
+            letter-spacing: 1px;
+            line-height: 1.2;
+            white-space: nowrap;
+            display: none;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: auto;
+        }
+        
+        /* Desktop Navigation */
+        @media (min-width: 993px) {
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                background: rgba(0, 135, 81, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 4px;
+            }
+            
+            .nav-menu li {
+                margin: 0 4px;
+                position: relative;
+            }
+            
+            .nav-menu a {
+                color: var(--primary);
+                font-weight: 500;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+                padding: 8px 15px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .nav-menu a i {
+                margin-right: 6px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.15);
+                transform: translateY(-2px);
+            }
+            
+            .nav-menu a.active {
+                background: var(--secondary);
+                color: var(--primary);
+                font-weight: 600;
+            }
+            
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background: white;
+                min-width: 180px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                z-index: 1;
+                border-radius: 10px;
+                overflow: hidden;
+                top: 100%;
+                left: 0;
+                padding: 8px 0;
+                margin-top: 4px;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+            
+            .dropdown-content a {
+                color: var(--dark);
+                padding: 8px 16px;
+                display: block;
+                font-size: 0.8rem;
+                border-radius: 0;
+            }
+            
+            .dropdown-content a:hover {
+                background: #f8f9fa;
+                color: var(--primary);
+                transform: none;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 2.5rem;
+            }
+            
+            .logo-frame {
+                width: 75px;
+                height: 75px;
+            }
+        }
+        
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            z-index: 1001;
+            background: var(--primary);
+            border-radius: 50%;
+            padding: 8px;
+            border: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            background: white;
+            border-radius: 2px;
+            opacity: 1;
+            left: 10px;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .hamburger span:nth-child(1) { top: 14px; }
+        .hamburger span:nth-child(2) { top: 19px; }
+        .hamburger span:nth-child(3) { top: 24px; }
+        
+        .hamburger.active span:nth-child(1) {
+            top: 19px;
+            transform: rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            top: 19px;
+            transform: rotate(-45deg);
+        }
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: -100vh;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('logo11.jpg');
+                background-size: cover;
+                background-position: center;
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 100px 20px 30px;
+                transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                top: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0 0 10px 0;
+                width: 100%;
+                max-width: 300px;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu li:nth-child(2) { transition-delay: 0.15s; }
+            .nav-menu li:nth-child(3) { transition-delay: 0.2s; }
+            .nav-menu li:nth-child(4) { transition-delay: 0.25s; }
+            .nav-menu li:nth-child(5) { transition-delay: 0.3s; }
+            .nav-menu li:nth-child(6) { transition-delay: 0.35s; }
+            .nav-menu li:nth-child(7) { transition-delay: 0.4s; }
+            .nav-menu li:nth-child(8) { transition-delay: 0.45s; }
+            .nav-menu li:nth-child(9) { transition-delay: 0.5s; }
+            
+            .nav-menu a {
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                width: 100%;
+                border-radius: 10px;
+                color: var(--primary);
+                background: rgba(0, 135, 81, 0.1);
+                margin-bottom: 5px;
+                border-left: 3px solid transparent;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.2);
+                border-left: 3px solid var(--secondary);
+            }
+            
+            .nav-menu a i {
+                margin-right: 12px;
+                font-size: 1rem;
+                width: 20px;
+                text-align: center;
+            }
+            
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                background: rgba(0, 135, 81, 0.05);
+                margin: 5px 0 5px 15px;
+                border-radius: 8px;
+                padding: 5px 0;
+                border-left: 2px solid rgba(0, 135, 81, 0.1);
+            }
+            
+            .dropdown-content a {
+                padding: 10px 15px 10px 25px;
+                font-size: 0.9rem;
+                color: var(--primary);
+                border-radius: 0;
+                border-left: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 1.8rem;
+            }
+            
+            .logo-frame {
+                width: 65px;
+                height: 65px;
+                margin-right: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-frame {
+                width: 60px;
+                height: 60px;
+            }
+            
+            header {
+                height: 80px;
+            }
+            
+            .header-container {
+                height: 72px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .logo-frame {
+                width: 55px;
+                height: 55px;
+            }
+            
+            header {
+                height: 75px;
+            }
+            
+            .header-container {
+                height: 67px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo-frame {
+                width: 50px;
+                height: 50px;
+                margin-right: 8px;
+            }
+        }
+        
+        /* ========== LIVE HERO SECTION ========== */
+        .live-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('live-bg.jpg') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: clamp(3rem, 8vw, 5rem);
+            overflow: hidden;
+        }
+        
+        .live-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, white, transparent);
+            z-index: 1;
+        }
+        
+        .hero-content-live {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-divider {
+            width: 120px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+        
+        .live-badge {
+            display: inline-block;
+            background: #ff0000;
+            color: white;
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            animation: pulse 2s infinite;
+            margin-bottom: 2rem;
+        }
+        
+        @keyframes pulse {
+            0% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0.7);
+            }
+            70% {
+                box-shadow: 0 0 0 10px rgba(255, 0, 0, 0);
+            }
+            100% {
+                box-shadow: 0 0 0 0 rgba(255, 0, 0, 0);
+            }
+        }
+        
+        /* ========== MAIN CONTENT ========== */
+        .live-main {
+            padding: 0 0 clamp(5rem, 12vw, 8rem) 0;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: clamp(2rem, 6vw, 4rem);
+            position: relative;
+            padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(80px, 15vw, 120px);
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* Welcome Card */
+        .welcome-card {
+            background: white;
+            border-radius: 25px;
+            padding: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .welcome-message {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 2.5rem;
+            text-align: justify;
+        }
+        
+        /* Live Stream Section */
+        .live-stream-section {
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+        }
+        
+        .live-stream-container {
+            background: var(--gradient);
+            border-radius: 25px;
+            padding: clamp(2.5rem, 6vw, 4rem);
+            color: white;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .live-stream-container::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .live-stream-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.5rem);
+            margin-bottom: 1.5rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .live-stream-text {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            margin-bottom: 3rem;
+            position: relative;
+            z-index: 2;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .live-stream-platforms {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1.5rem;
+            justify-content: center;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .platform-card {
+            background: rgba(255, 255, 255, 0.15);
+            backdrop-filter: blur(10px);
+            border-radius: 20px;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            flex: 1;
+            min-width: 250px;
+            max-width: 350px;
+            transition: all 0.3s ease;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+        
+        .platform-card:hover {
+            transform: translateY(-10px);
+            background: rgba(255, 255, 255, 0.25);
+            box-shadow: 0 15px 30px rgba(0, 0, 0, 0.2);
+        }
+        
+        .platform-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .facebook-platform {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5FD9 100%);
+        }
+        
+        .youtube-platform {
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+        }
+        
+        .platform-card h3 {
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            margin-bottom: 1rem;
+        }
+        
+        .platform-card p {
+            margin-bottom: 1.5rem;
+            opacity: 0.9;
+        }
+        
+        .platform-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .platform-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        /* Video Gallery */
+        .video-gallery {
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+        }
+        
+        .videos-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(350px, 100%), 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+        }
+        
+        .video-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .video-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .video-wrapper {
+            position: relative;
+            width: 100%;
+            padding-bottom: 56.25%; /* 16:9 Aspect Ratio */
+            height: 0;
+            overflow: hidden;
+            background: #000;
+        }
+        
+        .video-wrapper iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .video-info {
+            padding: clamp(1.5rem, 3vw, 2rem);
+        }
+        
+        .video-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 2vw, 1.5rem);
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        
+        .video-description {
+            color: #666;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        
+        .video-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-top: 1rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+            font-size: 0.85rem;
+            color: #888;
+        }
+        
+        /* Service Times */
+        .service-times {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 25px;
+            padding: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 4rem;
+        }
+        
+        .times-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .time-card {
+            background: white;
+            border-radius: 20px;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .time-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .time-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .time-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .time-schedule {
+            font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+            color: #666;
+            font-weight: 600;
+        }
+        
+        /* Social Media Section */
+        .social-media-section {
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+        }
+        
+        .social-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2rem;
+        }
+        
+        .social-card {
+            background: white;
+            border-radius: 20px;
+            padding: clamp(2rem, 3vw, 2.5rem);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .social-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .social-icon {
+            width: 80px;
+            height: 80px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: white;
+            font-size: 2rem;
+        }
+        
+        .facebook-icon {
+            background: linear-gradient(135deg, #1877F2 0%, #0D5FD9 100%);
+        }
+        
+        .youtube-icon {
+            background: linear-gradient(135deg, #FF0000 0%, #CC0000 100%);
+        }
+        
+        .tiktok-icon {
+            background: linear-gradient(135deg, #000000 0%, #333333 100%);
+        }
+        
+        .social-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            color: var(--primary);
+            margin-bottom: 1rem;
+        }
+        
+        .social-description {
+            font-size: 1rem;
+            color: #666;
+            margin-bottom: 1.5rem;
+            line-height: 1.6;
+        }
+        
+        .social-link {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gradient);
+            color: white;
+            padding: 0.75rem 1.5rem;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            transition: all 0.3s ease;
+        }
+        
+        .social-link:hover {
+            background: var(--primary);
+            transform: translateY(-3px);
+        }
+        
+        .social-link i {
+            margin-right: 8px;
+        }
+        
+        /* Reminder CTA */
+        .reminder-cta {
+            background: var(--gradient);
+            color: white;
+            padding: clamp(4rem, 10vw, 6rem) 0;
+            border-radius: 30px;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .reminder-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-text {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: clamp(0.875rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 1.875rem);
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-image: url('logo11.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+        
+        footer:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: clamp(2rem, 5vw, 3.125rem);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--secondary);
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.625rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: clamp(0.75rem, 2vw, 1rem);
+            margin-top: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(40px, 5vw, 45px);
+            height: clamp(40px, 5vw, 45px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            color: var(--dark);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: clamp(1rem, 2.5vw, 1.875rem);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+            color: #aaa;
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: clamp(1rem, 3vw, 1.875rem);
+            right: clamp(1rem, 3vw, 1.875rem);
+            width: clamp(45px, 5vw, 50px);
+            height: clamp(45px, 5vw, 50px);
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .live-hero {
+                height: 50vh;
+                min-height: 400px;
+            }
+            
+            .videos-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .live-stream-platforms {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .platform-card {
+                width: 100%;
+                max-width: 100%;
+            }
+            
+            .social-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .times-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .live-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .welcome-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .live-stream-container {
+                padding: 2rem 1.5rem;
+            }
+            
+            .video-info {
+                padding: 1.5rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header id="mainHeader" class="glass-effect">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-frame">
+                        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+                    </div>
+                    <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="welcome.html"><i class="fas fa-door-open"></i> Welcome</a></li>
+                    <li><a href="department.html"><i class="fas fa-building"></i> Department</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-church"></i> Ministries <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="foundation.html">Foundation Class</a>
+                            <a href="counselling.html">Counselling</a>
+                            <a href="evangelism.html">Evangelism</a>
+                            <a href="library.html">Visit Library</a>
+                            <a href="sermon.html">Listen to Sermon</a>
+                            <a href="live.html" class="active">Watch Us Live</a>
+                        </div>
+                    </li>
+                    <li><a href="pastor-note.html"><i class="fas fa-user-tie"></i> Pastor's Desk</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join Us</a></li>
+                    <li><a href="prayer.html"><i class="fas fa-pray"></i> Prayer</a></li>
+                    <li><a href="testimony.html"><i class="fas fa-star"></i> Testimonies</a></li>
+                    <li><a href="services.html"><i class="fas fa-calendar-alt"></i> Services</a></li>
+                    <li><a href="locations.html"><i class="fas fa-map-marker-alt"></i> Locations</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Contact</a></li>
+                    <li><a href="donate.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="live-hero">
+        <div class="hero-content-live animate-fadeInUp">
+            <div class="live-badge">LIVE NOW</div>
+            <h1 class="hero-title">Watch Us Live</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Join Our Online Worship Services & Sermons</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="live-main container">
+        <!-- Welcome Message -->
+        <section class="welcome-card animate-fadeInUp">
+            <div class="welcome-message">
+                <p>Welcome to our online worship experience! Whether you're joining us from home, work, or anywhere in the world, we're excited to have you worship with us. At Kingdom Citizens Church INT'L, we believe in the power of God's presence, and we're committed to making His presence accessible to everyone, everywhere.</p>
+                
+                <p>Our live streaming services allow you to participate in worship, hear the Word of God, and connect with our church family in real-time. You can join us during our regular service times or watch recorded sermons at your convenience. No matter where you are, you're welcome here!</p>
+                
+                <p>We stream our services live on multiple platforms to ensure you can join us from anywhere. Below you'll find links to our live streams, recent sermons, and ways to connect with our online community.</p>
+            </div>
+        </section>
+
+        <!-- Live Stream Platforms -->
+        <section class="live-stream-section animate-fadeInUp">
+            <h2 class="section-title">Join Our Live Stream</h2>
+            
+            <div class="live-stream-container">
+                <h3 class="live-stream-title">Where to Watch Live</h3>
+                <p class="live-stream-text">We broadcast our services live on multiple platforms. Click on your preferred platform to join the current service or explore our content libraries.</p>
+                
+                <div class="live-stream-platforms">
+                    <div class="platform-card">
+                        <div class="platform-icon facebook-platform">
+                            <i class="fab fa-facebook-f"></i>
+                        </div>
+                        <h3>Facebook Live</h3>
+                        <p>Join our live services on Facebook. Interact with comments, share with friends, and be part of our online community.</p>
+                        <a href="https://www.facebook.com/Kingdomcitizenchurchintl" class="platform-btn" target="_blank">
+                            <i class="fab fa-facebook-f"></i> Join on Facebook
+                        </a>
+                    </div>
+                    
+                    <div class="platform-card">
+                        <div class="platform-icon youtube-platform">
+                            <i class="fab fa-youtube"></i>
+                        </div>
+                        <h3>YouTube Live</h3>
+                        <p>Watch our services on YouTube. Subscribe to our channel for notifications when we go live and access our sermon library.</p>
+                        <a href="https://youtube.com/@kingdomcitizenschurchinter3209?si=qI6qv_JMigoi5Tvw" class="platform-btn" target="_blank">
+                            <i class="fab fa-youtube"></i> Subscribe on YouTube
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Recent Sermons/Videos -->
+        <section class="video-gallery animate-fadeInUp">
+            <h2 class="section-title">Recent Sermons & Teachings</h2>
+            
+            <div class="videos-grid">
+                <!-- Video 1 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsamuelabiodun.balogun%2Fvideos%2F1386833719575615%2F&show_text=false&width=560&t=0" 
+                                width="560" height="314" 
+                                style="border:none;overflow:hidden" 
+                                scrolling="no" 
+                                frameborder="0" 
+                                allowfullscreen="true" 
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                                allowFullScreen="true">
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Powerful Message of Hope</h3>
+                        <p class="video-description">An inspiring message about finding hope in challenging times and trusting in God's plan for your life.</p>
+                        <div class="video-meta">
+                            <span><i class="far fa-calendar"></i> Recent Sermon</span>
+                            <span><i class="far fa-clock"></i> 45 min</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 2 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsamuelabiodun.balogun%2Fvideos%2F749891184083600%2F&show_text=false&width=560&t=0" 
+                                width="560" height="314" 
+                                style="border:none;overflow:hidden" 
+                                scrolling="no" 
+                                frameborder="0" 
+                                allowfullscreen="true" 
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                                allowFullScreen="true">
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Sunday Celebration Service</h3>
+                        <p class="video-description">Full Sunday worship service including praise, worship, and powerful teaching from God's Word.</p>
+                        <div class="video-meta">
+                            <span><i class="far fa-calendar"></i> Sunday Service</span>
+                            <span><i class="far fa-clock"></i> 2 hours</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 3 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2Fsamuelabiodun.balogun%2Fvideos%2F1252346669668454%2F&show_text=false&width=560&t=0" 
+                                width="560" height="314" 
+                                style="border:none;overflow:hidden" 
+                                scrolling="no" 
+                                frameborder="0" 
+                                allowfullscreen="true" 
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                                allowFullScreen="true">
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Midweek Teaching Session</h3>
+                        <p class="video-description">Midweek Bible study focusing on practical application of God's Word in daily life.</p>
+                        <div class="video-meta">
+                            <span><i class="far fa-calendar"></i> Wednesday Study</span>
+                            <span><i class="far fa-clock"></i> 1 hour</span>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Video 4 -->
+                <div class="video-card">
+                    <div class="video-wrapper">
+                        <iframe src="https://www.facebook.com/plugins/video.php?height=314&href=https%3A%2F%2Fwww.facebook.com%2FKingdomcitizenchurchintl%2Fvideos%2F622014654000762%2F&show_text=false&width=560&t=0" 
+                                width="560" height="314" 
+                                style="border:none;overflow:hidden" 
+                                scrolling="no" 
+                                frameborder="0" 
+                                allowfullscreen="true" 
+                                allow="autoplay; clipboard-write; encrypted-media; picture-in-picture; web-share" 
+                                allowFullScreen="true">
+                        </iframe>
+                    </div>
+                    <div class="video-info">
+                        <h3 class="video-title">Church Anniversary Celebration</h3>
+                        <p class="video-description">Special celebration service marking another year of God's faithfulness to our church.</p>
+                        <div class="video-meta">
+                            <span><i class="far fa-calendar"></i> Special Event</span>
+                            <span><i class="far fa-clock"></i> 2.5 hours</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Service Times -->
+        <section class="service-times animate-fadeInUp">
+            <h2 class="section-title">Live Service Schedule</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 2rem;">Join us live during our regular service times. All times are in West Africa Time (WAT).</p>
+            
+            <div class="times-grid">
+                <div class="time-card">
+                    <div class="time-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="time-title">Sunday School</h3>
+                    <div class="time-schedule">8:00 AM - 9:00 AM</div>
+                    <p style="margin-top: 0.5rem; color: #777; font-size: 0.95rem;">Interactive Bible study for all ages</p>
+                </div>
+                
+                <div class="time-card">
+                    <div class="time-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3 class="time-title">Sunday Service</h3>
+                    <div class="time-schedule">9:00 AM - 11:00 AM</div>
+                    <p style="margin-top: 0.5rem; color: #777; font-size: 0.95rem;">Jesus Celebration Service (LIVE)</p>
+                </div>
+                
+                <div class="time-card">
+                    <div class="time-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <h3 class="time-title">Wednesday Communion</h3>
+                    <div class="time-schedule">5:00 PM - 6:30 PM</div>
+                    <p style="margin-top: 0.5rem; color: #777; font-size: 0.95rem;">Midweek refreshing (LIVE)</p>
+                </div>
+                
+                <div class="time-card">
+                    <div class="time-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="time-title">Foundation Class</h3>
+                    <div class="time-schedule">Saturday: 8:00 AM - 10:00 AM</div>
+                    <p style="margin-top: 0.5rem; color: #777; font-size: 0.95rem;">New believers' discipleship</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Social Media -->
+        <section class="social-media-section animate-fadeInUp">
+            <h2 class="section-title">Follow Us Online</h2>
+            <p style="text-align: center; font-size: 1.2rem; color: #666; max-width: 800px; margin: 0 auto 1rem;">Stay connected with us on social media for daily inspiration, updates, and live stream notifications.</p>
+            
+            <div class="social-grid">
+                <!-- Facebook -->
+                <div class="social-card">
+                    <div class="social-icon facebook-icon">
+                        <i class="fab fa-facebook-f"></i>
+                    </div>
+                    <h3 class="social-title">Facebook</h3>
+                    <div class="social-description">
+                        <p>Follow our church page for live stream notifications, event updates, and inspirational content.</p>
+                    </div>
+                    <div style="display: flex; flex-direction: column; gap: 1rem; margin-top: 1.5rem;">
+                        <a href="https://www.facebook.com/Kingdomcitizenchurchintl" class="social-link" target="_blank" style="font-weight: 600;">
+                            <i class="fab fa-facebook-f"></i> <strong>Church Page</strong>
+                        </a>
+                        <a href="https://www.facebook.com/samuelabiodun.balogun" class="social-link" target="_blank" style="font-weight: 600;">
+                            <i class="fab fa-facebook-f"></i> <strong>Pastor's Profile</strong>
+                        </a>
+                    </div>
+                </div>
+                
+                <!-- YouTube -->
+                <div class="social-card">
+                    <div class="social-icon youtube-icon">
+                        <i class="fab fa-youtube"></i>
+                    </div>
+                    <h3 class="social-title">YouTube</h3>
+                    <div class="social-description">
+                        <p>Subscribe to our YouTube channel for full sermons, teachings, and special event recordings.</p>
+                    </div>
+                    <a href="https://youtube.com/@kingdomcitizenschurchinter3209?si=qI6qv_JMigoi5Tvw" class="social-link" target="_blank" style="font-weight: 600;">
+                        <i class="fab fa-youtube"></i> <strong>Subscribe to Channel</strong>
+                    </a>
+                </div>
+                
+                <!-- TikTok -->
+                <div class="social-card">
+                    <div class="social-icon tiktok-icon">
+                        <i class="fab fa-tiktok"></i>
+                    </div>
+                    <h3 class="social-title">TikTok</h3>
+                    <div class="social-description">
+                        <p>Follow us on TikTok for short, inspiring videos, church highlights, and worship moments.</p>
+                    </div>
+                    <a href="https://www.tiktok.com/@kcci.abk?_r=1&_t=ZS-93j3tTO4e9w" class="social-link" target="_blank" style="font-weight: 600;">
+                        <i class="fab fa-tiktok"></i> <strong>Follow on TikTok</strong>
+                    </a>
+                </div>
+            </div>
+        </section>
+
+        <!-- Reminder CTA -->
+        <section class="reminder-cta animate-fadeInUp">
+            <div class="container">
+                <h2 class="cta-title">Never Miss a Service</h2>
+                <div class="cta-text">
+                    <p>Set reminders for our live services so you never miss a moment of worship. Join our online community and experience God's presence from wherever you are.</p>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="services.html" class="cta-btn">
+                        <i class="fas fa-calendar-alt"></i> View Service Schedule
+                    </a>
+                    <a href="contact.html" class="cta-btn">
+                        <i class="fas fa-bell"></i> Set Reminders
+                    </a>
+                    <a href="join.html" class="cta-btn">
+                        <i class="fas fa-user-plus"></i> Join Online Community
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Kingdom Citizens Church INT'L</h3>
+                <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/Kingdomcitizenchurchintl" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@kingdomcitizenschurchinter3209?si=qI6qv_JMigoi5Tvw" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@kcci.abk?_r=1&_t=ZS-93j3tTO4e9w" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/2348034280774" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="welcome.html">Welcome</a></li>
+                    <li><a href="department.html">Departments</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="live.html">Watch Live</a></li>
+                    <li><a href="donate.html">Give Online</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="pastor-note.html">Pastor's Desk</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Live Service Times</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-video"></i> <strong>Sunday Live Stream:</strong> 9:00 AM - 11:00 AM</li>
+                    <li><i class="fas fa-video"></i> <strong>Wednesday Live Stream:</strong> 5:00 PM - 6:30 PM</li>
+                    <li><i class="fab fa-facebook"></i> <strong>Facebook:</strong> Kingdomcitizenchurchintl</li>
+                    <li><i class="fab fa-youtube"></i> <strong>YouTube:</strong> @kingdomcitizenschurchinter3209</li>
+                    <li><i class="fas fa-phone"></i> <strong>Support:</strong> +234 803 428 0774</li>
+                    <li><i class="fas fa-envelope"></i> <strong>Email:</strong> kingdomcitizenschurchinternational</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        let isMenuOpen = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isMenuOpen);
+            
+            if (isMenuOpen) {
+                document.body.classList.add('menu-open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Dropdown menu on mobile
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('a');
+            
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close all other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992 && isMenuOpen) {
+                if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+                    isMenuOpen = false;
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Also close any open dropdowns
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            }
+        });
+
+        // Close menu when clicking a regular link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            if (!link.parentElement.classList.contains('dropdown')) {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992 && isMenuOpen) {
+                        isMenuOpen = false;
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Fix for window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && isMenuOpen) {
+                isMenuOpen = false;
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+                
+                // Close any open dropdowns
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                        el.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, 100);
+            
+            // Add live badge animation
+            const liveBadge = document.querySelector('.live-badge');
+            if (liveBadge) {
+                // Check if we're within live service hours (Sunday 9-11am, Wednesday 5-6:30pm)
+                const now = new Date();
+                const day = now.getDay(); // 0 = Sunday, 3 = Wednesday
+                const hour = now.getHours();
+                const minute = now.getMinutes();
+                
+                const isSundayService = day === 0 && hour >= 9 && hour < 11;
+                const isWednesdayService = day === 3 && hour >= 17 && hour < 18;
+                const isWednesdayServiceLate = day === 3 && hour === 18 && minute < 30;
+                
+                if (isSundayService || isWednesdayService || isWednesdayServiceLate) {
+                    liveBadge.style.display = 'inline-block';
+                    liveBadge.innerHTML = '<i class="fas fa-circle" style="margin-right: 5px; animation: pulse 2s infinite;"></i> LIVE NOW';
+                } else {
+                    liveBadge.style.display = 'none';
+                }
+            }
+            
+            // Add video lazy loading
+            const videoWrappers = document.querySelectorAll('.video-wrapper iframe');
+            videoWrappers.forEach(iframe => {
+                // Set data-src attribute and remove src initially
+                const src = iframe.getAttribute('src');
+                iframe.setAttribute('data-src', src);
+                iframe.removeAttribute('src');
+                
+                // Create observer to load when visible
+                const videoObserver = new IntersectionObserver((entries) => {
+                    entries.forEach(entry => {
+                        if (entry.isIntersecting) {
+                            const iframe = entry.target;
+                            iframe.setAttribute('src', iframe.getAttribute('data-src'));
+                            videoObserver.unobserve(iframe);
+                        }
+                    });
+                }, { threshold: 0.1 });
+                
+                videoObserver.observe(iframe);
+            });
+        });
+    </script>
+</body>
+</html>
