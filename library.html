@@ -1,0 +1,2073 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="theme-color" content="#008751">
+    <meta name="description" content="Kingdom Citizens Church Library | Christian Books by Pastor Sam Balogun, Pastor Mrs. Felicia Balogun, Pastor Wale Somoye, and Pastor Peter Oluwakunbi">
+    <meta name="keywords" content="Christian books, pastor sam balogun books, Christian bookstore, Kingdom Citizens Church library, Christian authors, spiritual growth books">
+    <meta name="author" content="Kingdom Citizens Church INT'L">
+    <meta property="og:title" content="Visit Library - Kingdom Citizens Church INT'L | Christian Bookstore">
+    <meta property="og:description" content="Browse and purchase Christian books written by Pastor Sam Balogun, Pastor Mrs. Felicia Balogun, Pastor Wale Somoye, and Pastor Peter Oluwakunbi">
+    <meta property="og:image" content="https://kingdomcitizenschurchintl.org/library-bg.jpg">
+    <meta property="og:url" content="https://kingdomcitizenschurchintl.org/library.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Visit Library - Kingdom Citizens Church INT'L">
+    <meta name="twitter:description" content="Christian Bookstore featuring books by our pastors">
+    <meta name="twitter:image" content="https://kingdomcitizenschurchintl.org/library-bg.jpg">
+    
+    <title>Visit Library - Kingdom Citizens Church INT'L | Christian Bookstore</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+        :root {
+            --primary: #008751;
+            --secondary: #FFD700;
+            --light: #f8f9fa;
+            --dark: #222;
+            --accent: #005a3a;
+            --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFED4E 100%);
+            --book-card: linear-gradient(135deg, #ffffff 0%, #f9f9f9 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: clamp(14px, 1vw, 18px);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            padding-top: 85px; /* For fixed header */
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Container */
+        .container {
+            width: min(100% - clamp(1rem, 5vw, 3rem), 1400px);
+            margin: 0 auto;
+            padding: 0 clamp(0.5rem, 3vw, 1.5rem);
+        }
+        
+        /* ========== HEADER ========== */
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 4px 0;
+            transition: all 0.4s ease;
+            height: 85px;
+        }
+        
+        .header-scrolled {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            height: 75px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 77px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1002;
+        }
+        
+        .logo-frame {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--secondary);
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-family: 'Lobster', cursive;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--primary);
+            letter-spacing: 1px;
+            line-height: 1.2;
+            white-space: nowrap;
+            display: none;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: auto;
+        }
+        
+        /* Desktop Navigation */
+        @media (min-width: 993px) {
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                background: rgba(0, 135, 81, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 4px;
+            }
+            
+            .nav-menu li {
+                margin: 0 4px;
+                position: relative;
+            }
+            
+            .nav-menu a {
+                color: var(--primary);
+                font-weight: 500;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+                padding: 8px 15px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .nav-menu a i {
+                margin-right: 6px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.15);
+                transform: translateY(-2px);
+            }
+            
+            .nav-menu a.active {
+                background: var(--secondary);
+                color: var(--primary);
+                font-weight: 600;
+            }
+            
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background: white;
+                min-width: 180px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                z-index: 1;
+                border-radius: 10px;
+                overflow: hidden;
+                top: 100%;
+                left: 0;
+                padding: 8px 0;
+                margin-top: 4px;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+            
+            .dropdown-content a {
+                color: var(--dark);
+                padding: 8px 16px;
+                display: block;
+                font-size: 0.8rem;
+                border-radius: 0;
+            }
+            
+            .dropdown-content a:hover {
+                background: #f8f9fa;
+                color: var(--primary);
+                transform: none;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 2.5rem;
+            }
+            
+            .logo-frame {
+                width: 75px;
+                height: 75px;
+            }
+        }
+        
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            z-index: 1001;
+            background: var(--primary);
+            border-radius: 50%;
+            padding: 8px;
+            border: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            background: white;
+            border-radius: 2px;
+            opacity: 1;
+            left: 10px;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .hamburger span:nth-child(1) { top: 14px; }
+        .hamburger span:nth-child(2) { top: 19px; }
+        .hamburger span:nth-child(3) { top: 24px; }
+        
+        .hamburger.active span:nth-child(1) {
+            top: 19px;
+            transform: rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            top: 19px;
+            transform: rotate(-45deg);
+        }
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: -100vh;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('logo11.jpg');
+                background-size: cover;
+                background-position: center;
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 100px 20px 30px;
+                transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                top: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0 0 10px 0;
+                width: 100%;
+                max-width: 300px;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu li:nth-child(2) { transition-delay: 0.15s; }
+            .nav-menu li:nth-child(3) { transition-delay: 0.2s; }
+            .nav-menu li:nth-child(4) { transition-delay: 0.25s; }
+            .nav-menu li:nth-child(5) { transition-delay: 0.3s; }
+            .nav-menu li:nth-child(6) { transition-delay: 0.35s; }
+            .nav-menu li:nth-child(7) { transition-delay: 0.4s; }
+            .nav-menu li:nth-child(8) { transition-delay: 0.45s; }
+            .nav-menu li:nth-child(9) { transition-delay: 0.5s; }
+            
+            .nav-menu a {
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                width: 100%;
+                border-radius: 10px;
+                color: var(--primary);
+                background: rgba(0, 135, 81, 0.1);
+                margin-bottom: 5px;
+                border-left: 3px solid transparent;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.2);
+                border-left: 3px solid var(--secondary);
+            }
+            
+            .nav-menu a i {
+                margin-right: 12px;
+                font-size: 1rem;
+                width: 20px;
+                text-align: center;
+            }
+            
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                background: rgba(0, 135, 81, 0.05);
+                margin: 5px 0 5px 15px;
+                border-radius: 8px;
+                padding: 5px 0;
+                border-left: 2px solid rgba(0, 135, 81, 0.1);
+            }
+            
+            .dropdown-content a {
+                padding: 10px 15px 10px 25px;
+                font-size: 0.9rem;
+                color: var(--primary);
+                border-radius: 0;
+                border-left: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 1.8rem;
+            }
+            
+            .logo-frame {
+                width: 65px;
+                height: 65px;
+                margin-right: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-frame {
+                width: 60px;
+                height: 60px;
+            }
+            
+            header {
+                height: 80px;
+            }
+            
+            .header-container {
+                height: 72px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .logo-frame {
+                width: 55px;
+                height: 55px;
+            }
+            
+            header {
+                height: 75px;
+            }
+            
+            .header-container {
+                height: 67px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo-frame {
+                width: 50px;
+                height: 50px;
+                margin-right: 8px;
+            }
+        }
+        
+        /* ========== LIBRARY HERO SECTION ========== */
+        .library-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('library-bg.jpg') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: clamp(3rem, 8vw, 5rem);
+            overflow: hidden;
+        }
+        
+        .library-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, white, transparent);
+            z-index: 1;
+        }
+        
+        .hero-content-library {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-divider {
+            width: 120px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+        
+        /* ========== MAIN LIBRARY CONTENT ========== */
+        .library-main {
+            padding: 0 0 clamp(5rem, 12vw, 8rem) 0;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: clamp(2rem, 6vw, 4rem);
+            position: relative;
+            padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(80px, 15vw, 120px);
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* Welcome Card */
+        .welcome-card {
+            background: white;
+            border-radius: 25px;
+            padding: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .welcome-message {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 2.5rem;
+            text-align: justify;
+        }
+        
+        /* Library Stats */
+        .library-stats {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(200px, 100%), 1fr));
+            gap: clamp(1.5rem, 3vw, 2rem);
+            margin-bottom: clamp(4rem, 8vw, 6rem);
+        }
+        
+        .stat-card {
+            background: white;
+            border-radius: 20px;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            text-align: center;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.08);
+            transition: all 0.3s ease;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .stat-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.15);
+        }
+        
+        .stat-number {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 4vw, 3.5rem);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            line-height: 1;
+        }
+        
+        .stat-label {
+            font-size: clamp(1rem, 1.5vw, 1.2rem);
+            color: #666;
+            font-weight: 600;
+        }
+        
+        /* Book Categories Filter */
+        .categories-filter {
+            margin-bottom: clamp(3rem, 6vw, 4rem);
+            text-align: center;
+        }
+        
+        .filter-title {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: var(--primary);
+            margin-bottom: 1.5rem;
+            font-weight: 600;
+        }
+        
+        .filter-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+            justify-content: center;
+            margin-bottom: 2rem;
+        }
+        
+        .filter-btn {
+            padding: 0.75rem 1.5rem;
+            background: white;
+            border: 2px solid var(--primary);
+            color: var(--primary);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 0.95rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .filter-btn:hover, .filter-btn.active {
+            background: var(--primary);
+            color: white;
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.2);
+        }
+        
+        /* Book Grid */
+        .books-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(min(300px, 100%), 1fr));
+            gap: clamp(2rem, 3vw, 2.5rem);
+            margin-bottom: clamp(4rem, 8vw, 6rem);
+        }
+        
+        .book-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .book-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .book-image {
+            position: relative;
+            height: 300px;
+            overflow: hidden;
+        }
+        
+        .book-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .book-card:hover .book-image img {
+            transform: scale(1.05);
+        }
+        
+        .book-badge {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background: var(--secondary);
+            color: var(--primary);
+            padding: 0.5rem 1rem;
+            border-radius: 20px;
+            font-weight: 600;
+            font-size: 0.85rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .book-content {
+            padding: clamp(1.5rem, 2.5vw, 2rem);
+            flex-grow: 1;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .book-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 2vw, 1.5rem);
+            color: var(--primary);
+            margin-bottom: 0.75rem;
+            line-height: 1.3;
+        }
+        
+        .book-author {
+            color: #666;
+            font-size: 1rem;
+            margin-bottom: 1rem;
+            font-weight: 500;
+        }
+        
+        .book-description {
+            color: #777;
+            font-size: 0.95rem;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            flex-grow: 1;
+        }
+        
+        .book-meta {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 1.5rem;
+            padding-bottom: 1rem;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .book-price {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            color: var(--primary);
+            font-weight: 700;
+        }
+        
+        .book-rating {
+            color: #FFD700;
+            font-size: 0.9rem;
+        }
+        
+        .book-actions {
+            display: flex;
+            gap: 1rem;
+        }
+        
+        .book-btn {
+            flex: 1;
+            text-align: center;
+            padding: 0.75rem 1rem;
+            border-radius: 10px;
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .btn-preview {
+            background: #f8f9fa;
+            color: var(--primary);
+            border: 1px solid #ddd;
+        }
+        
+        .btn-preview:hover {
+            background: #e9ecef;
+        }
+        
+        .btn-buy {
+            background: var(--primary);
+            color: white;
+        }
+        
+        .btn-buy:hover {
+            background: var(--accent);
+            transform: translateY(-3px);
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+        }
+        
+        /* Author Spotlight */
+        .author-spotlight {
+            margin-bottom: clamp(4rem, 8vw, 6rem);
+        }
+        
+        .authors-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(300px, 100%), 1fr));
+            gap: clamp(2rem, 3vw, 2.5rem);
+        }
+        
+        .author-card {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+            transition: all 0.3s ease;
+        }
+        
+        .author-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.15);
+        }
+        
+        .author-header {
+            padding: clamp(1.5rem, 2.5vw, 2rem);
+            background: var(--gradient);
+            color: white;
+            text-align: center;
+        }
+        
+        .author-avatar {
+            width: 120px;
+            height: 120px;
+            border-radius: 50%;
+            overflow: hidden;
+            margin: 0 auto 1rem;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        .author-avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .author-name {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.5rem, 2vw, 1.8rem);
+            margin-bottom: 0.5rem;
+        }
+        
+        .author-title {
+            font-size: 1rem;
+            opacity: 0.9;
+        }
+        
+        .author-body {
+            padding: clamp(1.5rem, 2.5vw, 2rem);
+        }
+        
+        .author-bio {
+            color: #666;
+            line-height: 1.6;
+            margin-bottom: 1.5rem;
+            font-size: 0.95rem;
+        }
+        
+        .author-books {
+            font-size: 0.9rem;
+            color: #888;
+        }
+        
+        /* Featured Collection */
+        .featured-collection {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 25px;
+            padding: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 4rem;
+        }
+        
+        .collection-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+        
+        .collection-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: all 0.3s ease;
+        }
+        
+        .collection-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
+        }
+        
+        .collection-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .collection-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.5s ease;
+        }
+        
+        .collection-card:hover .collection-image img {
+            transform: scale(1.05);
+        }
+        
+        .collection-content {
+            padding: 1.5rem;
+            text-align: center;
+        }
+        
+        .collection-title {
+            font-family: 'Playfair Display', serif;
+            font-size: 1.3rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .collection-count {
+            color: #666;
+            font-size: 0.9rem;
+            margin-bottom: 1rem;
+        }
+        
+        .collection-link {
+            display: inline-block;
+            color: var(--primary);
+            font-weight: 600;
+            font-size: 0.9rem;
+            transition: all 0.3s ease;
+        }
+        
+        .collection-link:hover {
+            color: var(--accent);
+            transform: translateX(5px);
+        }
+        
+        /* Newsletter Section */
+        .newsletter-section {
+            background: var(--gradient);
+            color: white;
+            padding: clamp(4rem, 8vw, 6rem) 0;
+            border-radius: 25px;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .newsletter-section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .newsletter-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.5rem);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter-text {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .newsletter-form {
+            max-width: 600px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .form-group {
+            display: flex;
+            gap: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .form-input {
+            flex: 1;
+            padding: 1rem 1.5rem;
+            border: none;
+            border-radius: 30px;
+            font-size: 1rem;
+            outline: none;
+        }
+        
+        .form-submit {
+            padding: 1rem 2rem;
+            background: white;
+            color: var(--primary);
+            border: none;
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+        
+        .form-submit:hover {
+            background: var(--secondary);
+            transform: translateY(-3px);
+        }
+        
+        .form-note {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+        
+        /* ========== FOOTER ========== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 1.875rem);
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-image: url('logo11.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+        
+        footer:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: clamp(2rem, 5vw, 3.125rem);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--secondary);
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.625rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: clamp(0.75rem, 2vw, 1rem);
+            margin-top: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(40px, 5vw, 45px);
+            height: clamp(40px, 5vw, 45px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            color: var(--dark);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: clamp(1rem, 2.5vw, 1.875rem);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+            color: #aaa;
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: clamp(1rem, 3vw, 1.875rem);
+            right: clamp(1rem, 3vw, 1.875rem);
+            width: clamp(45px, 5vw, 50px);
+            height: clamp(45px, 5vw, 50px);
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .library-hero {
+                height: 50vh;
+                min-height: 400px;
+            }
+            
+            .books-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .authors-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .collection-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .form-group {
+                flex-direction: column;
+            }
+            
+            .filter-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .filter-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+            
+            .book-actions {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .library-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .welcome-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .book-image {
+                height: 250px;
+            }
+            
+            .author-avatar {
+                width: 100px;
+                height: 100px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header id="mainHeader" class="glass-effect">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-frame">
+                        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+                    </div>
+                    <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="welcome.html"><i class="fas fa-door-open"></i> Welcome</a></li>
+                    <li><a href="department.html"><i class="fas fa-building"></i> Department</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-church"></i> Ministries <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="foundation.html">Foundation Class</a>
+                            <a href="counselling.html">Counselling</a>
+                            <a href="evangelism.html">Evangelism</a>
+                            <a href="library.html" class="active">Visit Library</a>
+                            <a href="sermon.html">Listen to Sermon</a>
+                            <a href="live.html">Watch Us Live</a>
+                        </div>
+                    </li>
+                    <li><a href="pastor-note.html"><i class="fas fa-user-tie"></i> Pastor's Desk</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join Us</a></li>
+                    <li><a href="prayer.html"><i class="fas fa-pray"></i> Prayer</a></li>
+                    <li><a href="testimony.html"><i class="fas fa-star"></i> Testimonies</a></li>
+                    <li><a href="services.html"><i class="fas fa-calendar-alt"></i> Services</a></li>
+                    <li><a href="locations.html"><i class="fas fa-map-marker-alt"></i> Locations</a></li>
+                    <li><a href="contact.html"><i class="fas fa-address-book"></i> Contact</a></li>
+                    <li><a href="donate.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="library-hero">
+        <div class="hero-content-library animate-fadeInUp">
+            <h1 class="hero-title">Kingdom Citizens Library</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Christian Books & Resources for Spiritual Growth</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="library-main container">
+        <!-- Welcome Message -->
+        <section class="welcome-card animate-fadeInUp">
+            <div class="welcome-message">
+                <p>Welcome to the Kingdom Citizens Church INT'L Online Library & Bookstore! We are delighted to offer you a carefully curated collection of Christian books written by our pastors and trusted Christian authors. Our mission is to provide spiritual nourishment, biblical teaching, and practical wisdom through quality Christian literature.</p>
+                
+                <p>Browse our collection of books on Christian living, leadership, marriage, prayer, and spiritual growth. Each book has been selected to help you grow in your faith and deepen your relationship with God. You can preview excerpts, read reviews, and purchase books directly through our trusted partners.</p>
+                
+                <p>Our library features exclusive works by Pastor Sam Balogun, Pastor Mrs. Felicia Balogun, Pastor Wale Somoye, and Pastor Peter Oluwakunbi. These anointed authors share insights from their ministry experience to equip and empower believers worldwide.</p>
+            </div>
+        </section>
+
+        <!-- Library Statistics -->
+        <section class="library-stats animate-fadeInUp">
+            <div class="stat-card">
+                <div class="stat-number">150+</div>
+                <div class="stat-label">Books Available</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">4</div>
+                <div class="stat-label">Featured Authors</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">12</div>
+                <div class="stat-label">Categories</div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-number">5,000+</div>
+                <div class="stat-label">Books Sold</div>
+            </div>
+        </section>
+
+        <!-- Book Categories Filter -->
+        <section class="categories-filter animate-fadeInUp">
+            <h3 class="filter-title">Browse by Category</h3>
+            <div class="filter-buttons">
+                <button class="filter-btn active" data-category="all">All Books</button>
+                <button class="filter-btn" data-category="pastor-sam">Pastor Sam Balogun</button>
+                <button class="filter-btn" data-category="pastor-felicia">Pastor Mrs. Felicia Balogun</button>
+                <button class="filter-btn" data-category="pastor-wale">Pastor Wale Somoye</button>
+                <button class="filter-btn" data-category="pastor-peter">Pastor Peter Oluwakunbi</button>
+                <button class="filter-btn" data-category="christian-living">Christian Living</button>
+                <button class="filter-btn" data-category="leadership">Leadership</button>
+                <button class="filter-btn" data-category="prayer">Prayer & Fasting</button>
+            </div>
+        </section>
+
+        <!-- Featured Books Grid -->
+        <section class="animate-fadeInUp">
+            <h2 class="section-title">Featured Books</h2>
+            
+            <div class="books-grid">
+                <!-- Book 1: Pastor Sam Balogun -->
+                <div class="book-card" data-category="pastor-sam leadership">
+                    <div class="book-image">
+                        <img src="book1.jpg" alt="Kingdom Leadership Principles">
+                        <div class="book-badge">Bestseller</div>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Kingdom Leadership Principles</h3>
+                        <p class="book-author">By Pastor Sam Balogun</p>
+                        <p class="book-description">Discover biblical principles for effective leadership in the kingdom of God. This book provides practical guidance for leading with wisdom, integrity, and spiritual authority.</p>
+                        <div class="book-meta">
+                            <div class="book-price">$24.99</div>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(47 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="book-btn btn-preview">Preview</a>
+                            <a href="#" class="book-btn btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 2: Pastor Mrs. Felicia Balogun -->
+                <div class="book-card" data-category="pastor-felicia christian-living">
+                    <div class="book-image">
+                        <img src="book2.jpg" alt="The Virtuous Woman">
+                        <div class="book-badge">New Release</div>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">The Virtuous Woman: God's Design for Women</h3>
+                        <p class="book-author">By Pastor Mrs. Felicia Balogun</p>
+                        <p class="book-description">A powerful exploration of biblical womanhood and God's purpose for women in today's world. This book offers practical wisdom for spiritual growth and family life.</p>
+                        <div class="book-meta">
+                            <div class="book-price">$19.99</div>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="far fa-star"></i>
+                                <span>(32 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="book-btn btn-preview">Preview</a>
+                            <a href="#" class="book-btn btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 3: Pastor Wale Somoye -->
+                <div class="book-card" data-category="pastor-wale prayer">
+                    <div class="book-image">
+                        <img src="book3.jpg" alt="Power in Prayer">
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Power in Prayer: Unlocking Heaven's Resources</h3>
+                        <p class="book-author">By Pastor Wale Somoye</p>
+                        <p class="book-description">Learn how to pray effectively and experience breakthrough in every area of life. This comprehensive guide covers different types of prayer and fasting.</p>
+                        <div class="book-meta">
+                            <div class="book-price">$21.99</div>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(56 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="book-btn btn-preview">Preview</a>
+                            <a href="#" class="book-btn btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 4: Pastor Peter Oluwakunbi -->
+                <div class="book-card" data-category="pastor-peter christian-living">
+                    <div class="book-image">
+                        <img src="book4.jpg" alt="Faith That Works">
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Faith That Works: Practical Christianity</h3>
+                        <p class="book-author">By Pastor Peter Oluwakunbi</p>
+                        <p class="book-description">A practical guide to living out your faith in everyday situations. This book helps believers apply biblical principles to work, family, and relationships.</p>
+                        <div class="book-meta">
+                            <div class="book-price">$18.99</div>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(41 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="book-btn btn-preview">Preview</a>
+                            <a href="#" class="book-btn btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 5: Pastor Sam Balogun -->
+                <div class="book-card" data-category="pastor-sam leadership">
+                    <div class="book-image">
+                        <img src="book5.jpg" alt="Building Kingdom Families">
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Building Kingdom Families</h3>
+                        <p class="book-author">By Pastor Sam Balogun</p>
+                        <p class="book-description">Biblical principles for establishing godly families that reflect God's kingdom values. Essential reading for parents and couples.</p>
+                        <div class="book-meta">
+                            <div class="book-price">$22.99</div>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <span>(63 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="book-btn btn-preview">Preview</a>
+                            <a href="#" class="book-btn btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Book 6: Pastor Mrs. Felicia Balogun -->
+                <div class="book-card" data-category="pastor-felicia prayer">
+                    <div class="book-image">
+                        <img src="book6.jpg" alt="Women of Prayer">
+                        <div class="book-badge">Popular</div>
+                    </div>
+                    <div class="book-content">
+                        <h3 class="book-title">Women of Prayer: Changing Your World</h3>
+                        <p class="book-author">By Pastor Mrs. Felicia Balogun</p>
+                        <p class="book-description">Empowering women to become prayer warriors who impact their families, communities, and nations through consistent prayer.</p>
+                        <div class="book-meta">
+                            <div class="book-price">$20.99</div>
+                            <div class="book-rating">
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star"></i>
+                                <i class="fas fa-star-half-alt"></i>
+                                <span>(38 reviews)</span>
+                            </div>
+                        </div>
+                        <div class="book-actions">
+                            <a href="#" class="book-btn btn-preview">Preview</a>
+                            <a href="#" class="book-btn btn-buy">Buy Now</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Author Spotlight -->
+        <section class="author-spotlight animate-fadeInUp">
+            <h2 class="section-title">Meet Our Authors</h2>
+            
+            <div class="authors-grid">
+                <!-- Pastor Sam Balogun -->
+                <div class="author-card">
+                    <div class="author-header">
+                        <div class="author-avatar">
+                            <img src="author1.jpg" alt="Pastor Sam Balogun">
+                        </div>
+                        <h3 class="author-name">Pastor Sam Balogun</h3>
+                        <p class="author-title">Senior Pastor & Author</p>
+                    </div>
+                    <div class="author-body">
+                        <p class="author-bio">With over 25 years of ministry experience, Pastor Sam Balogun has dedicated his life to teaching biblical principles for successful Christian living. His books on leadership and family have impacted thousands worldwide.</p>
+                        <p class="author-books"><strong>Books Published:</strong> 12 | <strong>Categories:</strong> Leadership, Family, Christian Living</p>
+                    </div>
+                </div>
+                
+                <!-- Pastor Mrs. Felicia Balogun -->
+                <div class="author-card">
+                    <div class="author-header">
+                        <div class="author-avatar">
+                            <img src="author2.jpg" alt="Pastor Mrs. Felicia Balogun">
+                        </div>
+                        <h3 class="author-name">Pastor Mrs. Felicia Balogun</h3>
+                        <p class="author-title">Women's Ministry Leader & Author</p>
+                    </div>
+                    <div class="author-body">
+                        <p class="author-bio">A dynamic teacher and women's ministry leader, Pastor Mrs. Felicia Balogun specializes in biblical teachings for women and family. Her practical approach to Christian living has transformed many homes.</p>
+                        <p class="author-books"><strong>Books Published:</strong> 8 | <strong>Categories:</strong> Women's Ministry, Family, Prayer</p>
+                    </div>
+                </div>
+                
+                <!-- Pastor Wale Somoye -->
+                <div class="author-card">
+                    <div class="author-header">
+                        <div class="author-avatar">
+                            <img src="author3.jpg" alt="Pastor Wale Somoye">
+                        </div>
+                        <h3 class="author-name">Pastor Wale Somoye</h3>
+                        <p class="author-title">Prayer Ministry Coordinator & Author</p>
+                    </div>
+                    <div class="author-body">
+                        <p class="author-bio">Known for his deep teachings on prayer and spiritual warfare, Pastor Wale Somoye has helped countless believers develop a powerful prayer life. His books are practical guides to spiritual breakthrough.</p>
+                        <p class="author-books"><strong>Books Published:</strong> 6 | <strong>Categories:</strong> Prayer, Spiritual Warfare, Christian Living</p>
+                    </div>
+                </div>
+                
+                <!-- Pastor Peter Oluwakunbi -->
+                <div class="author-card">
+                    <div class="author-header">
+                        <div class="author-avatar">
+                            <img src="author4.jpg" alt="Pastor Peter Oluwakunbi">
+                        </div>
+                        <h3 class="author-name">Pastor Peter Oluwakunbi</h3>
+                        <p class="author-title">Youth Pastor & Author</p>
+                    </div>
+                    <div class="author-body">
+                        <p class="author-bio">With a passion for reaching the younger generation, Pastor Peter Oluwakunbi writes practical books that help believers apply their faith in everyday situations. His relatable style makes complex topics accessible.</p>
+                        <p class="author-books"><strong>Books Published:</strong> 5 | <strong>Categories:</strong> Youth Ministry, Practical Christianity, Discipleship</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Featured Collections -->
+        <section class="featured-collection animate-fadeInUp">
+            <h2 class="section-title">Featured Collections</h2>
+            
+            <div class="collection-grid">
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="collection1.jpg" alt="Leadership Collection">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Leadership Collection</h3>
+                        <p class="collection-count">15 Books</p>
+                        <a href="#" class="collection-link">Browse Collection →</a>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="collection2.jpg" alt="Prayer & Fasting">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Prayer & Fasting</h3>
+                        <p class="collection-count">12 Books</p>
+                        <a href="#" class="collection-link">Browse Collection →</a>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="collection3.jpg" alt="Family & Marriage">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Family & Marriage</h3>
+                        <p class="collection-count">18 Books</p>
+                        <a href="#" class="collection-link">Browse Collection →</a>
+                    </div>
+                </div>
+                
+                <div class="collection-card">
+                    <div class="collection-image">
+                        <img src="collection4.jpg" alt="Christian Living">
+                    </div>
+                    <div class="collection-content">
+                        <h3 class="collection-title">Christian Living</h3>
+                        <p class="collection-count">25 Books</p>
+                        <a href="#" class="collection-link">Browse Collection →</a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Newsletter Section -->
+        <section class="newsletter-section animate-fadeInUp">
+            <div class="container">
+                <h2 class="newsletter-title">Stay Updated with New Releases</h2>
+                <p class="newsletter-text">Subscribe to our newsletter to receive updates on new book releases, author events, special discounts, and spiritual insights from our pastors.</p>
+                
+                <form class="newsletter-form">
+                    <div class="form-group">
+                        <input type="email" class="form-input" placeholder="Enter your email address" required>
+                        <button type="submit" class="form-submit">Subscribe</button>
+                    </div>
+                    <p class="form-note">We respect your privacy. Unsubscribe at any time.</p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Kingdom Citizens Library</h3>
+                <p>A curated collection of Christian books and resources for spiritual growth and development. Featuring works by Pastor Sam Balogun, Pastor Mrs. Felicia Balogun, Pastor Wale Somoye, and Pastor Peter Oluwakunbi.</p>
+                <div class="social-links">
+                    <a href="https://www.facebook.com/Kingdomcitizenchurchintl" aria-label="Facebook" target="_blank"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://youtube.com/@kingdomcitizenschurchinter3209?si=qI6qv_JMigoi5Tvw" aria-label="YouTube" target="_blank"><i class="fab fa-youtube"></i></a>
+                    <a href="https://www.tiktok.com/@kcci.abk?_r=1&_t=ZS-93j3tTO4e9w" aria-label="TikTok" target="_blank"><i class="fab fa-tiktok"></i></a>
+                    <a href="https://wa.me/2348034280774" aria-label="WhatsApp" target="_blank"><i class="fab fa-whatsapp"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="library.html">Library Home</a></li>
+                    <li><a href="#">All Books</a></li>
+                    <li><a href="#">Featured Authors</a></li>
+                    <li><a href="#">New Releases</a></li>
+                    <li><a href="#">Bestsellers</a></li>
+                    <li><a href="#">Special Offers</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Library Information</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-book"></i> <strong>Total Books:</strong> 150+ Titles</li>
+                    <li><i class="fas fa-user"></i> <strong>Featured Authors:</strong> 4 Pastors</li>
+                    <li><i class="fas fa-tags"></i> <strong>Categories:</strong> 12+ Topics</li>
+                    <li><i class="fas fa-shopping-cart"></i> <strong>Books Sold:</strong> 5,000+ Copies</li>
+                    <li><i class="fas fa-shipping-fast"></i> <strong>Shipping:</strong> Worldwide Delivery</li>
+                    <li><i class="fas fa-headset"></i> <strong>Support:</strong> library@kingdomcitizenschurchintl.org</li>
+                    <li><i class="fas fa-phone"></i> <strong>Phone:</strong> +234 803 428 0774</li>
+                    <li><i class="fas fa-clock"></i> <strong>Response Time:</strong> 24-48 Hours</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Kingdom Citizens Church INT'L Library. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a> | <a href="shipping.html">Shipping Policy</a>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        let isMenuOpen = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isMenuOpen);
+            
+            if (isMenuOpen) {
+                document.body.classList.add('menu-open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Dropdown menu on mobile
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('a');
+            
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close all other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992 && isMenuOpen) {
+                if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+                    isMenuOpen = false;
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Also close any open dropdowns
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            }
+        });
+
+        // Close menu when clicking a regular link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            if (!link.parentElement.classList.contains('dropdown')) {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992 && isMenuOpen) {
+                        isMenuOpen = false;
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Book filtering functionality
+        const filterButtons = document.querySelectorAll('.filter-btn');
+        const bookCards = document.querySelectorAll('.book-card');
+
+        filterButtons.forEach(button => {
+            button.addEventListener('click', () => {
+                // Remove active class from all buttons
+                filterButtons.forEach(btn => btn.classList.remove('active'));
+                
+                // Add active class to clicked button
+                button.classList.add('active');
+                
+                const category = button.getAttribute('data-category');
+                
+                // Show/hide book cards based on category
+                bookCards.forEach(card => {
+                    const cardCategories = card.getAttribute('data-category').split(' ');
+                    
+                    if (category === 'all' || cardCategories.includes(category)) {
+                        card.style.display = 'flex';
+                        setTimeout(() => {
+                            card.style.opacity = '1';
+                            card.style.transform = 'translateY(0)';
+                        }, 100);
+                    } else {
+                        card.style.opacity = '0';
+                        card.style.transform = 'translateY(20px)';
+                        setTimeout(() => {
+                            card.style.display = 'none';
+                        }, 300);
+                    }
+                });
+            });
+        });
+
+        // Book preview functionality
+        const previewButtons = document.querySelectorAll('.btn-preview');
+        
+        previewButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const bookCard = button.closest('.book-card');
+                const bookTitle = bookCard.querySelector('.book-title').textContent;
+                const bookAuthor = bookCard.querySelector('.book-author').textContent;
+                
+                // Create preview modal
+                const modal = document.createElement('div');
+                modal.style.cssText = `
+                    position: fixed;
+                    top: 0;
+                    left: 0;
+                    width: 100%;
+                    height: 100%;
+                    background: rgba(0,0,0,0.8);
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    z-index: 10000;
+                    padding: 20px;
+                `;
+                
+                modal.innerHTML = `
+                    <div style="
+                        background: white;
+                        border-radius: 20px;
+                        max-width: 800px;
+                        width: 100%;
+                        max-height: 90vh;
+                        overflow-y: auto;
+                        padding: 30px;
+                        position: relative;
+                    ">
+                        <button style="
+                            position: absolute;
+                            top: 15px;
+                            right: 15px;
+                            background: var(--primary);
+                            color: white;
+                            border: none;
+                            width: 40px;
+                            height: 40px;
+                            border-radius: 50%;
+                            cursor: pointer;
+                            font-size: 20px;
+                        ">×</button>
+                        
+                        <h2 style="color: var(--primary); margin-bottom: 10px;">${bookTitle}</h2>
+                        <p style="color: #666; margin-bottom: 30px;">${bookAuthor}</p>
+                        
+                        <div style="margin-bottom: 30px;">
+                            <h3 style="color: var(--primary); margin-bottom: 15px;">Book Preview</h3>
+                            <p style="line-height: 1.8; color: #555;">
+                                This is a preview of the book's introduction. To read the complete book, please purchase a copy.
+                                The full book contains valuable insights and practical guidance for your spiritual journey.
+                            </p>
+                            <p style="line-height: 1.8; color: #555; margin-top: 15px;">
+                                "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat."
+                            </p>
+                        </div>
+                        
+                        <div style="display: flex; gap: 15px; justify-content: center;">
+                            <button style="
+                                padding: 12px 30px;
+                                background: var(--primary);
+                                color: white;
+                                border: none;
+                                border-radius: 10px;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                            ">Buy Full Book</button>
+                            <button style="
+                                padding: 12px 30px;
+                                background: #f8f9fa;
+                                color: var(--primary);
+                                border: 1px solid #ddd;
+                                border-radius: 10px;
+                                font-weight: 600;
+                                cursor: pointer;
+                                transition: all 0.3s ease;
+                            ">Close Preview</button>
+                        </div>
+                    </div>
+                `;
+                
+                document.body.appendChild(modal);
+                
+                // Close modal functionality
+                const closeBtn = modal.querySelector('button');
+                closeBtn.addEventListener('click', () => {
+                    document.body.removeChild(modal);
+                });
+                
+                // Close on outside click
+                modal.addEventListener('click', (e) => {
+                    if (e.target === modal) {
+                        document.body.removeChild(modal);
+                    }
+                });
+            });
+        });
+
+        // Buy button functionality
+        const buyButtons = document.querySelectorAll('.btn-buy');
+        
+        buyButtons.forEach(button => {
+            button.addEventListener('click', (e) => {
+                e.preventDefault();
+                const bookCard = button.closest('.book-card');
+                const bookTitle = bookCard.querySelector('.book-title').textContent;
+                const bookPrice = bookCard.querySelector('.book-price').textContent;
+                
+                // In a real implementation, this would redirect to a checkout page
+                // For now, we'll show a message
+                alert(`Thank you for your interest in "${bookTitle}"!\n\nPrice: ${bookPrice}\n\nYou will be redirected to our secure checkout page.`);
+                
+                // In production, this would be: window.location.href = '/checkout?book=' + encodeURIComponent(bookTitle);
+            });
+        });
+
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('.newsletter-form');
+        
+        if (newsletterForm) {
+            newsletterForm.addEventListener('submit', (e) => {
+                e.preventDefault();
+                const emailInput = newsletterForm.querySelector('.form-input');
+                const email = emailInput.value;
+                
+                // Simple validation
+                if (email && email.includes('@')) {
+                    alert('Thank you for subscribing to our newsletter! You will receive updates on new book releases and special offers.');
+                    emailInput.value = '';
+                } else {
+                    alert('Please enter a valid email address.');
+                }
+            });
+        }
+
+        // Fix for window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && isMenuOpen) {
+                isMenuOpen = false;
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+                
+                // Close any open dropdowns
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                        el.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, 100);
+            
+            // Add hover effect to book cards
+            bookCards.forEach(card => {
+                card.addEventListener('mouseenter', function() {
+                    this.style.zIndex = '10';
+                });
+                
+                card.addEventListener('mouseleave', function() {
+                    this.style.zIndex = '1';
+                });
+            });
+            
+            // Simulate book ratings
+            const ratings = document.querySelectorAll('.book-rating');
+            ratings.forEach(rating => {
+                const stars = rating.querySelectorAll('i');
+                const ratingText = rating.querySelector('span');
+                if (ratingText) {
+                    const randomReviews = Math.floor(Math.random() * 100) + 20;
+                    ratingText.textContent = `(${randomReviews} reviews)`;
+                }
+            });
+        });
+    </script>
+</body>
+</html>
