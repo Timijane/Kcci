@@ -797,7 +797,7 @@
             box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
         }
         
-        /* Author Spotlight */
+        /* Author Spotlight - UPDATED: No images */
         .author-spotlight {
             margin-bottom: clamp(4rem, 8vw, 6rem);
         }
@@ -814,6 +814,8 @@
             overflow: hidden;
             box-shadow: 0 15px 40px rgba(0, 0, 0, 0.1);
             transition: all 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
         
         .author-card:hover {
@@ -826,21 +828,10 @@
             background: var(--gradient);
             color: white;
             text-align: center;
-        }
-        
-        .author-avatar {
-            width: 120px;
-            height: 120px;
-            border-radius: 50%;
-            overflow: hidden;
-            margin: 0 auto 1rem;
-            border: 4px solid rgba(255, 255, 255, 0.3);
-        }
-        
-        .author-avatar img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
+            min-height: 120px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
         }
         
         .author-name {
@@ -856,6 +847,7 @@
         
         .author-body {
             padding: clamp(1.5rem, 2.5vw, 2rem);
+            flex-grow: 1;
         }
         
         .author-bio {
@@ -1235,6 +1227,11 @@
             .book-actions {
                 flex-direction: column;
             }
+            
+            .author-header {
+                min-height: 100px;
+                padding: 1.5rem;
+            }
         }
         
         @media (max-width: 576px) {
@@ -1249,11 +1246,6 @@
             
             .book-image {
                 height: 250px;
-            }
-            
-            .author-avatar {
-                width: 100px;
-                height: 100px;
             }
         }
     </style>
@@ -1535,7 +1527,7 @@
             </div>
         </section>
 
-        <!-- Author Spotlight -->
+        <!-- Author Spotlight - UPDATED: No images -->
         <section class="author-spotlight animate-fadeInUp">
             <h2 class="section-title">Meet Our Authors</h2>
             
@@ -1543,9 +1535,6 @@
                 <!-- Pastor Sam Balogun -->
                 <div class="author-card">
                     <div class="author-header">
-                        <div class="author-avatar">
-                            <img src="author1.jpg" alt="Pastor Sam Balogun">
-                        </div>
                         <h3 class="author-name">Pastor Sam Balogun</h3>
                         <p class="author-title">Senior Pastor & Author</p>
                     </div>
@@ -1558,9 +1547,6 @@
                 <!-- Pastor Mrs. Felicia Balogun -->
                 <div class="author-card">
                     <div class="author-header">
-                        <div class="author-avatar">
-                            <img src="author2.jpg" alt="Pastor Mrs. Felicia Balogun">
-                        </div>
                         <h3 class="author-name">Pastor Mrs. Felicia Balogun</h3>
                         <p class="author-title">Women's Ministry Leader & Author</p>
                     </div>
@@ -1573,9 +1559,6 @@
                 <!-- Pastor Wale Somoye -->
                 <div class="author-card">
                     <div class="author-header">
-                        <div class="author-avatar">
-                            <img src="author3.jpg" alt="Pastor Wale Somoye">
-                        </div>
                         <h3 class="author-name">Pastor Wale Somoye</h3>
                         <p class="author-title">Prayer Ministry Coordinator & Author</p>
                     </div>
@@ -1588,9 +1571,6 @@
                 <!-- Pastor Peter Oluwakunbi -->
                 <div class="author-card">
                     <div class="author-header">
-                        <div class="author-avatar">
-                            <img src="author4.jpg" alt="Pastor Peter Oluwakunbi">
-                        </div>
                         <h3 class="author-name">Pastor Peter Oluwakunbi</h3>
                         <p class="author-title">Youth Pastor & Author</p>
                     </div>
