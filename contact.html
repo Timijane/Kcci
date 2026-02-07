@@ -1,0 +1,1566 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0, minimum-scale=0.5, user-scalable=yes, viewport-fit=cover">
+    
+    <!-- SEO Meta Tags -->
+    <meta name="theme-color" content="#008751">
+    <meta name="description" content="Our Locations - Kingdom Citizens Church INT'L | Find our headquarters and branch locations in Abeokuta, Ogun State, Nigeria.">
+    <meta name="keywords" content="church locations, Abeokuta church, Kingdom Citizens Church locations, Ogun State churches, Nigeria churches, worship centers">
+    <meta name="author" content="Kingdom Citizens Church INT'L">
+    <meta property="og:title" content="Our Locations - Kingdom Citizens Church INT'L | Find Us">
+    <meta property="og:description" content="Visit our headquarters in Abiola or our branch in Osara Obantoko, Abeokuta, Ogun State, Nigeria.">
+    <meta property="og:image" content="https://kingdomcitizenschurchintl.org/locations-bg.jpg">
+    <meta property="og:url" content="https://kingdomcitizenschurchintl.org/locations.html">
+    <meta property="og:type" content="website">
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Our Locations - Kingdom Citizens Church INT'L">
+    <meta name="twitter:description" content="Find our worship centers in Abeokuta, Nigeria">
+    <meta name="twitter:image" content="https://kingdomcitizenschurchintl.org/locations-bg.jpg">
+    
+    <title>Our Locations - Kingdom Citizens Church INT'L | Find Our Worship Centers</title>
+    
+    <!-- Favicon -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png">
+    
+    <!-- Fonts & Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Lobster&family=Poppins:wght@300;400;500;600;700&family=Playfair+Display:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+        :root {
+            --primary: #008751;
+            --secondary: #FFD700;
+            --light: #f8f9fa;
+            --dark: #222;
+            --accent: #005a3a;
+            --gradient: linear-gradient(135deg, #008751 0%, #005a3a 100%);
+            --gold-gradient: linear-gradient(135deg, #FFD700 0%, #FFED4E 100%);
+            --headquarters: linear-gradient(135deg, #4CAF50 0%, #2E7D32 100%);
+            --branch: linear-gradient(135deg, #2196F3 0%, #1976D2 100%);
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        html {
+            font-size: clamp(14px, 1vw, 18px);
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: 'Poppins', sans-serif;
+            background: linear-gradient(180deg, #ffffff 0%, #f8f9fa 100%);
+            color: #333;
+            line-height: 1.7;
+            overflow-x: hidden;
+            width: 100%;
+            max-width: 100vw;
+            padding-top: 85px; /* For fixed header */
+        }
+        
+        body.menu-open {
+            overflow: hidden;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        /* Container */
+        .container {
+            width: min(100% - clamp(1rem, 5vw, 3rem), 1200px);
+            margin: 0 auto;
+            padding: 0 clamp(0.5rem, 3vw, 1.5rem);
+        }
+        
+        /* ========== HEADER (Same as welcome page) ========== */
+        header {
+            background: white;
+            box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            z-index: 1000;
+            padding: 4px 0;
+            transition: all 0.4s ease;
+            height: 85px;
+        }
+        
+        .header-scrolled {
+            background: white;
+            box-shadow: 0 5px 20px rgba(0, 0, 0, 0.2);
+            height: 75px;
+        }
+        
+        .header-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0 clamp(0.75rem, 2vw, 1.5rem);
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            height: 77px;
+        }
+        
+        .logo {
+            display: flex;
+            align-items: center;
+            z-index: 1002;
+        }
+        
+        .logo-frame {
+            width: 70px;
+            height: 70px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+            border: 2px solid var(--secondary);
+            background: white;
+            transition: all 0.3s ease;
+        }
+        
+        .logo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .logo-link {
+            display: flex;
+            align-items: center;
+            text-decoration: none;
+        }
+        
+        .logo-text {
+            font-family: 'Lobster', cursive;
+            font-size: 2.2rem;
+            font-weight: 400;
+            color: var(--primary);
+            letter-spacing: 1px;
+            line-height: 1.2;
+            white-space: nowrap;
+            display: none;
+        }
+        
+        /* Navigation */
+        .nav-container {
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            width: auto;
+        }
+        
+        /* Desktop Navigation */
+        @media (min-width: 993px) {
+            .nav-menu {
+                display: flex;
+                list-style: none;
+                background: rgba(0, 135, 81, 0.1);
+                backdrop-filter: blur(10px);
+                border-radius: 30px;
+                padding: 4px;
+            }
+            
+            .nav-menu li {
+                margin: 0 4px;
+                position: relative;
+            }
+            
+            .nav-menu a {
+                color: var(--primary);
+                font-weight: 500;
+                font-size: 0.85rem;
+                transition: all 0.3s ease;
+                padding: 8px 15px;
+                border-radius: 20px;
+                display: flex;
+                align-items: center;
+            }
+            
+            .nav-menu a i {
+                margin-right: 6px;
+                font-size: 0.9rem;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.15);
+                transform: translateY(-2px);
+            }
+            
+            .nav-menu a.active {
+                background: var(--secondary);
+                color: var(--primary);
+                font-weight: 600;
+            }
+            
+            .dropdown-content {
+                display: none;
+                position: absolute;
+                background: white;
+                min-width: 180px;
+                box-shadow: 0 10px 25px rgba(0, 0, 0, 0.15);
+                z-index: 1;
+                border-radius: 10px;
+                overflow: hidden;
+                top: 100%;
+                left: 0;
+                padding: 8px 0;
+                margin-top: 4px;
+                border: 1px solid rgba(0,0,0,0.05);
+            }
+            
+            .dropdown-content a {
+                color: var(--dark);
+                padding: 8px 16px;
+                display: block;
+                font-size: 0.8rem;
+                border-radius: 0;
+            }
+            
+            .dropdown-content a:hover {
+                background: #f8f9fa;
+                color: var(--primary);
+                transform: none;
+            }
+            
+            .dropdown:hover .dropdown-content {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 2.5rem;
+            }
+            
+            .logo-frame {
+                width: 75px;
+                height: 75px;
+            }
+        }
+        
+        /* Mobile Menu */
+        .hamburger {
+            display: none;
+            cursor: pointer;
+            width: 40px;
+            height: 40px;
+            position: relative;
+            z-index: 1001;
+            background: var(--primary);
+            border-radius: 50%;
+            padding: 8px;
+            border: none;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.2);
+        }
+        
+        .hamburger span {
+            display: block;
+            position: absolute;
+            height: 2px;
+            width: 20px;
+            background: white;
+            border-radius: 2px;
+            opacity: 1;
+            left: 10px;
+            transform: rotate(0deg);
+            transition: .25s ease-in-out;
+        }
+        
+        .hamburger span:nth-child(1) { top: 14px; }
+        .hamburger span:nth-child(2) { top: 19px; }
+        .hamburger span:nth-child(3) { top: 24px; }
+        
+        .hamburger.active span:nth-child(1) {
+            top: 19px;
+            transform: rotate(45deg);
+        }
+        
+        .hamburger.active span:nth-child(2) {
+            opacity: 0;
+            left: -30px;
+        }
+        
+        .hamburger.active span:nth-child(3) {
+            top: 19px;
+            transform: rotate(-45deg);
+        }
+        
+        @media (max-width: 992px) {
+            .nav-menu {
+                position: fixed;
+                top: -100vh;
+                left: 0;
+                width: 100%;
+                height: 100vh;
+                background: linear-gradient(rgba(255, 255, 255, 0.92), rgba(255, 255, 255, 0.92)), url('logo11.jpg');
+                background-size: cover;
+                background-position: center;
+                backdrop-filter: blur(10px);
+                flex-direction: column;
+                justify-content: flex-start;
+                align-items: center;
+                padding: 100px 20px 30px;
+                transition: top 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+                box-shadow: 0 10px 30px rgba(0,0,0,0.2);
+                z-index: 999;
+                overflow-y: auto;
+            }
+            
+            .nav-menu.active {
+                top: 0;
+            }
+            
+            .nav-menu li {
+                margin: 0 0 10px 0;
+                width: 100%;
+                max-width: 300px;
+                opacity: 0;
+                transform: translateY(-20px);
+                transition: all 0.3s ease;
+            }
+            
+            .nav-menu.active li {
+                opacity: 1;
+                transform: translateY(0);
+            }
+            
+            .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
+            .nav-menu li:nth-child(2) { transition-delay: 0.15s; }
+            .nav-menu li:nth-child(3) { transition-delay: 0.2s; }
+            .nav-menu li:nth-child(4) { transition-delay: 0.25s; }
+            .nav-menu li:nth-child(5) { transition-delay: 0.3s; }
+            .nav-menu li:nth-child(6) { transition-delay: 0.35s; }
+            .nav-menu li:nth-child(7) { transition-delay: 0.4s; }
+            .nav-menu li:nth-child(8) { transition-delay: 0.45s; }
+            .nav-menu li:nth-child(9) { transition-delay: 0.5s; }
+            
+            .nav-menu a {
+                font-size: 1rem;
+                display: flex;
+                align-items: center;
+                padding: 12px 15px;
+                width: 100%;
+                border-radius: 10px;
+                color: var(--primary);
+                background: rgba(0, 135, 81, 0.1);
+                margin-bottom: 5px;
+                border-left: 3px solid transparent;
+            }
+            
+            .nav-menu a:hover {
+                background: rgba(0, 135, 81, 0.2);
+                border-left: 3px solid var(--secondary);
+            }
+            
+            .nav-menu a i {
+                margin-right: 12px;
+                font-size: 1rem;
+                width: 20px;
+                text-align: center;
+            }
+            
+            .dropdown-content {
+                position: static;
+                display: none;
+                box-shadow: none;
+                background: rgba(0, 135, 81, 0.05);
+                margin: 5px 0 5px 15px;
+                border-radius: 8px;
+                padding: 5px 0;
+                border-left: 2px solid rgba(0, 135, 81, 0.1);
+            }
+            
+            .dropdown-content a {
+                padding: 10px 15px 10px 25px;
+                font-size: 0.9rem;
+                color: var(--primary);
+                border-radius: 0;
+                border-left: none;
+            }
+            
+            .dropdown.active .dropdown-content {
+                display: block;
+            }
+            
+            .hamburger {
+                display: block;
+            }
+            
+            .logo-text {
+                display: block;
+                font-size: 1.8rem;
+            }
+            
+            .logo-frame {
+                width: 65px;
+                height: 65px;
+                margin-right: 10px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .logo-text {
+                font-size: 1.5rem;
+            }
+            
+            .logo-frame {
+                width: 60px;
+                height: 60px;
+            }
+            
+            header {
+                height: 80px;
+            }
+            
+            .header-container {
+                height: 72px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .logo-text {
+                font-size: 1.3rem;
+            }
+            
+            .logo-frame {
+                width: 55px;
+                height: 55px;
+            }
+            
+            header {
+                height: 75px;
+            }
+            
+            .header-container {
+                height: 67px;
+            }
+        }
+        
+        @media (max-width: 400px) {
+            .logo-text {
+                font-size: 1.1rem;
+            }
+            
+            .logo-frame {
+                width: 50px;
+                height: 50px;
+                margin-right: 8px;
+            }
+        }
+        
+        /* ========== LOCATIONS HERO SECTION ========== */
+        .locations-hero {
+            position: relative;
+            height: 60vh;
+            min-height: 500px;
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.5)), url('locations-bg.jpg') center center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: clamp(3rem, 8vw, 5rem);
+            overflow: hidden;
+        }
+        
+        .locations-hero::before {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, white, transparent);
+            z-index: 1;
+        }
+        
+        .hero-content-locations {
+            position: relative;
+            z-index: 2;
+            max-width: 900px;
+            padding: 0 2rem;
+        }
+        
+        .hero-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2.5rem, 6vw, 4.5rem);
+            margin-bottom: 1rem;
+            text-shadow: 0 4px 12px rgba(0, 0, 0, 0.5);
+            line-height: 1.1;
+        }
+        
+        .hero-subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+            font-family: 'Poppins', sans-serif;
+        }
+        
+        .hero-divider {
+            width: 120px;
+            height: 4px;
+            background: var(--secondary);
+            margin: 0 auto 2rem;
+            border-radius: 2px;
+        }
+        
+        /* ========== MAIN CONTENT ========== */
+        .locations-main {
+            padding: 0 0 clamp(5rem, 12vw, 8rem) 0;
+        }
+        
+        /* Welcome Card */
+        .welcome-card {
+            background: white;
+            border-radius: 25px;
+            padding: clamp(2.5rem, 6vw, 4rem) clamp(2rem, 5vw, 3.5rem);
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.08);
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+            position: relative;
+            border: 1px solid rgba(0, 0, 0, 0.05);
+        }
+        
+        .welcome-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 8px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            border-radius: 25px 25px 0 0;
+        }
+        
+        .welcome-message {
+            font-size: clamp(1.1rem, 2vw, 1.25rem);
+            line-height: 1.9;
+            color: #555;
+            margin-bottom: 2.5rem;
+            text-align: justify;
+        }
+        
+        /* Section Titles */
+        .section-title {
+            text-align: center;
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin-bottom: clamp(2rem, 6vw, 4rem);
+            position: relative;
+            padding-bottom: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: clamp(80px, 15vw, 120px);
+            height: 4px;
+            background: var(--secondary);
+            border-radius: 2px;
+        }
+        
+        /* Locations Grid */
+        .locations-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(500px, 100%), 1fr));
+            gap: clamp(2rem, 4vw, 3rem);
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+        }
+        
+        .location-card {
+            background: white;
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s ease;
+        }
+        
+        .location-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .location-header {
+            padding: clamp(2rem, 4vw, 2.5rem);
+            position: relative;
+            color: white;
+            min-height: 200px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        
+        .headquarters .location-header {
+            background: var(--headquarters);
+        }
+        
+        .branch .location-header {
+            background: var(--branch);
+        }
+        
+        .location-type {
+            display: inline-block;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.5rem 1.5rem;
+            border-radius: 30px;
+            font-size: 0.9rem;
+            font-weight: 600;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+        
+        .location-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.8rem, 3vw, 2.2rem);
+            margin-bottom: 0.5rem;
+        }
+        
+        .location-subtitle {
+            font-size: clamp(1.1rem, 2vw, 1.3rem);
+            opacity: 0.9;
+        }
+        
+        .location-body {
+            padding: clamp(2rem, 4vw, 2.5rem);
+        }
+        
+        .location-info {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 1.5rem;
+        }
+        
+        .location-info:last-child {
+            margin-bottom: 0;
+        }
+        
+        .info-icon {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 1.5rem;
+            flex-shrink: 0;
+            color: white;
+            font-size: 1.2rem;
+        }
+        
+        .headquarters .info-icon {
+            background: var(--headquarters);
+        }
+        
+        .branch .info-icon {
+            background: var(--branch);
+        }
+        
+        .info-content h4 {
+            color: var(--primary);
+            font-size: 1.3rem;
+            margin-bottom: 0.5rem;
+            font-weight: 600;
+        }
+        
+        .info-content p {
+            color: #666;
+            line-height: 1.6;
+        }
+        
+        /* Map Container */
+        .map-container {
+            margin-bottom: clamp(4rem, 10vw, 6rem);
+        }
+        
+        .map-wrapper {
+            border-radius: 25px;
+            overflow: hidden;
+            box-shadow: 0 20px 50px rgba(0, 0, 0, 0.1);
+            height: 500px;
+            position: relative;
+        }
+        
+        .map-iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+        }
+        
+        .map-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 2rem;
+        }
+        
+        .map-overlay h3 {
+            font-family: 'Playfair Display', serif;
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+        
+        /* Service Times */
+        .service-times {
+            background: linear-gradient(135deg, #f8f9fa 0%, #e9ecef 100%);
+            border-radius: 25px;
+            padding: clamp(3rem, 6vw, 4rem);
+            margin-bottom: 4rem;
+        }
+        
+        .times-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: 2rem;
+            margin-top: 2rem;
+        }
+        
+        .time-card {
+            background: white;
+            border-radius: 20px;
+            padding: clamp(1.5rem, 3vw, 2rem);
+            text-align: center;
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .time-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .time-icon {
+            width: 70px;
+            height: 70px;
+            background: var(--gold-gradient);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            color: var(--primary);
+            font-size: 1.8rem;
+        }
+        
+        .time-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(1.3rem, 2vw, 1.6rem);
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+        }
+        
+        .time-schedule {
+            font-size: clamp(1.1rem, 1.5vw, 1.25rem);
+            color: #666;
+            font-weight: 600;
+        }
+        
+        /* Contact CTA */
+        .contact-cta {
+            background: var(--gradient);
+            color: white;
+            padding: clamp(4rem, 10vw, 6rem) 0;
+            border-radius: 30px;
+            margin-bottom: 5rem;
+            position: relative;
+            overflow: hidden;
+            text-align: center;
+        }
+        
+        .contact-cta::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: url('data:image/svg+xml,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 100 100" preserveAspectRatio="none"><path d="M0,0 L100,0 L100,100 Z" fill="rgba(255,255,255,0.05)"/></svg>');
+            background-size: cover;
+        }
+        
+        .cta-title {
+            font-family: 'Playfair Display', serif;
+            font-size: clamp(2rem, 4vw, 2.8rem);
+            margin-bottom: 2rem;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-text {
+            font-size: clamp(1.2rem, 2vw, 1.5rem);
+            line-height: 1.8;
+            margin-bottom: 3rem;
+            max-width: 800px;
+            margin-left: auto;
+            margin-right: auto;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+            position: relative;
+            z-index: 2;
+        }
+        
+        .cta-btn {
+            display: inline-block;
+            background: white;
+            color: var(--primary);
+            padding: clamp(0.875rem, 2vw, 1rem) clamp(1.5rem, 3vw, 2rem);
+            border-radius: 30px;
+            font-weight: 600;
+            font-size: 1rem;
+            transition: all 0.3s ease;
+            box-shadow: 0 8px 25px rgba(255, 255, 255, 0.2);
+        }
+        
+        .cta-btn:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            box-shadow: 0 12px 30px rgba(255, 215, 0, 0.3);
+        }
+        
+        /* ========== FOOTER (Same as welcome page) ========== */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: clamp(3rem, 8vw, 5rem) 0 clamp(1.5rem, 4vw, 1.875rem);
+            position: relative;
+            width: 100%;
+            overflow: hidden;
+            background-image: url('logo11.jpg');
+            background-size: cover;
+            background-position: center;
+            background-repeat: no-repeat;
+            background-blend-mode: overlay;
+            background-color: rgba(0, 0, 0, 0.7);
+        }
+        
+        footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 0, 0, 0.7);
+            backdrop-filter: blur(5px);
+            -webkit-backdrop-filter: blur(5px);
+            z-index: 1;
+        }
+        
+        footer:after {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            z-index: 2;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(min(250px, 100%), 1fr));
+            gap: clamp(1.5rem, 4vw, 2.5rem);
+            margin-bottom: clamp(2rem, 5vw, 3.125rem);
+            position: relative;
+            z-index: 3;
+        }
+        
+        .footer-column h3 {
+            margin-bottom: clamp(1rem, 2.5vw, 1.5rem);
+            color: var(--secondary);
+            font-size: clamp(1.25rem, 2vw, 1.5rem);
+            font-weight: 600;
+            position: relative;
+            padding-bottom: 0.625rem;
+        }
+        
+        .footer-column h3:after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary);
+        }
+        
+        .footer-links {
+            list-style: none;
+        }
+        
+        .footer-links li {
+            margin-bottom: 0.75rem;
+        }
+        
+        .footer-links a {
+            color: #ddd;
+            transition: 0.3s;
+            display: inline-block;
+        }
+        
+        .footer-links a:hover {
+            color: var(--secondary);
+            transform: translateX(5px);
+        }
+        
+        .social-links {
+            display: flex;
+            gap: clamp(0.75rem, 2vw, 1rem);
+            margin-top: clamp(1rem, 2.5vw, 1.5rem);
+        }
+        
+        .social-links a {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: clamp(40px, 5vw, 45px);
+            height: clamp(40px, 5vw, 45px);
+            background: rgba(255, 255, 255, 0.1);
+            border-radius: 50%;
+            transition: 0.3s;
+        }
+        
+        .social-links a:hover {
+            background: var(--secondary);
+            transform: translateY(-5px);
+            color: var(--dark);
+        }
+        
+        .footer-bottom {
+            text-align: center;
+            padding-top: clamp(1rem, 2.5vw, 1.875rem);
+            border-top: 1px solid rgba(255,255,255,0.1);
+            font-size: clamp(0.75rem, 1.5vw, 0.9rem);
+            color: #aaa;
+            position: relative;
+            z-index: 3;
+        }
+        
+        /* Scroll to top button */
+        .scroll-top {
+            position: fixed;
+            bottom: clamp(1rem, 3vw, 1.875rem);
+            right: clamp(1rem, 3vw, 1.875rem);
+            width: clamp(45px, 5vw, 50px);
+            height: clamp(45px, 5vw, 50px);
+            background: var(--primary);
+            color: white;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            z-index: 999;
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            box-shadow: 0 5px 15px rgba(0, 135, 81, 0.3);
+        }
+        
+        .scroll-top.visible {
+            opacity: 1;
+            visibility: visible;
+        }
+        
+        .scroll-top:hover {
+            background: var(--accent);
+            transform: translateY(-5px);
+            box-shadow: 0 8px 20px rgba(0, 90, 58, 0.3);
+        }
+        
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        
+        .animate-fadeInUp {
+            animation: fadeInUp 0.8s ease-out forwards;
+        }
+        
+        /* Responsive adjustments */
+        @media (max-width: 768px) {
+            .locations-hero {
+                height: 50vh;
+                min-height: 400px;
+            }
+            
+            .locations-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .map-wrapper {
+                height: 400px;
+            }
+            
+            .times-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .cta-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .cta-btn {
+                width: 100%;
+                max-width: 300px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .locations-hero {
+                height: 40vh;
+                min-height: 300px;
+            }
+            
+            .welcome-card {
+                padding: 2rem 1.5rem;
+            }
+            
+            .location-header {
+                padding: 1.5rem;
+            }
+            
+            .location-body {
+                padding: 1.5rem;
+            }
+            
+            .location-info {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .info-icon {
+                margin-bottom: 1rem;
+                margin-right: 0;
+            }
+            
+            .map-wrapper {
+                height: 300px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Scroll to Top Button -->
+    <div class="scroll-top" id="scrollTop">
+        <i class="fas fa-chevron-up"></i>
+    </div>
+
+    <!-- Header -->
+    <header id="mainHeader" class="glass-effect">
+        <div class="container header-container">
+            <div class="logo">
+                <a href="index.html" class="logo-link">
+                    <div class="logo-frame">
+                        <img src="logo11.jpg" alt="Kingdom Citizens Church Logo">
+                    </div>
+                    <span class="logo-text">KINGDOM CITIZENS CHURCH INT'L</span>
+                </a>
+            </div>
+            <div class="nav-container">
+                <ul class="nav-menu">
+                    <li><a href="index.html"><i class="fas fa-home"></i> Home</a></li>
+                    <li><a href="about.html"><i class="fas fa-info-circle"></i> About</a></li>
+                    <li><a href="welcome.html"><i class="fas fa-door-open"></i> Welcome</a></li>
+                    <li><a href="department.html"><i class="fas fa-building"></i> Department</a></li>
+                    <li class="dropdown">
+                        <a href="#"><i class="fas fa-church"></i> Ministries <i class="fas fa-chevron-down"></i></a>
+                        <div class="dropdown-content">
+                            <a href="foundation.html">Foundation Class</a>
+                            <a href="counselling.html">Counselling</a>
+                            <a href="evangelism.html">Evangelism</a>
+                            <a href="library.html">Visit Library</a>
+                            <a href="sermon.html">Listen to Sermon</a>
+                            <a href="live.html">Watch Us Live</a>
+                        </div>
+                    </li>
+                    <li><a href="pastor-note.html"><i class="fas fa-user-tie"></i> Pastor's Desk</a></li>
+                    <li><a href="join.html"><i class="fas fa-user-plus"></i> Join Us</a></li>
+                    <li><a href="prayer.html"><i class="fas fa-pray"></i> Prayer</a></li>
+                    <li><a href="testimony.html"><i class="fas fa-star"></i> Testimonies</a></li>
+                    <li><a href="services.html"><i class="fas fa-calendar-alt"></i> Services</a></li>
+                    <li><a href="locations.html" class="active"><i class="fas fa-map-marker-alt"></i> Locations</a></li>
+                    <li><a href="donate.html"><i class="fas fa-hand-holding-heart"></i> Donate</a></li>
+                </ul>
+                <div class="hamburger"><span></span><span></span><span></span></div>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="locations-hero">
+        <div class="hero-content-locations animate-fadeInUp">
+            <h1 class="hero-title">Our Locations</h1>
+            <div class="hero-divider"></div>
+            <p class="hero-subtitle">Find Kingdom Citizens Church Near You</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="locations-main container">
+        <!-- Welcome Message -->
+        <section class="welcome-card animate-fadeInUp">
+            <div class="welcome-message">
+                <p>Kingdom Citizens Church INT'L is growing to serve you better! We currently have two vibrant worship centers in Abeokuta, Ogun State, Nigeria. Whether you're in the Abiola area or around Osara Obantoko, there's a Kingdom Citizens Church near you.</p>
+                
+                <p>Our doors are always open to welcome you into our family. Each location maintains the same standard of worship, teaching, and fellowship that has become our hallmark. Join us at either of our centers and experience the transforming power of God's presence.</p>
+            </div>
+        </section>
+
+        <!-- Locations Grid -->
+        <section class="animate-fadeInUp">
+            <h2 class="section-title">Our Worship Centers</h2>
+            
+            <div class="locations-grid">
+                <!-- Headquarters -->
+                <div class="location-card headquarters">
+                    <div class="location-header">
+                        <span class="location-type">Headquarters</span>
+                        <h2 class="location-title">Kingdom Citizens Church INT'L</h2>
+                        <p class="location-subtitle">Main Worship Center</p>
+                    </div>
+                    <div class="location-body">
+                        <div class="location-info">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Address</h4>
+                                <p>No. 20, Wole Iredele Street,<br>Abiola Way, Abeokuta,<br>Ogun State, Nigeria</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-info">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Contact</h4>
+                                <p>Phone: +2347027175427<br>WhatsApp: +2348034280774<br>Email: info@kingdomcitizenschurchintl.org</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-info">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Service Times</h4>
+                                <p>Sunday: 8am - 11am<br>Wednesday: 5pm - 6:30pm<br>Saturday: 8am - 10am</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-info">
+                            <div class="info-icon">
+                                <i class="fas fa-car"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Parking & Accessibility</h4>
+                                <p>Ample parking space available. Wheelchair accessible. Family-friendly environment with children's facilities.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- Branch -->
+                <div class="location-card branch">
+                    <div class="location-header">
+                        <span class="location-type">Branch</span>
+                        <h2 class="location-title">Light House Assembly</h2>
+                        <p class="location-subtitle">Kingdom Citizens Church Branch</p>
+                    </div>
+                    <div class="location-body">
+                        <div class="location-info">
+                            <div class="info-icon">
+                                <i class="fas fa-map-marker-alt"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Address</h4>
+                                <p>3, Alubarika Bus Stop,<br>Gbagada, Osaara,<br>Abeokuta, Ogun State,<br>Nigeria</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-info">
+                            <div class="info-icon">
+                                <i class="fas fa-phone"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Contact</h4>
+                                <p>Phone: +2348034280774<br>Email: lighthouse@kingdomcitizenschurchintl.org</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-info">
+                            <div class="info-icon">
+                                <i class="fas fa-clock"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>Service Times</h4>
+                                <p>Sunday: 9am - 12pm<br>Wednesday: 5pm - 7pm<br>Special meetings as announced</p>
+                            </div>
+                        </div>
+                        
+                        <div class="location-info">
+                            <div class="info-icon">
+                                <i class="fas fa-users"></i>
+                            </div>
+                            <div class="info-content">
+                                <h4>About This Location</h4>
+                                <p>A growing community of believers in the Osara Obantoko area. Focused on evangelism, discipleship, and community transformation. New converts and visitors warmly welcomed.</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Map Section -->
+        <section class="map-container animate-fadeInUp">
+            <h2 class="section-title">Find Us on the Map</h2>
+            
+            <div class="map-wrapper">
+                <!-- Google Maps Embed - Replace with actual embed code -->
+                <div class="map-overlay">
+                    <div>
+                        <h3>Interactive Map Coming Soon</h3>
+                        <p>We're working on integrating interactive maps for both locations.</p>
+                        <p>For now, use the addresses above with your preferred navigation app.</p>
+                    </div>
+                </div>
+                <!-- Actual Google Maps embed would go here -->
+                <!-- <iframe class="map-iframe" src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3959.1507768411183!2d3.43428921432088!3d7.132783994866052!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x103a2b6e3b0a4f5b%3A0x8f1d4b5b5b5b5b5b!2sAbeokuta%2C%20Ogun%20State%2C%20Nigeria!5e0!3m2!1sen!2sng!4v1648734567890!5m2!1sen!2sng" allowfullscreen="" loading="lazy"></iframe> -->
+            </div>
+        </section>
+
+        <!-- Service Times -->
+        <section class="service-times animate-fadeInUp">
+            <h2 class="section-title">Regular Service Times</h2>
+            
+            <div class="times-grid">
+                <div class="time-card">
+                    <div class="time-icon">
+                        <i class="fas fa-sun"></i>
+                    </div>
+                    <h3 class="time-title">Sunday School</h3>
+                    <div class="time-schedule">8:00 AM - 9:00 AM</div>
+                    <p style="margin-top: 0.5rem; color: #777; font-size: 0.95rem;">Bible study for all ages</p>
+                </div>
+                
+                <div class="time-card">
+                    <div class="time-icon">
+                        <i class="fas fa-church"></i>
+                    </div>
+                    <h3 class="time-title">Sunday Service</h3>
+                    <div class="time-schedule">9:00 AM - 11:00 AM</div>
+                    <p style="margin-top: 0.5rem; color: #777; font-size: 0.95rem;">Jesus Celebration Service</p>
+                </div>
+                
+                <div class="time-card">
+                    <div class="time-icon">
+                        <i class="fas fa-wine-glass-alt"></i>
+                    </div>
+                    <h3 class="time-title">Wednesday Communion</h3>
+                    <div class="time-schedule">5:00 PM - 6:30 PM</div>
+                    <p style="margin-top: 0.5rem; color: #777; font-size: 0.95rem;">Midweek refreshing</p>
+                </div>
+                
+                <div class="time-card">
+                    <div class="time-icon">
+                        <i class="fas fa-graduation-cap"></i>
+                    </div>
+                    <h3 class="time-title">Foundation Class</h3>
+                    <div class="time-schedule">Saturday: 8:00 AM - 10:00 AM</div>
+                    <p style="margin-top: 0.5rem; color: #777; font-size: 0.95rem;">New believers' discipleship</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contact CTA -->
+        <section class="contact-cta animate-fadeInUp">
+            <div class="container">
+                <h2 class="cta-title">Need Help Finding Us?</h2>
+                <div class="cta-text">
+                    <p>If you need directions or assistance finding either of our locations, our team is ready to help. Contact us for personalized guidance or to arrange a visit.</p>
+                </div>
+                
+                <div class="cta-buttons">
+                    <a href="tel:+2347027175427" class="cta-btn">
+                        <i class="fas fa-phone"></i> Call for Directions
+                    </a>
+                    <a href="https://wa.me/2348034280774" class="cta-btn" target="_blank">
+                        <i class="fab fa-whatsapp"></i> WhatsApp Us
+                    </a>
+                    <a href="contact.html" class="cta-btn">
+                        <i class="fas fa-envelope"></i> Send a Message
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer id="contact">
+        <div class="container footer-content">
+            <div class="footer-column">
+                <h3>Kingdom Citizens Church INT'L</h3>
+                <p>A vibrant community of believers committed to nurturing heirs of God's kingdom through faith, hope, and love.</p>
+                <div class="social-links">
+                    <a href="https://facebook.com/kingdomcitizenschurchintl" aria-label="Facebook"><i class="fab fa-facebook-f"></i></a>
+                    <a href="https://twitter.com/kingdomcitizens" aria-label="Twitter"><i class="fab fa-twitter"></i></a>
+                    <a href="https://instagram.com/kingdomcitizenschurchintl" aria-label="Instagram"><i class="fab fa-instagram"></i></a>
+                    <a href="https://youtube.com/kingdomcitizenschurchintl" aria-label="YouTube"><i class="fab fa-youtube"></i></a>
+                    <a href="https://tiktok.com/@kingdomcitizens" aria-label="TikTok"><i class="fab fa-tiktok"></i></a>
+                </div>
+            </div>
+            <div class="footer-column">
+                <h3>Quick Links</h3>
+                <ul class="footer-links">
+                    <li><a href="index.html">Home</a></li>
+                    <li><a href="about.html">About Us</a></li>
+                    <li><a href="welcome.html">Welcome</a></li>
+                    <li><a href="department.html">Departments</a></li>
+                    <li><a href="services.html">Our Services</a></li>
+                    <li><a href="watch-live.html">Watch Live</a></li>
+                    <li><a href="donate.html">Give Online</a></li>
+                    <li><a href="join.html">Join Us</a></li>
+                    <li><a href="pastor-note.html">Pastor's Desk</a></li>
+                </ul>
+            </div>
+            <div class="footer-column">
+                <h3>Contact Us</h3>
+                <ul class="footer-links">
+                    <li><i class="fas fa-map-marker-alt"></i> No 20, Wole Iredele Street, Abiola, Abeokuta, Ogun State, Nigeria</li>
+                    <li><i class="fas fa-phone"></i> Phone: +2347027175427</li>
+                    <li><i class="fas fa-phone"></i> WhatsApp: +2348034280774</li>
+                    <li><i class="fas fa-envelope"></i> Email: info@kingdomcitizenschurchintl.org</li>
+                    <li><i class="fas fa-clock"></i> Sunday School: 8am - 9am</li>
+                    <li><i class="fas fa-clock"></i> Sunday Service: 9am - 11am (Jesus Celebration Service)</li>
+                    <li><i class="fas fa-clock"></i> Wednesday: Communion Service 5pm - 6:30pm</li>
+                    <li><i class="fas fa-clock"></i> Saturday: Foundation Class 8am - 10am</li>
+                </ul>
+            </div>
+        </div>
+        <div class="footer-bottom">
+            &copy; 2025 Kingdom Citizens Church INT'L. All Rights Reserved. | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms of Use</a>
+        </div>
+    </footer>
+
+    <script>
+        // Header scroll effect
+        const header = document.getElementById('mainHeader');
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 50) {
+                header.classList.add('header-scrolled');
+            } else {
+                header.classList.remove('header-scrolled');
+            }
+        });
+
+        // Mobile Menu Functionality
+        const hamburger = document.querySelector('.hamburger');
+        const navMenu = document.querySelector('.nav-menu');
+        const dropdowns = document.querySelectorAll('.dropdown');
+        let isMenuOpen = false;
+
+        hamburger.addEventListener('click', (e) => {
+            e.stopPropagation();
+            isMenuOpen = !isMenuOpen;
+            hamburger.classList.toggle('active');
+            navMenu.classList.toggle('active');
+            hamburger.setAttribute('aria-expanded', isMenuOpen);
+            
+            if (isMenuOpen) {
+                document.body.classList.add('menu-open');
+                document.body.style.overflow = 'hidden';
+            } else {
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+            }
+        });
+
+        // Dropdown menu on mobile
+        dropdowns.forEach(dropdown => {
+            const trigger = dropdown.querySelector('a');
+            
+            trigger.addEventListener('click', (e) => {
+                if (window.innerWidth <= 992) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Close all other dropdowns
+                    dropdowns.forEach(otherDropdown => {
+                        if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
+                            otherDropdown.classList.remove('active');
+                        }
+                    });
+                    
+                    // Toggle current dropdown
+                    dropdown.classList.toggle('active');
+                }
+            });
+        });
+
+        // Close menu when clicking outside on mobile
+        document.addEventListener('click', (e) => {
+            if (window.innerWidth <= 992 && isMenuOpen) {
+                if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
+                    isMenuOpen = false;
+                    hamburger.classList.remove('active');
+                    navMenu.classList.remove('active');
+                    document.body.classList.remove('menu-open');
+                    document.body.style.overflow = 'auto';
+                    
+                    // Also close any open dropdowns
+                    dropdowns.forEach(dropdown => {
+                        dropdown.classList.remove('active');
+                    });
+                }
+            }
+        });
+
+        // Close menu when clicking a regular link
+        document.querySelectorAll('.nav-menu a').forEach(link => {
+            if (!link.parentElement.classList.contains('dropdown')) {
+                link.addEventListener('click', () => {
+                    if (window.innerWidth <= 992 && isMenuOpen) {
+                        isMenuOpen = false;
+                        hamburger.classList.remove('active');
+                        navMenu.classList.remove('active');
+                        document.body.classList.remove('menu-open');
+                        document.body.style.overflow = 'auto';
+                    }
+                });
+            }
+        });
+
+        // Scroll animations
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('animate-fadeInUp');
+                }
+            });
+        }, observerOptions);
+
+        // Observe elements for animation
+        document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Scroll to top button
+        const scrollTopBtn = document.getElementById('scrollTop');
+
+        window.addEventListener('scroll', () => {
+            if (window.scrollY > 300) {
+                scrollTopBtn.classList.add('visible');
+            } else {
+                scrollTopBtn.classList.remove('visible');
+            }
+        });
+
+        scrollTopBtn.addEventListener('click', () => {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        });
+
+        // Fix for window resize
+        window.addEventListener('resize', () => {
+            if (window.innerWidth > 992 && isMenuOpen) {
+                isMenuOpen = false;
+                hamburger.classList.remove('active');
+                navMenu.classList.remove('active');
+                document.body.classList.remove('menu-open');
+                document.body.style.overflow = 'auto';
+                
+                // Close any open dropdowns
+                dropdowns.forEach(dropdown => {
+                    dropdown.classList.remove('active');
+                });
+            }
+        });
+
+        // Initialize on load
+        window.addEventListener('DOMContentLoaded', function() {
+            // Trigger initial animations
+            setTimeout(() => {
+                document.querySelectorAll('.animate-fadeInUp').forEach(el => {
+                    if (el.getBoundingClientRect().top < window.innerHeight - 100) {
+                        el.classList.add('animate-fadeInUp');
+                    }
+                });
+            }, 100);
+            
+            // Add map embed functionality
+            const mapOverlay = document.querySelector('.map-overlay');
+            if (mapOverlay) {
+                mapOverlay.addEventListener('click', function() {
+                    // In a real implementation, this would load the actual Google Maps embed
+                    // For now, we'll just show a message
+                    this.innerHTML = `
+                        <div>
+                            <h3>Google Maps Integration</h3>
+                            <p>To embed actual maps:</p>
+                            <p>1. Go to Google Maps</p>
+                            <p>2. Find your location</p>
+                            <p>3. Click "Share" → "Embed a map"</p>
+                            <p>4. Copy iframe code and replace the overlay</p>
+                        </div>
+                    `;
+                });
+            }
+        });
+    </script>
+</body>
+</html>
