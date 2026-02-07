@@ -694,7 +694,7 @@
   
   @keyframes pulse {
     0%, 100% { transform: scale(1); }
-    50% { transform: scale(1.05); }
+    50% { transform: scale(1.1); }
   }
   
   @keyframes rotate {
@@ -704,55 +704,77 @@
   
   @keyframes glow {
     0%, 100% { box-shadow: 0 15px 35px rgba(0, 135, 81, 0.2); }
-    50% { box-shadow: 0 15px 35px rgba(255, 215, 0, 0.5), 0 0 20px rgba(255, 215, 0, 0.3); }
+    50% { box-shadow: 0 15px 35px rgba(255, 215, 0, 0.6), 0 0 25px rgba(255, 215, 0, 0.4); }
   }
   
   @keyframes shake {
     0%, 100% { transform: translateX(0); }
-    25% { transform: translateX(-5px); }
-    75% { transform: translateX(5px); }
+    10%, 30%, 50%, 70%, 90% { transform: translateX(-3px); }
+    20%, 40%, 60%, 80% { transform: translateX(3px); }
   }
   
   @keyframes float {
     0%, 100% { transform: translateY(0); }
-    50% { transform: translateY(-10px); }
+    50% { transform: translateY(-12px); }
   }
   
   @keyframes sparkle {
     0%, 100% { opacity: 0.7; }
-    50% { opacity: 1; text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); }
+    50% { opacity: 1; text-shadow: 0 0 15px rgba(255, 255, 255, 0.9); }
+  }
+  
+  @keyframes heartbeat {
+    0%, 100% { transform: scale(1); }
+    25% { transform: scale(1.05); }
+    50% { transform: scale(1); }
+    75% { transform: scale(1.03); }
+  }
+  
+  @keyframes colorShift {
+    0% { background: linear-gradient(135deg, #008751 0%, #005a3a 100%); }
+    33% { background: linear-gradient(135deg, #005a3a 0%, #008751 100%); }
+    66% { background: linear-gradient(135deg, var(--secondary) 0%, #ffed4e 100%); }
+    100% { background: linear-gradient(135deg, #008751 0%, #005a3a 100%); }
   }
   
   .circle-button.bounce {
-    animation: bounce var(--animation-time, 2s) ease-in-out infinite;
+    animation: bounce var(--animation-time, 1.8s) ease-in-out infinite;
   }
   
   .circle-button.pulse {
-    animation: pulse var(--animation-time, 1.5s) ease-in-out infinite;
+    animation: pulse var(--animation-time, 1.2s) ease-in-out infinite;
   }
   
   .circle-button.rotate i {
-    animation: rotate var(--animation-time, 8s) linear infinite;
+    animation: rotate var(--animation-time, 6s) linear infinite;
   }
   
   .circle-button.glow {
-    animation: glow var(--animation-time, 2s) ease-in-out infinite;
+    animation: glow var(--animation-time, 1.5s) ease-in-out infinite;
   }
   
   .circle-button.shake {
-    animation: shake var(--animation-time, 1s) ease-in-out infinite;
+    animation: shake var(--animation-time, 0.8s) ease-in-out infinite;
   }
   
   .circle-button.float {
-    animation: float var(--animation-time, 3s) ease-in-out infinite;
+    animation: float var(--animation-time, 2.5s) ease-in-out infinite;
+  }
+  
+  .circle-button.heartbeat {
+    animation: heartbeat var(--animation-time, 1.5s) ease-in-out infinite;
+  }
+  
+  .circle-button.color-shift {
+    animation: colorShift var(--animation-time, 8s) linear infinite;
   }
   
   .circle-button.sparkle i {
-    animation: sparkle var(--animation-time, 1.5s) ease-in-out infinite;
+    animation: sparkle var(--animation-time, 1.2s) ease-in-out infinite;
   }
   
   .circle-button.hover-active {
-    transform: scale(1.1) !important;
+    transform: scale(1.15) !important;
     z-index: 10;
   }
   
@@ -1638,7 +1660,7 @@
         <i class="fas fa-bullhorn"></i>
         <h3>Share Testimony</h3>
       </div>
-      <div class="circle-button hover-lift" id="resources-button" onclick="navigateToPage('donate.html', this)">
+      <div class="circle-button dynamic hover-lift" id="resources-button" onclick="navigateToPage('donate.html', this)">
         <i class="fas fa-hand-holding-heart"></i>
         <h3>Give/Donate</h3>
       </div>
@@ -1675,22 +1697,13 @@
   <div class="container">
     <h2 class="section-title gradient-text">Our Ministries & Services</h2>
     <div class="picture-grid">
-      <!-- Added KCCI UK and KCCI US as requested -->
-      <div class="picture-card hover-lift" onclick="openPage('kcci-uk.html')">
-        <img src="kcci-uk.jpg" alt="KCCI UK Ministry" loading="lazy">
-        <h3>KCCI UK</h3>
-      </div>
-      <div class="picture-card hover-lift" onclick="openPage('kcci-us.html')">
-        <img src="kcci-us.jpg" alt="KCCI US Ministry" loading="lazy">
-        <h3>KCCI US</h3>
-      </div>
       <div class="picture-card hover-lift" onclick="openPage('department.html')">
         <img src="youth-ministry.jpg" alt="Youth Ministry" loading="lazy">
         <h3>Youth Ministry</h3>
       </div>
       <div class="picture-card hover-lift" onclick="openPage('department.html')">
-        <img src="royal-piller.jpg" alt="Royal Piller" loading="lazy">
-        <h3>Royal Piller</h3>
+        <img src="royal-piller.jpg" alt="Royal Pillar" loading="lazy">
+        <h3>Royal Pillar</h3>
       </div>
       <div class="picture-card hover-lift" onclick="openPage('department.html')">
         <img src="royal-voice.jpg" alt="Royal Voice" loading="lazy">
@@ -1712,7 +1725,7 @@
         <img src="seed-royal.jpg" alt="Seed Royal School" loading="lazy">
         <h3>Seed Royal School</h3>
       </div>
-      <div class="picture-card hover-lift" onclick="openPage('evangelism.html')">
+      <div class="picture-card hover-lift" onclick="openPage('department.html')">
         <img src="evangelism.jpg" alt="Evangelism Ministry" loading="lazy">
         <h3>Evangelism Ministry</h3>
       </div>
@@ -1735,34 +1748,34 @@
     <div class="insta-slider glass-effect">
       <h3 class="insta-title gradient-text">Our Service</h3>
       <div class="insta-track">
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="sunday-school.jpg" alt="Sunday School 8am to 9am" loading="lazy">
         </div>
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="school-service.jpg" alt="School Service 9am to 11am (Jesus celebration service)" loading="lazy">
         </div>
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="communion-service.jpg" alt="Wednesday Communion service 5 to 6:30" loading="lazy">
         </div>
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="health-outreach.jpg" alt="Community health outreach" loading="lazy">
         </div>
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="kingdom-harvest.jpg" alt="Kingdom harvest time convention October" loading="lazy">
         </div>
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="youth-convention.jpg" alt="Youth convention September" loading="lazy">
         </div>
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="judah-praise.jpg" alt="Judah praise festival July" loading="lazy">
         </div>
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="december-outreach.jpg" alt="December 7 weekend outreach" loading="lazy">
         </div>
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="easter-feast.jpg" alt="Easter love feast" loading="lazy">
         </div>
-        <div class="insta-slide hover-lift" onclick="openPage('service.html')">
+        <div class="insta-slide hover-lift" onclick="openPage('services.html')">
           <img src="crossover-service.jpg" alt="Months end cross over service 11:30 to 12:30" loading="lazy">
         </div>
       </div>
@@ -1816,7 +1829,7 @@
         <li><a href="#quick-links">Quick Access</a></li>
         <li><a href="#locations">Location</a></li>
         <li><a href="department.html">Departments</a></li>
-        <li><a href="service.html">Our Service</a></li>
+        <li><a href="services.html">Our Service</a></li>
         <li><a href="watch-live.html">Watch Live</a></li>
         <li><a href="donate.html">Give Online</a></li>
         <li><a href="join.html">Join Us</a></li>
@@ -1965,73 +1978,109 @@ window.addEventListener('scroll', function() {
   }
 });
 
-// ====== DYNAMIC EFFECTS FOR FIRST THREE CIRCLE BUTTONS ======
+// ====== ENHANCED DYNAMIC EFFECTS FOR ALL FOUR CIRCLE BUTTONS ======
 function initializeDynamicButtons() {
   const buttons = document.querySelectorAll('.circle-button.dynamic');
   
   // Clear existing animations
   buttons.forEach(btn => {
     btn.style.animation = 'none';
-    btn.querySelector('i').style.animation = 'none';
+    if (btn.querySelector('i')) {
+      btn.querySelector('i').style.animation = 'none';
+    }
   });
   
-  // Assign dynamic effects with faster animations
+  // Enhanced dynamic effects for all four buttons
   const effects = [
-    { name: 'bounce', time: '2s' },
-    { name: 'pulse', time: '1.5s' },
-    { name: 'float', time: '3s' }
-  ];
-  
-  const iconEffects = [
-    { name: 'rotate', time: '8s' },
-    { name: 'sparkle', time: '1.5s' },
-    { name: 'sparkle', time: '1.8s' }
+    { 
+      name: 'bounce', 
+      time: '1.8s',
+      iconEffect: 'rotate',
+      iconTime: '6s'
+    },
+    { 
+      name: 'pulse', 
+      time: '1.2s',
+      iconEffect: 'sparkle',
+      iconTime: '1.5s'
+    },
+    { 
+      name: 'float', 
+      time: '2.5s',
+      iconEffect: 'sparkle',
+      iconTime: '2s'
+    },
+    { 
+      name: 'heartbeat', 
+      time: '1.5s',
+      iconEffect: 'rotate',
+      iconTime: '8s'
+    }
   ];
   
   buttons.forEach((button, index) => {
-    // Button animation
     const effect = effects[index % effects.length];
-    button.style.setProperty('--animation-time', effect.time);
     
     // Remove previous animation classes
-    ['bounce', 'pulse', 'rotate', 'glow', 'shake', 'float'].forEach(cls => {
+    ['bounce', 'pulse', 'rotate', 'glow', 'shake', 'float', 'heartbeat', 'color-shift'].forEach(cls => {
       button.classList.remove(cls);
     });
     
-    // Add new animation
+    // Set animation time variable
+    button.style.setProperty('--animation-time', effect.time);
+    
+    // Add new animation class
     button.classList.add(effect.name);
     
-    // Icon animation
-    const iconEffect = iconEffects[index % iconEffects.length];
+    // Apply icon animation if available
     const icon = button.querySelector('i');
-    icon.style.animation = 'none';
-    
-    // Apply icon animation
-    if (iconEffect.name === 'rotate') {
-      icon.style.animation = `rotate ${iconEffect.time} linear infinite`;
-    } else if (iconEffect.name === 'sparkle') {
-      icon.style.animation = `sparkle ${iconEffect.time} ease-in-out infinite`;
+    if (icon) {
+      icon.style.animation = 'none';
+      
+      if (effect.iconEffect === 'rotate') {
+        icon.style.animation = `rotate ${effect.iconTime} linear infinite`;
+      } else if (effect.iconEffect === 'sparkle') {
+        icon.style.animation = `sparkle ${effect.iconTime} ease-in-out infinite`;
+      }
     }
     
     // Enhanced hover effects
     button.addEventListener('mouseenter', function() {
-      this.style.transform = 'scale(1.15) rotate(5deg)';
+      this.style.transform = 'scale(1.15) rotate(3deg)';
       this.style.zIndex = '10';
+      this.style.boxShadow = '0 25px 50px rgba(0, 135, 81, 0.4)';
+      
+      // Add color shift on hover
+      if (!this.classList.contains('color-shift')) {
+        this.classList.add('color-shift');
+        this.style.setProperty('--animation-time', '3s');
+      }
     });
     
     button.addEventListener('mouseleave', function() {
       this.style.transform = '';
       this.style.zIndex = '';
+      this.style.boxShadow = '';
+      
+      // Remove color shift on leave
+      if (this.classList.contains('color-shift')) {
+        this.classList.remove('color-shift');
+      }
     });
     
-    // Click effect
+    // Enhanced click effect
     button.addEventListener('click', function(e) {
       createRipple(e, this);
+      
       // Quick pulse effect on click
       this.style.animation = 'none';
+      this.style.transform = 'scale(0.95)';
+      
+      // Restore animation after click
       setTimeout(() => {
+        this.style.transform = '';
         this.classList.add(effect.name);
-      }, 10);
+      }, 300);
     });
   });
 }
@@ -2193,27 +2242,19 @@ scrollTopBtn.addEventListener('click', () => {
 
 // ====== IMPROVED BUTTON NAVIGATION (NO LOADING) ======
 function navigateToPage(page, element) {
-  // For dynamic buttons - no loading spinner
-  if(['new-button', 'prayer-button', 'testimony-button'].includes(element.id)) {
-    createRipple(event, element);
-    
-    // Quick animation before navigation
-    element.classList.add('clicked');
-    element.style.transform = 'scale(0.95)';
-    
-    // Navigate immediately (no delay)
-    setTimeout(() => {
-      window.location.href = page;
-    }, 300);
-    
-    return false;
-  }
+  // For all dynamic buttons - no loading spinner
+  createRipple(event, element);
   
-  // Original behavior for other buttons
-  element.classList.add('square');
+  // Quick animation before navigation
+  element.classList.add('clicked');
+  element.style.transform = 'scale(0.95)';
+  
+  // Navigate immediately (no delay)
   setTimeout(() => {
     window.location.href = page;
-  }, 500);
+  }, 300);
+  
+  return false;
 }
 
 function openPage(page) {
