@@ -614,52 +614,77 @@
     margin-bottom: 0.5rem;
   }
   
-  .class-levels {
+  /* Bible Study Focus Styles */
+  .bible-study-section {
+    background: linear-gradient(135deg, #e8f4f0, #f0f7f4);
+    border-radius: 15px;
+    padding: 2rem;
+    margin-bottom: 2.5rem;
+    border-left: 5px solid var(--primary);
+  }
+  
+  .bible-study-section h3 {
+    color: var(--accent);
+    margin-bottom: 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+  }
+  
+  .bible-study-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(180px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 1.5rem;
+    margin-top: 1.5rem;
   }
   
-  .class-level {
-    background: #f9f9f9;
-    border: 2px solid #e0e0e0;
-    border-radius: 10px;
-    padding: 1.25rem;
+  .bible-study-level {
+    background: white;
+    border-radius: 12px;
+    padding: 1.5rem;
     text-align: center;
+    box-shadow: 0 5px 15px rgba(0,0,0,0.05);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
     cursor: pointer;
-    transition: all 0.3s ease;
+    border: 2px solid transparent;
   }
   
-  .class-level:hover {
+  .bible-study-level:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+    border-color: var(--primary);
+  }
+  
+  .bible-study-level.selected {
+    border-color: var(--primary);
     background: #f0f7f4;
-    border-color: var(--primary);
-    transform: translateY(-3px);
   }
   
-  .class-level.selected {
-    background: #e8f4f0;
-    border-color: var(--primary);
-    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
-  }
-  
-  .class-level .level {
-    font-weight: 600;
+  .bible-study-level i {
+    font-size: 2.5rem;
     color: var(--primary);
-    font-size: 1.1rem;
-    margin-bottom: 0.25rem;
+    margin-bottom: 1rem;
   }
   
-  .class-level .age {
+  .bible-study-level h4 {
+    color: var(--primary);
+    margin-bottom: 0.5rem;
+    font-size: 1.2rem;
+  }
+  
+  .bible-study-level .age-range {
     color: #666;
     font-size: 0.9rem;
+    margin-bottom: 0.5rem;
   }
   
-  .class-level .fee {
+  .bible-study-level .focus-area {
     color: var(--accent);
-    font-weight: 600;
-    margin-top: 0.5rem;
+    font-weight: 500;
     font-size: 0.9rem;
+    margin-top: 0.75rem;
+    padding-top: 0.75rem;
+    border-top: 1px dashed #e0e0e0;
   }
   
   .upload-area {
@@ -713,58 +738,6 @@
   .file-item .remove-file {
     color: #e74c3c;
     cursor: pointer;
-  }
-  
-  .payment-plan-options {
-    display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
-    gap: 1.5rem;
-    margin-top: 1rem;
-  }
-  
-  .payment-plan {
-    background: #f9f9f9;
-    border: 2px solid #e0e0e0;
-    border-radius: 12px;
-    padding: 1.5rem;
-    cursor: pointer;
-    transition: all 0.3s ease;
-    text-align: center;
-  }
-  
-  .payment-plan:hover {
-    background: #f0f7f4;
-    border-color: var(--primary);
-  }
-  
-  .payment-plan.selected {
-    background: #e8f4f0;
-    border-color: var(--primary);
-    box-shadow: 0 5px 15px rgba(0, 135, 81, 0.1);
-  }
-  
-  .payment-plan i {
-    font-size: 2.5rem;
-    color: var(--primary);
-    margin-bottom: 1rem;
-  }
-  
-  .payment-plan h4 {
-    color: var(--primary);
-    margin-bottom: 0.5rem;
-  }
-  
-  .payment-plan .amount {
-    font-size: 1.5rem;
-    font-weight: 600;
-    color: var(--accent);
-    margin: 0.5rem 0;
-  }
-  
-  .payment-plan .details {
-    color: #666;
-    font-size: 0.9rem;
-    margin-bottom: 0.5rem;
   }
   
   .parent-grid {
@@ -996,10 +969,9 @@
       font-size: clamp(2rem, 5vw, 2.8rem);
     }
     
-    .class-levels,
-    .payment-plan-options,
+    .bible-study-grid,
     .checkbox-group {
-      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
     }
     
     .parent-grid {
@@ -1017,9 +989,7 @@
   }
   
   @media (max-width: 480px) {
-    .class-levels,
-    .payment-plan-options,
-    .spiritual-background {
+    .bible-study-grid {
       grid-template-columns: 1fr;
     }
     
@@ -1134,6 +1104,46 @@
       </div>
     </div>
     
+    <!-- Bible Study Focus Section -->
+    <div class="bible-study-section">
+      <h3><i class="fas fa-bible"></i> Seed Royal Bible Study Program</h3>
+      <p>Our comprehensive Bible study curriculum is integrated into daily school activities, helping students develop a strong spiritual foundation alongside academic excellence.</p>
+      
+      <div class="bible-study-grid">
+        <div class="bible-study-level" data-level="creche">
+          <i class="fas fa-baby"></i>
+          <h4>Crèche Level</h4>
+          <div class="age-range">6 months - 2 years</div>
+          <p>Introduction to Bible stories through songs, pictures, and simple prayers</p>
+          <div class="focus-area">Focus: God's love & creation</div>
+        </div>
+        
+        <div class="bible-study-level" data-level="nursery">
+          <i class="fas fa-child"></i>
+          <h4>Nursery Level</h4>
+          <div class="age-range">2 - 4 years</div>
+          <p>Basic Bible stories, Christian values, and character development</p>
+          <div class="focus-area">Focus: Obedience & kindness</div>
+        </div>
+        
+        <div class="bible-study-level" data-level="primary">
+          <i class="fas fa-book-reader"></i>
+          <h4>Primary Level</h4>
+          <div class="age-range">5 - 11 years</div>
+          <p>Systematic Bible study, memory verses, and Christian leadership principles</p>
+          <div class="focus-area">Focus: Faith & service</div>
+        </div>
+        
+        <div class="bible-study-level" data-level="secondary">
+          <i class="fas fa-user-graduate"></i>
+          <h4>Secondary Level</h4>
+          <div class="age-range">11 - 17 years</div>
+          <p>Advanced Bible study, apologetics, Christian worldview, and discipleship</p>
+          <div class="focus-area">Focus: Kingdom citizenship</div>
+        </div>
+      </div>
+    </div>
+    
     <div class="form-container glass-effect">
       <div class="form-header">
         <h2>School Registration Form</h2>
@@ -1215,129 +1225,26 @@
           
           <!-- Class Level Selection -->
           <div class="form-group">
-            <label>Class Level Applying For <span class="required">*</span></label>
-            <p style="color: #666; margin-bottom: 1rem;">Select the appropriate class level based on child's age:</p>
-            
-            <div class="class-levels">
-              <div class="class-level" data-level="creche" data-age="6m-2y">
-                <div class="level">Crèche</div>
-                <div class="age">6 months - 2 years</div>
-                <div class="fee">₦50,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="nursery1" data-age="2-3y">
-                <div class="level">Nursery 1</div>
-                <div class="age">2 - 3 years</div>
-                <div class="fee">₦60,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="nursery2" data-age="3-4y">
-                <div class="level">Nursery 2</div>
-                <div class="age">3 - 4 years</div>
-                <div class="fee">₦65,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="kindergarten" data-age="4-5y">
-                <div class="level">Kindergarten</div>
-                <div class="age">4 - 5 years</div>
-                <div class="fee">₦70,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="primary1" data-age="5-6y">
-                <div class="level">Primary 1</div>
-                <div class="age">5 - 6 years</div>
-                <div class="fee">₦80,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="primary2" data-age="6-7y">
-                <div class="level">Primary 2</div>
-                <div class="age">6 - 7 years</div>
-                <div class="fee">₦85,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="primary3" data-age="7-8y">
-                <div class="level">Primary 3</div>
-                <div class="age">7 - 8 years</div>
-                <div class="fee">₦90,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="primary4" data-age="8-9y">
-                <div class="level">Primary 4</div>
-                <div class="age">8 - 9 years</div>
-                <div class="fee">₦95,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="primary5" data-age="9-10y">
-                <div class="level">Primary 5</div>
-                <div class="age">9 - 10 years</div>
-                <div class="fee">₦100,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="primary6" data-age="10-11y">
-                <div class="level">Primary 6</div>
-                <div class="age">10 - 11 years</div>
-                <div class="fee">₦110,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="jss1" data-age="11-12y">
-                <div class="level">JSS 1</div>
-                <div class="age">11 - 12 years</div>
-                <div class="fee">₦120,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="jss2" data-age="12-13y">
-                <div class="level">JSS 2</div>
-                <div class="age">12 - 13 years</div>
-                <div class="fee">₦125,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="jss3" data-age="13-14y">
-                <div class="level">JSS 3</div>
-                <div class="age">13 - 14 years</div>
-                <div class="fee">₦130,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="sss1" data-age="14-15y">
-                <div class="level">SSS 1</div>
-                <div class="age">14 - 15 years</div>
-                <div class="fee">₦140,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="sss2" data-age="15-16y">
-                <div class="level">SSS 2</div>
-                <div class="age">15 - 16 years</div>
-                <div class="fee">₦145,000/term</div>
-              </div>
-              
-              <div class="class-level" data-level="sss3" data-age="16-17y">
-                <div class="level">SSS 3</div>
-                <div class="age">16 - 17 years</div>
-                <div class="fee">₦150,000/term</div>
-              </div>
-            </div>
-            <input type="hidden" id="classLevel" name="classLevel" required>
-          </div>
-          
-          <!-- Previous School Information -->
-          <div class="form-group">
-            <h3 style="color: var(--primary); margin-bottom: 1.5rem; border-bottom: 2px solid #f0f0f0; padding-bottom: 0.5rem;">Previous School Information</h3>
-          </div>
-          
-          <div class="form-row">
-            <div class="form-group">
-              <label for="previousSchool">Previous School Name</label>
-              <input type="text" id="previousSchool" name="previousSchool" class="form-control" placeholder="Name of previous school attended">
-            </div>
-            
-            <div class="form-group">
-              <label for="previousClass">Previous Class Level</label>
-              <input type="text" id="previousClass" name="previousClass" class="form-control" placeholder="Last class completed">
-            </div>
-          </div>
-          
-          <div class="form-group">
-            <label for="reasonForTransfer">Reason for Transfer/New Admission</label>
-            <textarea id="reasonForTransfer" name="reasonForTransfer" class="form-control" rows="3" placeholder="Why are you choosing Seed Royal School?"></textarea>
+            <label for="classLevel">Class Level Applying For <span class="required">*</span></label>
+            <select id="classLevel" name="classLevel" class="form-control" required>
+              <option value="" disabled selected>Select appropriate class level</option>
+              <option value="creche">Crèche (6 months - 2 years)</option>
+              <option value="nursery1">Nursery 1 (2 - 3 years)</option>
+              <option value="nursery2">Nursery 2 (3 - 4 years)</option>
+              <option value="kindergarten">Kindergarten (4 - 5 years)</option>
+              <option value="primary1">Primary 1 (5 - 6 years)</option>
+              <option value="primary2">Primary 2 (6 - 7 years)</option>
+              <option value="primary3">Primary 3 (7 - 8 years)</option>
+              <option value="primary4">Primary 4 (8 - 9 years)</option>
+              <option value="primary5">Primary 5 (9 - 10 years)</option>
+              <option value="primary6">Primary 6 (10 - 11 years)</option>
+              <option value="jss1">JSS 1 (11 - 12 years)</option>
+              <option value="jss2">JSS 2 (12 - 13 years)</option>
+              <option value="jss3">JSS 3 (13 - 14 years)</option>
+              <option value="sss1">SSS 1 (14 - 15 years)</option>
+              <option value="sss2">SSS 2 (15 - 16 years)</option>
+              <option value="sss3">SSS 3 (16 - 17 years)</option>
+            </select>
           </div>
           
           <!-- Parent/Guardian Information -->
@@ -1496,37 +1403,6 @@
           <div class="form-group">
             <label for="medications">Current Medications</label>
             <textarea id="medications" name="medications" class="form-control" rows="2" placeholder="List any current medications"></textarea>
-          </div>
-          
-          <!-- Payment Plan -->
-          <div class="form-group">
-            <label>Preferred Payment Plan <span class="required">*</span></label>
-            <div class="payment-plan-options">
-              <div class="payment-plan" data-plan="full">
-                <i class="fas fa-money-bill-wave"></i>
-                <h4>Full Payment</h4>
-                <div class="amount">Save 5%</div>
-                <div class="details">Pay entire year's fees upfront</div>
-                <div class="benefit">No monthly worries</div>
-              </div>
-              
-              <div class="payment-plan" data-plan="termly">
-                <i class="fas fa-calendar-alt"></i>
-                <h4>Termly Payment</h4>
-                <div class="amount">Standard</div>
-                <div class="details">Pay per term (3 terms/year)</div>
-                <div class="benefit">Most popular option</div>
-              </div>
-              
-              <div class="payment-plan" data-plan="monthly">
-                <i class="fas fa-calendar-day"></i>
-                <h4>Monthly Installments</h4>
-                <div class="amount">+10% service fee</div>
-                <div class="details">Spread payments monthly</div>
-                <div class="benefit">Budget-friendly</div>
-              </div>
-            </div>
-            <input type="hidden" id="paymentPlan" name="paymentPlan" required>
           </div>
           
           <!-- Document Upload -->
@@ -1752,40 +1628,19 @@ document.querySelectorAll('.nav-menu a').forEach(link => {
   });
 });
 
-// ============ FORM FUNCTIONALITIES ============
-// Class level selection
-const classLevels = document.querySelectorAll('.class-level');
-const classLevelInput = document.getElementById('classLevel');
+// ============ BIBLE STUDY LEVEL SELECTION ============
+const bibleStudyLevels = document.querySelectorAll('.bible-study-level');
 
-classLevels.forEach(level => {
+bibleStudyLevels.forEach(level => {
   level.addEventListener('click', function() {
     // Remove selection from all levels
-    classLevels.forEach(lvl => lvl.classList.remove('selected'));
+    bibleStudyLevels.forEach(lvl => lvl.classList.remove('selected'));
     
     // Select this level
     this.classList.add('selected');
     
-    // Update hidden input
-    const selectedLevel = this.getAttribute('data-level');
-    classLevelInput.value = selectedLevel;
-  });
-});
-
-// Payment plan selection
-const paymentPlans = document.querySelectorAll('.payment-plan');
-const paymentPlanInput = document.getElementById('paymentPlan');
-
-paymentPlans.forEach(plan => {
-  plan.addEventListener('click', function() {
-    // Remove selection from all plans
-    paymentPlans.forEach(pln => pln.classList.remove('selected'));
-    
-    // Select this plan
-    this.classList.add('selected');
-    
-    // Update hidden input
-    const selectedPlan = this.getAttribute('data-plan');
-    paymentPlanInput.value = selectedPlan;
+    // Scroll to form for better UX
+    document.querySelector('#schoolForm').scrollIntoView({ behavior: 'smooth' });
   });
 });
 
@@ -1886,18 +1741,6 @@ function formatFileSize(bytes) {
 // ============ FORM SUBMISSION ============
 document.getElementById('schoolForm').addEventListener('submit', async function(e) {
   e.preventDefault();
-  
-  // Validate class level selection
-  if (!classLevelInput.value) {
-    alert('Please select a class level.');
-    return;
-  }
-  
-  // Validate payment plan selection
-  if (!paymentPlanInput.value) {
-    alert('Please select a payment plan.');
-    return;
-  }
   
   const form = this;
   const submitBtn = form.querySelector('button[type="submit"]');
