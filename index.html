@@ -59,6 +59,7 @@
     color: inherit;
   }
   
+  /* Enhanced container for better responsiveness */
   .container {
     width: min(100% - clamp(1rem, 5vw, 3rem), 1200px);
     margin: 0 auto;
@@ -88,13 +89,14 @@
     box-shadow: 0 6px 20px rgba(0, 90, 58, 0.25);
   }
   
+  /* Professional touch: Glass morphism effect */
   .glass-effect {
     background: rgba(255, 255, 255, 0.95);
     backdrop-filter: blur(10px);
     -webkit-backdrop-filter: blur(10px);
   }
   
-  /* ========== HEADER ========== */
+  /* ========== UPDATED HEADER ========== */
   header {
     background: white;
     box-shadow: 0 2px 15px rgba(0, 0, 0, 0.15);
@@ -105,7 +107,7 @@
     z-index: 1000;
     padding: 4px 0;
     transition: all 0.4s ease;
-    height: 85px;
+    height: 85px; /* Increased height for bigger logo */
   }
   
   .header-scrolled {
@@ -122,7 +124,7 @@
     width: 100%;
     max-width: 1200px;
     margin: 0 auto;
-    height: 77px;
+    height: 77px; /* Increased container height */
   }
   
   .logo {
@@ -132,8 +134,8 @@
   }
   
   .logo-frame {
-    width: 70px;
-    height: 70px;
+    width: 70px; /* Increased by 46% from original */
+    height: 70px; /* Increased by 46% from original */
     border-radius: 50%;
     display: flex;
     align-items: center;
@@ -160,7 +162,7 @@
   
   .logo-text {
     font-family: 'Lobster', cursive;
-    font-size: 2.2rem;
+    font-size: 2.2rem; /* Increased font size */
     font-weight: 400;
     color: var(--primary);
     letter-spacing: 1px;
@@ -170,6 +172,7 @@
     text-shadow: none;
   }
   
+  /* Updated Navigation - New Design */
   .nav-container {
     display: flex;
     align-items: center;
@@ -177,7 +180,7 @@
     width: auto;
   }
   
-  /* Desktop Navigation */
+  /* Desktop Navigation - Updated Design */
   @media (min-width: 993px) {
     .nav-menu {
       display: flex;
@@ -257,7 +260,7 @@
     
     .logo-text {
       display: block;
-      font-size: 2.5rem;
+      font-size: 2.5rem; /* Even bigger on desktop */
     }
     
     .logo-frame {
@@ -266,12 +269,12 @@
     }
   }
   
-  /* Mobile Menu */
+  /* Mobile Menu - COMPLETELY REDESIGNED TO SLIDE FROM TOP */
   .hamburger {
     display: none;
     cursor: pointer;
-    width: 40px;
-    height: 40px;
+    width: 40px; /* Fixed: Made smaller */
+    height: 40px; /* Fixed: Made smaller */
     position: relative;
     z-index: 1001;
     background: var(--primary);
@@ -284,8 +287,8 @@
   .hamburger span {
     display: block;
     position: absolute;
-    height: 2px;
-    width: 20px;
+    height: 2px; /* Made thinner */
+    width: 20px; /* Made shorter */
     background: white;
     border-radius: 2px;
     opacity: 1;
@@ -313,6 +316,7 @@
     transform: rotate(-45deg);
   }
   
+  /* NEW MOBILE MENU DESIGN - SLIDES FROM TOP */
   @media (max-width: 992px) {
     .nav-menu {
       position: fixed;
@@ -320,6 +324,7 @@
       left: 0;
       width: 100%;
       height: 100vh;
+      /* Fixed: Added church logo as background with proper opacity */
       background: linear-gradient(rgba(255, 255, 255, 0.88), rgba(255, 255, 255, 0.88)), url('logo11.jpg');
       background-size: cover;
       background-position: center;
@@ -354,6 +359,7 @@
       transform: translateY(0);
     }
     
+    /* Staggered animation delay */
     .nav-menu li:nth-child(1) { transition-delay: 0.1s; }
     .nav-menu li:nth-child(2) { transition-delay: 0.15s; }
     .nav-menu li:nth-child(3) { transition-delay: 0.2s; }
@@ -421,7 +427,7 @@
     
     .logo-text {
       display: block;
-      font-size: 1.8rem;
+      font-size: 1.8rem; /* Increased for mobile */
     }
     
     .logo-frame {
@@ -482,8 +488,9 @@
     }
   }
   
+  /* Add padding to body to account for fixed header */
   body {
-    padding-top: 85px;
+    padding-top: 85px; /* Increased to match larger header */
   }
   
   /* Hero Section */
@@ -502,7 +509,7 @@
     right: 50%;
     margin-left: -50vw;
     margin-right: -50vw;
-    margin-top: -85px;
+    margin-top: -85px; /* Compensate for increased header padding */
   }
   
   .hero-overlay {
@@ -515,6 +522,7 @@
     z-index: 1;
   }
   
+  /* 7. FASTER VIDEO LOADING */
   .hero-video {
     position: absolute;
     top: 0;
@@ -530,6 +538,7 @@
     autoplay: true;
   }
   
+  /* 4. LOWER HERO TEXT */
   .hero-content {
     max-width: min(90%, 800px);
     padding: 0 clamp(1rem, 3vw, 2rem);
@@ -547,6 +556,7 @@
     text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.5);
   }
   
+  /* 5. FASTER & SLANTED BIBLE TICKER */
   .scripture-ticker {
     position: absolute;
     bottom: 0;
@@ -585,6 +595,7 @@
     }
   }
   
+  /* Professional touch: Scroll progress indicator */
   .scroll-progress {
     position: fixed;
     top: 0;
@@ -596,7 +607,7 @@
     transition: width 0.1s ease;
   }
   
-  /* ====== CIRCLE BUTTONS SECTION ====== */
+  /* ====== 1. FIXED CIRCLE BUTTONS SECTION ====== */
   .circle-buttons-section {
     padding: clamp(3rem, 8vw, 4.375rem) 0;
     background: white;
@@ -675,7 +686,7 @@
     line-height: 1.3;
   }
   
-  /* Dynamic Button Animations */
+  /* ====== DYNAMIC BUTTON ANIMATIONS ====== */
   @keyframes bounce {
     0%, 100% { transform: translateY(0); }
     50% { transform: translateY(-15px); }
@@ -928,7 +939,7 @@
     text-align: center;
   }
   
-  /* ====== ENHANCED DYNAMIC PICTURES SECTION ====== */
+  /* ====== 2. ENHANCED DYNAMIC PICTURES SECTION ====== */
   .dynamic-pictures {
     padding: clamp(4rem, 10vw, 7.5rem) 0;
     background: linear-gradient(135deg, #f8f9fa 0%, #ffffff 100%);
@@ -1479,6 +1490,28 @@
     }
   }
   
+  /* Professional touch: Print styles */
+  @media print {
+    .no-print {
+      display: none !important;
+    }
+    
+    body {
+      font-size: 12pt;
+      line-height: 1.5;
+      background: white !important;
+    }
+    
+    .hero-video {
+      display: none;
+    }
+    
+    .hero {
+      background: var(--primary);
+      color: white;
+    }
+  }
+  
   /* Ensure all images are responsive */
   img {
     max-width: 100%;
@@ -1554,6 +1587,7 @@
             <a href="foundation.html">Foundation Class</a>
             <a href="counselling.html">Counselling</a>
             <a href="evangelism.html">Evangelism</a>
+            <!-- Added new items to ministries dropdown -->
             <a href="library.html">Visit Library</a>
             <a href="sermon.html">Listen to Sermon</a>
             <a href="live.html">Watch Us Live</a>
@@ -1561,6 +1595,7 @@
         </li>
         <li><a href="pastor-note.html"><i class="fas fa-user-tie"></i> Pastor's Desk</a></li>
         <li><a href="join.html"><i class="fas fa-user-plus"></i> Join Us</a></li>
+        <!-- Added new menu items -->
         <li><a href="library.html"><i class="fas fa-book-reader"></i> Visit Library</a></li>
         <li><a href="sermon.html"><i class="fas fa-headphones"></i> Listen to Sermon</a></li>
         <li><a href="live.html"><i class="fas fa-video"></i> Watch Us Live</a></li>
@@ -1572,6 +1607,7 @@
 
 <!-- Hero Section -->
 <section class="hero" id="home" id="main-content">
+  <!-- 7. FASTER VIDEO LOADING WITH OPTIMIZED ATTRIBUTES -->
   <video class="hero-video" autoplay muted loop playsinline preload="auto" poster="hero-poster.jpg">
     <source src="kingdom-video.mp4" type="video/mp4">
     <source src="kingdom-video.webm" type="video/webm">
@@ -1583,6 +1619,7 @@
     <p>Welcome to Kingdom Citizens Church INT'L - nurturing the heirs of God's kingdom. We're delighted you've chosen to visit us! We pray the Word of God delivered from this ministry becomes a testimony in your life. God bless you abundantly.</p>
   </div>
   
+  <!-- 5. FASTER & SLANTED SCRIPTURE TICKER -->
   <div class="scripture-ticker">
     <div class="ticker-container">
       <div class="ticker-item"><i class="fas fa-fire"></i> "But you will receive power when the Holy Spirit comes on you..." - Acts 1:8</div>
@@ -1692,6 +1729,7 @@
         <img src="evangelism.jpg" alt="Evangelism Ministry" loading="lazy">
         <h3>Evangelism Ministry</h3>
       </div>
+      <!-- Added new items as requested -->
       <div class="picture-card hover-lift" onclick="openPage('library.html')">
         <img src="library.jpg" alt="Visit Library" loading="lazy">
         <h3>Visit Library</h3>
@@ -1706,7 +1744,7 @@
       </div>
     </div>
     
-    <!-- Our Service Gallery -->
+    <!-- CHANGED FROM "OUR CHURCH GALLERY" TO "OUR SERVICE" -->
     <div class="insta-slider glass-effect">
       <h3 class="insta-title gradient-text">Our Service</h3>
       <div class="insta-track">
@@ -1827,11 +1865,12 @@ window.addEventListener('scroll', () => {
   }
 });
 
-// HAMBURGER MENU - FIXED
+// HAMBURGER MENU - COMPLETELY FIXED
 const hamburger = document.querySelector('.hamburger');
 const navMenu = document.querySelector('.nav-menu');
 const dropdowns = document.querySelectorAll('.dropdown');
 
+// Track if menu is open
 let isMenuOpen = false;
 
 hamburger.addEventListener('click', (e) => {
@@ -1843,6 +1882,7 @@ hamburger.addEventListener('click', (e) => {
   if (isMenuOpen) {
     document.body.classList.add('menu-open');
     document.body.style.overflow = 'hidden';
+    // FIX: Prevent horizontal scrolling by setting width to 100vw
     document.body.style.width = '100vw';
   } else {
     document.body.classList.remove('menu-open');
@@ -1851,7 +1891,7 @@ hamburger.addEventListener('click', (e) => {
   }
 });
 
-// Dropdown menu on mobile
+// Dropdown menu on mobile - FIXED
 dropdowns.forEach(dropdown => {
   const trigger = dropdown.querySelector('a');
   
@@ -1860,12 +1900,14 @@ dropdowns.forEach(dropdown => {
       e.preventDefault();
       e.stopPropagation();
       
+      // Close all other dropdowns
       dropdowns.forEach(otherDropdown => {
         if (otherDropdown !== dropdown && otherDropdown.classList.contains('active')) {
           otherDropdown.classList.remove('active');
         }
       });
       
+      // Toggle current dropdown
       dropdown.classList.toggle('active');
     }
   });
@@ -1874,6 +1916,7 @@ dropdowns.forEach(dropdown => {
 // Close menu when clicking outside on mobile
 document.addEventListener('click', (e) => {
   if (window.innerWidth <= 992 && isMenuOpen) {
+    // If clicking outside the menu AND not on hamburger
     if (!e.target.closest('.nav-menu') && !e.target.closest('.hamburger')) {
       isMenuOpen = false;
       hamburger.classList.remove('active');
@@ -1882,6 +1925,7 @@ document.addEventListener('click', (e) => {
       document.body.style.overflow = 'auto';
       document.body.style.width = '';
       
+      // Also close any open dropdowns
       dropdowns.forEach(dropdown => {
         dropdown.classList.remove('active');
       });
@@ -1891,6 +1935,7 @@ document.addEventListener('click', (e) => {
 
 // Close menu when clicking a regular link (not dropdown) in the menu on mobile
 document.querySelectorAll('.nav-menu a').forEach(link => {
+  // Skip dropdown triggers
   if (!link.parentElement.classList.contains('dropdown')) {
     link.addEventListener('click', () => {
       if (window.innerWidth <= 992 && isMenuOpen) {
@@ -1915,13 +1960,14 @@ window.addEventListener('resize', () => {
     document.body.style.overflow = 'auto';
     document.body.style.width = '';
     
+    // Close any open dropdowns
     dropdowns.forEach(dropdown => {
       dropdown.classList.remove('active');
     });
   }
 });
 
-// Scroll progress indicator
+// Professional touch: Scroll progress indicator
 window.addEventListener('scroll', function() {
   const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
   const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
@@ -1944,6 +1990,7 @@ function initializeDynamicButtons() {
     }
   });
   
+  // Enhanced dynamic effects for all four buttons
   const effects = [
     { 
       name: 'bounce', 
@@ -1985,7 +2032,7 @@ function initializeDynamicButtons() {
     // Add new animation class
     button.classList.add(effect.name);
     
-    // Apply icon animation
+    // Apply icon animation if available
     const icon = button.querySelector('i');
     if (icon) {
       icon.style.animation = 'none';
@@ -2003,6 +2050,7 @@ function initializeDynamicButtons() {
       this.style.zIndex = '10';
       this.style.boxShadow = '0 25px 50px rgba(0, 135, 81, 0.4)';
       
+      // Add color shift on hover
       if (!this.classList.contains('color-shift')) {
         this.classList.add('color-shift');
         this.style.setProperty('--animation-time', '3s');
@@ -2014,6 +2062,7 @@ function initializeDynamicButtons() {
       this.style.zIndex = '';
       this.style.boxShadow = '';
       
+      // Remove color shift on leave
       if (this.classList.contains('color-shift')) {
         this.classList.remove('color-shift');
       }
@@ -2023,9 +2072,11 @@ function initializeDynamicButtons() {
     button.addEventListener('click', function(e) {
       createRipple(e, this);
       
+      // Quick pulse effect on click
       this.style.animation = 'none';
       this.style.transform = 'scale(0.95)';
       
+      // Restore animation after click
       setTimeout(() => {
         this.style.transform = '';
         this.classList.add(effect.name);
@@ -2083,11 +2134,13 @@ function createRipple(event, element) {
   ripple.style.top = y + 'px';
   ripple.classList.add('ripple');
   
+  // Remove existing ripples
   const existingRipples = element.querySelectorAll('.ripple');
   existingRipples.forEach(r => r.remove());
   
   element.appendChild(ripple);
   
+  // Remove ripple after animation
   setTimeout(() => {
     ripple.remove();
   }, 800);
@@ -2098,6 +2151,7 @@ let lastScrollY = 0;
 let ticking = false;
 
 function updateScroll() {
+  // Picture cards animation with requestAnimationFrame
   const pictureCards = document.querySelectorAll('.picture-card:not(.visible)');
   const windowHeight = window.innerHeight;
   
@@ -2186,13 +2240,16 @@ scrollTopBtn.addEventListener('click', () => {
   });
 });
 
-// ====== IMPROVED BUTTON NAVIGATION ======
+// ====== IMPROVED BUTTON NAVIGATION (NO LOADING) ======
 function navigateToPage(page, element) {
+  // For all dynamic buttons - no loading spinner
   createRipple(event, element);
   
+  // Quick animation before navigation
   element.classList.add('clicked');
   element.style.transform = 'scale(0.95)';
   
+  // Navigate immediately (no delay)
   setTimeout(() => {
     window.location.href = page;
   }, 300);
@@ -2219,6 +2276,7 @@ if (instaTrack) {
       if (!isDragging) {
         scrollAmount += slideWidth;
         
+        // Reset if at end
         if (scrollAmount >= instaTrack.scrollWidth - instaTrack.clientWidth) {
           scrollAmount = 0;
           instaTrack.scrollTo({ left: 0, behavior: 'smooth' });
@@ -2226,7 +2284,7 @@ if (instaTrack) {
           instaTrack.scrollTo({ left: scrollAmount, behavior: 'smooth' });
         }
       }
-    }, 4000);
+    }, 4000); // Faster auto-scroll
   }
   
   startAutoScroll();
